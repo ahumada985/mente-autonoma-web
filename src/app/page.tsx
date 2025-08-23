@@ -67,13 +67,13 @@ export default function Home() {
             
             {/* Botones completamente renovados - NUEVO DISEÑO */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                  <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
+              <button className="group relative overflow-hidden bg-white text-purple-600 text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                  <div className="w-0 h-0 border-l-[10px] border-l-purple-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
                 </div>
                 <span className="relative z-10">Ver Demo en Vivo</span>
-                <div className="relative z-10 w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <div className="relative z-10 w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
               </button>
               
               <button className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
@@ -108,9 +108,19 @@ export default function Home() {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
             {/* Servicio 1 - Chatbot Inteligente - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Líneas decorativas */}
+              <div className="absolute top-6 left-6 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute bottom-6 right-6 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">🤖</span>
+                  {/* Anillo giratorio */}
+                  <div className="absolute inset-0 border-2 border-purple-300 border-dashed rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -121,17 +131,53 @@ export default function Home() {
                   Asistentes conversacionales que entienden contexto y resuelven consultas complejas con IA avanzada.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-green-700 font-semibold">Tiempo Respuesta: {'<'} 2s</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span className="text-blue-700 font-semibold">Idiomas: 25+</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Uptime: 99.9%</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Integración: API</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 2 - Diseño Web Inteligente - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-pink-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Puntos decorativos */}
+              <div className="absolute top-8 right-8 w-3 h-3 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
+              <div className="absolute bottom-8 left-8 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">🌐</span>
+                  {/* Ondas concéntricas */}
+                  <div className="absolute inset-0 border border-purple-300 rounded-2xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-2 border border-purple-200 rounded-xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -142,17 +188,53 @@ export default function Home() {
                   Sitios web que se adaptan automáticamente y optimizan la experiencia del usuario con IA.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 border border-blue-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <span className="text-emerald-700 font-semibold">Velocidad: {'<'} 1s</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span className="text-blue-700 font-semibold">SEO: 100/100</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Responsive: 100%</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Accesibilidad: AAA</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 3 - Automatización de Procesos - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pink-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Líneas diagonales */}
+              <div className="absolute top-4 left-4 w-16 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute bottom-4 right-4 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">⚡</span>
+                  {/* Rayos de energía */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -163,38 +245,109 @@ export default function Home() {
                   Optimiza flujos de trabajo y elimina tareas repetitivas con IA avanzada y machine learning.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border border-yellow-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                      <span className="text-yellow-700 font-semibold">Ahorro Tiempo: 80%</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                      <span className="text-orange-700 font-semibold">Reducción Errores: 95%</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-red-700 font-semibold">Procesos: 24/7</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">ROI: 300%</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 4 - Asistente de Ventas - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 4 - Marketing Digital - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 left-0 w-36 h-36 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-28 h-28 bg-gradient-to-tl from-purple-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Círculos decorativos */}
+              <div className="absolute top-6 right-6 w-4 h-4 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+              <div className="absolute bottom-6 left-6 w-3 h-3 bg-teal-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-4xl">💼</span>
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                  <span className="text-4xl">📱</span>
+                  {/* Efecto de brillo */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Asistente de Ventas
+                  Marketing Digital
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  IA que identifica leads calificados y optimiza el proceso de ventas con análisis predictivo.
+                  Estrategias digitales inteligentes con IA que optimizan campañas y maximizan el ROI de marketing.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <span className="text-emerald-700 font-semibold">ROI Promedio: 450%</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+                      <span className="text-teal-700 font-semibold">Conversiones: +200%</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+                      <span className="text-cyan-700 font-semibold">Cobertura: 10M+</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span className="text-blue-700 font-semibold">Plataformas: 15+</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 5 - Asistente Secretario IA - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-100 to-rose-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Cuadrados decorativos */}
+              <div className="absolute top-4 left-4 w-3 h-3 bg-indigo-400 rounded-sm opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-sm opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">👔</span>
+                  {/* Efecto de ondas */}
+                  <div className="absolute inset-0 border-2 border-purple-300 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                  <div className="absolute inset-1 border border-purple-200 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style={{animationDelay: '0.3s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -205,17 +358,53 @@ export default function Home() {
                   Gestión inteligente de agenda, emails y tareas con priorización automática y IA.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 border border-indigo-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
+                      <span className="text-indigo-700 font-semibold">Tareas/Día: 50+</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Emails: 200+</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Priorización: IA</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-rose-500 rounded-full animate-pulse"></div>
+                      <span className="text-rose-700 font-semibold">Productividad: +60%</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 6 - Generador de Contenido RRSS - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-orange-100 to-red-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Estrellas decorativas */}
+              <div className="absolute top-8 right-8 w-4 h-4 bg-amber-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-8 left-8 w-3 h-3 bg-orange-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">✍️</span>
+                  {/* Efecto de escritura */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-purple-300 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-purple-300 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -226,59 +415,175 @@ export default function Home() {
                   Creación automática de contenido viral con análisis de tendencias en tiempo real.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+                      <span className="text-amber-700 font-semibold">Contenido/Día: 100+</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                      <span className="text-orange-700 font-semibold">Engagement: +180%</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-red-700 font-semibold">Plataformas: 8+</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Tendencias: IA</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 7 - Análisis Predictivo - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 7 - Optimización SEO - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-100 to-green-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-teal-100 to-cyan-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Líneas de gráfico SEO */}
+              <div className="absolute top-6 left-6 w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute top-8 left-6 w-12 h-0.5 bg-gradient-to-r from-green-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute top-10 left-6 w-20 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-4xl">📊</span>
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                  <span className="text-4xl">🔍</span>
+                  {/* Barras de gráfico SEO */}
+                  <div className="absolute inset-0 flex items-end justify-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-1 bg-white h-3 animate-pulse"></div>
+                    <div className="w-1 bg-white h-5 animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-1 bg-white h-2 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-1 bg-white h-6 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  </div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Análisis Predictivo
+                  Optimización SEO
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Predicciones de mercado y comportamiento del cliente con machine learning avanzado.
+                  Posicionamiento inteligente en buscadores con análisis de palabras clave y optimización automática de contenido.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-4 border border-emerald-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <span className="text-emerald-700 font-semibold">Posicionamiento: +45</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-green-700 font-semibold">Tráfico: +300%</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+                      <span className="text-teal-700 font-semibold">Palabras Clave: 500+</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+                      <span className="text-cyan-700 font-semibold">Análisis: IA</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 8 - Integración de Sistemas - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 8 - Aplicaciones SAAS/BAAS - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-violet-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-fuchsia-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Nodos de conexión */}
+              <div className="absolute top-6 right-6 w-3 h-3 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
+              <div className="absolute bottom-6 left-6 w-3 h-3 bg-fuchsia-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-4xl">🔗</span>
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                  <span className="text-4xl">☁️</span>
+                  {/* Líneas de conexión */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Integración de Sistemas
+                  Aplicaciones SAAS/BAAS
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Conexión inteligente entre aplicaciones SAAS, BAAS y sistemas empresariales existentes.
+                  Desarrollo de software como servicio y backend como servicio con arquitectura cloud nativa e IA integrada.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-4 border border-violet-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></div>
+                      <span className="text-violet-700 font-semibold">Escalabilidad: ∞</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Uptime: 99.99%</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-fuchsia-500 rounded-full animate-pulse"></div>
+                      <span className="text-fuchsia-700 font-semibold">Integración: API</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Seguridad: Enterprise</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 9 - Módulo Personalizado - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-bl from-slate-100 to-gray-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-34 h-34 bg-gradient-to-tr from-zinc-100 to-neutral-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Engranajes decorativos */}
+              <div className="absolute top-8 left-8 w-4 h-4 bg-slate-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin"></div>
+              <div className="absolute bottom-8 right-8 w-3 h-3 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDirection: 'reverse'}}></div>
+              
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">⚙️</span>
+                  {/* Efecto de engranaje */}
+                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin"></div>
+                  <div className="absolute inset-2 border border-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDirection: 'reverse'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -289,14 +594,41 @@ export default function Home() {
                   Soluciones IA a medida diseñadas específicamente para las necesidades de tu empresa.
                 </p>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Explorar Servicio
+                {/* Información importante de forma visualmente atractiva */}
+                <div className="mb-6 bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-4 border border-slate-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-slate-500 rounded-full animate-pulse"></div>
+                      <span className="text-slate-700 font-semibold">Personalización: 100%</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
+                      <span className="text-gray-700 font-semibold">Integración: Total</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-zinc-500 rounded-full animate-pulse"></div>
+                      <span className="text-zinc-700 font-semibold">Soporte: 24/7</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-neutral-500 rounded-full animate-pulse"></div>
+                      <span className="text-neutral-700 font-semibold">Mantenimiento: IA</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                  <span className="relative z-10">Explorar Servicio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      
 
       {/* NUEVA SECCIÓN: Por Qué Adoptar IA en las Pymes - FONDO OSCURO */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
@@ -356,71 +688,74 @@ export default function Home() {
               </button>
             </div>
             
-            {/* Columna Derecha - Elemento Interactivo Perfeccionado */}
+            {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
             <div className="relative">
               <div className="w-96 h-96 mx-auto relative">
-                {/* Círculo central con gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full animate-pulse opacity-20"></div>
+                {/* Fondo animado con partículas flotantes */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl backdrop-blur-sm"></div>
                 
-                {/* Recuadro Rojo - Soporte 24/7 */}
-                <div className="absolute top-8 left-8 bg-gradient-to-r from-red-500 to-pink-500 text-white p-6 rounded-2xl shadow-2xl border-2 border-white/30 animate-bounce group cursor-pointer hover:scale-110 transition-transform duration-300">
+                {/* Partículas flotantes animadas */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
+                <div className="absolute top-12 right-8 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute top-20 left-16 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1s'}}></div>
+                <div className="absolute top-28 right-20 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
+                
+                {/* Círculo central principal con IA */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
+                  <div className="text-center text-white">
+                    <div className="text-4xl mb-2">🤖</div>
+                    <div className="text-sm font-bold">IA</div>
+                  </div>
+                  
+                  {/* Anillos concéntricos giratorios */}
+                  <div className="absolute inset-0 border-2 border-white/20 border-dashed rounded-full animate-spin"></div>
+                  <div className="absolute inset-2 border border-white/10 border-dashed rounded-full animate-spin" style={{animationDirection: 'reverse'}}></div>
+                </div>
+                
+                {/* Tarjetas flotantes alrededor del centro */}
+                <div className="absolute top-8 left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110 animate-bounce">
                   <div className="text-center">
-                    <div className="text-3xl mb-2">🔄</div>
-                    <div className="text-xl font-bold">Soporte 24/7</div>
-                    <div className="text-sm opacity-90">Asistencia continua</div>
+                    <div className="text-2xl mb-1 animate-pulse">🚀</div>
+                    <div className="text-sm font-bold">+500%</div>
+                    <div className="text-xs opacity-90">Eficiencia</div>
                   </div>
                 </div>
                 
-                {/* Recuadro Verde - 99.9% Uptime */}
-                <div className="absolute top-8 right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-2xl shadow-2xl border-2 border-white/30 animate-bounce group cursor-pointer hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.5s'}}>
+                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110 animate-pulse">
                   <div className="text-center">
-                    <div className="text-3xl mb-2">⚡</div>
-                    <div className="text-xl font-bold">99.9% Uptime</div>
-                    <div className="text-sm opacity-90">Disponibilidad total</div>
+                    <div className="text-2xl mb-1 animate-spin">⚡</div>
+                    <div className="text-sm font-bold">24/7</div>
+                    <div className="text-xs opacity-90">Disponible</div>
                   </div>
                 </div>
                 
-                {/* Recuadro Azul - 2025 Año de los Agentes IA */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white p-8 rounded-2xl shadow-2xl border-2 border-white/30 animate-pulse group cursor-pointer hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-3">🤖</div>
-                    <div className="text-xl font-bold">2025 Año de los</div>
-                    <div className="text-2xl font-black">Agentes IA</div>
-                    
-                    {/* Elemento Interactivo Dinámico */}
-                    <div className="mt-4 relative">
-                      <div className="w-16 h-16 mx-auto bg-white/20 rounded-full flex items-center justify-center animate-spin">
-                        <div className="w-8 h-8 bg-white rounded-full animate-ping"></div>
-                      </div>
-                      <div className="absolute inset-0 w-16 h-16 mx-auto border-2 border-white/30 border-dashed rounded-full animate-spin" style={{animationDirection: 'reverse'}}></div>
-                    </div>
+                    <div className="text-2xl mb-1">🤖</div>
+                    <div className="text-sm font-bold">Agentes</div>
+                    <div className="text-xs opacity-90">IA</div>
                   </div>
                 </div>
-                
-                {/* Elemento central flotante */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl animate-ping">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-3xl">⚡</span>
-                  </div>
-                </div>
-                
-                {/* Partículas flotantes adicionales */}
-                <div className="absolute top-20 right-20 w-3 h-3 bg-blue-400/60 rounded-full animate-ping"></div>
-                <div className="absolute bottom-20 left-20 w-2 h-2 bg-indigo-400/60 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-1/3 right-10 w-4 h-4 bg-purple-400/60 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 
                 {/* Líneas de conexión animadas */}
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 384 384">
                   <defs>
-                    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8"/>
-                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.8"/>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.6"/>
+                      <stop offset="100%" stopColor="#EC4899" stopOpacity="0.6"/>
                     </linearGradient>
                   </defs>
-                  <line x1="192" y1="192" x2="192" y2="96" stroke="url(#line1)" strokeWidth="2" className="animate-pulse"/>
-                  <line x1="192" y1="192" x2="288" y2="96" stroke="url(#line1)" strokeWidth="2" className="animate-pulse" style={{animationDelay: '0.5s'}}/>
-                  <line x1="192" y1="192" x2="192" y2="288" stroke="url(#line1)" strokeWidth="2" className="animate-pulse" style={{animationDelay: '1s'}}/>
+                  <path d="M192 192 L 96 96 M 192 192 L 288 96 M 192 192 L 96 288 M 192 192 L 288 288" 
+                        stroke="url(#lineGradient)" 
+                        strokeWidth="2" 
+                        fill="none" 
+                        strokeDasharray="5,5"
+                        className="animate-pulse"/>
                 </svg>
+                
+                {/* Efecto de ondas concéntricas */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-purple-400/30 rounded-full animate-ping opacity-20"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-blue-400/20 rounded-full animate-ping opacity-20" style={{animationDelay: '0.5s'}}></div>
               </div>
             </div>
           </div>
@@ -541,894 +876,334 @@ export default function Home() {
                  </div>
        </section>
  
-
- 
-
- 
-              {/* Sección de Tecnologías - COMPLETAMENTE REDISEÑADA DESDE CERO */}
-       <section className="py-24 bg-white relative overflow-hidden">
-         {/* Elementos de fondo creativos */}
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.08),transparent_50%)]"></div>
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(147,51,234,0.08),transparent_50%)]"></div>
-         
-         {/* Partículas flotantes animadas */}
-         <div className="absolute top-20 left-20 w-4 h-4 bg-blue-400/40 rounded-full animate-bounce"></div>
-         <div className="absolute top-40 right-32 w-3 h-3 bg-purple-400/40 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-         <div className="absolute bottom-32 left-32 w-5 h-5 bg-indigo-400/40 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
-         <div className="absolute bottom-20 right-20 w-2 h-2 bg-blue-300/50 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
-         
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-           {/* Header Section */}
-           <div className="text-center mb-20">
-             <div className="mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-10 py-4 text-sm shadow-2xl rounded-full inline-block backdrop-blur-sm border border-blue-200">
-               ⚡ Stack Tecnológico 2025
-             </div>
-             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
-               Tecnologías que
-               <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent"> Impulsan la Innovación</span>
-             </h2>
-             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-               Nuestro arsenal tecnológico de vanguardia para crear soluciones IA extraordinarias
-             </p>
-           </div>
-           
-           {/* Carrusel de Tecnologías con Movimiento Infinito */}
-           <div className="relative mb-16 overflow-hidden">
-             {/* Contenedor del carrusel */}
-             <div className="flex animate-scroll">
-               {/* Primera fila de tecnologías */}
-               <div className="flex space-x-6 flex-shrink-0">
-                 {/* Python */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Python</h3>
-                   <p className="text-xs text-gray-600 mt-2">IA & Machine Learning</p>
-                 </div>
-                 
-                 {/* N8N */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔗</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">N8N</h3>
-                   <p className="text-xs text-gray-600 mt-2">Automatización</p>
-                 </div>
-                 
-                 {/* Make */}
-                 <div className="group relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚙️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Make</h3>
-                   <p className="text-xs text-gray-600 mt-2">Integración</p>
-                 </div>
-                 
-                 {/* Zapier */}
-                 <div className="group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border-2 border-orange-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Zapier</h3>
-                   <p className="text-xs text-gray-600 mt-2">Conectividad</p>
-                 </div>
-                 
-                 {/* WordPress */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌐</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">WordPress</h3>
-                   <p className="text-xs text-gray-600 mt-2">CMS</p>
-                 </div>
-                 
-                 {/* Shopify */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🛒</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Shopify</h3>
-                   <p className="text-xs text-gray-600 mt-2">E-commerce</p>
-                 </div>
-                 
-                 {/* Next.js */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Next.js</h3>
-                   <p className="text-xs text-gray-600 mt-2">React Framework</p>
-                 </div>
-                 
-                 {/* Tailwind CSS */}
-                 <div className="group relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-teal-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🎨</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Tailwind</h3>
-                   <p className="text-xs text-gray-600 mt-2">CSS Framework</p>
-                 </div>
-                 
-                 {/* Shadcn/ui */}
-                 <div className="group relative bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border-2 border-violet-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🧩</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Shadcn</h3>
-                   <p className="text-xs text-gray-600 mt-2">UI Components</p>
-                 </div>
-                 
-                 {/* Cloudinary */}
-                 <div className="group relative bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-6 border-2 border-sky-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-sky-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">☁️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-sky-600 transition-colors">Cloudinary</h3>
-                   <p className="text-xs text-gray-600 mt-2">Media Cloud</p>
-                 </div>
-                 
-                 {/* Google Cloud */}
-                 <div className="group relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border-2 border-red-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors">Google</h3>
-                   <p className="text-xs text-gray-600 mt-2">Cloud Platform</p>
-                 </div>
-                 
-                 {/* ChatGPT 5 */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🤖</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">ChatGPT 5</h3>
-                   <p className="text-xs text-gray-600 mt-2">AI Assistant</p>
-                 </div>
-                 
-                 {/* Claude Code */}
-                 <div className="group relative bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 border-2 border-indigo-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">💻</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Claude</h3>
-                   <p className="text-xs text-gray-600 mt-2">Code AI</p>
-                 </div>
-                 
-                 {/* Firebase */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔥</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Firebase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Backend Service</p>
-                 </div>
-                 
-                 {/* Supabase */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 border-2 border-green-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🗄️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">Supabase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Database</p>
-                 </div>
-                 
-                 {/* Airtable */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📊</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Airtable</h3>
-                   <p className="text-xs text-gray-600 mt-2">Data Platform</p>
-                 </div>
-                 
-                 {/* Prisma */}
-                 <div className="group relative bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-6 border-2 border-gray-100 hover:border-slate-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-500 to-slate-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔧</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Prisma</h3>
-                   <p className="text-xs text-gray-600 mt-2">ORM</p>
-                 </div>
-                 
-                 {/* JavaScript */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-amber-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📜</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">JavaScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Programming</p>
-                 </div>
-                 
-                 {/* TypeScript */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔷</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">TypeScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Typed JS</p>
-                 </div>
-                 
-                 {/* GitHub */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐙</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-slate-600 transition-colors">GitHub</h3>
-                   <p className="text-xs text-gray-600 mt-2">Version Control</p>
-                 </div>
-               </div>
-               
-               {/* Duplicado para el efecto infinito */}
-               <div className="flex space-x-6 flex-shrink-0">
-                 {/* Python */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Python</h3>
-                   <p className="text-xs text-gray-600 mt-2">IA & Machine Learning</p>
-                 </div>
-                 
-                 {/* N8N */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔗</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">N8N</h3>
-                   <p className="text-xs text-gray-600 mt-2">Automatización</p>
-                 </div>
-                 
-                 {/* Make */}
-                 <div className="group relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚙️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Make</h3>
-                   <p className="text-xs text-gray-600 mt-2">Integración</p>
-                 </div>
-                 
-                 {/* Zapier */}
-                 <div className="group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border-2 border-orange-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Zapier</h3>
-                   <p className="text-xs text-gray-600 mt-2">Conectividad</p>
-                 </div>
-                 
-                 {/* WordPress */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌐</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">WordPress</h3>
-                   <p className="text-xs text-gray-600 mt-2">CMS</p>
-                 </div>
-                 
-                 {/* Shopify */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🛒</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Shopify</h3>
-                   <p className="text-xs text-gray-600 mt-2">E-commerce</p>
-                 </div>
-                 
-                 {/* Next.js */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Next.js</h3>
-                   <p className="text-xs text-gray-600 mt-2">React Framework</p>
-                 </div>
-                 
-                 {/* Tailwind CSS */}
-                 <div className="group relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-teal-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🎨</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Tailwind</h3>
-                   <p className="text-xs text-gray-600 mt-2">CSS Framework</p>
-                 </div>
-                 
-                 {/* Shadcn/ui */}
-                 <div className="group relative bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border-2 border-violet-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🧩</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Shadcn</h3>
-                   <p className="text-xs text-gray-600 mt-2">UI Components</p>
-                 </div>
-                 
-                 {/* Cloudinary */}
-                 <div className="group relative bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-6 border-2 border-sky-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-sky-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">☁️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-sky-600 transition-colors">Cloudinary</h3>
-                   <p className="text-xs text-gray-600 mt-2">Media Cloud</p>
-                 </div>
-                 
-                 {/* Google Cloud */}
-                 <div className="group relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border-2 border-red-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors">Google</h3>
-                   <p className="text-xs text-gray-600 mt-2">Cloud Platform</p>
-                 </div>
-                 
-                 {/* ChatGPT 5 */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🤖</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">ChatGPT 5</h3>
-                   <p className="text-xs text-gray-600 mt-2">AI Assistant</p>
-                 </div>
-                 
-                 {/* Claude Code */}
-                 <div className="group relative bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 border-2 border-indigo-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">💻</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Claude</h3>
-                   <p className="text-xs text-gray-600 mt-2">Code AI</p>
-                 </div>
-                 
-                 {/* Firebase */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔥</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Firebase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Backend Service</p>
-                 </div>
-                 
-                 {/* Supabase */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 border-2 border-green-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🗄️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">Supabase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Database</p>
-                 </div>
-                 
-                 {/* Airtable */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📊</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Airtable</h3>
-                   <p className="text-xs text-gray-600 mt-2">Data Platform</p>
-                 </div>
-                 
-                 {/* Prisma */}
-                 <div className="group relative bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-6 border-2 border-gray-100 hover:border-slate-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-500 to-slate-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔧</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Prisma</h3>
-                   <p className="text-xs text-gray-600 mt-2">ORM</p>
-                 </div>
-                 
-                 {/* JavaScript */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-amber-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📜</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">JavaScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Programming</p>
-                 </div>
-                 
-                 {/* TypeScript */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔷</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">TypeScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Typed JS</p>
-                 </div>
-                 
-                 {/* GitHub */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐙</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-slate-600 transition-colors">GitHub</h3>
-                   <p className="text-xs text-gray-600 mt-2">Version Control</p>
-                 </div>
-               </div>
-               
-               {/* Duplicado para el efecto infinito */}
-               <div className="flex space-x-6 flex-shrink-0">
-                 {/* Python */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Python</h3>
-                   <p className="text-xs text-gray-600 mt-2">IA & Machine Learning</p>
-                 </div>
-                 
-                 {/* N8N */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔗</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">N8N</h3>
-                   <p className="text-xs text-gray-600 mt-2">Automatización</p>
-                 </div>
-                 
-                 {/* Make */}
-                 <div className="group relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚙️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Make</h3>
-                   <p className="text-xs text-gray-600 mt-2">Integración</p>
-                 </div>
-                 
-                 {/* Zapier */}
-                 <div className="group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border-2 border-orange-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Zapier</h3>
-                   <p className="text-xs text-gray-600 mt-2">Conectividad</p>
-                 </div>
-                 
-                 {/* WordPress */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌐</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">WordPress</h3>
-                   <p className="text-xs text-gray-600 mt-2">CMS</p>
-                 </div>
-                 
-                 {/* Shopify */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🛒</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Shopify</h3>
-                   <p className="text-xs text-gray-600 mt-2">E-commerce</p>
-                 </div>
-                 
-                 {/* Next.js */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">⚡</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Next.js</h3>
-                   <p className="text-xs text-gray-600 mt-2">React Framework</p>
-                 </div>
-                 
-                 {/* Tailwind CSS */}
-                 <div className="group relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-teal-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🎨</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Tailwind</h3>
-                   <p className="text-xs text-gray-600 mt-2">CSS Framework</p>
-                 </div>
-                 
-                 {/* Shadcn/ui */}
-                 <div className="group relative bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border-2 border-violet-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🧩</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Shadcn</h3>
-                   <p className="text-xs text-gray-600 mt-2">UI Components</p>
-                 </div>
-                 
-                 {/* Cloudinary */}
-                 <div className="group relative bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-6 border-2 border-sky-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-sky-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">☁️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-sky-600 transition-colors">Cloudinary</h3>
-                   <p className="text-xs text-gray-600 mt-2">Media Cloud</p>
-                 </div>
-                 
-                 {/* Google Cloud */}
-                 <div className="group relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border-2 border-red-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🌍</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors">Google</h3>
-                   <p className="text-xs text-gray-600 mt-2">Cloud Platform</p>
-                 </div>
-                 
-                 {/* ChatGPT 5 */}
-                 <div className="group relative bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border-2 border-emerald-100 hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🤖</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">ChatGPT 5</h3>
-                   <p className="text-xs text-gray-600 mt-2">AI Assistant</p>
-                 </div>
-                 
-                 {/* Claude Code */}
-                 <div className="group relative bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 border-2 border-indigo-100 hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">💻</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Claude</h3>
-                   <p className="text-xs text-gray-600 mt-2">Code AI</p>
-                 </div>
-                 
-                 {/* Firebase */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔥</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Firebase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Backend Service</p>
-                 </div>
-                 
-                 {/* Supabase */}
-                 <div className="group relative bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 border-2 border-green-100 hover:border-teal-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🗄️</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors">Supabase</h3>
-                   <p className="text-xs text-gray-600 mt-2">Database</p>
-                 </div>
-                 
-                 {/* Airtable */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📊</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Airtable</h3>
-                   <p className="text-xs text-gray-600 mt-2">Data Platform</p>
-                 </div>
-                 
-                 {/* Prisma */}
-                 <div className="group relative bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-6 border-2 border-gray-100 hover:border-slate-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-500 to-slate-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔧</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Prisma</h3>
-                   <p className="text-xs text-gray-600 mt-2">ORM</p>
-                 </div>
-                 
-                 {/* JavaScript */}
-                 <div className="group relative bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 border-2 border-yellow-100 hover:border-amber-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">📜</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">JavaScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Programming</p>
-                 </div>
-                 
-                 {/* TypeScript */}
-                 <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-cyan-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🔷</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">TypeScript</h3>
-                   <p className="text-xs text-gray-600 mt-2">Typed JS</p>
-                 </div>
-                 
-                 {/* GitHub */}
-                 <div className="group relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-gray-300 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl text-center w-48">
-                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                     <span className="text-3xl text-white font-bold">🐙</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-slate-600 transition-colors">GitHub</h3>
-                   <p className="text-xs text-gray-600 mt-2">Version Control</p>
-                 </div>
-               </div>
-             </div>
-           </div>
-           
-           {/* Estadísticas del Stack */}
-           <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-3xl p-12 border-2 border-blue-100">
-             <div className="grid md:grid-cols-4 gap-8 text-center">
-               <div className="group">
-                 <div className="text-4xl font-black text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
-                 <div className="text-gray-600 font-medium">Tecnologías</div>
-               </div>
-               <div className="group">
-                 <div className="text-4xl font-black text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
-                 <div className="text-gray-600 font-medium">Uptime</div>
-               </div>
-               <div className="group">
-                 <div className="text-4xl font-black text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                 <div className="text-gray-600 font-medium">Soporte</div>
-               </div>
-               <div className="group">
-                 <div className="text-4xl font-black text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">5+</div>
-                 <div className="text-gray-600 font-medium">Años Experiencia</div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </section>
- 
-
- 
-
- 
- 
-
-      {/* Footer - Con logo sin fondo */}
-      <footer className="relative bg-gradient-to-br from-purple-900 via-gray-800 to-emerald-900 text-white py-20 overflow-hidden">
-        {/* Efectos de fondo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-emerald-500/10 to-cyan-500/10"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      {/* NUEVA SECCIÓN: Carrusel de Tecnologías - LOGOS ORIGINALES */}
+      <section className="py-20 bg-gradient-to-r from-gray-50 to-slate-100 relative overflow-hidden">
+        {/* Elementos de fondo sutiles */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Logo y descripción - SOLO IMAGEN SIN FONDO */}
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <img src="/logo_final.png" alt="Mente Autónoma" className="w-14 h-14 object-contain" />
-                <h3 className="text-3xl font-black bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
-                  Mente Autónoma
-                </h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Transformando empresas con inteligencia artificial de vanguardia. 
-                Hacemos que la IA sea accesible para todas las pymes.
-              </p>
-            </div>
-
-                                       {/* Servicios - LOS 9 COMPLETOS EN 2 COLUMNAS */}
-              <div className="space-y-6">
-                <h4 className="text-xl font-bold text-white">Nuestros Servicios</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {/* Columna 1 */}
-                  <div className="space-y-3">
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full group-hover:bg-orange-300"></div>
-                      <span className="text-sm">1. Chatbot</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-300"></div>
-                      <span className="text-sm">2. Diseño Web</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-green-400 rounded-full group-hover:bg-green-300"></div>
-                      <span className="text-sm">3. Automatización</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-purple-300"></div>
-                      <span className="text-sm">4. Asistente Ventas</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full group-hover:bg-indigo-300"></div>
-                      <span className="text-sm">5. Secretario IA</span>
-                    </a>
-                  </div>
-                  
-                  {/* Columna 2 */}
-                  <div className="space-y-3">
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-pink-400 rounded-full group-hover:bg-pink-300"></div>
-                      <span className="text-sm">6. Contenido RRSS</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full group-hover:bg-yellow-300"></div>
-                      <span className="text-sm">7. Módulo</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:bg-teal-300"></div>
-                      <span className="text-sm">8. Análisis</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-300"></div>
-                      <span className="text-sm">9. SAAS/BAAS</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-            {/* Newsletter */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-bold text-white">Newsletter</h4>
-              <p className="text-gray-300">
-                Recibe las últimas noticias sobre IA y estrategias para pymes.
-              </p>
-              <div className="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white/95 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-lg border-2 border-white/20">
-                  🚀 Suscribirse Ahora
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-white/20 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-gray-300 text-center md:text-left">
-                © 2025 Mente Autónoma. Todos los derechos reservados. 
-                <span className="text-emerald-400"> Construido con ❤️ y profesionalismo.</span>
-              </p>
-              <div className="flex space-x-6 text-sm">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacidad</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Términos</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookies</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Sección Independiente - Carrusel de Logos Oficiales */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block">
-              🚀 Tecnologías Principales
+            <div className="mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
+              🚀 Tecnologías de Vanguardia
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
-              Stack Tecnológico
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> de Vanguardia</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Construido con las Mejores
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Tecnologías</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Las tecnologías más potentes y confiables que impulsan nuestras soluciones
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Utilizamos las herramientas más avanzadas para crear soluciones IA excepcionales
             </p>
           </div>
           
-          {/* Carrusel de Logos Oficiales */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll-slow">
-              {/* Primera fila de logos */}
-              <div className="flex space-x-12 flex-shrink-0">
-                {/* Supabase */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-blue-200 hover:border-blue-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🗄️</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                    Supabase
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Base de datos PostgreSQL en la nube con autenticación y APIs automáticas
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Backend as a Service
-                  </div>
-                </div>
-                
-                {/* JavaScript */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-yellow-200 hover:border-yellow-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">📜</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
-                    JavaScript
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Lenguaje de programación versátil para desarrollo web y aplicaciones
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Programming Language
-                  </div>
-                </div>
-                
-                {/* Tailwind CSS */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-teal-200 hover:border-teal-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🎨</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors duration-300">
-                    Tailwind CSS
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Framework CSS utility-first para construir diseños modernos rápidamente
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    CSS Framework
-                  </div>
-                </div>
-                
-                {/* TypeScript */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-blue-200 hover:border-blue-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🔷</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    TypeScript
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    JavaScript tipado que mejora la calidad del código y la experiencia del desarrollador
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Typed JavaScript
+          {/* Carrusel de logos - PRIMERA FILA */}
+          <div className="mb-12">
+            <div className="flex space-x-16 animate-scroll">
+              {/* Logo 1 - React */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">⚛️</div>
+                    <div className="text-xs font-bold text-gray-700">React</div>
                   </div>
                 </div>
               </div>
               
-              {/* Duplicado para el efecto infinito */}
-              <div className="flex space-x-12 flex-shrink-0">
-                {/* Supabase */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-green-200 hover:border-green-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🗄️</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                    Supabase
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Base de datos PostgreSQL en la nube con autenticación y APIs automáticas
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Backend as a Service
+              {/* Logo 2 - Next.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Next.js</div>
                   </div>
                 </div>
-                
-                {/* JavaScript */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-yellow-200 hover:border-yellow-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">📜</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
-                    JavaScript
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Lenguaje de programación versátil para desarrollo web y aplicaciones
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Programming Language
+              </div>
+              
+              {/* Logo 3 - TypeScript */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">📘</div>
+                    <div className="text-xs font-bold text-gray-700">TypeScript</div>
                   </div>
                 </div>
-                
-                {/* Tailwind CSS */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-teal-200 hover:border-teal-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🎨</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors duration-300">
-                    Tailwind CSS
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Framework CSS utility-first para construir diseños modernos rápidamente
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    CSS Framework
+              </div>
+              
+              {/* Logo 4 - Tailwind CSS */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-cyan-200 hover:border-cyan-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">Tailwind</div>
                   </div>
                 </div>
-                
-                {/* TypeScript */}
-                <div className="group relative bg-white rounded-3xl p-8 border-2 border-blue-200 hover:border-blue-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg text-center w-64">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-4xl">🔷</span>
+              </div>
+              
+              {/* Logo 5 - Node.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🟢</div>
+                    <div className="text-xs font-bold text-gray-700">Node.js</div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    TypeScript
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    JavaScript tipado que mejora la calidad del código y la experiencia del desarrollador
-                  </p>
-                  <div className="text-sm text-gray-500 font-medium">
-                    Typed JavaScript
+                </div>
+              </div>
+              
+              {/* Logo 6 - Python */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐍</div>
+                    <div className="text-xs font-bold text-gray-700">Python</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 7 - TensorFlow */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🧠</div>
+                    <div className="text-xs font-bold text-gray-700">TensorFlow</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 8 - OpenAI */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🤖</div>
+                    <div className="text-xs font-bold text-gray-700">OpenAI</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 9 - AWS */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">☁️</div>
+                    <div className="text-xs font-bold text-gray-700">AWS</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 10 - Docker */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐳</div>
+                    <div className="text-xs font-bold text-gray-700">Docker</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 11 - Kubernetes */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">⚓</div>
+                    <div className="text-xs font-bold text-gray-700">Kubernetes</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 12 - MongoDB */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🍃</div>
+                    <div className="text-xs font-bold text-gray-700">MongoDB</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* REPETICIÓN PARA CARROSEL INFINITO */}
+              {/* Logo 1 - React */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">⚛️</div>
+                    <div className="text-xs font-bold text-gray-700">React</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 2 - Next.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Next.js</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 3 - TypeScript */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">📘</div>
+                    <div className="text-xs font-bold text-gray-700">TypeScript</div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          
+          {/* Carrusel de logos - SEGUNDA FILA (MÁS LENTA) */}
+          <div>
+            <div className="flex space-x-16 animate-scroll-slow">
+              {/* Logo 1 - PostgreSQL */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐘</div>
+                    <div className="text-xs font-bold text-gray-700">PostgreSQL</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 2 - Redis */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🔴</div>
+                    <div className="text-xs font-bold text-gray-700">Redis</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 3 - GraphQL */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-pink-200 hover:border-pink-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">GraphQL</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 4 - Jest */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🧪</div>
+                    <div className="text-xs font-bold text-gray-700">Jest</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 5 - Cypress */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🌲</div>
+                    <div className="text-xs font-bold text-gray-700">Cypress</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 6 - Vercel */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-black hover:border-gray-600 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Vercel</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 7 - GitHub */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐙</div>
+                    <div className="text-xs font-bold text-gray-700">GitHub</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 8 - Figma */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">Figma</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 9 - Stripe */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">💳</div>
+                    <div className="text-xs font-bold text-gray-700">Stripe</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 10 - SendGrid */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📧</div>
+                    <div className="text-xs font-bold text-gray-700">SendGrid</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* REPETICIÓN PARA CARROSEL INFINITO */}
+              {/* Logo 1 - PostgreSQL */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐘</div>
+                    <div className="text-xs font-bold text-gray-700">PostgreSQL</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 2 - Redis */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🔴</div>
+                    <div className="text-xs font-bold text-gray-700">Redis</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 3 - GraphQL */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-pink-200 hover:border-pink-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">GraphQL</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Texto explicativo */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Nuestro stack tecnológico combina las mejores herramientas del mercado para crear 
+              <span className="font-semibold text-gray-800"> soluciones IA robustas, escalables y de alto rendimiento</span>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer - Con logo sin fondo */}
-      <footer className="relative bg-gradient-to-br from-purple-900 via-gray-800 to-emerald-900 text-white py-20 overflow-hidden">
+      <footer className="relative bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white py-20 overflow-hidden">
         {/* Efectos de fondo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-emerald-500/10 to-cyan-500/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-purple-500/10 to-blue-500/10"></div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
@@ -1466,7 +1241,7 @@ export default function Home() {
                     </a>
                     <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
                       <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-purple-300"></div>
-                      <span className="text-sm">4. Asistente Ventas</span>
+                      <span className="text-sm">4. Marketing Digital</span>
                     </a>
                     <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
                       <div className="w-2 h-2 bg-indigo-400 rounded-full group-hover:bg-indigo-300"></div>
@@ -1486,7 +1261,7 @@ export default function Home() {
                     </a>
                     <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
                       <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:bg-teal-300"></div>
-                      <span className="text-sm">8. Análisis</span>
+                      <span className="text-sm">8. SEO</span>
                     </a>
                     <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
                       <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-300"></div>
@@ -1538,15 +1313,15 @@ export default function Home() {
            100% { transform: translateX(-50%); }
          }
          .animate-scroll {
-           animation: scroll 30s linear infinite;
+           animation: scroll 20s linear infinite; /* Primera fila más rápida */
          }
          
-         @keyframes scroll-fast {
+         @keyframes scroll-slow {
            0% { transform: translateX(0); }
-           100% { transform: translateX(-100%); }
+           100% { transform: translateX(-50%); }
          }
-         .animate-scroll-fast {
-           animation: scroll-fast 15s linear infinite; /* Carrusel MÁS RÁPIDO */
+         .animate-scroll-slow {
+           animation: scroll-slow 35s linear infinite; /* Segunda fila más lenta */
          }
        `}</style>
        
