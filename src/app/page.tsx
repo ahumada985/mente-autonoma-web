@@ -297,30 +297,26 @@ export default function Home() {
                   Marketing Digital
                 </h3>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Estrategias digitales inteligentes con IA que optimizan campañas y maximizan el ROI de marketing.
-                </p>
-                
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-200">
+                {/* Marketing Digital */}
+                <div className="mb-6 bg-gradient-to-r from-pink-50 to-red-50 rounded-xl p-4 border border-pink-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <span className="text-emerald-700 font-semibold">ROI Promedio: 450%</span>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-green-700 font-semibold">ROI Promedio: 320%</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-                      <span className="text-teal-700 font-semibold">Conversiones: +200%</span>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span className="text-blue-700 font-semibold">Alcance: +180%</span>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                      <span className="text-cyan-700 font-semibold">Cobertura: 10M+</span>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Conversión: +85%</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-blue-700 font-semibold">Plataformas: 15+</span>
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+                      <span className="text-pink-700 font-semibold">Costo: -40%</span>
                     </div>
                   </div>
                 </div>
@@ -478,25 +474,25 @@ export default function Home() {
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-4 border border-emerald-200">
+                <div className="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <span className="text-emerald-700 font-semibold">Posicionamiento: +45</span>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-green-700 font-semibold">Tráfico: +120%</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-700 font-semibold">Tráfico: +300%</span>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span className="text-blue-700 font-semibold">Posiciones: +8</span>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-                      <span className="text-teal-700 font-semibold">Palabras Clave: 500+</span>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span className="text-purple-700 font-semibold">Conversiones: +65%</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                      <span className="text-cyan-700 font-semibold">Análisis: IA</span>
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
+                      <span className="text-indigo-700 font-semibold">Tiempo: 3-6 meses</span>
                     </div>
                   </div>
                 </div>
@@ -542,21 +538,21 @@ export default function Home() {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></div>
-                      <span className="text-violet-700 font-semibold">Escalabilidad: ∞</span>
+                      <span className="text-violet-700 font-semibold">Tiempo: 6-12 semanas</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span className="text-purple-700 font-semibold">Uptime: 99.99%</span>
+                      <span className="text-purple-700 font-semibold">Escalabilidad: +300%</span>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-fuchsia-500 rounded-full animate-pulse"></div>
-                      <span className="text-fuchsia-700 font-semibold">Integración: API</span>
+                      <span className="text-fuchsia-700 font-semibold">Integración: 25+ APIs</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
-                      <span className="text-pink-700 font-semibold">Seguridad: Enterprise</span>
+                      <span className="text-pink-700 font-semibold">Uptime: 99.5%</span>
                     </div>
                   </div>
                 </div>
@@ -712,29 +708,48 @@ export default function Home() {
                   <div className="absolute inset-2 border border-white/10 border-dashed rounded-full animate-spin" style={{animationDirection: 'reverse'}}></div>
                 </div>
                 
-                {/* Tarjetas flotantes alrededor del centro */}
-                <div className="absolute top-8 left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110 animate-bounce">
+                {/* Tarjeta 1 - Superior Izquierda - Eficiencia */}
+                <div className="absolute top-8 left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce hover:animate-none">
                   <div className="text-center">
-                    <div className="text-2xl mb-1 animate-pulse">🚀</div>
+                    <div className="text-2xl mb-1 group-hover:animate-spin">🚀</div>
                     <div className="text-sm font-bold">+500%</div>
                     <div className="text-xs opacity-90">Eficiencia</div>
                   </div>
+                  {/* Efecto de brillo */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
-                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110 animate-pulse">
+                {/* Tarjeta 2 - Superior Derecha - Disponibilidad */}
+                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-pulse hover:animate-none">
                   <div className="text-center">
-                    <div className="text-2xl mb-1 animate-spin">⚡</div>
+                    <div className="text-2xl mb-1 group-hover:animate-bounce">⚡</div>
                     <div className="text-sm font-bold">24/7</div>
                     <div className="text-xs opacity-90">Disponible</div>
                   </div>
+                  {/* Efecto de energía */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-yellow-300 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
-                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-500 cursor-pointer group hover:scale-110">
+                {/* Tarjeta 3 - Inferior Izquierda - Uptime */}
+                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce hover:animate-none" style={{animationDelay: '0.5s'}}>
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🤖</div>
+                    <div className="text-2xl mb-1 group-hover:animate-ping">⚡</div>
+                    <div className="text-sm font-bold">99.9%</div>
+                    <div className="text-xs opacity-90">Uptime</div>
+                  </div>
+                  {/* Efecto de cristal */}
+                  <div className="absolute inset-0 border border-white/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                </div>
+                
+                {/* Tarjeta 4 - Inferior Derecha - Agentes IA (NUEVA) */}
+                <div className="absolute bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-pulse hover:animate-none" style={{animationDelay: '1s'}}>
+                  <div className="text-center">
+                    <div className="text-2xl mb-1 group-hover:animate-spin">🤖</div>
                     <div className="text-sm font-bold">Agentes</div>
                     <div className="text-xs opacity-90">IA</div>
                   </div>
+                  {/* Efecto de red */}
+                  <div className="absolute inset-0 border-2 border-white/20 border-dashed rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
                 {/* Líneas de conexión animadas */}
@@ -762,20 +777,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sección de Noticias - FONDO BLANCO, CONSERVADORA Y FORMAL */}
-      <section id="noticias" className="py-20 bg-white relative overflow-hidden">
+      {/* Sección de Noticias - DISEÑO HERO CON GRADIENTES AZUL-PÚRPURA-ROSA */}
+      <section id="noticias" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
         {/* Elementos de fondo sutiles */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
+            <div className="mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
               📰 Últimas Noticias
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Mantente al Día con la
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Revolución IA</span>
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"> Revolución IA</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Las últimas tendencias, innovaciones y casos de éxito en inteligencia artificial
@@ -784,14 +799,14 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Noticia 1 - Preparada para imagen */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-200 hover:border-purple-400">
               <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                <div className="w-full h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
                   <span className="text-6xl">🚀</span>
                   {/* Aquí irá la imagen que me pases */}
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Innovación
                   </span>
                 </div>
@@ -799,7 +814,7 @@ export default function Home() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-500">15 Mar 2025</span>
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   Chatbots que Entienden el Contexto
@@ -807,21 +822,21 @@ export default function Home() {
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Descubre cómo la nueva generación de IA conversacional está revolucionando la atención al cliente.
                 </p>
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <button className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
                 </button>
               </div>
             </div>
             
             {/* Noticia 2 - Preparada para imagen */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-200 hover:border-pink-400">
               <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                <div className="w-full h-48 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center">
                   <span className="text-6xl">💼</span>
                   {/* Aquí irá la imagen que me pases */}
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Pymes
                   </span>
                 </div>
@@ -829,29 +844,29 @@ export default function Home() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-500">12 Mar 2025</span>
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                   IA para Pequeñas Empresas
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Cómo las pymes están implementando inteligencia artificial para crecer exponencialmente.
                 </p>
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <button className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
                 </button>
               </div>
             </div>
             
             {/* Noticia 3 - Preparada para imagen */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-200 hover:border-blue-400">
               <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                <div className="w-full h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-purple-500 flex items-center justify-center">
                   <span className="text-6xl">🎯</span>
                   {/* Aquí irá la imagen que me pases */}
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  <span className="inline-block bg-gradient-to-r from-pink-600 to-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Automatización
                   </span>
                 </div>
@@ -859,15 +874,15 @@ export default function Home() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-500">10 Mar 2025</span>
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
                   Flujos de Trabajo Inteligentes
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Optimiza tus procesos empresariales con flujos de trabajo impulsados por IA.
                 </p>
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <button className="w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
                 </button>
               </div>
@@ -875,7 +890,103 @@ export default function Home() {
           </div>
                  </div>
        </section>
- 
+
+      {/* NUEVA SECCIÓN: CTA - Newsletter + PDF Gratuito */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
+        {/* Elementos de fondo decorativos */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+        
+        {/* Partículas flotantes animadas */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
+        <div className="absolute top-40 right-32 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-32 left-32 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 right-20 w-3 h-3 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block animate-pulse">
+              🚀 ACCESO EXCLUSIVO
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+              ¿Quieres Ser el Primero en
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> Implementar IA en tu Industria?</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              Únete a nuestra comunidad de innovadores y recibe acceso anticipado a las últimas tecnologías de IA. 
+              <span className="text-white font-semibold"> Suscríbete HOY</span> y obtén nuestro reporte exclusivo con 
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-bold"> estrategias secretas de IA que están revolucionando negocios</span>.
+            </p>
+          </div>
+          
+          {/* Formulario de suscripción elegante */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <form className="space-y-6">
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm">📧</span>
+                    </div>
+                  </div>
+                  <input 
+                    type="email" 
+                    placeholder="Ingresa tu correo empresarial aquí..." 
+                    className="w-full pl-16 pr-6 py-4 bg-white/20 border-2 border-white/30 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-blue-400 focus:bg-white/30 transition-all duration-300 text-lg"
+                    required
+                  />
+                  <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
+                    <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-white text-sm">✓</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-5 rounded-2xl font-bold text-xl transition-all duration-500 transform hover:scale-105 shadow-2xl relative overflow-hidden group"
+                >
+                  <span className="relative z-10 flex items-center justify-center space-x-3">
+                    <span>🚀 SUSCRIBIRME GRATIS</span>
+                    <span className="text-sm opacity-90">+ PDF EXCLUSIVO</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              </form>
+              
+              {/* Beneficios adicionales */}
+              <div className="mt-8 pt-8 border-t border-white/20">
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div className="group">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl">🔮</span>
+                    </div>
+                    <h4 className="text-white font-semibold mb-2">Tendencias Futuras</h4>
+                    <p className="text-gray-300 text-sm">Descubre qué tecnologías IA dominarán el mercado</p>
+                  </div>
+                  
+                  <div className="group">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl">💎</span>
+                    </div>
+                    <h4 className="text-white font-semibold mb-2">Contenido Premium</h4>
+                    <p className="text-gray-300 text-sm">Acceso a webinars y masterclasses exclusivas</p>
+                  </div>
+                  
+                  <div className="group">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl">🌟</span>
+                    </div>
+                    <h4 className="text-white font-semibold mb-2">Red de Expertos</h4>
+                    <p className="text-gray-300 text-sm">Conecta con líderes en IA y automatización</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* NUEVA SECCIÓN: Carrusel de Tecnologías - LOGOS ORIGINALES */}
       <section className="py-20 bg-gradient-to-r from-gray-50 to-slate-100 relative overflow-hidden">
         {/* Elementos de fondo sutiles */}
@@ -1019,7 +1130,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* REPETICIÓN PARA CARROSEL INFINITO */}
+              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO */}
               {/* Logo 1 - React */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
@@ -1046,6 +1157,96 @@ export default function Home() {
                   <div className="text-center">
                     <div className="text-3xl mb-1">📘</div>
                     <div className="text-xs font-bold text-gray-700">TypeScript</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 4 - Tailwind CSS */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-cyan-200 hover:border-cyan-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">Tailwind</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 5 - Node.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🟢</div>
+                    <div className="text-xs font-bold text-gray-700">Node.js</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 6 - Python */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐍</div>
+                    <div className="text-xs font-bold text-gray-700">Python</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 7 - TensorFlow */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🧠</div>
+                    <div className="text-xs font-bold text-gray-700">TensorFlow</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 8 - OpenAI */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🤖</div>
+                    <div className="text-xs font-bold text-gray-700">OpenAI</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 9 - AWS */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">☁️</div>
+                    <div className="text-xs font-bold text-gray-700">AWS</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 10 - Docker */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐳</div>
+                    <div className="text-xs font-bold text-gray-700">Docker</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 11 - Kubernetes */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">⚓</div>
+                    <div className="text-xs font-bold text-gray-700">Kubernetes</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 12 - MongoDB */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🍃</div>
+                    <div className="text-xs font-bold text-gray-700">MongoDB</div>
                   </div>
                 </div>
               </div>
@@ -1155,7 +1356,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* REPETICIÓN PARA CARROSEL INFINITO */}
+              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO */}
               {/* Logo 1 - PostgreSQL */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
@@ -1182,6 +1383,76 @@ export default function Home() {
                   <div className="text-center">
                     <div className="text-2xl mb-1">📊</div>
                     <div className="text-xs font-bold text-gray-700">GraphQL</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 4 - Jest */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🧪</div>
+                    <div className="text-xs font-bold text-gray-700">Jest</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 5 - Cypress */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🌲</div>
+                    <div className="text-xs font-bold text-gray-700">Cypress</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 6 - Vercel */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-black hover:border-gray-600 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Vercel</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 7 - GitHub */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐙</div>
+                    <div className="text-xs font-bold text-gray-700">GitHub</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 8 - Figma */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">Figma</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 9 - Stripe */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">💳</div>
+                    <div className="text-xs font-bold text-gray-700">Stripe</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 10 - SendGrid */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📧</div>
+                    <div className="text-xs font-bold text-gray-700">SendGrid</div>
                   </div>
                 </div>
               </div>
