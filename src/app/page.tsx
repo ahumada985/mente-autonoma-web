@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {/* Servicio 1 - Chatbot Inteligente - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 1 - Chatbot Inteligente - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -155,14 +155,15 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 2 - Diseño Web Inteligente - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 2 - Diseño Web Inteligente - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -212,14 +213,23 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
-                  <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group shadow-lg">
+                  <span className="relative z-10 flex items-center justify-center space-x-2">
+                    <span>🚀</span>
+                    <span>Explorar Servicio</span>
+                    <span>✨</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Indicador de servicio activo */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 3 - Automatización de Procesos - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 3 - Automatización de Procesos - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pink-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -231,14 +241,16 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-ping">⚡</span>
+                  <span className="text-4xl">⚡</span>
                   {/* Rayos de energía */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Automatización de Procesos
+                  Automatización Procesos
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -269,14 +281,15 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 3 - Marketing Digital - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 4 - Marketing Digital - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -289,7 +302,7 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-spin">📊</span>
+                  <span className="text-4xl group-hover:animate-bounce">📊</span>
                   {/* Líneas de conexión */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
@@ -336,7 +349,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Servicio 4 - Asistente Secretario IA - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 5 - Asistente Secretario IA - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -349,7 +362,7 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-ping">📋</span>
+                  <span className="text-4xl group-hover:animate-bounce">📋</span>
                   {/* Líneas de conexión */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
@@ -389,14 +402,15 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 5 - Generador de Contenido RRSS - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 6 - Generador de Contenido RRSS - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-orange-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -409,7 +423,7 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-spin">✍️</span>
+                  <span className="text-4xl group-hover:animate-bounce">✍️</span>
                   {/* Líneas de conexión */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
@@ -418,7 +432,7 @@ export default function Home() {
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Generador de Contenido RRSS
+                  Generador RRSS
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -456,7 +470,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Servicio 6 - Optimización SEO - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 7 - Optimización SEO - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-100 to-green-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -518,15 +532,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Servicio 7 - Aplicaciones SAAS/BAAS - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 8 - Aplicaciones SAAS/BAAS - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-violet-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-fuchsia-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Nodos de conexión */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-6 left-6 w-3 h-3 bg-fuchsia-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-6 right-6 w-3 h-3 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
+              <div className="absolute bottom-6 left-6 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
               <div className="absolute top-1/2 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
               
               <div className="relative z-10 text-center">
@@ -578,7 +592,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Servicio 8 - Módulo Personalizado - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 9 - Módulo Personalizado - DISEÑO SIMPLE PÚRPURA */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-bl from-slate-100 to-gray-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -652,13 +666,14 @@ export default function Home() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                ¿Por Qué Tu Pyme
-                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> Debe Adoptar IA?</span>
+                ¿Por Qué Tu Negocio
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Implementar Agentes IA?</span>
               </h2>
               
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                En la era de la inteligencia artificial, las pequeñas y medianas empresas que no implementen IA se quedarán atrás. 
-                La IA no es solo para grandes corporaciones, es la herramienta que democratiza la innovación.
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
+                Los agentes de IA son la próxima revolución en productividad empresarial. 
+                <span className="text-emerald-300 font-semibold">Automatizan tareas complejas, toman decisiones inteligentes y trabajan 24/7</span> 
+                para que tu equipo se enfoque en lo que realmente importa: crecer tu negocio.
               </p>
               
               <div className="space-y-6">
@@ -693,9 +708,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Descubre Cómo 🚀
-              </button>
+
             </div>
             
             {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
@@ -710,11 +723,11 @@ export default function Home() {
                 <div className="absolute top-20 left-16 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1s'}}></div>
                 <div className="absolute top-28 right-20 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
                 
-                {/* Círculo central principal con IA */}
+                {/* Círculo central principal con Agentes IA */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
                   <div className="text-center text-white">
                     <div className="text-4xl mb-2">🤖</div>
-                    <div className="text-sm font-bold">IA</div>
+                    <div className="text-sm font-bold">Agentes IA</div>
                   </div>
                   
                   {/* Anillos concéntricos giratorios */}
@@ -722,45 +735,45 @@ export default function Home() {
                   <div className="absolute inset-2 border border-white/10 border-dashed rounded-full animate-spin" style={{animationDirection: 'reverse'}}></div>
                 </div>
                 
-                {/* Tarjeta 1 - Superior Izquierda - Eficiencia */}
+                {/* Tarjeta 1 - Superior Izquierda - Autonomia total */}
                 <div className="absolute top-8 left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce">
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-spin">🚀</div>
-                    <div className="text-sm font-bold">+500%</div>
-                    <div className="text-xs opacity-90">Eficiencia</div>
+                    <div className="text-sm font-bold">Autonomia</div>
+                    <div className="text-xs opacity-90">total</div>
                   </div>
                   {/* Efecto de brillo */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
-                {/* Tarjeta 2 - Superior Derecha - Disponibilidad */}
-                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce">
+                {/* Tarjeta 2 - Superior Derecha - Escalable 100% */}
+                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '0.6s'}}>
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-bounce">⚡</div>
-                    <div className="text-sm font-bold">24/7</div>
-                    <div className="text-xs opacity-90">Disponible</div>
+                    <div className="text-sm font-bold">Escalable</div>
+                    <div className="text-xs opacity-90">100%</div>
                   </div>
                   {/* Efecto de energía */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-yellow-300 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
-                {/* Tarjeta 3 - Inferior Izquierda - Uptime */}
-                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '0.5s'}}>
+                {/* Tarjeta 3 - Inferior Izquierda - Uptime 99.9% */}
+                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '0.3s'}}>
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-ping">⚡</div>
-                    <div className="text-sm font-bold">99.9%</div>
-                    <div className="text-xs opacity-90">Uptime</div>
+                    <div className="text-sm font-bold">Uptime</div>
+                    <div className="text-xs opacity-90">99.9%</div>
                   </div>
                   {/* Efecto de cristal */}
                   <div className="absolute inset-0 border border-white/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
-                {/* Tarjeta 4 - Inferior Derecha - Agentes IA (NUEVA) */}
+                {/* Tarjeta 4 - Inferior Derecha - Evolución continua */}
                 <div className="absolute bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '1s'}}>
                   <div className="text-center">
-                    <div className="text-2xl mb-1 group-hover:animate-spin">🤖</div>
-                    <div className="text-sm font-bold">Agentes</div>
-                    <div className="text-xs opacity-90">IA</div>
+                    <div className="text-2xl mb-1 group-hover:animate-spin">🎯</div>
+                    <div className="text-sm font-bold">Evolución</div>
+                    <div className="text-xs opacity-90">continua</div>
                   </div>
                   {/* Efecto de red */}
                   <div className="absolute inset-0 border-2 border-white/20 border-dashed rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
@@ -1144,6 +1157,36 @@ export default function Home() {
                 </div>
               </div>
               
+              {/* NUEVA TECNOLOGÍA 1 - Aaaaa */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/n.png" alt="Aaaaa" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Aaaaa</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* NUEVA TECNOLOGÍA 2 - Eeeee */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/p.png" alt="Eeeee" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Eeeee</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* NUEVA TECNOLOGÍA 3 - Iiiiii */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/t.png" alt="Iiiiii" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Iiiiii</div>
+                  </div>
+                </div>
+              </div>
+              
               {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO */}
               {/* Logo 1 - React */}
               <div className="flex-shrink-0 group">
@@ -1264,6 +1307,36 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              
+              {/* NUEVA TECNOLOGÍA 1 - Aaaaa */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/n.png" alt="Aaaaa" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Aaaaa</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* NUEVA TECNOLOGÍA 2 - Eeeee */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/p.png" alt="Eeeee" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Eeeee</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* NUEVA TECNOLOGÍA 3 - Iiiiii */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <img src="/logos/t.png" alt="Iiiiii" className="w-12 h-12 object-contain mb-1" />
+                    <div className="text-xs font-bold text-gray-700">Iiiiii</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -1370,7 +1443,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO */}
+              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO - SEGUNDA FILA */}
               {/* Logo 1 - PostgreSQL */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
