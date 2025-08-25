@@ -1,5 +1,7 @@
 'use client'
 
+import LeadCaptureForm from '@/components/LeadCaptureForm'
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -318,8 +320,8 @@ export default function Home() {
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-315 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.7s'}}></div>
                   
                   {/* Anillos pulsantes adicionales */}
-                  <div className="absolute inset-0 border-2 border-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-150 animate-ping"></div>
-                  <div className="absolute inset-0 border border-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-200 animate-ping" style={{animationDelay: '0.3s'}}></div>
+                  <div className="absolute inset-0 border-2 border-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-125 animate-ping"></div>
+                  <div className="absolute inset-0 border border-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-150 animate-ping" style={{animationDelay: '0.5s'}}></div>
                   
                   {/* Partículas flotantes de energía */}
                   <div className="absolute top-2 left-2 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.1s'}}></div>
@@ -919,12 +921,12 @@ export default function Home() {
                   <span className="text-sm text-gray-500">12 Mar 2025</span>
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  IA para Pequeñas Empresas
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Cómo los negocios están implementando inteligencia artificial para crecer exponencialmente.
-                </p>
+                                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                    Automatización Inteligente Avanzada
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Sistemas IA que aprenden y optimizan procesos empresariales de forma autónoma.
+                  </p>
                 <button className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
                 </button>
@@ -953,7 +955,7 @@ export default function Home() {
                   Flujos de Trabajo Inteligentes
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Optimiza tus procesos empresariales con flujos de trabajo impulsados por IA.
+                Optimiza tus procesos empresariales con flujos de trabajo impulsados por IA que automatizan tareas, reducen errores y aumentan la productividad
                 </p>
                 <button className="w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
@@ -992,69 +994,17 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Formulario de suscripción elegante */}
+          {/* Formulario de suscripción elegante con Firebase integrado */}
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
-              <form className="space-y-6">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">📧</span>
-                    </div>
-                  </div>
-                  <input 
-                    type="email" 
-                    placeholder="Ingresa tu correo empresarial aquí..." 
-                    className="w-full pl-16 pr-6 py-4 bg-white/20 border-2 border-white/30 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-blue-400 focus:bg-white/30 transition-all duration-300 text-lg"
-                    required
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
-                    <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center animate-pulse">
-                      <span className="text-white text-sm">✓</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-5 rounded-2xl font-bold text-xl transition-all duration-500 transform hover:scale-105 shadow-2xl relative overflow-hidden group"
-                >
-                  <span className="relative z-10 flex items-center justify-center space-x-3">
-                    <span>🚀 SUSCRIBIRME GRATIS</span>
-                    <span className="text-sm opacity-90">+ PDF EXCLUSIVO</span>
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
-              </form>
-              
-              {/* Beneficios adicionales */}
-              <div className="mt-8 pt-8 border-t border-white/20">
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div className="group">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">🔮</span>
-                    </div>
-                    <h4 className="text-white font-semibold mb-2">Tendencias Futuras</h4>
-                    <p className="text-gray-300 text-sm">Descubre qué tecnologías IA dominarán el mercado</p>
-                  </div>
-                  
-                  <div className="group">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">💎</span>
-                    </div>
-                    <h4 className="text-white font-semibold mb-2">Contenido Premium</h4>
-                    <p className="text-gray-300 text-sm">Acceso a webinars y masterclasses exclusivas</p>
-                  </div>
-                  
-                  <div className="group">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">🌟</span>
-                    </div>
-                    <h4 className="text-white font-semibold mb-2">Acceso VIP</h4>
-                    <p className="text-gray-300 text-sm">Contenido exclusivo y herramientas premium</p>
-                  </div>
-                </div>
-              </div>
+              <LeadCaptureForm 
+                title="🚀 Únete a la Revolución IA"
+                subtitle="Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio"
+                buttonText="Suscribirse Gratis + PDF"
+                showNewsletter={true}
+                showPDF={true}
+                useOriginalStyle={true}
+              />
             </div>
           </div>
         </div>
@@ -1163,12 +1113,22 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 9 - FirestoreCode */}
+              {/* Logo 9 - Firestore */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">
                     <div className="text-3xl mb-1">🔥</div>
-                    <div className="text-xs font-bold text-gray-700">FirestoreCode</div>
+                    <div className="text-xs font-bold text-gray-700">Firestore</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 9.5 - VS Code */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">💻</div>
+                    <div className="text-xs font-bold text-gray-700">VS Code</div>
                   </div>
                 </div>
               </div>
@@ -1839,16 +1799,15 @@ export default function Home() {
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Recibe las últimas noticias sobre IA y estrategias para tu negocio
               </p>
-              <div className="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white/95 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-lg border-2 border-white/20">
-                  🚀 Suscribirse Ahora
-                </button>
-              </div>
+              <LeadCaptureForm 
+                title=""
+                subtitle=""
+                buttonText="🚀 Suscribirse Ahora"
+                showNewsletter={true}
+                showPDF={false}
+                useOriginalStyle={false}
+                compact={true}
+              />
             </div>
           </div>
 
