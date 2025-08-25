@@ -21,15 +21,15 @@ export default function Home() {
               <a href="#noticias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Noticias
               </a>
-              <a href="#contacto" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Contacto
+              <a href="#tecnologias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Tecnologías
               </a>
             </nav>
             
             {/* CTA Button - DISEÑO NUEVO */}
             <div className="flex items-center space-x-4">
               <button className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Solicitar Demo
+                Ver Demo
               </button>
             </div>
           </div>
@@ -76,14 +76,14 @@ export default function Home() {
                 <div className="relative z-10 w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
               </button>
               
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
+              <a href="#servicios" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-45"></div>
                 </div>
                 <span className="relative z-10">Explorar Servicios</span>
                 <div className="relative z-10 w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -316,6 +316,16 @@ export default function Home() {
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-225 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.5s'}}></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.6s'}}></div>
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-315 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.7s'}}></div>
+                  
+                  {/* Anillos pulsantes adicionales */}
+                  <div className="absolute inset-0 border-2 border-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-150 animate-ping"></div>
+                  <div className="absolute inset-0 border border-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-200 animate-ping" style={{animationDelay: '0.3s'}}></div>
+                  
+                  {/* Partículas flotantes de energía */}
+                  <div className="absolute top-2 left-2 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.4s'}}></div>
+                  <div className="absolute bottom-2 right-2 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.5s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -504,7 +514,7 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">🔍</span>
+                  <span className="text-4xl group-hover:animate-spin" style={{animationDuration: '3s'}}>🔍</span>
                   {/* Anillos de búsqueda */}
                   <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '2.9s'}}></div>
                  
@@ -570,11 +580,13 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">☁️</span>
-                  {/* Cubos giratorios */}
-                  <div className="absolute inset-0 w-6 h-6 bg-white/20 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0s'}}></div>
-                  <div className="absolute inset-2 w-4 h-4 bg-white/15 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.2s', animationDirection: 'reverse'}}></div>
-                  <div className="absolute inset-4 w-2 h-2 bg-white/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.4s'}}></div>
+                  {/* Nube que aparece y desaparece */}
+                  <span className="text-4xl group-hover:opacity-0 transition-opacity duration-300">☁️</span>
+                  <span className="text-4xl absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">⛈️</span>
+                  
+                  {/* Rayos de energía */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[12px] border-t-yellow-400 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse"></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[8px] border-t-orange-400 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -635,11 +647,12 @@ export default function Home() {
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">⚙️</span>
-                  {/* Engranajes giratorios */}
-                  <div className="absolute inset-0 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0s'}}></div>
-                  <div className="absolute inset-2 w-6 h-6 bg-white/15 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.2s', animationDirection: 'reverse'}}></div>
-                  <div className="absolute inset-4 w-4 h-4 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.4s'}}></div>
+                  {/* Tuerca girando lentamente */}
+                  <span className="text-4xl group-hover:animate-spin" style={{animationDuration: '4s'}}>⚙️</span>
+                  
+                  {/* Círculos que crecen hacia afuera con delay */}
+                  <div className="absolute inset-0 border-2 border-white/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-150 animate-ping" style={{transitionDelay: '0s'}}></div>
+                  <div className="absolute inset-0 border border-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-200 animate-ping" style={{transitionDelay: '0.2s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -1048,7 +1061,7 @@ export default function Home() {
       </section>
 
       {/* NUEVA SECCIÓN: Carrusel de Tecnologías - LOGOS ORIGINALES */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-slate-100 relative overflow-hidden">
+      <section id="tecnologias" className="py-20 bg-gradient-to-r from-gray-50 to-slate-100 relative overflow-hidden">
         {/* Elementos de fondo sutiles */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.05),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
@@ -1201,6 +1214,146 @@ export default function Home() {
               </div>
               
               {/* Logo 14 - Google */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🔍</div>
+                    <div className="text-xs font-bold text-gray-700">Google</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 1 - Supabase */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🗄️</div>
+                    <div className="text-xs font-bold text-gray-700">Supabase</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 2 - Next.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Next.js</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 3 - TypeScript */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">📘</div>
+                    <div className="text-xs font-bold text-gray-700">TypeScript</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 4 - Tailwind CSS */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-cyan-200 hover:border-cyan-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">Tailwind</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 5 - Node.js */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🟢</div>
+                    <div className="text-xs font-bold text-gray-700">Node.js</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 6 - Python */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐍</div>
+                    <div className="text-xs font-bold text-gray-700">Python</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 7 - Cloudinary */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">☁️</div>
+                    <div className="text-xs font-bold text-gray-700">Cloudinary</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 8 - OpenAI */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🧠</div>
+                    <div className="text-xs font-bold text-gray-700">OpenAI</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 9 - Firestore */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🔥</div>
+                    <div className="text-xs font-bold text-gray-700">Firestore</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 10 - Docker */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🐳</div>
+                    <div className="text-xs font-bold text-gray-700">Docker</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 11 - Javascript */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">💛</div>
+                    <div className="text-xs font-bold text-gray-700">Javascript</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 12 - MongoDB */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🍃</div>
+                    <div className="text-xs font-bold text-gray-700">MongoDB</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 13 - Firebase */}
+              <div className="flex-shrink-0 group">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">🔥</div>
+                    <div className="text-xs font-bold text-gray-700">Firebase</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 14 - Google */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
                   <div className="text-center">
@@ -1396,6 +1549,196 @@ export default function Home() {
               </div>
               
               {/* Logo 19 - Tableau */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">Tableau</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 1 - PostgreSQL */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐘</div>
+                    <div className="text-xs font-bold text-gray-700">PostgreSQL</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 2 - Redis */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🔴</div>
+                    <div className="text-xs font-bold text-gray-700">Redis</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 3 - Wordpress */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-pink-200 hover:border-pink-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📝</div>
+                    <div className="text-xs font-bold text-gray-700">Wordpress</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 4 - n8n */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🔄</div>
+                    <div className="text-xs font-bold text-gray-700">n8n</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 5 - shadcn/ui */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">shadcn/ui</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 6 - Vercel */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-black hover:border-gray-600 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">▲</div>
+                    <div className="text-xs font-bold text-gray-700">Vercel</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 7 - GitHub */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🐙</div>
+                    <div className="text-xs font-bold text-gray-700">GitHub</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 8 - Prisma ORM */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🗃️</div>
+                    <div className="text-xs font-bold text-gray-700">Prisma ORM</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 9 - Webpay */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">💳</div>
+                    <div className="text-xs font-bold text-gray-700">Webpay</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 10 - SendGrid */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📧</div>
+                    <div className="text-xs font-bold text-gray-700">SendGrid</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 11 - Zapier */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">⚡</div>
+                    <div className="text-xs font-bold text-gray-700">Zapier</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 12 - Shopify */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🛍️</div>
+                    <div className="text-xs font-bold text-gray-700">Shopify</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 13 - Airtable */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">Airtable</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 14 - SQL Server */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🗄️</div>
+                    <div className="text-xs font-bold text-gray-700">SQL Server</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 15 - Make */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🔧</div>
+                    <div className="text-xs font-bold text-gray-700">Make</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 16 - Power BI */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📈</div>
+                    <div className="text-xs font-bold text-gray-700">Power BI</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 17 - VS Code */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">💻</div>
+                    <div className="text-xs font-bold text-gray-700">VS Code</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 18 - Bootstrap */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🎯</div>
+                    <div className="text-xs font-bold text-gray-700">Bootstrap</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* DUPLICADO PARA FLUIDEZ - Logo 19 - Tableau */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">

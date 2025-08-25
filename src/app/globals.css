@@ -141,7 +141,7 @@ body {
 }
 
 .animate-scroll {
-  animation: scroll 35s linear infinite; /* Primera fila más lenta */
+  animation: scroll 45s linear infinite; /* Primera fila más lenta */
 }
 
 .animate-scroll:hover {
@@ -159,7 +159,7 @@ body {
 }
 
 .animate-scroll-slow {
-  animation: scroll-slow 20s linear infinite; /* Segunda fila más rápida */
+  animation: scroll-slow 30s linear infinite; /* Segunda fila más rápida */
 }
 
 .animate-scroll-slow:hover {
