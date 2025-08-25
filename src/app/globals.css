@@ -121,18 +121,27 @@ body {
   background: hsl(var(--background));
 }
 
-/* Animación del carrusel de tecnologías */
+/* Animaciones para carrusel de tecnologías */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
 .animate-scroll {
-  animation: scroll 20s linear infinite; /* Primera fila más rápida */
+  animation: scroll 35s linear infinite; /* Primera fila más lenta */
 }
 
 .animate-scroll:hover {
@@ -145,12 +154,12 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-scroll-slow {
-  animation: scroll-slow 35s linear infinite; /* Segunda fila más lenta */
+  animation: scroll-slow 20s linear infinite; /* Segunda fila más rápida */
 }
 
 .animate-scroll-slow:hover {
