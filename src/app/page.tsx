@@ -232,21 +232,22 @@ export default function Home() {
             {/* Servicio 3 - Automatización de Procesos - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pink-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Líneas diagonales */}
-              <div className="absolute top-4 left-4 w-16 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="absolute bottom-4 right-4 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              {/* Líneas decorativas dinámicas */}
+              <div className="absolute top-4 left-4 w-16 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-4 right-4 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute top-1/2 left-2 w-8 h-0.5 bg-gradient-to-r from-pink-400 to-blue-400 transform rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+              <div className="absolute top-1/2 right-2 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform -rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
                   <span className="text-4xl">⚡</span>
-                  {/* Rayos de energía */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[12px] border-l-yellow-400 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  {/* Anillos concéntricos giratorios */}
+                  
+                  <div className="absolute inset-2 border border-white/20 rounded-xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '0.2s'}}></div>
+                  <div className="absolute inset-4 border border-white/10 rounded-lg animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.4s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -292,22 +293,29 @@ export default function Home() {
             {/* Servicio 4 - Marketing Digital - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-pink-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-green-100 to-blue-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-purple-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Nodos de conexión */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-6 left-6 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              {/* Líneas decorativas alucinantes */}
+              <div className="absolute top-6 left-6 w-12 h-0.5 bg-gradient-to-r from-green-400 to-blue-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-6 right-6 w-8 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute top-1/2 left-4 w-10 h-0.5 bg-gradient-to-r from-blue-400 to-green-400 transform rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 right-4 w-10 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 transform -rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="absolute top-1/4 left-1/2 w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              <div className="absolute bottom-1/4 right-1/2 w-8 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.8s'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-bounce">📊</span>
-                  {/* Líneas de conexión */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  <span className="text-4xl">📊</span>
+                  {/* Estrella de conexión giratoria */}
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin"></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.1s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-135 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.3s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.4s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-225 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.5s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.6s'}}></div>
+                  <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-315 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.7s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -315,11 +323,11 @@ export default function Home() {
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Estrategias digitales inteligentes con IA que optimizan campañas y maximizan el ROI de marketing.
+                  Estrategias digitales inteligentes con IA que maximizan el ROI y optimizan campañas en tiempo real.
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200">
+                <div className="mb-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 border border-green-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -342,32 +350,35 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 5 - Asistente Secretario IA - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 5 - Asistente Secretario IA - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-pink-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-blue-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-pink-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Nodos de conexión */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-6 left-6 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              {/* Líneas decorativas alucinantes */}
+              <div className="absolute top-6 right-6 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-6 left-6 w-8 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute top-1/2 right-4 w-10 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform -rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 left-4 w-10 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="absolute top-1/4 right-1/2 w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              <div className="absolute bottom-1/4 left-1/2 w-8 h-0.5 bg-gradient-to-r from-pink-400 to-rose-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.8s'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-bounce">📋</span>
-                  {/* Líneas de conexión */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  <span className="text-4xl">📋</span>
+                  {/* Espiral de conexión giratoria */}
+                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                 
+                  <div className="absolute inset-6 border border-white/5 rounded-md animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '0.3s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -375,7 +386,7 @@ export default function Home() {
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Gestión inteligente de agenda, emails y tareas con priorización automática y IA.
+                  Gestión inteligente de agenda, emails y tareas administrativas con IA avanzada.
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
@@ -410,25 +421,29 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Servicio 6 - Generador de Contenido RRSS - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 6 - Generador de Contenido RRSS - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-orange-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-pink-100 to-orange-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-orange-100 to-red-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-purple-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Nodos de conexión */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-6 left-6 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              {/* Líneas decorativas alucinantes */}
+              <div className="absolute top-6 left-6 w-12 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-6 right-6 w-8 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute top-1/2 left-4 w-10 h-0.5 bg-gradient-to-r from-red-400 to-orange-400 transform rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 right-4 w-10 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 transform -rotate-90 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="absolute top-1/4 left-1/2 w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-400 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              <div className="absolute bottom-1/4 right-1/2 w-8 h-0.5 bg-gradient-to-r from-rose-400 to-pink-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.8s'}}></div>
+              <div className="absolute top-1/3 left-1/3 w-6 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 transform rotate-30 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-1/3 right-1/3 w-6 h-0.5 bg-gradient-to-r from-fuchsia-400 to-purple-400 transform -rotate-30 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '1.2s'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-bounce">✍️</span>
-                  {/* Líneas de conexión */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  <span className="text-4xl">✍️</span>
+                  {/* Onda de conexión pulsante */}
+                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-2 border border-white/20 rounded-xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute inset-4 border border-white/10 rounded-lg animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.4s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -440,7 +455,7 @@ export default function Home() {
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-200">
+                <div className="mb-6 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-4 border border-orange-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -454,43 +469,47 @@ export default function Home() {
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span className="text-purple-700 font-semibold">Ahorro de tiempo</span>
+                      <span className="text-purple-700 font-semibold">Analisis</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
-                      <span className="text-pink-700 font-semibold">Analisis</span>
+                      <span className="text-pink-700 font-semibold">Viralización: +150%</span>
                     </div>
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 7 - Optimización SEO - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 7 - Optimización SEO - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-100 to-green-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-teal-100 to-cyan-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-green-100 to-blue-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-purple-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Líneas de gráfico SEO */}
-              <div className="absolute top-6 left-6 w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="absolute top-8 left-6 w-12 h-0.5 bg-gradient-to-r from-green-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="absolute top-10 left-6 w-20 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              {/* Estrellas decorativas */}
+              <div className="absolute top-4 left-4 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[8px] border-b-green-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-4 right-4 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[8px] border-t-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 left-2 w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-b-[6px] border-b-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="absolute top-1/2 right-2 w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-t-[6px] border-t-pink-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              
+              {/* Diamantes decorativos */}
+              <div className="absolute top-1/4 right-1/2 w-3 h-3 bg-gradient-to-r from-green-400 to-blue-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.1s'}}></div>
+              <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.3s'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-spin">🔍</span>
-                  {/* Barras de gráfico SEO */}
-                  <div className="absolute inset-0 flex items-end justify-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-1 bg-white h-3 animate-pulse"></div>
-                    <div className="w-1 bg-white h-5 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-1 bg-white h-2 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-1 bg-white h-6 animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                  </div>
+                  <span className="text-4xl">🔍</span>
+                  {/* Anillos de búsqueda */}
+                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '2.9s'}}></div>
+                 
+                  <div className="absolute inset-4 border border-white/10 rounded-lg animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.6s'}}></div>
+                  
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -498,11 +517,11 @@ export default function Home() {
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Posicionamiento inteligente en buscadores con análisis de palabras clave y optimización automática de contenido.
+                  Mejora tu posicionamiento en buscadores con estrategias de SEO inteligentes y análisis avanzado.
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-200">
+                <div className="mb-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 border border-green-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -516,41 +535,46 @@ export default function Home() {
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span className="text-purple-700 font-semibold">Palabras claves</span>
+                      <span className="text-purple-700 font-semibold">Auditoria inteligente</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
-                      <span className="text-pink-700 font-semibold">Auditoria inteligente</span>
+                      <span className="text-pink-700 font-semibold">Palabras claves</span>
                     </div>
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 8 - Aplicaciones SAAS/BAAS - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 8 - Aplicaciones SAAS/BAAS - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-30 h-30 bg-gradient-to-br from-violet-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-26 h-26 bg-gradient-to-tl from-fuchsia-100 to-pink-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-indigo-100 to-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Nodos de conexión */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-6 left-6 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              {/* Hexágonos decorativos */}
+              <div className="absolute top-4 left-4 w-6 h-6 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+              <div className="absolute bottom-4 right-4 w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+              <div className="absolute top-1/2 left-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+              <div className="absolute top-1/2 right-2 w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+              
+              {/* Círculos con bordes punteados */}
+              <div className="absolute top-1/4 right-1/2 w-8 h-8 border-2 border-dashed border-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDelay: '0.1s'}}></div>
+              <div className="absolute bottom-1/4 left-1/2 w-6 h-6 border-2 border-dashed border-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDelay: '0.3s', animationDirection: 'reverse'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-ping">☁️</span>
-                  {/* Líneas de conexión */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent transform rotate-270 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                  <span className="text-4xl">☁️</span>
+                  {/* Cubos giratorios */}
+                  <div className="absolute inset-0 w-6 h-6 bg-white/20 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0s'}}></div>
+                  <div className="absolute inset-2 w-4 h-4 bg-white/15 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.2s', animationDirection: 'reverse'}}></div>
+                  <div className="absolute inset-4 w-2 h-2 bg-white/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.4s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -558,25 +582,25 @@ export default function Home() {
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Desarrollo de software como servicio y backend como servicio con arquitectura cloud nativa e IA integrada.
+                  Desarrollo de aplicaciones escalables en la nube con arquitectura moderna y servicios gestionados.
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-200">
+                <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-4 border border-indigo-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-700 font-semibold">Soluciones Cloud</span>
+                      <span className="text-green-700 font-semibold">Escalable</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-blue-700 font-semibold">Escalable</span>
+                      <span className="text-blue-700 font-semibold">Soluciones Cloud</span>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span className="text-purple-700 font-semibold">Reducción de costos</span>
+                      <span className="text-purple-700 font-semibold">Conectividad: Total</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
@@ -585,29 +609,37 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 9 - Módulo Personalizado - DISEÑO SIMPLE PÚRPURA */}
+            {/* Servicio 9 - Módulo Personalizado - DISEÑO COMPLETO CON EFECTOS */}
             <div className="group relative overflow-hidden bg-white rounded-3xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl shadow-lg">
               {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-bl from-slate-100 to-gray-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-34 h-34 bg-gradient-to-tr from-zinc-100 to-neutral-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-violet-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Engranajes decorativos */}
-              <div className="absolute top-8 left-8 w-4 h-4 bg-slate-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin"></div>
-              <div className="absolute bottom-8 right-8 w-3 h-3 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDirection: 'reverse'}}></div>
+              {/* Rombo decorativo */}
+              <div className="absolute top-4 left-4 w-6 h-6 bg-gradient-to-r from-emerald-400 to-teal-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute bottom-4 right-4 w-4 h-4 bg-gradient-to-r from-violet-400 to-purple-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute top-1/2 left-2 w-3 h-3 bg-gradient-to-r from-teal-400 to-emerald-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="absolute top-1/2 right-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-violet-400 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              
+              {/* Líneas onduladas */}
+              <div className="absolute top-1/4 right-1/2 w-8 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.1s', borderRadius: '50%'}}></div>
+              <div className="absolute bottom-1/4 left-1/2 w-6 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.3s', borderRadius: '50%'}}></div>
               
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-spin">⚙️</span>
-                  {/* Efecto de engranaje */}
-                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin"></div>
-                  <div className="absolute inset-2 border border-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDirection: 'reverse'}}></div>
+                  <span className="text-4xl">⚙️</span>
+                  {/* Engranajes giratorios */}
+                  <div className="absolute inset-0 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0s'}}></div>
+                  <div className="absolute inset-2 w-6 h-6 bg-white/15 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.2s', animationDirection: 'reverse'}}></div>
+                  <div className="absolute inset-4 w-4 h-4 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin" style={{animationDelay: '0.4s'}}></div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -615,19 +647,19 @@ export default function Home() {
                 </h3>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Soluciones IA a medida diseñadas específicamente para las necesidades de tu empresa.
+                  Soluciones a medida que se adaptan perfectamente a las necesidades específicas de tu negocio.
                 </p>
                 
                 {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-200">
+                <div className="mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-200">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-700 font-semibold">Personalización</span>
+                      <span className="text-green-700 font-semibold">Escalable</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-blue-700 font-semibold">Escalable</span>
+                      <span className="text-blue-700 font-semibold">Personalización</span>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm">
@@ -642,9 +674,10 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Próximamente</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
@@ -654,7 +687,7 @@ export default function Home() {
 
       
 
-      {/* NUEVA SECCIÓN: Por Qué Adoptar IA en las Pymes - FONDO OSCURO */}
+                    {/* NUEVA SECCIÓN: Por Qué Adoptar IA en los Negocios - FONDO OSCURO */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -683,7 +716,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Crecimiento Exponencial</h3>
-                    <p className="text-gray-300">Las pymes con IA crecen 3x más rápido que las tradicionales</p>
+                    <p className="text-gray-300">Los negocios con IA crecen 3x más rápido que los tradicionales</p>
                   </div>
                 </div>
                 
@@ -713,7 +746,7 @@ export default function Home() {
             
             {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
             <div className="relative">
-              <div className="w-96 h-96 mx-auto relative">
+              <div className="w-[450px] h-[450px] mx-auto relative">
                 {/* Fondo animado con partículas flotantes */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl backdrop-blur-sm"></div>
                 
@@ -724,10 +757,10 @@ export default function Home() {
                 <div className="absolute top-28 right-20 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
                 
                 {/* Círculo central principal con Agentes IA */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
                   <div className="text-center text-white">
                     <div className="text-4xl mb-2">🤖</div>
-                    <div className="text-sm font-bold">Agentes IA</div>
+                    <div className="text-base font-bold">Agentes IA</div>
                   </div>
                   
                   {/* Anillos concéntricos giratorios */}
@@ -736,7 +769,7 @@ export default function Home() {
                 </div>
                 
                 {/* Tarjeta 1 - Superior Izquierda - Autonomia total */}
-                <div className="absolute top-8 left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce">
+                <div className="absolute top-10 left-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28">
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-spin">🚀</div>
                     <div className="text-sm font-bold">Autonomia</div>
@@ -747,7 +780,7 @@ export default function Home() {
                 </div>
                 
                 {/* Tarjeta 2 - Superior Derecha - Escalable 100% */}
-                <div className="absolute top-8 right-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '0.6s'}}>
+                <div className="absolute top-10 right-10 bg-gradient-to-r from-orange-500 to-red-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '0.6s'}}>
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-bounce">⚡</div>
                     <div className="text-sm font-bold">Escalable</div>
@@ -758,7 +791,7 @@ export default function Home() {
                 </div>
                 
                 {/* Tarjeta 3 - Inferior Izquierda - Uptime 99.9% */}
-                <div className="absolute bottom-8 left-8 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '0.3s'}}>
+                <div className="absolute bottom-10 left-10 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '0.3s'}}>
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-ping">⚡</div>
                     <div className="text-sm font-bold">Uptime</div>
@@ -769,7 +802,7 @@ export default function Home() {
                 </div>
                 
                 {/* Tarjeta 4 - Inferior Derecha - Evolución continua */}
-                <div className="absolute bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-10 right-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '1s'}}>
                   <div className="text-center">
                     <div className="text-2xl mb-1 group-hover:animate-spin">🎯</div>
                     <div className="text-sm font-bold">Evolución</div>
@@ -864,7 +897,7 @@ export default function Home() {
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Pymes
+                    Negocios
                   </span>
                 </div>
               </div>
@@ -877,7 +910,7 @@ export default function Home() {
                   IA para Pequeñas Empresas
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Cómo las pymes están implementando inteligencia artificial para crecer exponencialmente.
+                  Cómo los negocios están implementando inteligencia artificial para crecer exponencialmente.
                 </p>
                 <button className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Leer Más →
@@ -1034,15 +1067,15 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Carrusel de logos - PRIMERA FILA */}
+          {/* Carrusel de logos - PRIMERA FILA (SIN REPETICIONES) */}
           <div className="mb-12">
             <div className="flex space-x-16 animate-scroll">
-              {/* Logo 1 - React */}
+              {/* Logo 1 - Supabase */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">⚛️</div>
-                    <div className="text-xs font-bold text-gray-700">React</div>
+                    <div className="text-3xl mb-1">🗄️</div>
+                    <div className="text-xs font-bold text-gray-700">Supabase</div>
                   </div>
                 </div>
               </div>
@@ -1097,12 +1130,12 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 7 - TensorFlow */}
+              {/* Logo 7 - Cloudinary */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">🧠</div>
-                    <div className="text-xs font-bold text-gray-700">TensorFlow</div>
+                    <div className="text-3xl mb-1">☁️</div>
+                    <div className="text-xs font-bold text-gray-700">Cloudinary</div>
                   </div>
                 </div>
               </div>
@@ -1117,12 +1150,12 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 9 - AWS */}
+              {/* Logo 9 - FirestoreCode */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">☁️</div>
-                    <div className="text-xs font-bold text-gray-700">AWS</div>
+                    <div className="text-3xl mb-1">🔥</div>
+                    <div className="text-xs font-bold text-gray-700">FirestoreCode</div>
                   </div>
                 </div>
               </div>
@@ -1137,12 +1170,12 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 11 - Kubernetes */}
+              {/* Logo 11 - Javascript */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">⚓</div>
-                    <div className="text-xs font-bold text-gray-700">Kubernetes</div>
+                    <div className="text-3xl mb-1">💛</div>
+                    <div className="text-xs font-bold text-gray-700">Javascript</div>
                   </div>
                 </div>
               </div>
@@ -1157,192 +1190,31 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* NUEVA TECNOLOGÍA 1 - Aaaaa */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/n.png" alt="Aaaaa" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Aaaaa</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* NUEVA TECNOLOGÍA 2 - Eeeee */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/p.png" alt="Eeeee" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Eeeee</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* NUEVA TECNOLOGÍA 3 - Iiiiii */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/t.png" alt="Iiiiii" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Iiiiii</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO */}
-              {/* Logo 1 - React */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">⚛️</div>
-                    <div className="text-xs font-bold text-gray-700">React</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 2 - Next.js */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">▲</div>
-                    <div className="text-xs font-bold text-gray-700">Next.js</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 3 - TypeScript */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">📘</div>
-                    <div className="text-xs font-bold text-gray-700">TypeScript</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 4 - Tailwind CSS */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-cyan-200 hover:border-cyan-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">🎨</div>
-                    <div className="text-xs font-bold text-gray-700">Tailwind</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 5 - Node.js */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">🟢</div>
-                    <div className="text-xs font-bold text-gray-700">Node.js</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 6 - Python */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">🐍</div>
-                    <div className="text-xs font-bold text-gray-700">Python</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 7 - TensorFlow */}
+              {/* Logo 13 - Firebase */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">🧠</div>
-                    <div className="text-xs font-bold text-gray-700">TensorFlow</div>
+                    <div className="text-3xl mb-1">🔥</div>
+                    <div className="text-xs font-bold text-gray-700">Firebase</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 8 - OpenAI */}
+              {/* Logo 14 - Google */}
               <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-3xl mb-1">🤖</div>
-                    <div className="text-xs font-bold text-gray-700">OpenAI</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 9 - AWS */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">☁️</div>
-                    <div className="text-xs font-bold text-gray-700">AWS</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 10 - Docker */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">🐳</div>
-                    <div className="text-xs font-bold text-gray-700">Docker</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 11 - Kubernetes */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">⚓</div>
-                    <div className="text-xs font-bold text-gray-700">Kubernetes</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 12 - MongoDB */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-3xl mb-1">🍃</div>
-                    <div className="text-xs font-bold text-gray-700">MongoDB</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* NUEVA TECNOLOGÍA 1 - Aaaaa */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/n.png" alt="Aaaaa" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Aaaaa</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* NUEVA TECNOLOGÍA 2 - Eeeee */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/p.png" alt="Eeeee" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Eeeee</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* NUEVA TECNOLOGÍA 3 - Iiiiii */}
-              <div className="flex-shrink-0 group">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <img src="/logos/t.png" alt="Iiiiii" className="w-12 h-12 object-contain mb-1" />
-                    <div className="text-xs font-bold text-gray-700">Iiiiii</div>
+                    <div className="text-3xl mb-1">🔍</div>
+                    <div className="text-xs font-bold text-gray-700">Google</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Carrusel de logos - SEGUNDA FILA (MÁS LENTA) */}
-          <div>
-            <div className="flex space-x-16 animate-scroll-slow">
+          {/* Carrusel de logos - SEGUNDA FILA (SIN REPETICIONES) */}
+          <div className="mb-12">
+            <div className="flex space-x-12 animate-scroll-slow">
               {/* Logo 1 - PostgreSQL */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
@@ -1363,32 +1235,32 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 3 - GraphQL */}
+              {/* Logo 3 - Wordpress */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-pink-200 hover:border-pink-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">📊</div>
-                    <div className="text-xs font-bold text-gray-700">GraphQL</div>
+                    <div className="text-2xl mb-1">📝</div>
+                    <div className="text-xs font-bold text-gray-700">Wordpress</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 4 - Jest */}
+              {/* Logo 4 - n8n */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🧪</div>
-                    <div className="text-xs font-bold text-gray-700">Jest</div>
+                    <div className="text-2xl mb-1">🔄</div>
+                    <div className="text-xs font-bold text-gray-700">n8n</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 5 - Cypress */}
+              {/* Logo 5 - shadcn/ui */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🌲</div>
-                    <div className="text-xs font-bold text-gray-700">Cypress</div>
+                    <div className="text-2xl mb-1">🎨</div>
+                    <div className="text-xs font-bold text-gray-700">shadcn/ui</div>
                   </div>
                 </div>
               </div>
@@ -1413,22 +1285,22 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Logo 8 - Figma */}
+              {/* Logo 8 - Prisma ORM */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🎨</div>
-                    <div className="text-xs font-bold text-gray-700">Figma</div>
+                    <div className="text-2xl mb-1">🗃️</div>
+                    <div className="text-xs font-bold text-gray-700">Prisma ORM</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 9 - Stripe */}
+              {/* Logo 9 - Webpay */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
                   <div className="text-center">
                     <div className="text-2xl mb-1">💳</div>
-                    <div className="text-xs font-bold text-gray-700">Stripe</div>
+                    <div className="text-xs font-bold text-gray-700">Webpay</div>
                   </div>
                 </div>
               </div>
@@ -1443,103 +1315,92 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* REPETICIÓN COMPLETA PARA CARROSEL INFINITO FLUIDO - SEGUNDA FILA */}
-              {/* Logo 1 - PostgreSQL */}
+              {/* Logo 11 - Zapier */}
               <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🐘</div>
-                    <div className="text-xs font-bold text-gray-700">PostgreSQL</div>
+                    <div className="text-2xl mb-1">⚡</div>
+                    <div className="text-xs font-bold text-gray-700">Zapier</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 2 - Redis */}
+              {/* Logo 12 - Shopify */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🛍️</div>
+                    <div className="text-xs font-bold text-gray-700">Shopify</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 13 - Airtable */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">Airtable</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 14 - SQL Server */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-red-200 hover:border-red-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🔴</div>
-                    <div className="text-xs font-bold text-gray-700">Redis</div>
+                    <div className="text-2xl mb-1">🗄️</div>
+                    <div className="text-xs font-bold text-gray-700">SQL Server</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 3 - GraphQL */}
-              <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-pink-200 hover:border-pink-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">📊</div>
-                    <div className="text-xs font-bold text-gray-700">GraphQL</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 4 - Jest */}
-              <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">🧪</div>
-                    <div className="text-xs font-bold text-gray-700">Jest</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 5 - Cypress */}
-              <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-green-200 hover:border-green-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">🌲</div>
-                    <div className="text-xs font-bold text-gray-700">Cypress</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 6 - Vercel */}
-              <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-black hover:border-gray-600 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">▲</div>
-                    <div className="text-xs font-bold text-gray-700">Vercel</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 7 - GitHub */}
-              <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-200 hover:border-gray-400 hover:scale-110">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">🐙</div>
-                    <div className="text-xs font-bold text-gray-700">GitHub</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Logo 8 - Figma */}
+              {/* Logo 15 - Make */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🎨</div>
-                    <div className="text-xs font-bold text-gray-700">Figma</div>
+                    <div className="text-2xl mb-1">🔧</div>
+                    <div className="text-xs font-bold text-gray-700">Make</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 9 - Stripe */}
+              {/* Logo 16 - Power BI */}
               <div className="flex-shrink-0 group">
-                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-yellow-200 hover:border-yellow-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">💳</div>
-                    <div className="text-xs font-bold text-gray-700">Stripe</div>
+                    <div className="text-2xl mb-1">📈</div>
+                    <div className="text-xs font-bold text-gray-700">Power BI</div>
                   </div>
                 </div>
               </div>
               
-              {/* Logo 10 - SendGrid */}
+              {/* Logo 17 - VS Code */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">📧</div>
-                    <div className="text-xs font-bold text-gray-700">SendGrid</div>
+                    <div className="text-2xl mb-1">💻</div>
+                    <div className="text-xs font-bold text-gray-700">VS Code</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 18 - Bootstrap */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-purple-200 hover:border-purple-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">🎯</div>
+                    <div className="text-xs font-bold text-gray-700">Bootstrap</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Logo 19 - Tableau */}
+              <div className="flex-shrink-0 group">
+                <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-orange-200 hover:border-orange-400 hover:scale-110">
+                  <div className="text-center">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-gray-700">Tableau</div>
                   </div>
                 </div>
               </div>
@@ -1575,7 +1436,7 @@ export default function Home() {
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Transformando empresas con inteligencia artificial de vanguardia. 
-                Hacemos que la IA sea accesible para todas las pymes.
+                Hacemos que la IA sea accesible para todos los negocios.
               </p>
             </div>
 
@@ -1665,23 +1526,7 @@ export default function Home() {
         </div>
       </footer>
 
-             <style jsx>{`
-         @keyframes scroll {
-           0% { transform: translateX(0); }
-           100% { transform: translateX(-50%); }
-         }
-         .animate-scroll {
-           animation: scroll 20s linear infinite; /* Primera fila más rápida */
-         }
-         
-         @keyframes scroll-slow {
-           0% { transform: translateX(0); }
-           100% { transform: translateX(-50%); }
-         }
-         .animate-scroll-slow {
-           animation: scroll-slow 35s linear infinite; /* Segunda fila más lenta */
-         }
-       `}</style>
+             {/* Estilos del carrusel manejados por CSS global */}
        
        <script dangerouslySetInnerHTML={{
          __html: `
