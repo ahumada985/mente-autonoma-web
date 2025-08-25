@@ -1,6 +1,7 @@
 'use client'
 
 import LeadCaptureForm from '@/components/LeadCaptureForm'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -215,19 +216,21 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group shadow-lg">
-                  <span className="relative z-10 flex items-center justify-center space-x-2">
-                    <span>🚀</span>
-                    <span>Explorar Servicio</span>
-                    <span>✨</span>
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  {/* Indicador de servicio activo */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                </button>
+                <Link href="/servicios-desarrollo-web" className="block w-full">
+                  <button className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group shadow-lg">
+                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                      <span>🚀</span>
+                      <span>Explorar Servicio</span>
+                      <span>✨</span>
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {/* Indicador de servicio activo */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                  </button>
+                </Link>
               </div>
             </div>
 

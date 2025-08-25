@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { captureLead, checkEmailExists } from '@/lib/firebase';
+import { validateEmail, logAttempt, detectSpamPatterns, generateCSRFToken } from '@/lib/antiSpam';
 
 export default function LeadCaptureForm({ 
   title = "¡Únete a la Revolución IA!", 
@@ -15,9 +16,24 @@ export default function LeadCaptureForm({
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [message, setMessage] = useState('');
+  const [csrfToken, setCsrfToken] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+
+  // Generar token CSRF al montar el componente
+  useEffect(() => {
+    setCsrfToken(generateCSRFToken());
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Verificar honeypot (si se llenó, es un bot)
+    if (honeypot) {
+      console.log('Bot detectado por honeypot');
+      setStatus('error');
+      setMessage('Solicitud rechazada por seguridad');
+      return;
+    }
     
     if (!email || !email.includes('@')) {
       setStatus('error');
@@ -29,32 +45,59 @@ export default function LeadCaptureForm({
     setMessage('');
 
     try {
-      // Verificar si el email ya existe
-      const emailExists = await checkEmailExists(email);
+      // Obtener IP del cliente (en producción usarías un servicio real)
+      const clientIP = '127.0.0.1'; // En desarrollo
       
-      if (emailExists) {
+      // Validación completa del email
+      const validation = await validateEmail(email, clientIP);
+      
+      if (!validation.valid) {
         setStatus('error');
-        setMessage('Este email ya está registrado. ¡Gracias por tu interés!');
+        setMessage(validation.reason);
+        
+        // Registrar intento fallido
+        await logAttempt(clientIP, email, false, validation.reason);
+        return;
+      }
+      
+      // Detectar patrones de spam
+      const spamCheck = detectSpamPatterns(email, navigator.userAgent);
+      if (spamCheck.isSpam) {
+        setStatus('error');
+        setMessage('Email detectado como spam. Por favor usa un email válido.');
+        
+        // Registrar intento de spam
+        await logAttempt(clientIP, email, false, `Spam detectado: ${spamCheck.reasons.join(', ')}`);
         return;
       }
 
       // Capturar el lead
       const result = await captureLead(email, {
         formType: 'newsletter',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        csrfToken,
+        userAgent: navigator.userAgent,
+        clientIP
       });
 
       if (result.success) {
         setStatus('success');
         setMessage('¡Gracias! Tu email ha sido registrado exitosamente.');
         setEmail('');
+        
+        // Registrar intento exitoso
+        await logAttempt(clientIP, email, true, 'Lead capturado exitosamente');
       } else {
         setStatus('error');
         setMessage('Hubo un error. Por favor intenta nuevamente.');
+        
+        // Registrar intento fallido
+        await logAttempt(clientIP, email, false, result.error || 'Error desconocido');
       }
     } catch (error) {
       setStatus('error');
       setMessage('Error de conexión. Por favor verifica tu internet.');
+      console.error('Error en handleSubmit:', error);
     }
   };
 
@@ -72,6 +115,18 @@ export default function LeadCaptureForm({
       )}
 
       <form onSubmit={handleSubmit} className={compact ? "space-y-4" : "space-y-6"}>
+        {/* Campo honeypot oculto para detectar bots */}
+        <div className="hidden">
+          <input
+            type="text"
+            name="website"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex="-1"
+            autoComplete="off"
+          />
+        </div>
+        
         <div className="relative">
           {!compact && (
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
