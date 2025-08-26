@@ -216,7 +216,7 @@ export default function Privacidad() {
                 <ul className="list-disc list-inside space-y-2 ml-6">
                   <li>Notificación en nuestro sitio web</li>
                   <li>Email directo a tu dirección registrada</li>
-                  <li>Actualización de la fecha de "última actualización"</li>
+                  <li>Actualización de la fecha de &ldquo;última actualización&rdquo;</li>
                 </ul>
                 <p>
                   Te recomendamos revisar esta política periódicamente para mantenerte informado 
