@@ -231,7 +231,7 @@ La implementación requiere una estrategia de datos sólida, pero los resultados
               <button 
                 onClick={() => {
                   const noticiasGuardadas = JSON.parse(localStorage.getItem('noticiasGuardadas') || '[]');
-                                     if (!noticiasGuardadas.find((n: any) => n.id === noticia.id)) {
+                  if (!noticiasGuardadas.find((n: { id: number }) => n.id === noticia.id)) {
                     noticiasGuardadas.push({
                       id: noticia.id,
                       titulo: noticia.titulo,

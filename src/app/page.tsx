@@ -2,6 +2,7 @@
 
 import LeadCaptureForm from '@/components/LeadCaptureForm'
 import Link from 'next/link'
+import SupabaseTest from '@/components/SupabaseTest'
 
 export default function Home() {
   return (
@@ -1880,6 +1881,9 @@ export default function Home() {
            });
          `
        }} />
+
+       {/* Componente de prueba de Supabase */}
+       <SupabaseTest />
     </div>
   )
 }

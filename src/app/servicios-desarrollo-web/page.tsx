@@ -640,6 +640,7 @@ export default function ServiciosDesarrolloWeb() {
       {/* Formulario de Cotización */}
       {showQuoteForm && (
         <QuoteForm 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           selectedPlan={selectedPlan as any} 
           onClose={() => setShowQuoteForm(false)} 
         />
