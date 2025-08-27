@@ -143,7 +143,46 @@ Además, la IA está creando nuevos tipos de empleos que requieren habilidades �
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* Header especial para noticias */}
+      <header className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-lg font-bold">AI</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold">Mente Autónoma</h1>
+                <p className="text-sm text-gray-300">Soluciones Digitales</p>
+              </div>
+            </Link>
+            
+            {/* Menu */}
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Inicio
+              </Link>
+              <Link href="/noticias" className="text-white border-b-2 border-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                Noticias
+              </Link>
+              <Link href="/servicios-desarrollo-web" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Servicios
+              </Link>
+            </nav>
+            
+            {/* CTA Button */}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/#contacto" 
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+              >
+                Ver Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
       
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-100 py-20">

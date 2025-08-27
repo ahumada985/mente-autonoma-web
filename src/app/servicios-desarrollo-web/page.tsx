@@ -529,25 +529,28 @@ export default function ServiciosDesarrolloWeb() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900">
+      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
             ¿Listo para Transformar tu Negocio?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Estos precios de lanzamiento son por tiempo limitado. No pierdas la oportunidad 
             de tener una presencia digital profesional que impulse tu negocio al siguiente nivel.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-200">
               📞 Hablar con un Experto
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => setShowQuoteForm(true)}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
               📧 Solicitar Presupuesto
             </button>
           </div>
           <div className="mt-8 text-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-sm">
               ⏰ Oferta válida hasta el 31 de Marzo, 2025
             </p>
           </div>

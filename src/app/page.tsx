@@ -967,37 +967,27 @@ export default function Home() {
                  </div>
        </section>
 
-      {/* NUEVA SECCIÓN: CTA - Newsletter + PDF Gratuito */}
+      {/* CTA - Newsletter + PDF Gratuito */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
-        {/* Elementos de fondo decorativos */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
-        
-        {/* Partículas flotantes animadas */}
-        <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
-        <div className="absolute top-40 right-32 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-32 left-32 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 right-20 w-3 h-3 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
-        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block animate-pulse">
+            <div className="mb-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block animate-pulse">
               🚀 ACCESO EXCLUSIVO
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
               ¿Quieres Ser el Primero en
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> Implementar IA en tu Industria?</span>
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent"> Implementar IA en tu Industria?</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
               Únete a nuestra comunidad de innovadores y recibe acceso anticipado a las últimas tecnologías de IA. 
               <span className="text-white font-semibold"> Suscríbete HOY</span> y obtén nuestro reporte exclusivo con 
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-bold"> estrategias secretas de IA que están revolucionando negocios</span>.
+              <span className="bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent font-bold"> estrategias secretas de IA que están revolucionando negocios</span>.
             </p>
           </div>
           
           {/* Formulario de suscripción rediseñado */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-r from-blue-900/80 via-purple-900/80 to-pink-900/80 backdrop-blur-sm rounded-3xl p-8 border border-white/30 shadow-2xl">
+            <div className="bg-gradient-to-r from-emerald-900/80 via-teal-900/80 to-cyan-900/80 backdrop-blur-sm rounded-3xl p-8 border border-emerald-500/30 shadow-2xl">
               <LeadCaptureForm 
                 title="🚀 Únete a la Revolución IA"
                 subtitle="Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio"

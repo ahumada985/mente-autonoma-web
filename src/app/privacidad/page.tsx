@@ -7,7 +7,46 @@ import Link from 'next/link';
 export default function Privacidad() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* Header especial para páginas legales */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-lg font-bold">AI</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
+                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+              </div>
+            </Link>
+            
+            {/* Menu */}
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Inicio
+              </Link>
+              <Link href="/noticias" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Noticias
+              </Link>
+              <Link href="/servicios-desarrollo-web" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Servicios
+              </Link>
+            </nav>
+            
+            {/* CTA Button */}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/#contacto" 
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+              >
+                Ver Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
