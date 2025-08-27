@@ -134,26 +134,17 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Legal */}
-            <div>
-              <h5 className="text-lg font-semibold mb-4">Legal</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/privacidad" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Política de Privacidad
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terminos" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Términos de Servicio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Política de Cookies
-                  </Link>
-                </li>
-              </ul>
+            {/* Enlaces Legales */}
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacidad" className="text-gray-300 hover:text-white transition-colors duration-200">
+                Privacidad
+              </Link>
+              <Link href="/terminos" className="text-gray-300 hover:text-white transition-colors duration-200">
+                Términos
+              </Link>
+              <Link href="/cookies" className="text-gray-300 hover:text-white transition-colors duration-200">
+                Cookies
+              </Link>
             </div>
           </div>
 

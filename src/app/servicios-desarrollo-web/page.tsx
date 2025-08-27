@@ -8,6 +8,7 @@ import QuoteForm from '@/components/QuoteForm';
 
 export default function ServiciosDesarrolloWeb() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
 
   const plans = {
     wordpress: [
@@ -155,7 +156,7 @@ export default function ServiciosDesarrolloWeb() {
       {
         id: 'modern-webapp-db',
         name: 'Web App + Base de Datos',
-        price: 'Sujeto a Evaluación',
+        price: '💬 Consulta Personalizada',
         originalPrice: null,
         description: 'Aplicación web completa con base de datos',
         features: [
@@ -180,7 +181,7 @@ export default function ServiciosDesarrolloWeb() {
       {
         id: 'modern-advanced',
         name: 'Web App Avanzada',
-        price: 'Sujeto a Evaluación',
+        price: '💬 Consulta Personalizada',
         originalPrice: null,
         description: 'Aplicación web empresarial avanzada',
         features: [
@@ -207,7 +208,7 @@ export default function ServiciosDesarrolloWeb() {
       {
         id: 'modern-advanced-db',
         name: 'Web App Avanzada + BD Compleja',
-        price: 'Sujeto a Evaluación',
+        price: '💬 Consulta Personalizada',
         originalPrice: null,
         description: 'Aplicación web empresarial con base de datos compleja',
         features: [
@@ -322,10 +323,18 @@ export default function ServiciosDesarrolloWeb() {
                     {/* Precios */}
                     <div className="mb-6">
                       <div className="text-4xl font-bold text-gray-900 mb-1">{plan.price}</div>
-                      <div className="text-lg text-gray-500 line-through">{plan.originalPrice}</div>
-                      <div className="text-sm text-green-600 font-semibold">
-                        ¡Ahorras ${parseInt(plan.originalPrice.replace('$', '').replace('.', '')) - parseInt(plan.price.replace('$', '').replace('.', ''))}!
-                      </div>
+                      {plan.originalPrice ? (
+                        <>
+                          <div className="text-lg text-gray-500 line-through">{plan.originalPrice}</div>
+                          <div className="text-sm text-green-600 font-semibold">
+                            ¡Ahorras ${parseInt(plan.originalPrice.replace('$', '').replace('.', '')) - parseInt(plan.price.replace('$', '').replace('.', ''))}!
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-sm text-blue-600 font-semibold">
+                          💬 Contacta para evaluación personalizada
+                        </div>
+                      )}
                     </div>
 
                     {/* Características */}
@@ -426,10 +435,18 @@ export default function ServiciosDesarrolloWeb() {
                     {/* Precios */}
                     <div className="mb-6">
                       <div className="text-4xl font-bold text-gray-900 mb-1">{plan.price}</div>
-                      <div className="text-lg text-gray-500 line-through">{plan.originalPrice}</div>
-                      <div className="text-sm text-green-600 font-semibold">
-                        ¡Ahorras ${parseInt(plan.originalPrice.replace('$', '').replace('.', '')) - parseInt(plan.price.replace('$', '').replace('.', ''))}!
-                      </div>
+                      {plan.originalPrice ? (
+                        <>
+                          <div className="text-lg text-gray-500 line-through">{plan.originalPrice}</div>
+                          <div className="text-sm text-green-600 font-semibold">
+                            ¡Ahorras ${parseInt(plan.originalPrice.replace('$', '').replace('.', '')) - parseInt(plan.price.replace('$', '').replace('.', ''))}!
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-sm text-blue-600 font-semibold">
+                          💬 Contacta para evaluación personalizada
+                        </div>
+                      )}
                     </div>
 
                     {/* Características */}
@@ -521,10 +538,13 @@ export default function ServiciosDesarrolloWeb() {
                     {plans.wordpress.find(p => p.id === selectedPlan)?.price || 
                      plans.modern.find(p => p.id === selectedPlan)?.price}
                   </div>
-                  <div className="text-lg text-gray-500 line-through">
-                    {plans.wordpress.find(p => p.id === selectedPlan)?.originalPrice || 
-                     plans.modern.find(p => p.id === selectedPlan)?.originalPrice}
-                  </div>
+                  {plans.wordpress.find(p => p.id === selectedPlan)?.originalPrice || 
+                   plans.modern.find(p => p.id === selectedPlan)?.originalPrice ? (
+                    <div className="text-lg text-gray-500 line-through">
+                      {plans.wordpress.find(p => p.id === selectedPlan)?.originalPrice || 
+                       plans.modern.find(p => p.id === selectedPlan)?.originalPrice}
+                    </div>
+                   ) : null}
                 </div>
 
                 <div className="space-y-4">
@@ -559,7 +579,13 @@ export default function ServiciosDesarrolloWeb() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <button 
+                  onClick={() => {
+                    setShowQuoteForm(true);
+                    setSelectedPlan(null);
+                  }}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
                   🚀 Solicitar Cotización Ahora
                 </button>
               </div>
