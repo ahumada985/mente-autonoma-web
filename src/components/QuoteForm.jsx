@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { saveQuote } from '@/lib/supabase';
 
 export default function QuoteForm({ selectedPlan = null, onClose }) {
   const [formData, setFormData] = useState({
@@ -59,44 +60,39 @@ export default function QuoteForm({ selectedPlan = null, onClose }) {
     setMessage('Enviando cotización...');
 
     try {
-      // Simular envío
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Guardar en Supabase
+      const result = await saveQuote(formData);
       
-      setStatus('success');
-      setMessage('¡Cotización enviada exitosamente! Te contactaremos en las próximas 24 horas.');
-      
-      // Guardar en localStorage para simular base de datos
-      const quotes = JSON.parse(localStorage.getItem('quotes') || '[]');
-      quotes.push({
-        ...formData,
-        id: Date.now(),
-        timestamp: new Date().toISOString(),
-        status: 'pending'
-      });
-      localStorage.setItem('quotes', JSON.stringify(JSON.stringify(quotes)));
-      
-      // Resetear formulario después de 3 segundos
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          projectType: '',
-          budget: '',
-          timeline: '',
-          description: '',
-          features: [],
-          additionalServices: []
-        });
-        setStatus('idle');
-        setMessage('');
-        if (onClose) onClose();
-      }, 3000);
+      if (result.success) {
+        setStatus('success');
+        setMessage('¡Cotización enviada exitosamente! Te contactaremos en las próximas 24 horas.');
+        
+        // Resetear formulario después de 3 segundos
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            projectType: '',
+            budget: '',
+            timeline: '',
+            description: '',
+            features: [],
+            additionalServices: []
+          });
+          setStatus('idle');
+          setMessage('');
+          if (onClose) onClose();
+        }, 3000);
+      } else {
+        throw new Error(result.error);
+      }
       
     } catch (error) {
       setStatus('error');
       setMessage('Error al enviar la cotización. Por favor intenta nuevamente.');
+      console.error('Error:', error);
     }
   };
 

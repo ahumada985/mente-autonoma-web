@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,18 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white text-xl font-bold">MA</span>
-            </div>
+            <Image 
+              src="/logo_final.png" 
+              alt="Mente Autónoma" 
+              width={40} 
+              height={40} 
+              className="object-contain group-hover:scale-110 transition-transform duration-300"
+            />
             <div>
               <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
               <p className="text-sm text-gray-600">Soluciones Digitales</p>
@@ -35,9 +40,6 @@ export default function Header() {
             </Link>
             <Link href="/noticias" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
               Noticias
-            </Link>
-            <Link href="/30-ideas" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
-              30 Ideas
             </Link>
             <Link 
               href="/contacto" 
@@ -86,13 +88,6 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Noticias
-              </Link>
-              <Link 
-                href="/30-ideas" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                30 Ideas
               </Link>
               <Link 
                 href="/contacto" 

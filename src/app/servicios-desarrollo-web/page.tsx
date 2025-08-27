@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import QuoteForm from '@/components/QuoteForm';
+import Image from 'next/image';
 
 export default function ServiciosDesarrolloWeb() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
@@ -240,33 +241,34 @@ export default function ServiciosDesarrolloWeb() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Personalizado para Servicios */}
-      <header className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white sticky top-0 z-50 shadow-lg">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-xl font-bold">MA</span>
-              </div>
+              <Image 
+                src="/logo_final.png" 
+                alt="Mente Autónoma" 
+                width={40} 
+                height={40} 
+                className="object-contain group-hover:scale-110 transition-transform duration-300"
+              />
               <div>
-                <h1 className="text-xl font-bold">Mente Autónoma</h1>
-                <p className="text-sm text-blue-200">Soluciones Digitales</p>
+                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
+                <p className="text-sm text-gray-600">Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Inicio
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-blue-400 border-b-2 border-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/servicios-desarrollo-web" className="text-blue-600 border-b-2 border-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300">
                 Servicios
               </Link>
-              <Link href="/noticias" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Noticias
-              </Link>
-              <Link href="/30-ideas" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                30 Ideas
               </Link>
             </nav>
             
@@ -517,7 +519,7 @@ export default function ServiciosDesarrolloWeb() {
 
                   {/* CTA Button */}
                   <button className={`w-full mt-6 bg-gradient-to-r ${plan.color} text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}>
-                    �� Solicitar Cotización
+                    🚀 Solicitar Cotización
                   </button>
                 </div>
               </div>

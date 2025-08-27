@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { saveNewsletterSubscription } from '@/lib/supabase';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -16,68 +17,36 @@ export default function Footer() {
 
     setNewsletterStatus('loading');
     
-    // Simular envío
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setNewsletterStatus('success');
-    setEmail('');
-    
-    // Resetear después de 3 segundos
-    setTimeout(() => setNewsletterStatus('idle'), 3000);
+    try {
+      // Guardar en Supabase
+      const result = await saveNewsletterSubscription(email);
+      
+      if (result.success) {
+        setNewsletterStatus('success');
+        setEmail('');
+        
+        // Resetear después de 3 segundos
+        setTimeout(() => setNewsletterStatus('idle'), 3000);
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      setNewsletterStatus('error');
+      console.error('Error:', error);
+    }
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-4">
-              ¡Únete a la Revolución IA!
-            </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Recibe las últimas noticias, estrategias y tendencias de IA para impulsar tu negocio al siguiente nivel.
-            </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu email aquí..."
-                  className="flex-1 px-6 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                  required
-                />
-                <button
-                  type="submit"
-                  disabled={newsletterStatus === 'loading'}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50"
-                >
-                  {newsletterStatus === 'loading' ? 'Suscribiendo...' : 'Suscribirse'}
-                </button>
-              </div>
-              
-              {newsletterStatus === 'success' && (
-                <p className="text-green-400 mt-3 text-sm">¡Gracias! Te has suscrito exitosamente.</p>
-              )}
-              {newsletterStatus === 'error' && (
-                <p className="text-red-400 mt-3 text-sm">Por favor ingresa un email válido.</p>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-
+    <footer className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white">
       {/* Main Footer */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">MA</span>
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">AI</span>
                 </div>
                 <div>
                   <h4 className="text-xl font-bold">Mente Autónoma</h4>
@@ -85,8 +54,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-gray-300 mb-6 max-w-md">
-                Transformamos ideas en soluciones digitales impactantes. Especialistas en desarrollo web, 
-                IA y estrategias digitales para empresas que buscan crecer.
+                Transformando empresas con inteligencia artificial de vanguardia. Hacemos que la IA sea accesible para todos los negocios.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -107,31 +75,47 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Our Services */}
             <div>
-              <h5 className="text-lg font-semibold mb-4">Enlaces Rápidos</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/servicios-desarrollo-web" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Servicios
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/noticias" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Noticias
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/30-ideas" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    30 Ideas
-                  </Link>
-                </li>
-              </ul>
+              <h5 className="text-lg font-semibold mb-4">Nuestros Servicios</h5>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Chatbot</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Diseño Web</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Automatización</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Marketing Digital</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Secretario IA</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Contenido RRSS</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Módulo</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                  <span className="text-sm text-gray-300">SEO</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span className="text-sm text-gray-300">SAAS/BAAS</span>
+                </div>
+              </div>
             </div>
 
             {/* Newsletter */}
@@ -140,51 +124,57 @@ export default function Footer() {
               <p className="text-gray-300 text-sm mb-4">
                 Recibe las últimas noticias sobre IA y estrategias para tu negocio
               </p>
-              <div className="bg-gradient-to-r from-blue-900/40 via-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-xl p-4 border border-white/30 shadow-lg">
-                <div className="flex">
+              <div className="bg-white rounded-xl p-4">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Tu email aquí..."
-                    className="flex-1 px-3 py-2 bg-white/20 border border-white/40 rounded-l-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    required
                   />
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-r-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    🚀
+                  <button 
+                    type="submit"
+                    disabled={newsletterStatus === 'loading'}
+                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50"
+                  >
+                    {newsletterStatus === 'loading' ? 'Suscribiendo...' : '🚀 Suscribirse Ahora'}
                   </button>
-                </div>
-                <p className="text-xs text-blue-200 mt-2">
-                  Sin spam. Solo contenido valioso.
-                </p>
+                  <p className="text-xs text-gray-500 text-center">
+                    Al suscribirte, aceptas recibir emails con contenido relevante. Puedes cancelar en cualquier momento.
+                  </p>
+                </form>
+                
+                {newsletterStatus === 'success' && (
+                  <p className="text-green-600 mt-2 text-xs text-center">¡Gracias! Te has suscrito exitosamente.</p>
+                )}
+                {newsletterStatus === 'error' && (
+                  <p className="text-red-600 mt-2 text-xs text-center">Por favor ingresa un email válido.</p>
+                )}
               </div>
-            </div>
-
-            {/* Enlaces Legales */}
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacidad" className="text-gray-300 hover:text-white transition-colors duration-200">
-                Privacidad
-              </Link>
-              <Link href="/terminos" className="text-gray-300 hover:text-white transition-colors duration-200">
-                Términos
-              </Link>
-              <Link href="/cookies" className="text-gray-300 hover:text-white transition-colors duration-200">
-                Cookies
-              </Link>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-800 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">
-                © 2025 Mente Autónoma. Todos los derechos reservados.
-              </p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                <Link href="/contacto" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                  Contacto
-                </Link>
-                <Link href="/soporte" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                  Soporte
-                </Link>
-              </div>
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © 2025 Mente Autónoma. Todos los derechos reservados. Construido con ❤️ y profesionalismo.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link href="/privacidad" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                Privacidad
+              </Link>
+              <Link href="/terminos" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                Términos
+              </Link>
+              <Link href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                Cookies
+              </Link>
             </div>
           </div>
         </div>
