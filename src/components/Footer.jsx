@@ -134,6 +134,29 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Newsletter */}
+            <div>
+              <h5 className="text-lg font-semibold mb-4">Newsletter</h5>
+              <p className="text-gray-300 text-sm mb-4">
+                Recibe las últimas noticias sobre IA y estrategias para tu negocio
+              </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                <div className="flex">
+                  <input
+                    type="email"
+                    placeholder="Tu email aquí..."
+                    className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-l-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm"
+                  />
+                  <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-r-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105">
+                    🚀
+                  </button>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">
+                  Sin spam. Solo contenido valioso.
+                </p>
+              </div>
+            </div>
+
             {/* Enlaces Legales */}
             <div className="flex space-x-6 text-sm">
               <Link href="/privacidad" className="text-gray-300 hover:text-white transition-colors duration-200">

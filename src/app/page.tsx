@@ -876,93 +876,90 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Noticia 1 - Preparada para imagen */}
+            {/* Noticia 1 - IA en Retail */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-200 hover:border-purple-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
-                  <span className="text-6xl">🚀</span>
-                  {/* Aquí irá la imagen que me pases */}
+                  <span className="text-6xl">🤖</span>
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Innovación
+                    Tecnología
                   </span>
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-500">15 Mar 2025</span>
+                  <span className="text-sm text-gray-500">15 Enero 2025</span>
                   <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  Chatbots que Entienden el Contexto
+                  IA en Retail: Transformando la Experiencia del Cliente
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Descubre cómo la nueva generación de IA conversacional está revolucionando la atención al cliente.
+                  Chatbots inteligentes y sistemas de recomendación que aumentan las ventas en un 35%.
                 </p>
-                <button className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <Link href="/noticias/1" className="block w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Leer Más →
-                </button>
+                </Link>
               </div>
             </div>
             
-            {/* Noticia 2 - Preparada para imagen */}
+            {/* Noticia 2 - Automatización */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-200 hover:border-pink-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center">
-                  <span className="text-6xl">💼</span>
-                  {/* Aquí irá la imagen que me pases */}
+                  <span className="text-6xl">⚡</span>
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Negocios
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-500">12 Mar 2025</span>
-                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                </div>
-                                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                    Automatización Inteligente Avanzada
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Sistemas IA que aprenden y optimizan procesos empresariales de forma autónoma.
-                  </p>
-                <button className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Leer Más →
-                </button>
-              </div>
-            </div>
-            
-            {/* Noticia 3 - Preparada para imagen */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-200 hover:border-blue-400">
-              <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-purple-500 flex items-center justify-center">
-                  <span className="text-6xl">🎯</span>
-                  {/* Aquí irá la imagen que me pases */}
-                </div>
-                <div className="absolute top-4 right-4">
-                  <span className="inline-block bg-gradient-to-r from-pink-600 to-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Automatización
                   </span>
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-500">10 Mar 2025</span>
+                  <span className="text-sm text-gray-500">12 Enero 2025</span>
+                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                  Automatización: El Futuro de la Eficiencia Empresarial
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Incremento del 40% en productividad y reducción del 60% en errores operativos.
+                </p>
+                <Link href="/noticias/2" className="block w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                  Leer Más →
+                </Link>
+              </div>
+            </div>
+            
+            {/* Noticia 3 - Marketing Digital */}
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-200 hover:border-blue-400">
+              <div className="relative overflow-hidden">
+                <div className="w-full h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-purple-500 flex items-center justify-center">
+                  <span className="text-6xl">📊</span>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <span className="inline-block bg-gradient-to-r from-pink-600 to-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                    Marketing
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-500">10 Enero 2025</span>
                   <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
-                  Flujos de Trabajo Inteligentes
+                  Marketing Digital Inteligente: Datos y IA
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                Optimiza tus procesos empresariales con flujos de trabajo impulsados por IA que automatizan tareas, reducen errores y aumentan la productividad
+                  Optimiza campañas de marketing con análisis predictivo y personalización en tiempo real.
                 </p>
-                <button className="w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <Link href="/noticias/3" className="block w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Leer Más →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -997,17 +994,47 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Formulario de suscripción elegante con Firebase integrado */}
+          {/* Formulario de suscripción rediseñado */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
-              <LeadCaptureForm 
-                title="🚀 Únete a la Revolución IA"
-                subtitle="Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio"
-                buttonText="Suscribirse Gratis + PDF"
-                showNewsletter={true}
-                showPDF={true}
-                useOriginalStyle={true}
-              />
+            <div className="bg-gradient-to-r from-blue-900/80 via-purple-900/80 to-pink-900/80 backdrop-blur-sm rounded-3xl p-8 border border-white/30 shadow-2xl">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">🚀 Únete a la Revolución IA</h3>
+                <p className="text-lg text-blue-100">
+                  Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio
+                </p>
+              </div>
+              
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email profesional"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                  />
+                </div>
+                
+                <input
+                  type="text"
+                  placeholder="Empresa"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                />
+                
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  🚀 Suscribirse Gratis + PDF
+                </button>
+                
+                <p className="text-sm text-blue-200 text-center">
+                  Al suscribirte, aceptas recibir emails con contenido relevante. Puedes cancelar en cualquier momento.
+                </p>
+              </form>
             </div>
           </div>
         </div>
