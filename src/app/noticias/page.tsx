@@ -1,212 +1,283 @@
-'use client'
+'use client';
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import Link from 'next/link'
-import Image from 'next/image'
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-const noticias = [
-  {
-    categoria: "Antofagasta",
-    titulo: "Cómo la IA puede impulsar tu pyme en Antofagasta: ¡Ahorra y crece!",
-    reseña: "¡Impulsa tu pyme en Antofagasta con IA! Automatiza tareas, ahorra tiempo y atrae más clientes con herramientas accesibles para veterinarias, pet shops, librerías, talleres o tiendas deportivas. ¡Descubre cómo transformar tu negocio!",
-    imagen: "/noticia1.webp",
-    fecha: "15 Enero 2025",
-    tiempoLectura: "5 min"
-  },
-  {
-    categoria: "Antofagasta",
-    titulo: "¿Por qué la IA está creando nuevas oportunidades para pymes locales en mercados emergentes?",
-    reseña: "En 2025, la IA es accesible para pymes: cafeterías optimizan turnos y recomendaciones, tiendas online personalizan ofertas, y empresas mineras previenen fallos con sensores. La IA mejora ventas y eficiencia sin gran inversión.",
-    imagen: "/noticia2.webp",
-    fecha: "12 Enero 2025",
-    tiempoLectura: "4 min"
-  },
-  {
-    categoria: "Futuro",
-    titulo: "Agentes de IA Autónomos: El Futuro de la Automatización en Pymes",
-    reseña: "Los agentes de IA autónomos están revolucionando a las pymes en 2025 al automatizar tareas como inventarios y servicio al cliente. Gracias a su capacidad de planificación y aprendizaje, ayudan a reducir costos hasta en un 30%, brindan análisis predictivo y favorecen la escalabilidad en mercados emergentes.",
-    imagen: "/noticia3.webp",
-    fecha: "10 Enero 2025",
-    tiempoLectura: "6 min"
-  }
-]
+export default function Noticias() {
+  const noticias = [
+    {
+      id: 1,
+      title: 'La IA Revoluciona el Desarrollo Web en 2025',
+      excerpt: 'Las tecnologías de inteligencia artificial están transformando la forma en que se desarrollan los sitios web, ofreciendo experiencias más personalizadas y eficientes.',
+      content: `El desarrollo web está experimentando una revolución sin precedentes gracias a la inteligencia artificial. En 2025, estamos viendo cómo la IA no solo automatiza procesos de desarrollo, sino que también crea experiencias de usuario más inteligentes y personalizadas.
 
-export default function NoticiasPage() {
+Las principales tendencias incluyen:
+• Generación automática de código
+• Optimización inteligente de rendimiento
+• Personalización dinámica de contenido
+• Análisis predictivo de comportamiento del usuario
+
+Esta transformación está permitiendo a las empresas crear sitios web más sofisticados en menos tiempo, con un enfoque cada vez mayor en la experiencia del usuario y la conversión.`,
+      author: 'Equipo Mente Autónoma',
+      date: '15 de Enero, 2025',
+      category: 'Tecnología',
+      readTime: '5 min',
+      image: '/api/placeholder/600/400',
+      featured: true
+    },
+    {
+      id: 2,
+      title: 'Next.js 15: Las Nuevas Características que Cambiarán el Desarrollo Web',
+      excerpt: 'La última versión de Next.js introduce mejoras significativas en rendimiento, SEO y experiencia de desarrollador.',
+      content: `Next.js 15 representa un salto significativo en el ecosistema de React, introduciendo características que transformarán la forma en que desarrollamos aplicaciones web modernas.
+
+Características destacadas:
+• Compilación más rápida con Turbopack
+• Mejoras en el sistema de enrutamiento
+• Optimizaciones automáticas de imágenes
+• Mejor soporte para TypeScript
+
+Estas mejoras no solo benefician a los desarrolladores, sino que también resultan en aplicaciones más rápidas y eficientes para los usuarios finales.`,
+      author: 'Carlos Rodríguez',
+      date: '12 de Enero, 2025',
+      category: 'Desarrollo Web',
+      readTime: '7 min',
+      image: '/api/placeholder/600/400'
+    },
+    {
+      id: 3,
+      title: 'El Futuro del E-commerce: Tendencias 2025',
+      excerpt: 'Las nuevas tecnologías están redefiniendo la experiencia de compra online, desde la realidad aumentada hasta la IA personalizada.',
+      content: `El comercio electrónico está evolucionando más rápido que nunca, impulsado por tecnologías emergentes que están transformando la experiencia de compra.
+
+Tendencias principales:
+• Realidad aumentada para probar productos
+• Chatbots inteligentes para atención al cliente
+• Personalización basada en IA
+• Pagos con criptomonedas
+• Comercio social integrado
+
+Estas innovaciones están creando experiencias de compra más inmersivas y convenientes, lo que resulta en mayores tasas de conversión y satisfacción del cliente.`,
+      author: 'María González',
+      date: '10 de Enero, 2025',
+      category: 'E-commerce',
+      readTime: '6 min',
+      image: '/api/placeholder/600/400'
+    },
+    {
+      id: 4,
+      title: 'WordPress vs. Tecnologías Modernas: ¿Cuál Elegir en 2025?',
+      excerpt: 'Análisis comparativo de las ventajas y desventajas de WordPress frente a las tecnologías de desarrollo web modernas.',
+      content: `La elección entre WordPress y tecnologías modernas como Next.js o React sigue siendo un tema de debate en la comunidad de desarrollo web.
+
+WordPress ofrece:
+• Facilidad de uso para principiantes
+• Gran ecosistema de plugins
+• SEO optimizado por defecto
+• Costos iniciales bajos
+
+Tecnologías modernas proporcionan:
+• Mayor flexibilidad y personalización
+• Mejor rendimiento
+• Escalabilidad superior
+• Control total sobre el código
+
+La decisión debe basarse en los requisitos específicos del proyecto, el presupuesto y la experiencia técnica del equipo.`,
+      author: 'Ana Martínez',
+      date: '8 de Enero, 2025',
+      category: 'Análisis',
+      readTime: '8 min',
+      image: '/api/placeholder/600/400'
+    },
+    {
+      id: 5,
+      title: 'Optimización SEO para 2025: Más Allá de las Palabras Clave',
+      excerpt: 'El SEO moderno requiere un enfoque holístico que incluya experiencia del usuario, Core Web Vitals y contenido de valor.',
+      content: `El SEO ha evolucionado significativamente, y en 2025, las estrategias tradicionales basadas únicamente en palabras clave ya no son suficientes.
+
+Factores críticos modernos:
+• Core Web Vitals y rendimiento
+• Experiencia del usuario (UX)
+• Contenido de valor y autoridad
+• Intención de búsqueda
+• E-A-T (Experiencia, Autoridad, Confiabilidad)
+
+Google está priorizando cada vez más la calidad de la experiencia del usuario, lo que significa que los sitios web deben ser rápidos, accesibles y proporcionar valor real a los visitantes.`,
+      author: 'Luis Fernández',
+      date: '5 de Enero, 2025',
+      category: 'SEO',
+      readTime: '9 min',
+      image: '/api/placeholder/600/400'
+    },
+    {
+      id: 6,
+      title: 'La Importancia de la Accesibilidad Web en el Desarrollo Moderno',
+      excerpt: 'Crear sitios web accesibles no solo es una buena práctica, sino también un requisito legal y ético en muchos países.',
+      content: `La accesibilidad web se ha convertido en un aspecto fundamental del desarrollo web moderno, especialmente considerando que más del 15% de la población mundial vive con algún tipo de discapacidad.
+
+Principios de accesibilidad:
+• Perceptible: La información debe ser presentable de formas que los usuarios puedan percibir
+• Operable: Los componentes de la interfaz deben ser operables
+• Comprensible: La información y operación de la interfaz deben ser comprensibles
+• Robusto: El contenido debe ser interpretable por una amplia variedad de tecnologías
+
+Implementar accesibilidad desde el inicio del desarrollo no solo mejora la experiencia para usuarios con discapacidades, sino que también beneficia a todos los usuarios y mejora el SEO.`,
+      author: 'Sofía Ramírez',
+      date: '3 de Enero, 2025',
+      category: 'Accesibilidad',
+      readTime: '7 min',
+      image: '/api/placeholder/600/400'
+    }
+  ];
+
+  const categories = ['Todas', 'Tecnología', 'Desarrollo Web', 'E-commerce', 'Análisis', 'SEO', 'Accesibilidad'];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-2">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">✨</span>
-                </div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
-                  Mente Autónoma
-                </h1>
-              </Link>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/#services" className="text-gray-700 hover:text-violet-600 transition-all duration-300 font-medium">
-                Servicios
-              </Link>
-              <Link href="/noticias" className="text-violet-600 font-semibold">
-                Noticias
-              </Link>
-              <Link href="/#contact" className="text-gray-700 hover:text-violet-600 transition-all duration-300 font-medium">
-                Contacto
-              </Link>
-            </nav>
-            <div className="flex items-center space-x-4">
-              <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
-                Solicitar Demo
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <Badge className="mb-6 bg-gradient-to-r from-violet-500 to-indigo-500 text-white border-0 px-4 py-2 text-sm">
-            📰 Blog & Noticias
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Las Últimas
-            <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"> Noticias</span>
-            <br />
-            en IA para Pymes
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-100 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Noticias y
+            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Tendencias
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed">
-            Mantente actualizado con las últimas tendencias, casos de éxito y estrategias 
-            para implementar inteligencia artificial en tu empresa.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Mantente actualizado con las últimas noticias, tendencias y análisis del mundo del desarrollo web, 
+            tecnología y transformación digital.
           </p>
-        </div>
-      </section>
-
-      {/* Noticias Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {noticias.map((noticia, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-white/50 backdrop-blur-sm overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={noticia.imagen}
-                    alt={noticia.titulo}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-gradient-to-r from-violet-500 to-indigo-500 text-white border-0">
-                      {noticia.categoria}
-                    </Badge>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-white/90 text-gray-700">
-                      {noticia.tiempoLectura}
-                    </Badge>
-                  </div>
-                </div>
-                <CardHeader className="pb-4">
-                  <div className="text-sm text-gray-500 mb-2">{noticia.fecha}</div>
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-violet-600 transition-colors line-clamp-2">
-                    {noticia.titulo}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <CardDescription className="text-gray-600 mb-6 text-base leading-relaxed line-clamp-3">
-                    {noticia.reseña}
-                  </CardDescription>
-                  <Button 
-                    className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white border-0 transition-all duration-300"
-                    variant="default"
-                  >
-                    Leer Más ➡️
-                  </Button>
-                </CardContent>
-              </Card>
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className="px-6 py-2 rounded-full bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                {category}
+              </button>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-3xl p-12 text-white shadow-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¿Quieres más contenido como este?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Suscríbete a nuestro newsletter y recibe las últimas noticias sobre IA para pymes
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-6 py-4 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-              />
-              <Button size="lg" className="bg-white text-violet-600 hover:bg-gray-100 px-8 py-4">
-                Suscribirse
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <span className="text-lg">✨</span>
+      {/* Featured News */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Noticia Destacada
+          </h2>
+          
+          {noticias.filter(n => n.featured).map((noticia) => (
+            <div key={noticia.id} className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-12 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <div className="text-6xl mb-4">📰</div>
+                    <h3 className="text-2xl font-bold mb-4">{noticia.title}</h3>
+                    <p className="text-blue-100 mb-6">{noticia.excerpt}</p>
+                    <div className="flex items-center justify-center space-x-4 text-sm text-blue-100">
+                      <span>👤 {noticia.author}</span>
+                      <span>📅 {noticia.date}</span>
+                      <span>⏱️ {noticia.readTime}</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white">Mente Autónoma</h3>
-              </div>
-              <p className="text-gray-400 leading-relaxed">
-                Transformando empresas con inteligencia artificial de vanguardia.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Servicios</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/#services" className="hover:text-white transition-colors">Chatbot IA</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">Asistente Virtual</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">Generador de Contenido</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">Automatización</Link></li>
-              </ul>
-            </div>
-            <div className="md:col-span-1">
-              <h4 className="font-semibold mb-4 text-white">Newsletter</h4>
-              <p className="text-gray-400 mb-4">Recibe las últimas noticias sobre IA</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Tu correo"
-                  className="flex-1 px-4 py-2 rounded-lg text-gray-900 text-sm"
-                />
-                <Button size="sm" className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700">
-                  →
-                </Button>
+                <div className="p-12">
+                  <div className="mb-6">
+                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                      {noticia.category}
+                    </span>
+                  </div>
+                  <div className="prose prose-lg max-w-none text-gray-700">
+                    {noticia.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="mb-4 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  <button className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Leer Artículo Completo
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Mente Autónoma. Todos los derechos reservados. Construido con ❤️ y profesionalismo.</p>
+          ))}
+        </div>
+      </div>
+
+      {/* News Grid */}
+      <div className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Últimas Noticias
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {noticias.filter(n => !n.featured).map((noticia) => (
+              <article key={noticia.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                  <div className="text-4xl">📱</div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                      {noticia.category}
+                    </span>
+                    <span className="text-sm text-gray-500">{noticia.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                    {noticia.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {noticia.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>👤 {noticia.author}</span>
+                    <span>📅 {noticia.date}</span>
+                  </div>
+                  
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Leer Más
+                  </button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
-      </footer>
+      </div>
+
+      {/* Newsletter Section */}
+      <div className="py-20 bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            ¡No Te Pierdas Nada!
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Suscríbete a nuestro newsletter para recibir las últimas noticias, tendencias y análisis 
+            directamente en tu bandeja de entrada.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Tu email aquí..."
+              className="flex-1 px-6 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            />
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Suscribirse
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
 

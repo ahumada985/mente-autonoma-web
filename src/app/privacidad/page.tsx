@@ -1,32 +1,13 @@
 'use client';
 
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function Privacidad() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-xl font-bold">MA</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Política de Privacidad</p>
-              </div>
-            </Link>
-            <Link 
-              href="/"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              ← Volver al Inicio
-            </Link>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -252,32 +233,7 @@ export default function Privacidad() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white text-xl font-bold">MA</span>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-4">
-              © 2025 Mente Autónoma. Todos los derechos reservados.
-            </p>
-            <div className="flex justify-center space-x-6 text-sm">
-              <Link href="/privacidad" className="text-blue-400 hover:text-white transition-colors">
-                Privacidad
-              </Link>
-              <Link href="/terminos" className="text-gray-400 hover:text-white transition-colors">
-                Términos
-              </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors">
-                Cookies
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
