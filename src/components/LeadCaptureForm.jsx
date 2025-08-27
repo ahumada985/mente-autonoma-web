@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { validateEmail } from '@/lib/antiSpam';
+import { saveLead } from '@/lib/supabase';
 
 export default function LeadCaptureForm({ 
   title = "¡Únete a la Revolución IA!", 
@@ -47,15 +48,22 @@ export default function LeadCaptureForm({
         return;
       }
 
-      // Simular captura del lead (en producción esto se conectaría a una API)
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simular delay
+      // Guardar lead en Supabase
+      const result = await saveLead({
+        email: email,
+        source: 'website-cta',
+        name: 'Usuario Web',
+        company: 'No especificado',
+        phone: 'No especificado'
+      });
 
-      setStatus('success');
-      setMessage('¡Gracias! Tu email ha sido registrado exitosamente.');
-      setEmail('');
-      
-      // Aquí podrías enviar el email a un servicio como EmailJS, Formspree, etc.
-      console.log('Lead capturado:', email);
+      if (result.success) {
+        setStatus('success');
+        setMessage('¡Gracias! Tu email ha sido registrado exitosamente.');
+        setEmail('');
+      } else {
+        throw new Error(result.error);
+      }
       
     } catch (error) {
       setStatus('error');

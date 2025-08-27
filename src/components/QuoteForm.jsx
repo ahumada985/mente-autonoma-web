@@ -14,7 +14,7 @@ export default function QuoteForm({ selectedPlan = null, onClose }) {
     timeline: '',
     description: '',
     features: [],
-    additionalServices: []
+    additionalServices: ['Certificado SSL (Incluido)'] // SSL activado por defecto
   });
 
   const [status, setStatus] = useState('idle');
@@ -79,7 +79,7 @@ export default function QuoteForm({ selectedPlan = null, onClose }) {
             timeline: '',
             description: '',
             features: [],
-            additionalServices: []
+            additionalServices: ['Certificado SSL (Incluido)'] // SSL activado por defecto
           });
           setStatus('idle');
           setMessage('');
