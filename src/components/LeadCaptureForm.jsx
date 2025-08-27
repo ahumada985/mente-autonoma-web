@@ -6,17 +6,29 @@ import { saveLead } from '@/lib/supabase';
 
 export default function LeadCaptureForm({ 
   title = "¡Únete a la Revolución IA!", 
-  subtitle = "Recibe las últimas noticias y estrategias para tu negocio",
-  buttonText = "Suscribirse Gratis",
+  subtitle = "Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio",
+  buttonText = "Suscribirse Gratis + PDF",
   showNewsletter = true,
   showPDF = true,
   useOriginalStyle = false,
   compact = false
 }) {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: ''
+  });
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [message, setMessage] = useState('');
   const [honeypot, setHoneypot] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,9 +41,15 @@ export default function LeadCaptureForm({
       return;
     }
     
-    if (!email || !email.includes('@')) {
+    if (!formData.email || !formData.email.includes('@')) {
       setStatus('error');
       setMessage('Por favor ingresa un email válido');
+      return;
+    }
+
+    if (!formData.name || formData.name.trim().length < 2) {
+      setStatus('error');
+      setMessage('Por favor ingresa tu nombre completo');
       return;
     }
 
@@ -39,8 +57,11 @@ export default function LeadCaptureForm({
     setMessage('');
 
     try {
+      console.log('🔍 Iniciando envío de lead...');
+      console.log('📧 Datos:', formData);
+      
       // Validación del email
-      const validation = validateEmail(email);
+      const validation = validateEmail(formData.email);
       
       if (!validation.valid) {
         setStatus('error');
@@ -48,27 +69,33 @@ export default function LeadCaptureForm({
         return;
       }
 
+      console.log('✅ Email válido, guardando en Supabase...');
+
       // Guardar lead en Supabase
       const result = await saveLead({
-        email: email,
-        source: 'website-cta',
-        name: 'Usuario Web',
-        company: 'No especificado',
-        phone: 'No especificado'
+        email: formData.email,
+        name: formData.name,
+        company: formData.company || 'No especificado',
+        phone: 'No especificado',
+        source: 'website-cta'
       });
+
+      console.log('📊 Resultado de Supabase:', result);
 
       if (result.success) {
         setStatus('success');
         setMessage('¡Gracias! Tu email ha sido registrado exitosamente.');
-        setEmail('');
+        setFormData({ name: '', email: '', company: '' });
+        console.log('✅ Lead guardado exitosamente');
       } else {
+        console.error('❌ Error al guardar lead:', result.error);
         throw new Error(result.error);
       }
       
     } catch (error) {
+      console.error('💥 Error completo:', error);
       setStatus('error');
-      setMessage('Error de conexión. Por favor verifica tu internet.');
-      console.error('Error en handleSubmit:', error);
+      setMessage(`Error: ${error.message || 'Error de conexión. Por favor verifica tu internet.'}`);
     }
   };
 
@@ -122,12 +149,38 @@ export default function LeadCaptureForm({
 
         <div>
           <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="Tu nombre completo"
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${getStatusStyles()}`}
+            required
+            disabled={status === 'loading'}
+          />
+        </div>
+
+        <div>
+          <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
             placeholder="Tu email aquí..."
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${getStatusStyles()}`}
             required
+            disabled={status === 'loading'}
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleInputChange}
+            placeholder="Tu empresa (opcional)"
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${getStatusStyles()}`}
             disabled={status === 'loading'}
           />
         </div>

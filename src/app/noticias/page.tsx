@@ -111,25 +111,6 @@ export default function Noticias() {
               Mantente al día con las últimas tendencias, innovaciones y estrategias de inteligencia artificial 
               que están transformando industrias y creando nuevas oportunidades de negocio.
             </p>
-            
-            {/* Newsletter Section Integrado */}
-            <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                🚀 No te Pierdas Nada
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Recibe las noticias más importantes directamente en tu email
-              </p>
-              <LeadCaptureForm 
-                title=""
-                subtitle=""
-                buttonText="📧 Suscribirse Gratis"
-                showNewsletter={true}
-                showPDF={false}
-                useOriginalStyle={false}
-                compact={true}
-              />
-            </div>
           </div>
         </div>
       </section>

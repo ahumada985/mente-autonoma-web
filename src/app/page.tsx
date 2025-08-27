@@ -998,44 +998,15 @@ export default function Home() {
           {/* Formulario de suscripción rediseñado */}
           <div className="max-w-2xl mx-auto">
             <div className="bg-gradient-to-r from-blue-900/80 via-purple-900/80 to-pink-900/80 backdrop-blur-sm rounded-3xl p-8 border border-white/30 shadow-2xl">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">🚀 Únete a la Revolución IA</h3>
-                <p className="text-lg text-blue-100">
-                  Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio
-                </p>
-              </div>
-              
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Nombre completo"
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email profesional"
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                  />
-                </div>
-                
-                <input
-                  type="text"
-                  placeholder="Empresa"
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                />
-                
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  🚀 Suscribirse Gratis + PDF
-                </button>
-                
-                <p className="text-sm text-blue-200 text-center">
-                  Al suscribirte, aceptas recibir emails con contenido relevante. Puedes cancelar en cualquier momento.
-                </p>
-              </form>
+              <LeadCaptureForm 
+                title="🚀 Únete a la Revolución IA"
+                subtitle="Recibe estrategias exclusivas y el PDF con las 30 mejores ideas para aplicar IA en tu negocio"
+                buttonText="🚀 Suscribirse Gratis + PDF"
+                showNewsletter={true}
+                showPDF={true}
+                useOriginalStyle={false}
+                compact={false}
+              />
             </div>
           </div>
         </div>

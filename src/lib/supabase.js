@@ -3,11 +3,23 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Validar que las variables de entorno estén disponibles
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('❌ ERROR: Variables de entorno de Supabase no están configuradas');
+  console.error('NEXT_PUBLIC_SUPABASE_URL:', supabaseUrl ? '✅ Configurada' : '❌ No configurada');
+  console.error('NEXT_PUBLIC_SUPABASE_ANON_KEY:', supabaseAnonKey ? '✅ Configurada' : '❌ No configurada');
+}
+
+export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
 
 // Funciones para manejar leads y cotizaciones
 export const saveLead = async (leadData) => {
   try {
+    // Verificar que Supabase esté configurado
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase no está configurado correctamente');
+    }
+
     const { data, error } = await supabase
       .from('leads')
       .insert([
@@ -31,6 +43,11 @@ export const saveLead = async (leadData) => {
 
 export const saveQuote = async (quoteData) => {
   try {
+    // Verificar que Supabase esté configurado
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase no está configurado correctamente');
+    }
+
     const { data, error } = await supabase
       .from('quotes')
       .insert([
@@ -60,6 +77,11 @@ export const saveQuote = async (quoteData) => {
 
 export const saveNewsletterSubscription = async (email) => {
   try {
+    // Verificar que Supabase esté configurado
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase no está configurado correctamente');
+    }
+
     const { data, error } = await supabase
       .from('newsletter_subscriptions')
       .insert([
