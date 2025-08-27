@@ -140,18 +140,18 @@ export default function Footer() {
               <p className="text-gray-300 text-sm mb-4">
                 Recibe las últimas noticias sobre IA y estrategias para tu negocio
               </p>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <div className="bg-gradient-to-r from-blue-900/40 via-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-xl p-4 border border-white/30 shadow-lg">
                 <div className="flex">
                   <input
                     type="email"
                     placeholder="Tu email aquí..."
-                    className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-l-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm"
+                    className="flex-1 px-3 py-2 bg-white/20 border border-white/40 rounded-l-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm"
                   />
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-r-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-r-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg">
                     🚀
                   </button>
                 </div>
-                <p className="text-xs text-gray-400 mt-2">
+                <p className="text-xs text-blue-200 mt-2">
                   Sin spam. Solo contenido valioso.
                 </p>
               </div>

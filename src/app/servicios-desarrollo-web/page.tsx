@@ -25,7 +25,7 @@ export default function ServiciosDesarrolloWeb() {
           'Integración con redes sociales',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 30 días',
           'Panel de administración WordPress',
           'Capacitación básica del sistema'
@@ -49,7 +49,7 @@ export default function ServiciosDesarrolloWeb() {
           'Optimización SEO completa',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 60 días',
           'Capacitación completa del sistema',
           'Backup automático'
@@ -73,7 +73,7 @@ export default function ServiciosDesarrolloWeb() {
           'Optimización SEO avanzada',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 90 días',
           'Capacitación completa + manual',
           'Backup automático diario',
@@ -99,7 +99,7 @@ export default function ServiciosDesarrolloWeb() {
           'Rendimiento 95+ Lighthouse',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 30 días',
           'Código fuente incluido'
         ],
@@ -123,7 +123,7 @@ export default function ServiciosDesarrolloWeb() {
           'Componentes shadcn/ui',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 45 días'
         ],
         bestFor: 'Negocios que necesitan capturar y gestionar datos',
@@ -146,7 +146,7 @@ export default function ServiciosDesarrolloWeb() {
           'Componentes shadcn/ui',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 60 días'
         ],
         bestFor: 'Empresas que necesitan aplicaciones complejas',
@@ -171,7 +171,7 @@ export default function ServiciosDesarrolloWeb() {
           'Componentes shadcn/ui',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 90 días'
         ],
         bestFor: 'Empresas que necesitan aplicaciones empresariales completas',
@@ -198,7 +198,7 @@ export default function ServiciosDesarrolloWeb() {
           'Componentes shadcn/ui',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 120 días'
         ],
         bestFor: 'Empresas grandes que necesitan soluciones empresariales',
@@ -227,7 +227,7 @@ export default function ServiciosDesarrolloWeb() {
           'Componentes shadcn/ui',
           'Hosting gratuito por 1 año',
           'Dominio personalizado',
-          'Certificado SSL',
+          'Certificado SSL (Incluido)',
           'Soporte técnico 180 días'
         ],
         bestFor: 'Corporaciones que necesitan soluciones enterprise',
@@ -239,47 +239,88 @@ export default function ServiciosDesarrolloWeb() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* Header Personalizado para Servicios */}
+      <header className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-xl font-bold">MA</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold">Mente Autónoma</h1>
+                <p className="text-sm text-blue-200">Soluciones Digitales</p>
+              </div>
+            </Link>
+            
+            {/* Menu */}
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Inicio
+              </Link>
+              <Link href="/servicios-desarrollo-web" className="text-blue-400 border-b-2 border-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                Servicios
+              </Link>
+              <Link href="/noticias" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Noticias
+              </Link>
+              <Link href="/30-ideas" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                30 Ideas
+              </Link>
+            </nav>
+            
+            {/* CTA Button */}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/contacto" 
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+              >
+                Contacto
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white py-20">
+        {/* Elementos de fondo decorativos */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6 backdrop-blur-sm border border-white/30">
               🚀 Precios de Lanzamiento - Oferta Limitada
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Desarrollo Web
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Profesional
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
               Transforma tu idea en una presencia digital impactante. Ofrecemos soluciones con WordPress 
               y tecnologías modernas para llevar tu negocio al siguiente nivel.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center space-x-2 text-green-600 font-semibold">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+              <div className="flex items-center space-x-2 text-green-300 font-semibold">
+                <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
                 <span>Hosting Gratuito por 1 Año</span>
               </div>
-              <div className="flex items-center space-x-2 text-blue-600 font-semibold">
-                <span className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></span>
+              <div className="flex items-center space-x-2 text-blue-300 font-semibold">
+                <span className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></span>
                 <span>Soporte Técnico Incluido</span>
               </div>
-              <div className="flex items-center space-x-2 text-purple-600 font-semibold">
-                <span className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></span>
+              <div className="flex items-center space-x-2 text-purple-300 font-semibold">
+                <span className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></span>
                 <span>Garantía de Satisfacción</span>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
       </div>
 
@@ -476,7 +517,7 @@ export default function ServiciosDesarrolloWeb() {
 
                   {/* CTA Button */}
                   <button className={`w-full mt-6 bg-gradient-to-r ${plan.color} text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}>
-                    🚀 Solicitar Cotización
+                    �� Solicitar Cotización
                   </button>
                 </div>
               </div>
@@ -597,7 +638,7 @@ export default function ServiciosDesarrolloWeb() {
       {/* Formulario de Cotización */}
       {showQuoteForm && (
         <QuoteForm 
-          selectedPlan={selectedPlan} 
+          selectedPlan={selectedPlan as any} 
           onClose={() => setShowQuoteForm(false)} 
         />
       )}

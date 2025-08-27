@@ -211,10 +211,41 @@ La implementación requiere una estrategia de datos sólida, pero los resultados
             </Link>
             
             <div className="flex space-x-4">
-              <button className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-200 transition-all duration-300">
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: noticia.titulo,
+                      text: noticia.resumen,
+                      url: window.location.href
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Enlace copiado al portapapeles');
+                  }
+                }}
+                className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-200 transition-all duration-300"
+              >
                 📤 Compartir
               </button>
-              <button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition-all duration-300">
+              <button 
+                onClick={() => {
+                  const noticiasGuardadas = JSON.parse(localStorage.getItem('noticiasGuardadas') || '[]');
+                                     if (!noticiasGuardadas.find((n: any) => n.id === noticia.id)) {
+                    noticiasGuardadas.push({
+                      id: noticia.id,
+                      titulo: noticia.titulo,
+                      fecha: noticia.fecha,
+                      url: window.location.href
+                    });
+                    localStorage.setItem('noticiasGuardadas', JSON.stringify(noticiasGuardadas));
+                    alert('Noticia guardada en favoritos');
+                  } else {
+                    alert('Esta noticia ya está guardada');
+                  }
+                }}
+                className="bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition-all duration-300"
+              >
                 💾 Guardar
               </button>
             </div>

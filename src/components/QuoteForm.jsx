@@ -324,7 +324,7 @@ export default function QuoteForm({ selectedPlan = null, onClose }) {
               <div className="grid md:grid-cols-2 gap-3">
                 {[
                   'Hosting y Dominio',
-                  'Certificado SSL',
+                                     'Certificado SSL (Incluido)',
                   'Mantenimiento Mensual',
                   'Capacitación del Equipo',
                   'Soporte Técnico Extendido',
