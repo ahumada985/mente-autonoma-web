@@ -14,9 +14,19 @@ export default function Indigo() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [isClient, setIsClient] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    
+    // Función para detectar cuando el header debe ser sticky
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,26 +87,46 @@ export default function Indigo() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Estándar */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      {/* Header con transparencia dinámica */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderSticky 
+          ? 'bg-white border-b border-gray-200 shadow-sm' 
+          : 'bg-transparent'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-900' : 'text-white'
+                }`}>Mente Autónoma</h1>
+                <p className={`text-sm transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
+                }`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Inicio
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Servicios
               </Link>
-              <Link href="/noticias" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Noticias
               </Link>
             </nav>

@@ -35,9 +35,12 @@ export default function Footer() {
           {/* Columna 1 - Mente Autónoma */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xl font-bold">AI</span>
-              </div>
+              {/* Logo original sin modificaciones */}
+              <img 
+                src="/logo_final.png" 
+                alt="Mente Autónoma" 
+                className="w-12 h-12 object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold">Mente Autónoma</h1>
               </div>
