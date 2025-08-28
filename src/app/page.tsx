@@ -3,9 +3,62 @@
 import LeadCaptureForm from '@/components/LeadCaptureForm'
 import Footer from '@/components/Footer';
 import Link from 'next/link'
-import SupabaseTest from '@/components/SupabaseTest'
+import { useState } from 'react'
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    terms: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null,
+          source: 'CTA Principal',
+          created_at: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', terms: false });
+        setTimeout(() => setSubmitStatus(''), 3000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus(''), 3000);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus(''), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
             {/* Header transparente que se vuelve sticky - DISEÑO COMPLETAMENTE NUEVO */}
@@ -23,9 +76,9 @@ export default function Home() {
               <a href="#servicios" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Servicios
               </a>
-              <a href="/noticias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Noticias
-              </a>
+              </Link>
               <a href="#tecnologias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Tecnologías
               </a>
