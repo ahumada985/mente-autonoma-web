@@ -1,250 +1,180 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export default function NoticiaAutomatizacion() {
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsHeaderSticky(scrollPosition > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header con transparencia dinámica */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHeaderSticky 
-          ? 'bg-white border-b border-gray-200 shadow-sm' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-900' : 'text-white'
-                }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
-                }`}>Soluciones Digitales</p>
-              </div>
-            </Link>
-            
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Inicio
-              </Link>
-              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Servicios
-              </Link>
-              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-blue-600' 
-                  : 'text-white'
-              }`}>
-                Noticias
-              </Link>
-            </nav>
-            
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Contacto
-              </Link>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
+            <span>→</span>
+            <span>Automatización</span>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
-              📰 Noticia
+      {/* Artículo Principal */}
+      <article className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Header del Artículo */}
+          <header className="mb-12">
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                Automatización
+              </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Automatización Inteligente Avanzada:
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Eficiencia sin Límites</span>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Automatización Inteligente Avanzada: El Futuro de la Eficiencia Empresarial
             </h1>
             
-            <div className="flex items-center justify-center space-x-6 text-slate-200">
-              <span>📅 10 Enero 2025</span>
-              <span>•</span>
-              <span>⏱️ 6 min de lectura</span>
-              <span>•</span>
-              <span>🏷️ Automatización</span>
+            <div className="flex items-center space-x-6 text-gray-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium">Dr. Carlos Méndez</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>15 de Enero, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>5 min de lectura</span>
+              </div>
             </div>
+            
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, 
+              aumentando la productividad en un 40% y reduciendo errores operativos en un 60%.
+            </p>
+          </header>
+
+          {/* Imagen Principal */}
+          <div className="mb-12">
+            <img 
+              src="/noticia1.webp" 
+              alt="Automatización Inteligente Avanzada"
+              className="w-full h-96 object-cover rounded-lg"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Contenido de la Noticia */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <img 
-                src="/noticia3.webp" 
-                alt="Automatización Inteligente Avanzada"
-                className="w-full h-64 object-cover rounded-lg mb-8"
-              />
-            </div>
-
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              La automatización inteligente está transformando fundamentalmente la forma en que las empresas operan, eliminando tareas repetitivas y permitiendo que los equipos se enfoquen en actividades de mayor valor estratégico.
+          {/* Contenido del Artículo */}
+          <div className="prose prose-lg max-w-none">
+            <h2>La Revolución de la Automatización Empresarial</h2>
+            
+            <p>
+              En la era digital actual, la automatización inteligente se ha convertido en un pilar fundamental 
+              para la competitividad empresarial. Las organizaciones que implementan soluciones de IA avanzadas 
+              están experimentando transformaciones radicales en sus operaciones diarias.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              ¿Qué es la automatización inteligente?
-            </h2>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La automatización inteligente combina tecnologías de automatización robótica de procesos (RPA) con inteligencia artificial y machine learning para crear sistemas que no solo automatizan tareas, sino que también aprenden y mejoran con el tiempo. Esta convergencia permite que los procesos empresariales sean más eficientes, precisos y adaptativos.
+            <h3>¿Qué es la Automatización Inteligente?</h3>
+            
+            <p>
+              La automatización inteligente combina tecnologías de automatización robótica de procesos (RPA) 
+              con capacidades de inteligencia artificial y machine learning. Esta sinergia permite que los 
+              sistemas no solo ejecuten tareas repetitivas, sino que también aprendan, se adapten y tomen 
+              decisiones inteligentes en tiempo real.
             </p>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Componentes clave de la automatización inteligente:
-            </h3>
-
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Automatización robótica de procesos (RPA)</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Procesamiento de lenguaje natural (NLP)</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Machine learning y análisis predictivo</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Integración de sistemas y APIs</span>
-              </li>
+            <h3>Beneficios Cuantificables</h3>
+            
+            <ul>
+              <li><strong>Productividad:</strong> Incremento del 40% en la eficiencia operativa</li>
+              <li><strong>Precisión:</strong> Reducción del 60% en errores operativos</li>
+              <li><strong>Costos:</strong> Ahorro del 30% en gastos operativos</li>
+              <li><strong>Escalabilidad:</strong> Capacidad de manejar volúmenes 10x mayores</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Aplicaciones empresariales principales:
-            </h3>
+            <h3>Casos de Uso Principales</h3>
+            
+            <h4>1. Gestión de Inventarios</h4>
+            <p>
+              Los sistemas de IA pueden predecir la demanda futura, optimizar niveles de stock y 
+              automatizar pedidos de reabastecimiento, reduciendo costos de almacenamiento y 
+              mejorando la satisfacción del cliente.
+            </p>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Gestión de Documentos</h4>
-                <p className="text-gray-600">Procesamiento automático de facturas, contratos y formularios con extracción inteligente de datos y clasificación automática.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Atención al Cliente</h4>
-                <p className="text-gray-600">Resolución automática de consultas frecuentes, escalación inteligente y análisis de sentimientos en tiempo real.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Gestión de Recursos Humanos</h4>
-                <p className="text-gray-600">Automatización de procesos de reclutamiento, onboarding y gestión de nóminas con validación inteligente.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Análisis Financiero</h4>
-                <p className="text-gray-600">Generación automática de reportes, detección de anomalías y predicción de tendencias financieras.</p>
-              </div>
+            <h4>2. Procesamiento de Facturas</h4>
+            <p>
+              La automatización del procesamiento de documentos permite extraer información clave, 
+              validar datos y procesar pagos sin intervención manual, acelerando el ciclo de 
+              cobranza y reduciendo errores.
+            </p>
+
+            <h4>3. Atención al Cliente</h4>
+            <p>
+              Los chatbots inteligentes pueden manejar consultas complejas, resolver problemas 
+              comunes y escalar casos complejos a agentes humanos, mejorando la experiencia 
+              del cliente 24/7.
+            </p>
+
+            <h3>Implementación Estratégica</h3>
+            
+            <p>
+              Para implementar exitosamente la automatización inteligente, las empresas deben:
+            </p>
+
+            <ol>
+              <li><strong>Evaluar procesos actuales:</strong> Identificar tareas repetitivas y de alto volumen</li>
+              <li><strong>Definir objetivos claros:</strong> Establecer métricas de éxito medibles</li>
+              <li><strong>Capacitar al equipo:</strong> Preparar a los empleados para la transición</li>
+              <li><strong>Implementar gradualmente:</strong> Comenzar con pilotos y expandir progresivamente</li>
+              <li><strong>Monitorear y optimizar:</strong> Medir resultados y ajustar estrategias</li>
+            </ol>
+
+            <h3>El Futuro de la Automatización</h3>
+            
+            <p>
+              A medida que la IA continúa evolucionando, veremos sistemas cada vez más sofisticados 
+              que pueden manejar tareas complejas, tomar decisiones estratégicas y colaborar 
+              efectivamente con equipos humanos. La clave del éxito estará en encontrar el equilibrio 
+              perfecto entre automatización y creatividad humana.
+            </p>
+
+            <h3>Conclusión</h3>
+            
+            <p>
+              La automatización inteligente no es solo una tendencia tecnológica, sino una 
+              necesidad estratégica para las empresas que buscan mantenerse competitivas en 
+              un mercado cada vez más digital. Las organizaciones que adopten estas tecnologías 
+              hoy estarán mejor posicionadas para el futuro.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Automatización</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#IA</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Eficiencia</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Procesos</span>
             </div>
+          </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Beneficios medibles para las empresas
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La implementación de automatización inteligente puede generar beneficios significativos y medibles para las empresas, incluyendo reducción de costos operativos, mejora en la precisión de los procesos y aumento en la satisfacción del cliente.
-            </p>
-
-            <div className="bg-orange-50 border-l-4 border-orange-500 p-6 mb-8">
-              <h4 className="text-lg font-semibold text-orange-900 mb-3">📈 Resultados Comprobados</h4>
-              <p className="text-orange-800">
-                Las empresas que implementan automatización inteligente reportan una reducción del 40% en costos operativos, un aumento del 60% en la precisión de los procesos y una mejora del 35% en la satisfacción del cliente.
-              </p>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Implementación estratégica
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La implementación exitosa de automatización inteligente requiere un enfoque estratégico que incluya la identificación de procesos candidatos, la selección de tecnologías apropiadas y la gestión del cambio organizacional.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              El futuro de la automatización
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-8">
-              Con el continuo avance de la tecnología de IA, la automatización se volverá aún más inteligente y autónoma. Los sistemas del futuro podrán tomar decisiones complejas, aprender de experiencias pasadas y adaptarse a cambios en el entorno empresarial sin intervención humana.
-            </p>
-
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-200 text-center">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                ¿Quieres automatizar tu empresa?
-              </h4>
-              <p className="text-gray-600 mb-6">
-                Nuestro equipo puede ayudarte a identificar oportunidades de automatización y implementar soluciones inteligentes que transformen tu negocio.
-              </p>
+          {/* Navegación */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex justify-between">
               <Link 
-                href="/contacto"
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                href="/noticias" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                Consulta Gratuita
+                ← Volver a Noticias
               </Link>
-            </div>
-          </article>
-
-          {/* Navegación entre noticias */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
               <Link 
-                href="/noticias/chatbots-que-entienden-contexto"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/chatbots-que-entienden-contexto" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Anterior: Chatbots que Entienden Contexto
-              </Link>
-              
-              <Link 
-                href="/noticias/flujos-de-trabajo-inteligentes"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-              >
-                Siguiente: Flujos de Trabajo Inteligentes
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                Siguiente: Chatbots que Entienden Contexto →
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <Footer />
     </div>

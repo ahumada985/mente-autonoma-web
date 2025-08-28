@@ -1,301 +1,282 @@
-'use client'
+'use client';
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import Link from 'next/link'
-import Image from 'next/image'
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export default function Noticia1Page() {
+export default function NoticiaMachineLearning() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-2">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <Image src="/logo_final.webp" alt="Mente Autónoma" width={40} height={40} className="rounded-lg" />
-                </div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Mente Autónoma
-                </h1>
-              </Link>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/#services" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium">
-                Servicios
-              </Link>
-              <Link href="/#news" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium">
-                Noticias
-              </Link>
-              <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium">
-                Contacto
-              </Link>
-            </nav>
-            <div className="flex items-center space-x-4">
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
-                Solicitar Demo
-              </Button>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
+            <span>→</span>
+            <span>Machine Learning</span>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Article Content */}
-      <article className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Article Header */}
-          <header className="text-center mb-12">
-            <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0 px-4 py-2 text-sm">
-              Antofagasta
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Cómo la IA puede impulsar tu pyme: ¡Ahorra y crece!
-            </h1>
-            <div className="flex items-center justify-center space-x-4 text-gray-600">
-              <span>15 Enero 2025</span>
-              <span>•</span>
-              <span>5 min de lectura</span>
-              <span>•</span>
-              <span>Por Mente Autónoma</span>
+      {/* Artículo Principal */}
+      <article className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Header del Artículo */}
+          <header className="mb-12">
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">
+                Machine Learning
+              </span>
             </div>
+            
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Machine Learning en el Análisis de Datos: Revelando Insights Ocultos
+            </h1>
+            
+            <div className="flex items-center space-x-6 text-gray-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium">Dr. Roberto Silva</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>5 de Enero, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>7 min de lectura</span>
+              </div>
+            </div>
+            
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Técnicas avanzadas de machine learning que están transformando la forma 
+              en que las empresas analizan y utilizan sus datos.
+            </p>
           </header>
 
-          {/* Featured Image */}
-          <div className="relative h-96 rounded-3xl overflow-hidden mb-12 shadow-2xl">
-            <Image
-              src="/noticia1.webp"
-              alt="IA para pymes"
-              fill
-              className="object-cover"
+          {/* Imagen Principal */}
+          <div className="mb-12">
+            <img 
+              src="/noticia2.webp" 
+              alt="Machine Learning en Análisis de Datos"
+              className="w-full h-96 object-cover rounded-lg"
             />
           </div>
 
-          {/* Article Body */}
+          {/* Contenido del Artículo */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 leading-relaxed mb-8">
-              En el dinámico mundo empresarial actual, las pequeñas y medianas empresas (PYMEs) se enfrentan a desafíos constantes: 
-              optimizar costos, mejorar la eficiencia operativa y mantenerse competitivas en un mercado cada vez más digitalizado. 
-              La Inteligencia Artificial (IA) ya no es exclusiva de grandes corporaciones; hoy está al alcance de todas las empresas, 
-              sin importar su tamaño.
+            <h2>La Revolución del Análisis de Datos</h2>
+            
+            <p>
+              El machine learning ha revolucionado fundamentalmente el campo del análisis 
+              de datos, transformando la forma en que las organizaciones extraen valor 
+              de la información. Ya no se trata solo de analizar datos históricos, sino 
+              de predecir tendencias futuras y descubrir patrones ocultos que antes 
+              eran imposibles de detectar.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              ¿Por qué la IA es crucial para las PYMEs en 2025?
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              La IA representa una oportunidad única para que las PYMEs compitan en igualdad de condiciones con empresas más grandes. 
-              No se trata solo de automatización, sino de inteligencia estratégica que puede transformar completamente la forma en que 
-              operas tu negocio.
+            <h3>¿Qué es el Machine Learning en Análisis de Datos?</h3>
+            
+            <p>
+              El machine learning en análisis de datos se refiere al uso de algoritmos 
+              que pueden aprender automáticamente de los datos, identificar patrones 
+              complejos y hacer predicciones sin ser programados explícitamente para 
+              cada tarea específica.
             </p>
 
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-8 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">💡 Beneficios Clave de la IA para PYMEs:</h3>
-              <ul className="space-y-2 text-blue-800">
-                <li>• <strong>Reducción de costos operativos</strong> hasta en un 30%</li>
-                <li>• <strong>Mejora de la productividad</strong> del equipo en un 40%</li>
-                <li>• <strong>Personalización del servicio al cliente</strong> sin incrementar personal</li>
-                <li>• <strong>Análisis predictivo</strong> para tomar mejores decisiones</li>
-                <li>• <strong>Automatización de tareas repetitivas</strong> que liberan tiempo valioso</li>
+            <h3>Tipos de Machine Learning Aplicados al Análisis</h3>
+            
+            <h4>1. Aprendizaje Supervisado</h4>
+            <p>
+              En este enfoque, los algoritmos aprenden de datos etiquetados para hacer 
+              predicciones sobre nuevos datos. Es ideal para tareas como clasificación 
+              de clientes, predicción de ventas y detección de fraudes.
+            </p>
+
+            <h4>2. Aprendizaje No Supervisado</h4>
+            <p>
+              Los algoritmos descubren patrones ocultos en datos no etiquetados. 
+              Es útil para segmentación de clientes, detección de anomalías y 
+              reducción de dimensionalidad en conjuntos de datos complejos.
+            </p>
+
+            <h4>3. Aprendizaje por Refuerzo</h4>
+            <p>
+              Los algoritmos aprenden a través de la interacción con un entorno, 
+              optimizando decisiones basándose en recompensas y penalizaciones. 
+              Se aplica en optimización de precios y gestión de inventarios.
+            </p>
+
+            <h3>Aplicaciones Empresariales Principales</h3>
+            
+            <h4>Análisis Predictivo</h4>
+            <p>
+              Los modelos de machine learning pueden predecir comportamientos futuros 
+              del cliente, tendencias de mercado y necesidades de inventario con 
+              una precisión que supera los métodos tradicionales.
+            </p>
+
+            <h4>Segmentación de Clientes</h4>
+            <p>
+              Algoritmos avanzados pueden identificar segmentos de clientes 
+              previamente desconocidos, permitiendo estrategias de marketing 
+              más efectivas y personalizadas.
+            </p>
+
+            <h4>Detección de Anomalías</h4>
+            <p>
+              Los sistemas de ML pueden identificar patrones inusuales en datos 
+              financieros, operacionales o de seguridad, alertando sobre 
+              posibles problemas antes de que se agraven.
+            </p>
+
+            <h4>Optimización de Precios</h4>
+            <p>
+              Los algoritmos pueden analizar múltiples variables para determinar 
+              precios óptimos que maximicen la rentabilidad mientras mantienen 
+              la competitividad en el mercado.
+            </p>
+
+            <h3>Beneficios Cuantificables</h3>
+            
+            <div className="bg-orange-50 border-l-4 border-orange-500 p-6 mb-8">
+              <h4 className="text-lg font-semibold text-orange-900 mb-3">📊 Impacto Medible</h4>
+              <ul className="text-orange-800 space-y-2">
+                <li>• Incremento del 45% en la precisión de las predicciones</li>
+                <li>• Reducción del 60% en tiempo de análisis de datos</li>
+                <li>• Mejora del 35% en la toma de decisiones estratégicas</li>
+                <li>• Ahorro del 40% en costos de análisis manual</li>
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              Casos de Éxito Reales en PYMEs
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Veamos algunos ejemplos concretos de cómo la IA está transformando PYMEs en diferentes sectores:
+            <h3>Implementación Estratégica</h3>
+            
+            <h4>Fase 1: Preparación de Datos</h4>
+            <p>
+              La calidad de los datos es fundamental. Incluye limpieza, normalización 
+              y preparación de datasets para entrenamiento y validación.
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              🏪 Comercio Minorista
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Una tienda de ropa local implementó un sistema de recomendaciones basado en IA que aumentó sus ventas en un 25%. 
-              El sistema analiza el historial de compras de cada cliente y sugiere productos que realmente les interesan, 
-              creando una experiencia de compra personalizada.
+            <h4>Fase 2: Selección de Algoritmos</h4>
+            <p>
+              Elegir el algoritmo apropiado según el tipo de problema, el volumen 
+              de datos y los recursos computacionales disponibles.
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              🏥 Servicios de Salud
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Una clínica dental pequeña automatizó su agenda de citas con IA, reduciendo las cancelaciones en un 40% y 
-              optimizando el tiempo de los especialistas. El sistema envía recordatorios inteligentes y sugiere horarios 
-              alternativos cuando hay cancelaciones.
+            <h4>Fase 3: Entrenamiento y Validación</h4>
+            <p>
+              Entrenar modelos con datos históricos y validar su rendimiento 
+              usando técnicas como validación cruzada y conjuntos de prueba.
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              🏭 Industria Manufacturera
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Un taller mecánico implementó mantenimiento predictivo con IA, anticipando fallas en equipos antes de que ocurran. 
-              Esto les permitió reducir el tiempo de inactividad en un 60% y ahorrar significativamente en costos de reparación.
+            <h4>Fase 4: Despliegue y Monitoreo</h4>
+            <p>
+              Implementar modelos en producción y monitorear continuamente 
+              su rendimiento para detectar degradación o cambios en los datos.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              Cómo Empezar con IA en tu PYME
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              La implementación de IA no tiene que ser abrumadora. Te recomendamos un enfoque gradual:
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="text-3xl mb-4">🚀</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Fase 1: Evaluación</h4>
-                <p className="text-gray-600 text-sm">
-                  Identifica procesos repetitivos y áreas donde la IA puede generar mayor impacto inmediato.
-                </p>
+            <h3>Herramientas y Tecnologías</h3>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Python y R</h4>
+                <p className="text-gray-600">Lenguajes de programación líderes con bibliotecas especializadas en ML.</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="text-3xl mb-4">⚡</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Fase 2: Implementación</h4>
-                <p className="text-gray-600 text-sm">
-                  Comienza con una solución específica y mide los resultados antes de expandir.
-                </p>
+              
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">TensorFlow y PyTorch</h4>
+                <p className="text-gray-600">Frameworks de deep learning para modelos complejos y redes neuronales.</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="text-3xl mb-4">📈</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Fase 3: Escalamiento</h4>
-                <p className="text-gray-600 text-sm">
-                  Una vez que veas resultados, expande la IA a otras áreas de tu negocio.
-                </p>
+              
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Scikit-learn</h4>
+                <p className="text-gray-600">Biblioteca de Python para algoritmos clásicos de machine learning.</p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Plataformas Cloud</h4>
+                <p className="text-gray-600">Servicios como AWS SageMaker, Azure ML y Google AI Platform.</p>
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              Soluciones de IA Recomendadas para PYMEs
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Estas son las soluciones de IA más efectivas para PYMEs, ordenadas por facilidad de implementación:
+            <h3>Desafíos y Consideraciones</h3>
+            
+            <h4>Calidad de los Datos</h4>
+            <p>
+              <strong>Desafío:</strong> Datos incompletos, inconsistentes o sesgados pueden 
+              llevar a modelos inexactos o sesgados.
             </p>
 
-            <ol className="space-y-4 text-lg text-gray-700">
-              <li className="flex items-start space-x-3">
-                <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">1</span>
-                <div>
-                  <strong>Chatbots para atención al cliente:</strong> Resuelven consultas frecuentes 24/7, mejorando la satisfacción del cliente y reduciendo la carga de trabajo del personal.
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">2</span>
-                <div>
-                  <strong>Generación automática de contenido:</strong> Crea posts para redes sociales, emails y descripciones de productos de manera automática, manteniendo tu voz de marca.
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">3</span>
-                <div>
-                  <strong>Análisis de datos y reportes:</strong> Transforma la información de tu negocio en insights accionables que te ayuden a tomar mejores decisiones.
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">4</span>
-                <div>
-                  <strong>Automatización de procesos:</strong> Elimina tareas repetitivas como facturación, seguimiento de inventario y gestión de clientes.
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">5</span>
-                <div>
-                  <strong>Predicción de demanda:</strong> Anticipa las necesidades de tus clientes y optimiza tu inventario para maximizar ventas y minimizar costos.
-                </div>
-              </li>
-            </ol>
-
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              Inversión y ROI Esperado
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Muchas PYMEs se preocupan por el costo de implementar IA. La buena noticia es que las soluciones modernas son 
-              mucho más accesibles de lo que piensas:
+            <h4>Interpretabilidad</h4>
+            <p>
+              <strong>Desafío:</strong> Los modelos complejos pueden ser difíciles de interpretar, 
+              limitando la confianza en las decisiones basadas en ML.
             </p>
 
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 mb-8 border-l-4 border-green-500">
-              <h3 className="text-xl font-bold text-green-900 mb-4">💰 Costos y Beneficios:</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold text-green-800 mb-2">Inversión Inicial:</h4>
-                  <ul className="text-green-700 space-y-1">
-                    <li>• Soluciones básicas: $50-200/mes</li>
-                    <li>• Soluciones avanzadas: $200-500/mes</li>
-                    <li>• Implementación: $500-2,000</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-green-800 mb-2">ROI Esperado:</h4>
-                  <ul className="text-green-700 space-y-1">
-                    <li>• Ahorro en costos: 20-40%</li>
-                    <li>• Incremento en ventas: 15-30%</li>
-                    <li>• Mejora en productividad: 25-50%</li>
-                  </ul>
-                </div>
-              </div>
+            <h4>Sobreajuste</h4>
+            <p>
+              <strong>Desafío:</strong> Los modelos pueden memorizar los datos de entrenamiento 
+              en lugar de generalizar a nuevos datos.
+            </p>
+
+            <h4>Ética y Sesgos</h4>
+            <p>
+              <strong>Desafío:</strong> Los modelos pueden perpetuar o amplificar sesgos 
+              existentes en los datos de entrenamiento.
+            </p>
+
+            <h3>El Futuro del Machine Learning en Análisis</h3>
+            
+            <p>
+              El futuro del machine learning en análisis de datos incluye técnicas 
+              más avanzadas como deep learning, procesamiento de lenguaje natural 
+              y aprendizaje federado. También veremos mayor automatización en la 
+              selección de modelos y la interpretación de resultados.
+            </p>
+
+            <h3>Conclusión</h3>
+            
+            <p>
+              El machine learning está transformando fundamentalmente el análisis 
+              de datos, permitiendo a las organizaciones descubrir insights que 
+              antes eran imposibles de detectar. Las empresas que adopten estas 
+              tecnologías hoy estarán mejor posicionadas para tomar decisiones 
+              informadas y mantener una ventaja competitiva en el mercado.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Machine Learning</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Análisis de Datos</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#IA</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Insights</span>
             </div>
+          </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">
-              El Futuro de las PYMEs con IA
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              La IA no es solo una tendencia pasajera; es el futuro del negocio. Las PYMEs que adopten estas tecnologías 
-              hoy estarán mejor posicionadas para competir en el mercado del mañana. La clave está en empezar pequeño, 
-              medir resultados y escalar gradualmente.
-            </p>
-
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              En Mente Autónoma, creemos que la IA debe ser accesible para todas las empresas. Nuestras soluciones están 
-              diseñadas específicamente para PYMEs, con precios accesibles y soporte personalizado que te acompaña en cada 
-              paso de tu transformación digital.
-            </p>
-
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white text-center">
-              <h3 className="text-2xl font-bold mb-4">¿Listo para Transformar tu PYME con IA?</h3>
-              <p className="text-blue-100 mb-6">
-                Descubre cómo podemos ayudarte a implementar soluciones de IA que generen resultados reales y medibles.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 shadow-lg">
-                  Solicitar Consulta Gratuita
-                </Button>
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
-                  Ver Más Casos de Éxito
-                </Button>
-              </div>
+          {/* Navegación */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex justify-between">
+              <Link 
+                href="/noticias/ia-para-pequenas-empresas" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                ← Anterior: IA para Pequeñas Empresas
+              </Link>
+              <Link 
+                href="/noticias/noticia2" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                Siguiente: Inteligencia Artificial Generativa →
+              </Link>
             </div>
           </div>
         </div>
       </article>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
-              <Image src="/logo_final.webp" alt="Mente Autónoma" width={40} height={40} className="rounded-lg" />
-            </div>
-            <h3 className="text-xl font-bold text-white">Mente Autónoma</h3>
-          </div>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Transformando empresas con inteligencia artificial de vanguardia. 
-            Hacemos que la IA sea accesible para todas las pymes.
-          </p>
-          <div className="border-t border-gray-800 pt-8">
-            <p className="text-gray-400">
-              &copy; 2025 Mente Autónoma. Todos los derechos reservados. Construido con ❤️ y profesionalismo.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
-  )
+  );
 }
 
 

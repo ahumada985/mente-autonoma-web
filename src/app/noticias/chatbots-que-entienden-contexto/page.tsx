@@ -1,242 +1,198 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export default function NoticiaChatbots() {
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsHeaderSticky(scrollPosition > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header con transparencia dinámica */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHeaderSticky 
-          ? 'bg-white border-b border-gray-200 shadow-sm' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-900' : 'text-white'
-                }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
-                }`}>Soluciones Digitales</p>
-              </div>
-            </Link>
-            
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Inicio
-              </Link>
-              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Servicios
-              </Link>
-              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-blue-600' 
-                  : 'text-white'
-              }`}>
-                Noticias
-              </Link>
-            </nav>
-            
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Contacto
-              </Link>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
+            <span>→</span>
+            <span>Inteligencia Artificial</span>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
-              📰 Noticia
+      {/* Artículo Principal */}
+      <article className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Header del Artículo */}
+          <header className="mb-12">
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                Inteligencia Artificial
+              </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Chatbots que Entienden Contexto:
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> El Futuro de la Atención al Cliente</span>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Chatbots que Entienden Contexto: La Nueva Era de la Atención al Cliente
             </h1>
             
-            <div className="flex items-center justify-center space-x-6 text-slate-200">
-              <span>📅 12 Enero 2025</span>
-              <span>•</span>
-              <span>⏱️ 4 min de lectura</span>
-              <span>•</span>
-              <span>🏷️ Innovación</span>
+            <div className="flex items-center space-x-6 text-gray-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium">Dra. Ana Rodríguez</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>12 de Enero, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>4 min de lectura</span>
+              </div>
             </div>
+            
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Los chatbots inteligentes están transformando la experiencia del cliente con capacidades 
+              de comprensión contextual avanzada y respuestas personalizadas.
+            </p>
+          </header>
+
+          {/* Imagen Principal */}
+          <div className="mb-12">
+            <img 
+              src="/noticia2.webp" 
+              alt="Chatbots que Entienden Contexto"
+              className="w-full h-96 object-cover rounded-lg"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Contenido de la Noticia */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <img 
-                src="/noticia2.webp" 
-                alt="Chatbots que Entienden Contexto"
-                className="w-full h-64 object-cover rounded-lg mb-8"
-              />
-            </div>
-
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Los chatbots tradicionales están siendo reemplazados por sistemas de inteligencia artificial que realmente entienden el contexto de las conversaciones, revolucionando la forma en que las empresas interactúan con sus clientes.
+          {/* Contenido del Artículo */}
+          <div className="prose prose-lg max-w-none">
+            <h2>La Evolución de los Chatbots</h2>
+            
+            <p>
+              Los chatbots han evolucionado significativamente desde sus inicios como simples 
+              sistemas de respuestas predefinidas. Hoy, gracias a los avances en inteligencia 
+              artificial y procesamiento del lenguaje natural, estos sistemas pueden mantener 
+              conversaciones complejas y contextualmente relevantes.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              La evolución de los chatbots
-            </h2>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Los primeros chatbots funcionaban con respuestas predefinidas y reglas simples, lo que resultaba en conversaciones rígidas y frustrantes para los usuarios. Hoy, gracias a los avances en procesamiento del lenguaje natural (NLP) y machine learning, los chatbots pueden mantener conversaciones fluidas y contextualmente relevantes.
+            <h3>¿Qué hace que un Chatbot sea "Inteligente"?</h3>
+            
+            <p>
+              Un chatbot inteligente se distingue por su capacidad de comprender el contexto 
+              de la conversación, recordar interacciones previas y adaptar sus respuestas 
+              según el perfil y necesidades específicas del usuario.
             </p>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Características de los chatbots inteligentes:
-            </h3>
-
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Comprensión del contexto de la conversación</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Memoria de interacciones previas</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Aprendizaje continuo de patrones de usuario</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Integración con sistemas empresariales</span>
-              </li>
+            <h3>Componentes Clave de la Inteligencia Contextual</h3>
+            
+            <ul>
+              <li><strong>Memoria de Conversación:</strong> Capacidad de recordar el contexto completo de la interacción</li>
+              <li><strong>Análisis de Sentimientos:</strong> Comprensión del estado emocional del usuario</li>
+              <li><strong>Personalización:</strong> Adaptación de respuestas según el historial del usuario</li>
+              <li><strong>Aprendizaje Continuo:</strong> Mejora constante basada en nuevas interacciones</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Aplicaciones prácticas en el negocio:
-            </h3>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Atención al Cliente 24/7</h4>
-                <p className="text-gray-600">Los chatbots inteligentes pueden manejar consultas complejas en cualquier momento del día, proporcionando respuestas inmediatas y precisas.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Ventas y Consultas</h4>
-                <p className="text-gray-600">Capacidad de recomendar productos, procesar pedidos y responder preguntas técnicas de manera natural y conversacional.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Soporte Técnico</h4>
-                <p className="text-gray-600">Diagnóstico de problemas comunes, guías paso a paso y escalación inteligente a agentes humanos cuando sea necesario.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Reservas y Agendamiento</h4>
-                <p className="text-gray-600">Gestión automática de citas, recordatorios y confirmaciones con integración a calendarios y sistemas de gestión.</p>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Beneficios para las empresas
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La implementación de chatbots inteligentes puede generar beneficios significativos para las empresas, incluyendo reducción de costos operativos, mejora en la satisfacción del cliente y aumento en la eficiencia del equipo de atención al cliente.
+            <h3>Aplicaciones Empresariales</h3>
+            
+            <h4>1. Atención al Cliente 24/7</h4>
+            <p>
+              Los chatbots inteligentes pueden manejar consultas complejas en cualquier momento 
+              del día, proporcionando respuestas inmediatas y escalando casos complejos a 
+              agentes humanos cuando sea necesario.
             </p>
 
-            <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
-              <h4 className="text-lg font-semibold text-green-900 mb-3">📊 Impacto Medible</h4>
-              <p className="text-green-800">
-                Las empresas que implementan chatbots inteligentes reportan una reducción del 30% en costos de atención al cliente y una mejora del 45% en la satisfacción del cliente, según estudios recientes del sector.
-              </p>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              El futuro de la atención al cliente
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-8">
-              Con el continuo avance de la tecnología de IA, los chatbots se volverán aún más inteligentes y capaces. La integración con sistemas de análisis de sentimientos, reconocimiento de voz y procesamiento de imágenes permitirá experiencias de usuario verdaderamente inmersivas y personalizadas.
+            <h4>2. Ventas y Marketing</h4>
+            <p>
+              Estos sistemas pueden identificar oportunidades de venta, recomendar productos 
+              relevantes y guiar a los clientes a través del proceso de compra de manera 
+              personalizada.
             </p>
 
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-200 text-center">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                ¿Quieres implementar un chatbot inteligente?
-              </h4>
-              <p className="text-gray-600 mb-6">
-                Nuestro equipo especializado puede ayudarte a desarrollar e implementar chatbots que realmente entiendan a tus clientes.
-              </p>
-              <Link 
-                href="/contacto"
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Consulta Gratuita
-              </Link>
-            </div>
-          </article>
+            <h4>3. Soporte Técnico</h4>
+            <p>
+              Los chatbots pueden diagnosticar problemas técnicos, proporcionar soluciones 
+              paso a paso y reducir significativamente el tiempo de resolución de incidencias.
+            </p>
 
-          {/* Navegación entre noticias */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
+            <h3>Beneficios para las Empresas</h3>
+            
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+              <h4 className="text-lg font-semibold text-blue-900 mb-3">📊 Impacto Medible</h4>
+              <ul className="text-blue-800 space-y-2">
+                <li>• Reducción del 70% en tiempo de respuesta al cliente</li>
+                <li>• Incremento del 45% en satisfacción del cliente</li>
+                <li>• Ahorro del 60% en costos de atención al cliente</li>
+                <li>• Disponibilidad 24/7 sin costos adicionales</li>
+              </ul>
+            </div>
+
+            <h3>Implementación Estratégica</h3>
+            
+            <p>
+              Para implementar exitosamente chatbots inteligentes, las empresas deben considerar:
+            </p>
+
+            <ol>
+              <li><strong>Definir objetivos claros:</strong> Establecer métricas específicas de éxito</li>
+              <li><strong>Diseñar la experiencia del usuario:</strong> Crear flujos de conversación intuitivos</li>
+              <li><strong>Integrar con sistemas existentes:</strong> Conectar con CRM, bases de datos y APIs</li>
+              <li><strong>Capacitar al equipo:</strong> Preparar a los empleados para la colaboración con IA</li>
+              <li><strong>Monitorear y optimizar:</strong> Analizar métricas y mejorar continuamente</li>
+            </ol>
+
+            <h3>El Futuro de los Chatbots</h3>
+            
+            <p>
+              Los chatbots del futuro serán aún más sofisticados, incorporando capacidades 
+              de procesamiento de voz, reconocimiento facial y análisis predictivo avanzado. 
+              Esto permitirá experiencias de usuario más naturales y personalizadas.
+            </p>
+
+            <h3>Consideraciones Éticas</h3>
+            
+            <p>
+              Es fundamental que las empresas implementen chatbots de manera ética, 
+              asegurando transparencia en la interacción, protección de la privacidad 
+              del usuario y la capacidad de escalar a agentes humanos cuando sea necesario.
+            </p>
+
+            <h3>Conclusión</h3>
+            
+            <p>
+              Los chatbots inteligentes representan una oportunidad significativa para 
+              transformar la atención al cliente y mejorar la eficiencia operativa. 
+              Las empresas que adopten esta tecnología hoy estarán mejor posicionadas 
+              para competir en un mercado cada vez más digital.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Chatbots</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#IA</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Atención al Cliente</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Contexto</span>
+            </div>
+          </div>
+
+          {/* Navegación */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex justify-between">
               <Link 
-                href="/noticias/ia-para-pequenas-empresas"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/automatizacion-inteligente-avanzada" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Anterior: IA para Pequeñas Empresas
+                ← Anterior: Automatización Inteligente Avanzada
               </Link>
-              
               <Link 
-                href="/noticias/automatizacion-inteligente-avanzada"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/flujos-de-trabajo-inteligentes" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                Siguiente: Automatización Inteligente Avanzada
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                Siguiente: Flujos de Trabajo Inteligentes →
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <Footer />
     </div>

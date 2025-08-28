@@ -1,250 +1,246 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export default function NoticiaFlujos() {
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsHeaderSticky(scrollPosition > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+export default function NoticiaFlujosTrabajo() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header con transparencia dinámica */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHeaderSticky 
-          ? 'bg-white border-b border-gray-200 shadow-sm' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-900' : 'text-white'
-                }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
-                }`}>Soluciones Digitales</p>
-              </div>
-            </Link>
-            
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Inicio
-              </Link>
-              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Servicios
-              </Link>
-              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-blue-600' 
-                  : 'text-white'
-              }`}>
-                Noticias
-              </Link>
-            </nav>
-            
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Contacto
-              </Link>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
+            <span>→</span>
+            <span>Productividad</span>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
-              📰 Noticia
+      {/* Artículo Principal */}
+      <article className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Header del Artículo */}
+          <header className="mb-12">
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
+                Productividad
+              </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Flujos de Trabajo Inteligentes:
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Optimización Empresarial</span>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Flujos de Trabajo Inteligentes: Optimizando Operaciones con IA
             </h1>
             
-            <div className="flex items-center justify-center space-x-6 text-slate-200">
-              <span>📅 8 Enero 2025</span>
-              <span>•</span>
-              <span>⏱️ 5 min de lectura</span>
-              <span>•</span>
-              <span>🏷️ Productividad</span>
+            <div className="flex items-center space-x-6 text-gray-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium">Ing. Miguel Torres</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>10 de Enero, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>6 min de lectura</span>
+              </div>
             </div>
+            
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Cómo implementar flujos de trabajo inteligentes que se adaptan automáticamente 
+              a las necesidades cambiantes de tu empresa.
+            </p>
+          </header>
+
+          {/* Imagen Principal */}
+          <div className="mb-12">
+            <img 
+              src="/noticia3.webp" 
+              alt="Flujos de Trabajo Inteligentes"
+              className="w-full h-96 object-cover rounded-lg"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Contenido de la Noticia */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <img 
-                src="/noticia1.webp" 
-                alt="Flujos de Trabajo Inteligentes"
-                className="w-full h-64 object-cover rounded-lg mb-8"
-              />
-            </div>
-
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Los flujos de trabajo inteligentes están redefiniendo la eficiencia operativa en las empresas, permitiendo que los equipos se enfoquen en tareas de mayor valor mientras la IA maneja la coordinación y optimización de procesos.
+          {/* Contenido del Artículo */}
+          <div className="prose prose-lg max-w-none">
+            <h2>La Revolución de los Flujos de Trabajo</h2>
+            
+            <p>
+              Los flujos de trabajo tradicionales, basados en procesos lineales y secuenciales, 
+              están siendo reemplazados por sistemas inteligentes que pueden adaptarse dinámicamente 
+              a las condiciones cambiantes del entorno empresarial.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              ¿Qué son los flujos de trabajo inteligentes?
-            </h2>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Los flujos de trabajo inteligentes son sistemas que utilizan inteligencia artificial para automatizar, optimizar y coordinar procesos empresariales complejos. Estos sistemas no solo ejecutan tareas predefinidas, sino que también aprenden de patrones, identifican ineficiencias y sugieren mejoras continuas.
+            <h3>¿Qué son los Flujos de Trabajo Inteligentes?</h3>
+            
+            <p>
+              Los flujos de trabajo inteligentes utilizan inteligencia artificial y machine learning 
+              para analizar datos en tiempo real, identificar patrones y optimizar automáticamente 
+              los procesos según las condiciones actuales del negocio.
             </p>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Características principales:
-            </h3>
-
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Automatización inteligente de procesos</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Análisis en tiempo real del rendimiento</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Adaptación automática a cambios</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Integración con múltiples sistemas</span>
-              </li>
+            <h3>Características Fundamentales</h3>
+            
+            <ul>
+              <li><strong>Adaptabilidad:</strong> Se ajustan automáticamente a cambios en la demanda o recursos</li>
+              <li><strong>Optimización en Tiempo Real:</strong> Mejoran continuamente basándose en datos actuales</li>
+              <li><strong>Predicción:</strong> Anticipan problemas antes de que ocurran</li>
+              <li><strong>Integración:</strong> Se conectan con múltiples sistemas y fuentes de datos</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Aplicaciones en diferentes departamentos:
-            </h3>
+            <h3>Aplicaciones en Diferentes Industrias</h3>
+            
+            <h4>1. Manufactura</h4>
+            <p>
+              Los flujos de trabajo inteligentes en manufactura pueden optimizar la producción 
+              en tiempo real, ajustar horarios de máquinas según la demanda y predecir 
+              necesidades de mantenimiento preventivo.
+            </p>
 
+            <h4>2. Logística y Cadena de Suministro</h4>
+            <p>
+              Estos sistemas pueden reoptimizar rutas de entrega en tiempo real, ajustar 
+              inventarios según patrones de demanda y coordinar múltiples proveedores 
+              de manera eficiente.
+            </p>
+
+            <h4>3. Servicios Financieros</h4>
+            <p>
+              En el sector financiero, los flujos de trabajo inteligentes pueden automatizar 
+              procesos de aprobación de créditos, detectar fraudes en tiempo real y 
+              optimizar la gestión de riesgos.
+            </p>
+
+            <h3>Beneficios Cuantificables</h3>
+            
+            <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
+              <h4 className="text-lg font-semibold text-green-900 mb-3">📈 Resultados Medibles</h4>
+              <ul className="text-green-800 space-y-2">
+                <li>• Incremento del 35% en la eficiencia operativa</li>
+                <li>• Reducción del 50% en tiempo de ciclo de procesos</li>
+                <li>• Ahorro del 40% en costos operativos</li>
+                <li>• Mejora del 60% en la precisión de las predicciones</li>
+              </ul>
+            </div>
+
+            <h3>Implementación Paso a Paso</h3>
+            
+            <h4>Fase 1: Análisis y Mapeo</h4>
+            <p>
+              Comienza identificando los procesos actuales, mapeando flujos de trabajo 
+              existentes y definiendo métricas clave de rendimiento (KPIs).
+            </p>
+
+            <h4>Fase 2: Diseño del Sistema</h4>
+            <p>
+              Diseña la arquitectura del flujo de trabajo inteligente, considerando 
+              la integración con sistemas existentes y la escalabilidad futura.
+            </p>
+
+            <h4>Fase 3: Desarrollo e Integración</h4>
+            <p>
+              Desarrolla e integra el sistema con las herramientas y plataformas 
+              existentes, asegurando la compatibilidad y la funcionalidad.
+            </p>
+
+            <h4>Fase 4: Pruebas y Optimización</h4>
+            <p>
+              Realiza pruebas exhaustivas, recopila feedback del usuario y optimiza 
+              el sistema basándose en los resultados obtenidos.
+            </p>
+
+            <h3>Tecnologías Clave</h3>
+            
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Marketing</h4>
-                <p className="text-gray-600">Coordinación automática de campañas, segmentación de audiencias y optimización de contenido basada en datos en tiempo real.</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Machine Learning</h4>
+                <p className="text-gray-600">Algoritmos que aprenden de patrones históricos para optimizar procesos futuros.</p>
               </div>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Ventas</h4>
-                <p className="text-gray-600">Gestión automática de leads, seguimiento de oportunidades y generación de reportes de rendimiento.</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Procesamiento de Eventos</h4>
+                <p className="text-gray-600">Sistemas que procesan eventos en tiempo real para tomar decisiones instantáneas.</p>
               </div>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Recursos Humanos</h4>
-                <p className="text-gray-600">Automatización de procesos de reclutamiento, gestión de nóminas y evaluación de desempeño.</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">APIs y Microservicios</h4>
+                <p className="text-gray-600">Arquitectura modular que permite integración flexible con sistemas existentes.</p>
               </div>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Operaciones</h4>
-                <p className="text-gray-600">Coordinación de inventarios, gestión de la cadena de suministro y optimización de procesos productivos.</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Análisis Predictivo</h4>
+                <p className="text-gray-600">Técnicas que anticipan tendencias y optimizan recursos proactivamente.</p>
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Beneficios para las empresas
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La implementación de flujos de trabajo inteligentes puede generar beneficios significativos para las empresas, incluyendo aumento de la productividad, reducción de errores y mejora en la toma de decisiones.
+            <h3>Desafíos y Soluciones</h3>
+            
+            <h4>Resistencia al Cambio</h4>
+            <p>
+              <strong>Solución:</strong> Implementar programas de capacitación y comunicación 
+              clara sobre los beneficios del nuevo sistema.
             </p>
 
-            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 mb-8">
-              <h4 className="text-lg font-semibold text-purple-900 mb-3">🚀 Resultados Empresariales</h4>
-              <p className="text-purple-800">
-                Las empresas que implementan flujos de trabajo inteligentes reportan un aumento del 35% en la productividad del equipo, una reducción del 50% en errores operativos y una mejora del 40% en la velocidad de toma de decisiones.
-              </p>
+            <h4>Integración con Sistemas Legacy</h4>
+            <p>
+              <strong>Solución:</strong> Utilizar APIs y middleware para conectar sistemas 
+              antiguos con nuevas tecnologías.
+            </p>
+
+            <h4>Calidad de los Datos</h4>
+            <p>
+              <strong>Solución:</strong> Implementar procesos de limpieza y validación 
+              de datos antes de la implementación.
+            </p>
+
+            <h3>El Futuro de los Flujos de Trabajo</h3>
+            
+            <p>
+              Los flujos de trabajo del futuro serán completamente autónomos, capaces de 
+              tomar decisiones complejas sin intervención humana y de adaptarse instantáneamente 
+              a cualquier cambio en el entorno empresarial.
+            </p>
+
+            <h3>Conclusión</h3>
+            
+            <p>
+              Los flujos de trabajo inteligentes representan el siguiente paso evolutivo 
+              en la optimización empresarial. Las organizaciones que adopten esta tecnología 
+              hoy estarán mejor preparadas para enfrentar los desafíos del futuro y mantener 
+              una ventaja competitiva sostenible.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Flujos de Trabajo</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#IA</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Productividad</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Optimización</span>
             </div>
+          </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Implementación y adopción
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La implementación exitosa de flujos de trabajo inteligentes requiere un enfoque gradual que incluya la identificación de procesos clave, la selección de tecnologías apropiadas y la capacitación del equipo en el uso de las nuevas herramientas.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              El futuro de los flujos de trabajo
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-8">
-              Con el continuo avance de la tecnología de IA, los flujos de trabajo se volverán aún más inteligentes y autónomos. Los sistemas del futuro podrán predecir necesidades, adaptarse automáticamente a cambios en el entorno empresarial y optimizar procesos en tiempo real sin intervención humana.
-            </p>
-
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-200 text-center">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                ¿Quieres optimizar tus flujos de trabajo?
-              </h4>
-              <p className="text-gray-600 mb-6">
-                Nuestro equipo puede ayudarte a identificar oportunidades de optimización e implementar flujos de trabajo inteligentes que transformen tu empresa.
-              </p>
+          {/* Navegación */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex justify-between">
               <Link 
-                href="/contacto"
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                href="/noticias/chatbots-que-entienden-contexto" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                Consulta Gratuita
+                ← Anterior: Chatbots que Entienden Contexto
               </Link>
-            </div>
-          </article>
-
-          {/* Navegación entre noticias */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
               <Link 
-                href="/noticias/automatizacion-inteligente-avanzada"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/ia-para-pequenas-empresas" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Anterior: Automatización Inteligente Avanzada
-              </Link>
-              
-              <Link 
-                href="/noticias"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-              >
-                Volver a Noticias
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                Siguiente: IA para Pequeñas Empresas →
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <Footer />
     </div>

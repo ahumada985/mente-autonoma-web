@@ -1,242 +1,252 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export default function NoticiaIA() {
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsHeaderSticky(scrollPosition > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+export default function NoticiaIAPYMES() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header con transparencia dinámica */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHeaderSticky 
-          ? 'bg-white border-b border-gray-200 shadow-sm' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-900' : 'text-white'
-                }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
-                }`}>Soluciones Digitales</p>
-              </div>
-            </Link>
-            
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Inicio
-              </Link>
-              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-gray-700 hover:text-blue-600' 
-                  : 'text-white/90 hover:text-white'
-              }`}>
-                Servicios
-              </Link>
-              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-blue-600' 
-                  : 'text-white'
-              }`}>
-                Noticias
-              </Link>
-            </nav>
-            
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Contacto
-              </Link>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
+            <span>→</span>
+            <span>Transformación Digital</span>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
-              📰 Noticia
+      {/* Artículo Principal */}
+      <article className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Header del Artículo */}
+          <header className="mb-12">
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">
+                Transformación Digital
+              </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              IA para Pequeñas Empresas:
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Transformación Accesible</span>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              IA para Pequeñas Empresas: Democratizando la Tecnología Avanzada
             </h1>
             
-            <div className="flex items-center justify-center space-x-6 text-slate-200">
-              <span>📅 15 Enero 2025</span>
-              <span>•</span>
-              <span>⏱️ 5 min de lectura</span>
-              <span>•</span>
-              <span>🏷️ Tecnología</span>
+            <div className="flex items-center space-x-6 text-gray-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium">Lic. Patricia Vargas</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>8 de Enero, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>4 min de lectura</span>
+              </div>
             </div>
+            
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Soluciones accesibles de inteligencia artificial que permiten a las pequeñas 
+              empresas competir con corporaciones más grandes.
+            </p>
+          </header>
+
+          {/* Imagen Principal */}
+          <div className="mb-12">
+            <img 
+              src="/noticia1.webp" 
+              alt="IA para Pequeñas Empresas"
+              className="w-full h-96 object-cover rounded-lg"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Contenido de la Noticia */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <img 
-                src="/noticia1.webp" 
-                alt="IA para Pequeñas Empresas"
-                className="w-full h-64 object-cover rounded-lg mb-8"
-              />
+          {/* Contenido del Artículo */}
+          <div className="prose prose-lg max-w-none">
+            <h2>La Democratización de la Inteligencia Artificial</h2>
+            
+            <p>
+              Durante mucho tiempo, la inteligencia artificial fue considerada una tecnología 
+              exclusiva para grandes corporaciones con presupuestos multimillonarios. Sin embargo, 
+              la revolución en la nube y el desarrollo de soluciones SaaS han democratizado 
+              el acceso a estas tecnologías avanzadas.
+            </p>
+
+            <h3>¿Por qué las PYMES necesitan IA?</h3>
+            
+            <p>
+              En un mercado cada vez más competitivo, las pequeñas empresas deben encontrar 
+              formas de hacer más con menos recursos. La IA ofrece la oportunidad de 
+              automatizar procesos, mejorar la toma de decisiones y personalizar la 
+              experiencia del cliente sin los costos tradicionales de implementación.
+            </p>
+
+            <h3>Soluciones Accesibles de IA</h3>
+            
+            <h4>1. Herramientas de Marketing Digital</h4>
+            <p>
+              Plataformas que utilizan IA para segmentar audiencias, optimizar campañas 
+              publicitarias y personalizar contenido según el comportamiento del usuario. 
+              Estas herramientas están disponibles a precios accesibles para PYMES.
+            </p>
+
+            <h4>2. Chatbots y Atención al Cliente</h4>
+            <p>
+              Soluciones de chatbot que pueden manejar consultas básicas, programar 
+              citas y escalar casos complejos a agentes humanos. Muchas de estas 
+              plataformas ofrecen planes gratuitos o de bajo costo.
+            </p>
+
+            <h4>3. Análisis de Datos y Reportes</h4>
+            <p>
+              Herramientas que convierten datos complejos en insights accionables, 
+              permitiendo a las PYMES tomar decisiones basadas en evidencia sin 
+              necesidad de contratar analistas de datos.
+            </p>
+
+            <h4>4. Automatización de Procesos</h4>
+            <p>
+              Plataformas que automatizan tareas repetitivas como facturación, 
+              gestión de inventarios y seguimiento de leads, liberando tiempo 
+              para actividades estratégicas.
+            </p>
+
+            <h3>Casos de Éxito en PYMES</h3>
+            
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 mb-8">
+              <h4 className="text-lg font-semibold text-purple-900 mb-3">💡 Ejemplos Reales</h4>
+              <div className="space-y-4 text-purple-800">
+                <div>
+                  <strong>Restaurante Local:</strong> Implementó un sistema de IA para 
+                  predecir la demanda y optimizar inventarios, reduciendo desperdicios en un 30%.
+                </div>
+                <div>
+                  <strong>Tienda de Ropa:</strong> Utilizó chatbots para atención al cliente 
+                  24/7, aumentando las ventas en un 25% durante horarios no laborables.
+                </div>
+                <div>
+                  <strong>Consultoría:</strong> Automatizó la generación de reportes con IA, 
+                  ahorrando 15 horas semanales en tareas administrativas.
+                </div>
+              </div>
             </div>
 
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              La inteligencia artificial ya no es exclusiva de las grandes corporaciones. Las pequeñas empresas están descubriendo que la IA puede ser una herramienta poderosa y accesible para transformar sus operaciones y competir en el mercado actual.
+            <h3>Implementación Gradual y Estratégica</h3>
+            
+            <p>
+              Para las PYMES, la implementación de IA debe ser gradual y estratégica. 
+              Es recomendable comenzar con una sola área del negocio y expandir 
+              progresivamente según los resultados obtenidos.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              ¿Por qué las PYMES deben considerar la IA?
-            </h2>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              En un entorno empresarial cada vez más competitivo, las pequeñas empresas necesitan encontrar formas innovadoras de optimizar sus procesos, mejorar la atención al cliente y tomar decisiones más informadas. La inteligencia artificial ofrece soluciones prácticas que pueden implementarse gradualmente, sin requerir inversiones masivas.
+            <h4>Paso 1: Identificar Oportunidades</h4>
+            <p>
+              Analiza tu negocio para identificar procesos que podrían beneficiarse 
+              de la automatización o el análisis inteligente de datos.
             </p>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Beneficios clave para PYMES:
-            </h3>
+            <h4>Paso 2: Investigar Soluciones</h4>
+            <p>
+              Explora las opciones disponibles en el mercado, comparando precios, 
+              funcionalidades y facilidad de uso.
+            </p>
 
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Reducción de costos operativos del 20-30%</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Mejora en la satisfacción del cliente del 40%</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Aumento de la productividad del equipo del 25%</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <span className="text-gray-700">Mejor toma de decisiones basada en datos</span>
-              </li>
+            <h4>Paso 3: Implementar Pilotos</h4>
+            <p>
+              Comienza con implementaciones pequeñas para probar la efectividad 
+              antes de expandir a toda la organización.
+            </p>
+
+            <h4>Paso 4: Medir y Optimizar</h4>
+            <p>
+              Establece métricas claras para medir el impacto de la IA en tu negocio 
+              y optimiza continuamente los procesos.
+            </p>
+
+            <h3>Consideraciones de Costo y ROI</h3>
+            
+            <p>
+              Aunque las soluciones de IA para PYMES son más accesibles que nunca, 
+              es importante considerar el retorno de inversión (ROI) antes de implementar.
+            </p>
+
+            <ul>
+              <li><strong>Costos Directos:</strong> Suscripciones mensuales, implementación inicial</li>
+              <li><strong>Costos Indirectos:</strong> Tiempo de capacitación, cambios en procesos</li>
+              <li><strong>Beneficios Esperados:</strong> Ahorro de tiempo, aumento de ventas, mejora en eficiencia</li>
+              <li><strong>Período de Recuperación:</strong> Tiempo estimado para recuperar la inversión</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Soluciones IA accesibles para PYMES:
-            </h3>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Chatbots Inteligentes</h4>
-                <p className="text-gray-600">Atención al cliente 24/7 con respuestas automáticas inteligentes que pueden manejar consultas frecuentes y dirigir casos complejos a agentes humanos.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Análisis de Datos</h4>
-                <p className="text-gray-600">Herramientas que analizan patrones en el comportamiento del cliente, ventas y operaciones para identificar oportunidades de mejora.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Automatización de Marketing</h4>
-                <p className="text-gray-600">Campañas de email marketing personalizadas, segmentación automática de audiencias y optimización de contenido basada en IA.</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Gestión de Inventario</h4>
-                <p className="text-gray-600">Predicción de demanda, optimización de stock y alertas automáticas para reabastecimiento basadas en patrones históricos.</p>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Implementación gradual y efectiva
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              La clave del éxito en la implementación de IA para PYMES es comenzar con proyectos pequeños y escalables. Es recomendable identificar un proceso específico que sea repetitivo y consuma mucho tiempo, y luego implementar una solución de IA para automatizarlo.
+            <h3>Desafíos Comunes y Soluciones</h3>
+            
+            <h4>Falta de Experiencia Técnica</h4>
+            <p>
+              <strong>Solución:</strong> Busca proveedores que ofrezcan soporte técnico 
+              y capacitación para tu equipo.
             </p>
 
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
-              <h4 className="text-lg font-semibold text-blue-900 mb-3">💡 Consejo para PYMES</h4>
-              <p className="text-blue-800">
-                Comienza con un chatbot simple para atención al cliente. Es una inversión relativamente baja que puede generar resultados inmediatos y visibles, ayudando a construir confianza en la tecnología antes de implementar soluciones más complejas.
-              </p>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              El futuro es accesible
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-8">
-              La democratización de la IA significa que las herramientas que antes solo estaban disponibles para grandes empresas ahora son accesibles para todos. Las PYMES que adopten estas tecnologías temprano tendrán una ventaja competitiva significativa en sus respectivos mercados.
+            <h4>Resistencia al Cambio</h4>
+            <p>
+              <strong>Solución:</strong> Comunica claramente los beneficios y involucra 
+              a tu equipo en el proceso de implementación.
             </p>
 
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-200 text-center">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                ¿Listo para transformar tu empresa con IA?
-              </h4>
-              <p className="text-gray-600 mb-6">
-                Nuestro equipo está aquí para ayudarte a identificar las mejores oportunidades de implementación de IA para tu negocio específico.
-              </p>
-              <Link 
-                href="/contacto"
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Consulta Gratuita
-              </Link>
-            </div>
-          </article>
+            <h4>Integración con Sistemas Existentes</h4>
+            <p>
+              <strong>Solución:</strong> Elige soluciones que se integren fácilmente 
+              con las herramientas que ya utilizas.
+            </p>
 
-          {/* Navegación entre noticias */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
+            <h3>El Futuro de la IA en PYMES</h3>
+            
+            <p>
+              A medida que la tecnología de IA continúa evolucionando, veremos soluciones 
+              cada vez más accesibles y específicas para las necesidades de las pequeñas 
+              empresas. La democratización de la IA no solo nivelará el campo de juego, 
+              sino que también creará nuevas oportunidades para que las PYMES compitan 
+              efectivamente en el mercado global.
+            </p>
+
+            <h3>Conclusión</h3>
+            
+            <p>
+              La inteligencia artificial ya no es un lujo reservado para grandes corporaciones. 
+              Las PYMES que adopten estas tecnologías hoy estarán mejor posicionadas para 
+              crecer, competir y prosperar en un mercado cada vez más digital. La clave 
+              está en comenzar pequeño, aprender continuamente y expandir estratégicamente.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#IA</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#PYMES</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Transformación Digital</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Competitividad</span>
+            </div>
+          </div>
+
+          {/* Navegación */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex justify-between">
               <Link 
-                href="/noticias"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/flujos-de-trabajo-inteligentes" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Volver a Noticias
+                ← Anterior: Flujos de Trabajo Inteligentes
               </Link>
-              
               <Link 
-                href="/noticias/chatbots-que-entienden-contexto"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                href="/noticias/noticia1" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                Siguiente: Chatbots que Entienden Contexto
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                Siguiente: Machine Learning en Análisis de Datos →
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <Footer />
     </div>
