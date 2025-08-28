@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import ContactModal from './ContactModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <header className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white sticky top-0 z-50 shadow-lg">
@@ -41,12 +43,12 @@ export default function Header() {
           
           {/* Botón CTA - DERECHA */}
           <div className="flex items-center space-x-4">
-            <Link 
-              href="/#contacto" 
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
               className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
             >
-              Ver Demo
-            </Link>
+              Contacto
+            </button>
           </div>
 
           {/* Menú Móvil */}
@@ -95,6 +97,13 @@ export default function Header() {
           </div>
         )}
       </div>
+      
+      {/* Modal de Contacto */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        contactType="general"
+      />
     </header>
   );
 }

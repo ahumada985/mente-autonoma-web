@@ -983,7 +983,7 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-200 hover:border-purple-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
-                  <span className="text-6xl">🤖</span>
+                  <img src="/noticia1.webp" alt="Automatización Inteligente" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
@@ -1012,11 +1012,11 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-200 hover:border-pink-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center">
-                  <span className="text-6xl">⚡</span>
+                  <img src="/noticia2.webp" alt="Chatbots Inteligentes" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Automatización
+                    Chatbots
                   </span>
                 </div>
               </div>
@@ -1026,12 +1026,12 @@ export default function Indigo() {
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  Automatización: El Futuro de la Eficiencia Empresarial
+                  Chatbots que Entienden Contexto: La Nueva Era de la Atención al Cliente
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Incremento del 40% en productividad y reducción del 60% en errores operativos.
+                  Descubre cómo los chatbots inteligentes están revolucionando la atención al cliente con comprensión contextual avanzada.
                 </p>
-                <Link href="/noticias/2" className="block w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                <Link href="/noticias/chatbots-que-entienden-contexto" className="block w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Leer Más →
                 </Link>
               </div>
@@ -1041,11 +1041,11 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-200 hover:border-blue-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-purple-500 flex items-center justify-center">
-                  <span className="text-6xl">📊</span>
+                  <img src="/noticia3.webp" alt="Flujos de Trabajo Inteligentes" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-pink-600 to-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Marketing
+                    Flujos de Trabajo
                   </span>
                 </div>
               </div>
@@ -1055,12 +1055,12 @@ export default function Indigo() {
                   <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
-                  Marketing Digital Inteligente: Datos y IA
+                  Flujos de Trabajo Inteligentes: Optimizando Operaciones con IA
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Optimiza campañas de marketing con análisis predictivo y personalización en tiempo real.
+                  Transforma tus procesos empresariales con flujos de trabajo inteligentes que se adaptan y optimizan automáticamente.
                 </p>
-                <Link href="/noticias/3" className="block w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                <Link href="/noticias/flujos-de-trabajo-inteligentes" className="block w-full bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 hover:from-pink-700 hover:via-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Leer Más →
                 </Link>
               </div>
