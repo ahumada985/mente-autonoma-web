@@ -997,12 +997,12 @@ export default function Indigo() {
                   <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  IA en Retail: Transformando la Experiencia del Cliente
+                  Automatización inteligente avanzada: el futuro de la eficiencia empresarial
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Chatbots inteligentes y sistemas de recomendación que aumentan las ventas en un 35%.
+                  Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, aumentando la...
                 </p>
-                <Link href="/noticias/1" className="block w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                <Link href="noticias/automatizacion-inteligente-avanzada" className="block w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Leer Más →
                 </Link>
               </div>

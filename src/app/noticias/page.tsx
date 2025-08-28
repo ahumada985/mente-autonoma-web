@@ -37,39 +37,6 @@ export default function Noticias() {
       autor: "Ing. Miguel Torres",
       tiempoLectura: "6 min",
       tags: ["Flujos de Trabajo", "IA", "Productividad", "Optimización"]
-    },
-    {
-      id: 'ia-para-pequenas-empresas',
-      titulo: "IA para Pequeñas Empresas: Democratizando la Tecnología Avanzada",
-      fecha: "8 de Enero, 2025",
-      categoria: "Transformación Digital",
-      resumen: "Soluciones accesibles de inteligencia artificial que permiten a las pequeñas empresas competir con corporaciones más grandes.",
-      imagen: "/noticia1.webp",
-      autor: "Lic. Patricia Vargas",
-      tiempoLectura: "4 min",
-      tags: ["IA", "PYMES", "Transformación Digital", "Competitividad"]
-    },
-    {
-      id: 'noticia1',
-      titulo: "Machine Learning en el Análisis de Datos: Revelando Insights Ocultos",
-      fecha: "5 de Enero, 2025",
-      categoria: "Machine Learning",
-      resumen: "Técnicas avanzadas de machine learning que están transformando la forma en que las empresas analizan y utilizan sus datos.",
-      imagen: "/noticia2.webp",
-      autor: "Dr. Roberto Silva",
-      tiempoLectura: "7 min",
-      tags: ["Machine Learning", "Análisis de Datos", "IA", "Insights"]
-    },
-    {
-      id: 'noticia2',
-      titulo: "Inteligencia Artificial Generativa: Creando Contenido del Futuro",
-      fecha: "3 de Enero, 2025",
-      categoria: "IA Generativa",
-      resumen: "Explorando las capacidades revolucionarias de la IA generativa en la creación de contenido, diseño y desarrollo de productos.",
-      imagen: "/noticia3.webp",
-      autor: "Dra. Carmen Morales",
-      tiempoLectura: "6 min",
-      tags: ["IA Generativa", "Contenido", "Diseño", "Innovación"]
     }
   ];
 
@@ -81,9 +48,7 @@ export default function Noticias() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-lg font-bold">AI</span>
-              </div>
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
                 <p className="text-sm text-gray-600">Soluciones Digitales</p>
