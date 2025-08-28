@@ -1,6 +1,7 @@
 'use client'
 
 import LeadCaptureForm from '@/components/LeadCaptureForm'
+import Footer from '@/components/Footer';
 import Link from 'next/link'
 import SupabaseTest from '@/components/SupabaseTest'
 
@@ -22,7 +23,7 @@ export default function Home() {
               <a href="#servicios" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Servicios
               </a>
-              <a href="#noticias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <a href="/noticias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Noticias
               </a>
               <a href="#tecnologias" className="nav-link text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
@@ -1712,113 +1713,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer - Con logo sin fondo */}
-      <footer className="relative bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white py-20 overflow-hidden">
-        {/* Efectos de fondo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-purple-500/10 to-blue-500/10"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Logo y descripción - SOLO IMAGEN SIN FONDO */}
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <img src="/logo_final.png" alt="Mente Autónoma" className="w-14 h-14 object-contain" />
-                <h3 className="text-3xl font-black bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
-                  Mente Autónoma
-                </h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Transformando empresas con inteligencia artificial de vanguardia. 
-                Hacemos que la IA sea accesible para todos los negocios.
-              </p>
-            </div>
-
-                                       {/* Servicios - LOS 9 COMPLETOS EN 2 COLUMNAS */}
-              <div className="space-y-6">
-                <h4 className="text-xl font-bold text-white">Nuestros Servicios</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {/* Columna 1 */}
-                  <div className="space-y-3">
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full group-hover:bg-orange-300"></div>
-                      <span className="text-sm">1. Chatbot</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-300"></div>
-                      <span className="text-sm">2. Diseño Web</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-green-400 rounded-full group-hover:bg-green-300"></div>
-                      <span className="text-sm">3. Automatización</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-purple-300"></div>
-                      <span className="text-sm">4. Marketing Digital</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full group-hover:bg-indigo-300"></div>
-                      <span className="text-sm">5. Secretario IA</span>
-                    </a>
-                  </div>
-                  
-                  {/* Columna 2 */}
-                  <div className="space-y-3">
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-pink-400 rounded-full group-hover:bg-pink-300"></div>
-                      <span className="text-sm">6. Contenido RRSS</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full group-hover:bg-yellow-300"></div>
-                      <span className="text-sm">7. Módulo</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:bg-teal-300"></div>
-                      <span className="text-sm">8. SEO</span>
-                    </a>
-                    <a href="#" className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-300"></div>
-                      <span className="text-sm">9. SAAS/BAAS</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-            {/* Newsletter */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-bold text-white">Newsletter</h4>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Recibe las últimas noticias sobre IA y estrategias para tu negocio
-              </p>
-              <LeadCaptureForm 
-                title=""
-                subtitle=""
-                buttonText="🚀 Suscribirse Ahora"
-                showNewsletter={true}
-                showPDF={false}
-                useOriginalStyle={false}
-                compact={true}
-              />
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-white/20 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-gray-300 text-center md:text-left">
-                © 2025 Mente Autónoma. Todos los derechos reservados. 
-                <span className="text-emerald-400"> Construido con ❤️ y profesionalismo.</span>
-              </p>
-              <div className="flex space-x-6 text-sm">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacidad</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Términos</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookies</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+         {/* Footer Estándar */}
+            <Footer />
 
              {/* Estilos del carrusel manejados por CSS global */}
        
@@ -1843,8 +1739,7 @@ export default function Home() {
          `
        }} />
 
-       {/* Componente de prueba de Supabase */}
-       <SupabaseTest />
+      
     </div>
   )
 }
