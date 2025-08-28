@@ -99,3 +99,37 @@ export const saveNewsletterSubscription = async (email) => {
     return { success: false, error: error.message };
   }
 };
+
+// Función para guardar contactos
+export async function saveContact(name, email, company, message, contactType = 'general') {
+  try {
+    // Verificar que Supabase esté configurado
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase no está configurado correctamente');
+    }
+
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert([
+        {
+          name,
+          email,
+          company,
+          message,
+          contact_type: contactType,
+          source: 'contact_form',
+          created_at: new Date().toISOString()
+        }
+      ]);
+
+    if (error) {
+      console.error('Error saving contact:', error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true, data };
+  } catch (error) {
+    console.error('Error saving contact:', error);
+    return { success: false, error: error.message };
+  }
+}
