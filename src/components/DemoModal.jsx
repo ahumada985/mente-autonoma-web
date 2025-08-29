@@ -257,115 +257,140 @@ export default function DemoModal({ isOpen, onClose }) {
      },
          {
        id: 2,
-       title: '🌟 IA Creativa & Diseño',
-       subtitle: 'Generación de Contenido Inteligente',
-       description: 'Descubre cómo nuestra IA crea diseños únicos, contenido personalizado y experiencias visuales impactantes.',
+       title: '📱 Generador de Contenido RRSS',
+       subtitle: 'Sistema Funcional en Vivo',
+       description: 'Experimenta cómo funciona nuestro generador de contenido cuando un cliente lo compra y comienza a usarlo.',
        content: (
-         <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-100 rounded-xl p-6 h-80 overflow-hidden">
-           {/* Header con tema creativo */}
+         <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-100 rounded-xl p-6 h-80 overflow-hidden">
+           {/* Header del sistema */}
            <div className="flex items-center justify-between mb-4">
              <div>
-               <h3 className="text-lg font-bold text-gray-800">🎨 IA Creativa Studio</h3>
-               <p className="text-xs text-gray-600">Generando contenido único • Última creación: Hace 3 min</p>
+               <h3 className="text-lg font-bold text-gray-800">🚀 Sistema RRSS Activo</h3>
+               <p className="text-xs text-gray-600">Cliente: Empresa Tech • Plan: Premium • Estado: Activo</p>
              </div>
              <div className="flex items-center space-x-2">
-               <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-               <span className="text-sm font-semibold text-orange-600">CREANDO</span>
+               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+               <span className="text-sm font-semibold text-green-600">FUNCIONANDO</span>
              </div>
            </div>
            
-           {/* Galería de diseños generados por IA */}
+           {/* Panel de control del cliente */}
            <div className="grid grid-cols-2 gap-3 mb-4">
              <motion.div 
-               className="bg-white rounded-xl p-3 text-center relative overflow-hidden group cursor-pointer"
-               whileHover={{ scale: 1.05, rotateY: 5 }}
+               className="bg-white rounded-xl p-3 text-center relative overflow-hidden group cursor-pointer border-2 border-green-200"
+               whileHover={{ scale: 1.05 }}
                transition={{ type: "spring", stiffness: 300 }}
              >
-               <div className="w-full h-20 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg mb-2 flex items-center justify-center">
-                 <span className="text-white text-2xl">🎭</span>
+               <div className="w-full h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-lg mb-2 flex items-center justify-center">
+                 <span className="text-white text-xl">📊</span>
                </div>
-               <div className="text-sm font-semibold text-gray-800">Logo Corporativo</div>
-               <div className="text-xs text-gray-600">Estilo: Moderno</div>
-               <div className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+               <div className="text-sm font-semibold text-gray-800">Posts Generados</div>
+               <div className="text-xs text-green-600 font-bold">47 posts</div>
+               <div className="text-xs text-gray-500">Este mes</div>
              </motion.div>
              
              <motion.div 
-               className="bg-white rounded-xl p-3 text-center relative overflow-hidden group cursor-pointer"
-               whileHover={{ scale: 1.05, rotateY: -5 }}
+               className="bg-white rounded-xl p-3 text-center relative overflow-hidden group cursor-pointer border-2 border-blue-200"
+               whileHover={{ scale: 1.05 }}
                transition={{ type: "spring", stiffness: 300 }}
              >
-               <div className="w-full h-20 bg-gradient-to-br from-pink-400 to-red-600 rounded-lg mb-2 flex items-center justify-center">
-                 <span className="text-white text-2xl">📱</span>
+               <div className="w-full h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-lg mb-2 flex items-center justify-center">
+                 <span className="text-white text-xl">🎯</span>
                </div>
-               <div className="text-sm font-semibold text-gray-800">App Interface</div>
-               <div className="text-xs text-gray-600">Estilo: Minimalista</div>
-               <div className="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+               <div className="text-sm font-semibold text-gray-800">Engagement Total</div>
+               <div className="text-xs text-blue-600 font-bold">+89K</div>
+               <div className="text-xs text-gray-500">+156% vs mes anterior</div>
              </motion.div>
            </div>
            
-           {/* Proceso creativo en tiempo real */}
-           <div className="bg-white rounded-xl p-4 mb-4">
+           {/* Generador de contenido en acción */}
+           <div className="bg-white rounded-xl p-4 mb-4 border border-gray-200">
              <div className="flex items-center justify-between mb-3">
-               <h4 className="font-semibold text-gray-800">🎯 Proceso Creativo en Vivo</h4>
-               <div className="text-xs text-gray-500">Generando: Campaña de Marketing</div>
+               <h4 className="font-semibold text-gray-800">⚡ Generando Post en Vivo</h4>
+               <div className="text-xs text-gray-500">Tema: "Inteligencia Artificial en 2025"</div>
              </div>
              
-             {/* Pasos del proceso creativo */}
-             <div className="space-y-3">
+             {/* Proceso de generación paso a paso */}
+             <div className="space-y-2">
                <motion.div 
-                 className="flex items-center space-x-3"
+                 className="flex items-center space-x-3 p-2 bg-green-50 rounded-lg"
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
-                 transition={{ delay: 0.2 }}
+                 transition={{ delay: 0.1 }}
                >
-                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                   <span className="text-white text-xs">✓</span>
+                 <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                   <span className="text-white text-xs">1</span>
                  </div>
-                 <span className="text-sm text-gray-700">Análisis de audiencia objetivo</span>
+                 <span className="text-sm text-gray-700">IA analiza tendencias del sector</span>
                </motion.div>
                
                <motion.div 
-                 className="flex items-center space-x-3"
+                 className="flex items-center space-x-3 p-2 bg-blue-50 rounded-lg"
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
-                 transition={{ delay: 0.4 }}
+                 transition={{ delay: 0.3 }}
                >
-                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                   <span className="text-white text-xs">✓</span>
+                 <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                   <span className="text-white text-xs">2</span>
                  </div>
-                 <span className="text-sm text-gray-700">Generación de conceptos visuales</span>
+                 <span className="text-sm text-gray-700">Genera copy optimizado para RRSS</span>
                </motion.div>
                
                <motion.div 
-                 className="flex items-center space-x-3"
+                 className="flex items-center space-x-3 p-2 bg-purple-50 rounded-lg"
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
-                 transition={{ delay: 0.6 }}
+                 transition={{ delay: 0.5 }}
                >
-                 <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
-                   <span className="text-white text-xs">⚡</span>
+                 <div className="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center">
+                   <span className="text-white text-xs">3</span>
                  </div>
-                 <span className="text-sm text-gray-700">Refinamiento de diseño</span>
+                 <span className="text-sm text-gray-700">Crea hashtags relevantes</span>
                </motion.div>
                
                <motion.div 
-                 className="flex items-center space-x-3"
+                 className="flex items-center space-x-3 p-2 bg-yellow-50 rounded-lg"
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
-                 transition={{ delay: 0.8 }}
+                 transition={{ delay: 0.7 }}
                >
-                 <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
-                   <span className="text-gray-500 text-xs">⏳</span>
+                 <div className="w-5 h-5 bg-yellow-500 rounded-full flex items-center justify-center">
+                   <span className="text-white text-xs">4</span>
                  </div>
-                 <span className="text-sm text-gray-500">Exportación final</span>
+                 <span className="text-sm text-gray-700">Programa publicación automática</span>
                </motion.div>
              </div>
            </div>
            
-           {/* Estadísticas creativas */}
-           <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg p-3 text-center">
-             <div className="text-sm font-medium">🎨 IA Generando Creatividad</div>
-             <div className="text-xs opacity-90">+47 diseños únicos • +89% satisfacción cliente</div>
+           {/* Resultados del cliente */}
+           <div className="space-y-2">
+             <motion.div 
+               className="bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-lg p-3 flex items-center space-x-3"
+               initial={{ x: -20, opacity: 0 }}
+               animate={{ x: 0, opacity: 1 }}
+               transition={{ delay: 0.5 }}
+             >
+               <div className="text-xl">💰</div>
+               <div className="flex-1">
+                 <div className="text-sm font-semibold">ROI del Cliente: +234%</div>
+                 <div className="text-xs opacity-90">Inversión: $299/mes • Retorno: $1,000+ en leads</div>
+               </div>
+               <div className="text-xs bg-white/20 px-2 py-1 rounded">+234%</div>
+             </motion.div>
+             
+             <motion.div 
+               className="bg-gradient-to-br from-emerald-400 to-teal-500 text-white rounded-lg p-3 flex items-center space-x-3"
+               initial={{ x: -20, opacity: 0 }}
+               animate={{ x: 0, opacity: 1 }}
+               transition={{ delay: 0.7 }}
+             >
+               <div className="text-xl">📈</div>
+               <div className="flex-1">
+                 <div className="text-sm font-semibold">Crecimiento Orgánico</div>
+                 <div className="text-xs opacity-90">Seguidores: 2.4K → 8.7K • Alcance: +367%</div>
+               </div>
+               <div className="text-xs bg-white/20 px-2 py-1 rounded">+367%</div>
+             </motion.div>
            </div>
          </div>
        )

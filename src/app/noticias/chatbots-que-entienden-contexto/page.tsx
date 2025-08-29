@@ -120,7 +120,7 @@ export default function NoticiaChatbots() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">¿Qué hace que un Chatbot sea "Inteligente"?</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">¿Qué hace que un Chatbot sea &quot;Inteligente&quot;?</h3>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Un chatbot inteligente se distingue por su capacidad de comprender el contexto 

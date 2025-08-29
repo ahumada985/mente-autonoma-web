@@ -184,13 +184,13 @@ export default function Indigo() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button 
                 onClick={() => setIsDemoModalOpen(true)}
-                className="group relative overflow-hidden bg-white text-purple-600 text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white"
+                className="group relative overflow-hidden bg-white text-purple-600 text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
                   <div className="w-0 h-0 border-l-[10px] border-l-purple-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent group-hover:border-l-white transition-all duration-300"></div>
                 </div>
-                <span className="relative z-10">Ver Demo en Vivo</span>
+                <span className="relative z-10 text-purple-600">Ver Demo en Vivo</span>
                 <div className="relative z-10 w-2 h-2 bg-purple-600 rounded-full animate-pulse group-hover:bg-white transition-colors duration-300"></div>
                 
                 {/* Efecto de brillo */}
