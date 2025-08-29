@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import SEO from '@/components/SEO'
 
 export default function Indigo() {
   const [formData, setFormData] = useState({
@@ -86,7 +87,14 @@ export default function Indigo() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO 
+        title="Soluciones Digitales con Inteligencia Artificial"
+        description="Transformamos tu empresa con IA avanzada. Desarrollo web, chatbots inteligentes y automatización que generan resultados reales. Consultoría gratuita."
+        keywords="inteligencia artificial, desarrollo web, chatbots, automatización, IA, tecnología, Chile, Santiago, transformación digital"
+        ogImage="https://res.cloudinary.com/dysvptyfc/image/upload/v1756465870/logos/hp0ci35hkx5ld1azubdv.png"
+      />
+      <div className="min-h-screen bg-white">
       {/* Header con transparencia dinámica */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHeaderSticky 
@@ -1984,7 +1992,8 @@ export default function Indigo() {
         .animate-tilt {
           animation: tilt 10s infinite linear;
         }
-      `}</style>
-    </div>
+      `}      </style>
+      </div>
+    </>
   )
 }

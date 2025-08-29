@@ -31,20 +31,20 @@ export default function NoticiaFlujosTrabajo() {
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
-                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-white/80'}`}>Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-gray-900'}`}>Mente Autónoma</h1>
+                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-600'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Noticias
               </Link>
-              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Servicios
               </Link>
             </nav>

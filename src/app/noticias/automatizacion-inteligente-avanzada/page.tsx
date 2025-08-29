@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import SEO from '@/components/SEO';
 
 export default function NoticiaAutomatizacion() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
@@ -18,7 +19,40 @@ export default function NoticiaAutomatizacion() {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Automatización Inteligente Avanzada: El Futuro de la Eficiencia Empresarial"
+        description="Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, aumentando la productividad en un 40% y reduciendo errores operativos en un 60%."
+        keywords="automatización inteligente, IA empresarial, RPA, machine learning, eficiencia operativa, transformación digital, Chile"
+        ogImage="https://res.cloudinary.com/dysvptyfc/image/upload/v1756465872/noticias/p9k8uj758xmdyik4tnhj.webp"
+        ogType="article"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Automatización Inteligente Avanzada: El Futuro de la Eficiencia Empresarial",
+          "description": "Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, aumentando la productividad en un 40% y reduciendo errores operativos en un 60%.",
+          "image": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465872/noticias/p9k8uj758xmdyik4tnhj.webp",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Carlos Méndez"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Mente Autónoma",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465870/logos/hp0ci35hkx5ld1azubdv.png"
+            }
+          },
+          "datePublished": "2025-01-15",
+          "dateModified": "2025-01-15",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://menteautonoma.cl/noticias/automatizacion-inteligente-avanzada"
+          }
+        }}
+      />
+      <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHeaderSticky 
@@ -31,20 +65,20 @@ export default function NoticiaAutomatizacion() {
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
-                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-white/80'}`}>Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-gray-900'}`}>Mente Autónoma</h1>
+                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-600'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Noticias
               </Link>
-              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Servicios
               </Link>
             </nav>
@@ -239,7 +273,8 @@ export default function NoticiaAutomatizacion() {
       </article>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 
