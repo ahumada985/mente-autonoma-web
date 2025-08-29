@@ -71,10 +71,10 @@ export default function Noticias() {
             {/* CTA Button */}
             <div className="flex items-center space-x-4">
               <Link 
-                href="/#contacto" 
+                href="/contacto" 
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
               >
-                Ver Demo
+                Contacto
               </Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Noticias() {
       </header>
       
       {/* Header de la Página */}
-      <section className="bg-white border-b border-gray-200">
+      <section className="bg-white">
         <div className="max-w-4xl mx-auto px-6 py-16">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">

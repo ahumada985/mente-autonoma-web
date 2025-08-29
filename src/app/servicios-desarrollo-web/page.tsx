@@ -5,11 +5,13 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import QuoteForm from '@/components/QuoteForm';
+import ContactModal from '@/components/ContactModal';
 import Image from 'next/image';
 
 export default function ServiciosDesarrolloWeb() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const plans = {
     wordpress: [
@@ -539,7 +541,10 @@ export default function ServiciosDesarrolloWeb() {
             de tener una presencia digital profesional que impulse tu negocio al siguiente nivel.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-200">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-200"
+            >
               📞 Hablar con un Experto
             </button>
             <button 
@@ -559,6 +564,13 @@ export default function ServiciosDesarrolloWeb() {
 
       {/* Footer Estándar */}
       <Footer />
+
+      {/* Modal de Contacto */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        contactType="servicios"
+      />
 
       {/* Modal de Plan Seleccionado */}
       {selectedPlan && (

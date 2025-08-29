@@ -35,10 +35,10 @@ export default function NoticiaChatbots() {
             {/* CTA Button */}
             <div className="flex items-center space-x-4">
               <Link 
-                href="/#contacto" 
+                href="/contacto" 
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
               >
-                Ver Demo
+                Contacto
               </Link>
             </div>
           </div>
@@ -99,32 +99,50 @@ export default function NoticiaChatbots() {
           </div>
 
           {/* Contenido del Artículo */}
-          <div className="prose prose-lg max-w-none">
-            <h2>La Evolución de los Chatbots</h2>
-            
-            <p>
-              Los chatbots han evolucionado significativamente desde sus inicios como simples 
-              sistemas de respuestas predefinidas. Hoy, gracias a los avances en inteligencia 
-              artificial y procesamiento del lenguaje natural, estos sistemas pueden mantener 
-              conversaciones complejas y contextualmente relevantes.
-            </p>
+          <div className="prose prose-lg max-w-none space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">La Evolución de los Chatbots</h2>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Los chatbots han evolucionado significativamente desde sus inicios como simples 
+                sistemas de respuestas predefinidas. Hoy, gracias a los avances en inteligencia 
+                artificial y procesamiento del lenguaje natural, estos sistemas pueden mantener 
+                conversaciones complejas y contextualmente relevantes.
+              </p>
+            </div>
 
-            <h3>¿Qué hace que un Chatbot sea "Inteligente"?</h3>
-            
-            <p>
-              Un chatbot inteligente se distingue por su capacidad de comprender el contexto 
-              de la conversación, recordar interacciones previas y adaptar sus respuestas 
-              según el perfil y necesidades específicas del usuario.
-            </p>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">¿Qué hace que un Chatbot sea "Inteligente"?</h3>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Un chatbot inteligente se distingue por su capacidad de comprender el contexto 
+                de la conversación, recordar interacciones previas y adaptar sus respuestas 
+                según el perfil y necesidades específicas del usuario.
+              </p>
+            </div>
 
-            <h3>Componentes Clave de la Inteligencia Contextual</h3>
-            
-            <ul>
-              <li><strong>Memoria de Conversación:</strong> Capacidad de recordar el contexto completo de la interacción</li>
-              <li><strong>Análisis de Sentimientos:</strong> Comprensión del estado emocional del usuario</li>
-              <li><strong>Personalización:</strong> Adaptación de respuestas según el historial del usuario</li>
-              <li><strong>Aprendizaje Continuo:</strong> Mejora constante basada en nuevas interacciones</li>
-            </ul>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Componentes Clave de la Inteligencia Contextual</h3>
+              
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Memoria de Conversación:</strong> Capacidad de recordar el contexto completo de la interacción</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Análisis de Sentimientos:</strong> Comprensión del estado emocional del usuario</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Personalización:</strong> Adaptación de respuestas según el historial del usuario</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Aprendizaje Continuo:</strong> Mejora constante basada en nuevas interacciones</span>
+                </li>
+              </ul>
+            </div>
 
             <h3>Aplicaciones Empresariales</h3>
             

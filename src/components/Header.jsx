@@ -2,15 +2,30 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ContactModal from './ContactModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white sticky top-0 z-50 shadow-lg">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isHeaderSticky 
+        ? 'bg-white border-b border-gray-200 shadow-sm text-gray-900' 
+        : 'bg-transparent text-white'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo y Nombre de Marca - IZQUIERDA */}
@@ -23,20 +38,20 @@ export default function Header() {
               className="object-contain"
             />
             <div>
-              <h1 className="text-xl font-bold">Mente Autónoma</h1>
-              <p className="text-sm text-gray-300">Soluciones Digitales</p>
+              <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
+              <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-300'}`}>Soluciones Digitales</p>
             </div>
           </div>
           
           {/* Menú de Navegación - CENTRO */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/#servicios" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <Link href="/#servicios" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-400'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
               Servicios
             </Link>
-            <Link href="/noticias" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <Link href="/noticias" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-400'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
               Noticias
             </Link>
-            <Link href="/#tecnologias" className="text-white hover:text-blue-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <Link href="/#tecnologias" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-400'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
               Tecnologías
             </Link>
           </nav>
@@ -55,7 +70,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-blue-400 focus:outline-none focus:text-blue-400"
+              className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-400'} focus:outline-none`}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
