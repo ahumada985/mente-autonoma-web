@@ -6,7 +6,7 @@ export default function SEO({
   keywords, 
   ogImage, 
   ogType = 'website',
-  schemaData = null 
+  schemaData = {} 
 }) {
   const fullTitle = title ? `${title} - Mente Autónoma` : 'Mente Autónoma - Soluciones Digitales con IA';
   const defaultDescription = 'Transformamos tu empresa con inteligencia artificial. Soluciones personalizadas de desarrollo web, chatbots inteligentes y automatización avanzada.';
