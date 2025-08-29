@@ -201,12 +201,12 @@ export default function Contacto() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
+      <section className="py-20 bg-gray-50 text-gray-900">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
             ¿Listo para Empezar?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             No esperes más para transformar tu negocio con inteligencia artificial. 
             Nuestro equipo está listo para ayudarte a alcanzar tus objetivos.
           </p>

@@ -2,32 +2,49 @@
 
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function NoticiaChatbots() {
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderSticky 
+          ? 'bg-white border-b border-gray-200 shadow-sm' 
+          : 'bg-transparent'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
+                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-white/80'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className="text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Noticias
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Servicios
               </Link>
             </nav>
@@ -45,16 +62,7 @@ export default function NoticiaChatbots() {
         </div>
       </header>
       
-      {/* Breadcrumb */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
-            <span>→</span>
-            <span>Inteligencia Artificial</span>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Artículo Principal */}
       <article className="py-16">

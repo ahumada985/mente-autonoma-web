@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect }  from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import QuoteForm from '@/components/QuoteForm';
 import ContactModal from '@/components/ContactModal';
@@ -13,6 +12,16 @@ export default function ServiciosDesarrolloWeb() {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const plans = {
     wordpress: [
@@ -249,7 +258,7 @@ export default function ServiciosDesarrolloWeb() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHeaderSticky 
           ? 'bg-white border-b border-gray-200 shadow-sm' 
-          : 'bg-WHITE'
+          : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
