@@ -2,32 +2,49 @@
 
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function NoticiaAutomatizacion() {
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderSticky 
+          ? 'bg-white border-b border-gray-200 shadow-sm' 
+          : 'bg-transparent'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
+                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-white/80'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className="text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Noticias
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Servicios
               </Link>
             </nav>
@@ -45,16 +62,7 @@ export default function NoticiaAutomatizacion() {
         </div>
       </header>
       
-      {/* Breadcrumb */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
-            <span>→</span>
-            <span>Automatización</span>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Artículo Principal */}
       <article className="py-16">
@@ -99,32 +107,50 @@ export default function NoticiaAutomatizacion() {
           </div>
 
           {/* Contenido del Artículo */}
-          <div className="prose prose-lg max-w-none">
-            <h2>La Revolución de la Automatización Empresarial</h2>
-            
-            <p>
-              En la era digital actual, la automatización inteligente se ha convertido en un pilar fundamental 
-              para la competitividad empresarial. Las organizaciones que implementan soluciones de IA avanzadas 
-              están experimentando transformaciones radicales en sus operaciones diarias.
-            </p>
+          <div className="prose prose-lg max-w-none space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">La Revolución de la Automatización Empresarial</h2>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                En la era digital actual, la automatización inteligente se ha convertido en un pilar fundamental 
+                para la competitividad empresarial. Las organizaciones que implementan soluciones de IA avanzadas 
+                están experimentando transformaciones radicales en sus operaciones diarias.
+              </p>
+            </div>
 
-            <h3>¿Qué es la Automatización Inteligente?</h3>
-            
-            <p>
-              La automatización inteligente combina tecnologías de automatización robótica de procesos (RPA) 
-              con capacidades de inteligencia artificial y machine learning. Esta sinergia permite que los 
-              sistemas no solo ejecuten tareas repetitivas, sino que también aprendan, se adapten y tomen 
-              decisiones inteligentes en tiempo real.
-            </p>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">¿Qué es la Automatización Inteligente?</h3>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                La automatización inteligente combina tecnologías de automatización robótica de procesos (RPA) 
+                con capacidades de inteligencia artificial y machine learning. Esta sinergia permite que los 
+                sistemas no solo ejecuten tareas repetitivas, sino que también aprendan, se adapten y tomen 
+                decisiones inteligentes en tiempo real.
+              </p>
+            </div>
 
-            <h3>Beneficios Cuantificables</h3>
-            
-            <ul>
-              <li><strong>Productividad:</strong> Incremento del 40% en la eficiencia operativa</li>
-              <li><strong>Precisión:</strong> Reducción del 60% en errores operativos</li>
-              <li><strong>Costos:</strong> Ahorro del 30% en gastos operativos</li>
-              <li><strong>Escalabilidad:</strong> Capacidad de manejar volúmenes 10x mayores</li>
-            </ul>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Beneficios Cuantificables</h3>
+              
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Productividad:</strong> Incremento del 40% en la eficiencia operativa</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Precisión:</strong> Reducción del 60% en errores operativos</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Costos:</strong> Ahorro del 30% en gastos operativos</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Escalabilidad:</strong> Capacidad de manejar volúmenes 10x mayores</span>
+                </li>
+              </ul>
+            </div>
 
             <h3>Casos de Uso Principales</h3>
             

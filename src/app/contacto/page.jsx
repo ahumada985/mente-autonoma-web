@@ -65,12 +65,11 @@ export default function Contacto() {
               </Link>
             </nav>
             
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isHeaderSticky 
-                  ? 'text-blue-600' 
-                  : 'text-white'
-              }`}>
+           <div className="flex items-center space-x-4">
+              <Link 
+                href="/contacto" 
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+              >
                 Contacto
               </Link>
             </div>
@@ -213,7 +212,7 @@ export default function Contacto() {
           </p>
           <button 
             onClick={() => setIsContactModalOpen(true)}
-            className="bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
           >
             🚀 Iniciar Proyecto
           </button>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect }  from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,6 +12,7 @@ export default function ServiciosDesarrolloWeb() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
 
   const plans = {
     wordpress: [
@@ -243,43 +244,53 @@ export default function ServiciosDesarrolloWeb() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Personalizado para Servicios */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      
+      {/* Header con transparencia dinámica */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderSticky 
+          ? 'bg-white border-b border-gray-200 shadow-sm' 
+          : 'bg-WHITE'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <Image 
-                src="/logo_final.png" 
-                alt="Mente Autónoma" 
-                width={40} 
-                height={40} 
-                className="object-contain group-hover:scale-110 transition-transform duration-300"
-              />
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-900' : 'text-white'
+                }`}>Mente Autónoma</h1>
+                <p className={`text-sm transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
+                }`}>Soluciones Digitales</p>
               </div>
             </Link>
             
-            {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Inicio
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-blue-600 border-b-2 border-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Servicios
               </Link>
-              <Link href="/noticias" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-white/90 hover:text-white'
+              }`}>
                 Noticias
               </Link>
             </nav>
             
-            {/* CTA Button */}
             <div className="flex items-center space-x-4">
-              <Link 
-                href="/contacto" 
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
-              >
+              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
                 Contacto
               </Link>
             </div>

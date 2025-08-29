@@ -2,32 +2,49 @@
 
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function NoticiaFlujosTrabajo() {
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderSticky 
+          ? 'bg-white border-b border-gray-200 shadow-sm' 
+          : 'bg-transparent'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
-                <p className="text-sm text-gray-600">Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-white'}`}>Mente Autónoma</h1>
+                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-white/80'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className="text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Noticias
               </Link>
-              <Link href="/servicios-desarrollo-web" className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
                 Servicios
               </Link>
             </nav>
@@ -45,16 +62,7 @@ export default function NoticiaFlujosTrabajo() {
         </div>
       </header>
       
-      {/* Breadcrumb */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/noticias" className="hover:text-blue-600">Noticias</Link>
-            <span>→</span>
-            <span>Productividad</span>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Artículo Principal */}
       <article className="py-16">
@@ -99,31 +107,49 @@ export default function NoticiaFlujosTrabajo() {
           </div>
 
           {/* Contenido del Artículo */}
-          <div className="prose prose-lg max-w-none">
-            <h2>La Revolución de los Flujos de Trabajo</h2>
-            
-            <p>
-              Los flujos de trabajo tradicionales, basados en procesos lineales y secuenciales, 
-              están siendo reemplazados por sistemas inteligentes que pueden adaptarse dinámicamente 
-              a las condiciones cambiantes del entorno empresarial.
-            </p>
+          <div className="prose prose-lg max-w-none space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">La Revolución de los Flujos de Trabajo</h2>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Los flujos de trabajo tradicionales, basados en procesos lineales y secuenciales, 
+                están siendo reemplazados por sistemas inteligentes que pueden adaptarse dinámicamente 
+                a las condiciones cambiantes del entorno empresarial.
+              </p>
+            </div>
 
-            <h3>¿Qué son los Flujos de Trabajo Inteligentes?</h3>
-            
-            <p>
-              Los flujos de trabajo inteligentes utilizan inteligencia artificial y machine learning 
-              para analizar datos en tiempo real, identificar patrones y optimizar automáticamente 
-              los procesos según las condiciones actuales del negocio.
-            </p>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">¿Qué son los Flujos de Trabajo Inteligentes?</h3>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Los flujos de trabajo inteligentes utilizan inteligencia artificial y machine learning 
+                para analizar datos en tiempo real, identificar patrones y optimizar automáticamente 
+                los procesos según las condiciones actuales del negocio.
+              </p>
+            </div>
 
-            <h3>Características Fundamentales</h3>
-            
-            <ul>
-              <li><strong>Adaptabilidad:</strong> Se ajustan automáticamente a cambios en la demanda o recursos</li>
-              <li><strong>Optimización en Tiempo Real:</strong> Mejoran continuamente basándose en datos actuales</li>
-              <li><strong>Predicción:</strong> Anticipan problemas antes de que ocurran</li>
-              <li><strong>Integración:</strong> Se conectan con múltiples sistemas y fuentes de datos</li>
-            </ul>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Características Fundamentales</h3>
+              
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Adaptabilidad:</strong> Se ajustan automáticamente a cambios en la demanda o recursos</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Optimización en Tiempo Real:</strong> Mejoran continuamente basándose en datos actuales</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Predicción:</strong> Anticipan problemas antes de que ocurran</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+                  <span className="text-lg text-gray-700"><strong>Integración:</strong> Se conectan con múltiples sistemas y fuentes de datos</span>
+                </li>
+              </ul>
+            </div>
 
             <h3>Aplicaciones en Diferentes Industrias</h3>
             

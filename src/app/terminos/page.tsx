@@ -3,8 +3,12 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import ContactModal from '@/components/ContactModal';
+import { useState } from 'react';
 
 export default function Terminos() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Header especial para páginas legales */}
@@ -283,12 +287,12 @@ export default function Terminos() {
               Estamos aquí para ayudarte con cualquier consulta sobre nuestros términos de servicio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:legal@menteautonoma.com"
+              <button
+                onClick={() => setIsContactModalOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 📧 Contactar Legal
-              </a>
+              </button>
               <Link 
                 href="/privacidad"
                 className="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-2xl font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
@@ -299,6 +303,13 @@ export default function Terminos() {
           </div>
         </div>
       </div>
+      
+      {/* Modal de Contacto */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        contactType="legal"
+      />
 
       <Footer />
     </div>
