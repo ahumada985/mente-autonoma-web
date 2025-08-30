@@ -15,13 +15,11 @@ export default function Indigo() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [isClient, setIsClient] = useState(false);
+
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-    
     // Función para detectar cuando el header debe ser sticky
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -46,7 +44,8 @@ export default function Indigo() {
     setSubmitStatus('');
 
     try {
-      const response = await fetch('/api/leads', {
+      // Primero guardar en Supabase
+      const leadsResponse = await fetch('/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,11 +54,27 @@ export default function Indigo() {
           name: formData.name,
           email: formData.email,
           company: formData.company || null
-          // Solo enviamos los campos que existen en la tabla
         }),
       });
 
-      if (response.ok) {
+      if (!leadsResponse.ok) {
+        throw new Error('Error guardando en base de datos');
+      }
+
+      // Luego enviar el PDF por email
+      const pdfResponse = await fetch('/api/send-pdf', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null
+        }),
+      });
+
+      if (pdfResponse.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', company: '', terms: false });
         setTimeout(() => setSubmitStatus(''), 3000);
@@ -68,6 +83,7 @@ export default function Indigo() {
         setTimeout(() => setSubmitStatus(''), 3000);
       }
     } catch (error) {
+      console.error('Error en el formulario:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(''), 3000);
     } finally {
@@ -75,18 +91,7 @@ export default function Indigo() {
     }
   };
 
-  if (!isClient) {
-    return (
-      <div className="min-h-screen bg-white">
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Cargando...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <>
@@ -1201,7 +1206,7 @@ export default function Indigo() {
                   {/* Mensaje de estado */}
                   {submitStatus === 'success' && (
                     <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-xl">
-                      <p className="text-green-300 font-semibold">¡Gracias! Te hemos enviado el PDF por email.</p>
+                      <p className="text-green-300 font-semibold">¡Perfecto! Hemos guardado tus datos y te hemos enviado el PDF por email. Revisa tu bandeja de entrada.</p>
                     </div>
                   )}
                   
