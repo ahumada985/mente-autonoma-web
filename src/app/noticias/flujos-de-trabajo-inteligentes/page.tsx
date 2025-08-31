@@ -16,7 +16,7 @@ export default function NoticiaFlujosTrabajo() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
@@ -61,11 +61,11 @@ export default function NoticiaFlujosTrabajo() {
           </div>
         </div>
       </header>
-      
+
 
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -85,11 +85,11 @@ export default function NoticiaFlujosTrabajo() {
               </div>
               <div className="flex items-center space-x-2">
                 <span>10 de Enero, 2025</span>
-              </div>
+            </div>
               <div className="flex items-center space-x-2">
                 <span>6 min de lectura</span>
-              </div>
-            </div>
+          </div>
+        </div>
             
             <p className="text-xl text-gray-600 leading-relaxed">
               Cómo implementar flujos de trabajo inteligentes que se adaptan automáticamente 
@@ -101,10 +101,10 @@ export default function NoticiaFlujosTrabajo() {
           <div className="mb-12">
             <img 
               src="/noticia3.webp" 
-              alt="Flujos de Trabajo Inteligentes"
+                alt="Flujos de Trabajo Inteligentes"
               className="w-full h-96 object-cover rounded-lg"
-            />
-          </div>
+              />
+            </div>
 
           {/* Contenido del Artículo */}
           <div className="prose prose-lg max-w-none space-y-8">
@@ -132,23 +132,23 @@ export default function NoticiaFlujosTrabajo() {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Características Fundamentales</h3>
               
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Adaptabilidad:</strong> Se ajustan automáticamente a cambios en la demanda o recursos</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Optimización en Tiempo Real:</strong> Mejoran continuamente basándose en datos actuales</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Predicción:</strong> Anticipan problemas antes de que ocurran</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Integración:</strong> Se conectan con múltiples sistemas y fuentes de datos</span>
-                </li>
-              </ul>
+              </li>
+            </ul>
             </div>
 
             <h3>Aplicaciones en Diferentes Industrias</h3>
@@ -213,7 +213,7 @@ export default function NoticiaFlujosTrabajo() {
             </p>
 
             <h3>Tecnologías Clave</h3>
-            
+
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Machine Learning</h4>
@@ -282,7 +282,7 @@ export default function NoticiaFlujosTrabajo() {
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Productividad</span>
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Optimización</span>
             </div>
-          </div>
+            </div>
 
           {/* Navegación */}
           <div className="mt-12 pt-8 border-t border-gray-200">

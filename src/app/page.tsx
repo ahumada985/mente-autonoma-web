@@ -15,11 +15,13 @@ export default function Indigo() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-
+  const [isClient, setIsClient] = useState(false);
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    
     // Función para detectar cuando el header debe ser sticky
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -44,8 +46,7 @@ export default function Indigo() {
     setSubmitStatus('');
 
     try {
-      // Primero guardar en Supabase
-      const leadsResponse = await fetch('/api/leads', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,27 +55,11 @@ export default function Indigo() {
           name: formData.name,
           email: formData.email,
           company: formData.company || null
+          // Solo enviamos los campos que existen en la tabla
         }),
       });
 
-      if (!leadsResponse.ok) {
-        throw new Error('Error guardando en base de datos');
-      }
-
-      // Luego enviar el PDF por email
-      const pdfResponse = await fetch('/api/send-pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || null
-        }),
-      });
-
-      if (pdfResponse.ok) {
+      if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', company: '', terms: false });
         setTimeout(() => setSubmitStatus(''), 3000);
@@ -83,7 +68,6 @@ export default function Indigo() {
         setTimeout(() => setSubmitStatus(''), 3000);
       }
     } catch (error) {
-      console.error('Error en el formulario:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(''), 3000);
     } finally {
@@ -91,7 +75,18 @@ export default function Indigo() {
     }
   };
 
-
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-white">
+        <div className="flex items-center justify-center h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Cargando...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -829,55 +824,55 @@ export default function Indigo() {
       
 
                     {/* NUEVA SECCIÓN: Por Qué Adoptar IA en los Negocios - FONDO OSCURO */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Columna Izquierda - Contenido */}
-            <div className="space-y-8">
-              <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm shadow-2xl rounded-full inline-block">
                 🚀 Transformación Digital 2025
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 ¿Por Qué Tu Negocio
                 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Implementar Agentes IA?</span>
               </h2>
               
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl">
                 Los agentes de IA son la próxima revolución en productividad empresarial. 
                 <span className="text-emerald-300 font-semibold">Automatizan tareas complejas, toman decisiones inteligentes y trabajan 24/7</span> 
                 para que tu equipo se enfoque en lo que realmente importa: crecer tu negocio.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">📈</span>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg sm:text-2xl">📈</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Crecimiento Exponencial</h3>
-                    <p className="text-gray-300">Los negocios con IA crecen 3x más rápido que los tradicionales</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Crecimiento Exponencial</h3>
+                    <p className="text-sm sm:text-base text-gray-300">Los negocios con IA crecen 3x más rápido que los tradicionales</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">💰</span>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg sm:text-2xl">💰</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Ahorro de Costos</h3>
-                    <p className="text-gray-300">Reduce gastos operativos hasta en un 40% con automatización inteligente</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Ahorro de Costos</h3>
+                    <p className="text-sm sm:text-base text-gray-300">Reduce gastos operativos hasta en un 40% con automatización inteligente</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🎯</span>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg sm:text-2xl">🎯</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Ventaja Competitiva</h3>
-                    <p className="text-gray-300">Sé el primero en tu industria en implementar soluciones IA</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Ventaja Competitiva</h3>
+                    <p className="text-sm sm:text-base text-gray-300">Sé el primero en tu industria en implementar soluciones IA</p>
                   </div>
                 </div>
               </div>
@@ -887,7 +882,7 @@ export default function Indigo() {
             
             {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
             <div className="relative">
-              <div className="w-[450px] h-[450px] mx-auto relative">
+              <div className="w-full max-w-[350px] sm:w-[400px] lg:w-[450px] h-[350px] sm:h-[400px] lg:h-[450px] mx-auto relative">
                 {/* Fondo animado con partículas flotantes */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl backdrop-blur-sm"></div>
                 
@@ -1206,7 +1201,7 @@ export default function Indigo() {
                   {/* Mensaje de estado */}
                   {submitStatus === 'success' && (
                     <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-xl">
-                      <p className="text-green-300 font-semibold">¡Perfecto! Hemos guardado tus datos y te hemos enviado el PDF por email. Revisa tu bandeja de entrada.</p>
+                      <p className="text-green-300 font-semibold">¡Gracias! Te hemos enviado el PDF por email.</p>
                     </div>
                   )}
                   

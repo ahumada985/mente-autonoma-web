@@ -35,7 +35,7 @@ export default function Noticia3Page() {
             </nav>
             <div className="flex items-center space-x-4">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
-                Solicitar Demo
+                Solicitar Simulación
               </Button>
             </div>
           </div>
@@ -367,7 +367,7 @@ export default function Noticia3Page() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 shadow-lg">
-                  Demo de Agentes Autónomos
+                  Simulación de Agentes Autónomos
                 </Button>
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
                   Consulta Gratuita

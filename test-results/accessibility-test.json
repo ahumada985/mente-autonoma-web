@@ -1,0 +1,1854 @@
+[
+  {
+    "url": "/",
+    "timestamp": "2025-08-31T07:59:22.430Z",
+    "summary": {
+      "total": 25,
+      "violations": 1,
+      "passes": 23,
+      "incomplete": 1
+    },
+    "violations": [
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "button-name",
+        "description": "Ensure buttons have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.a",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "image-alt",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a",
+          "TTv5",
+          "TT7.a",
+          "TT7.b",
+          "EN-301-549",
+          "EN-9.1.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "image-redundant-alt",
+        "description": "Ensure image alternative is not repeated as text",
+        "tags": [
+          "cat.text-alternatives",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "description": "Ensure the banner landmark is at top level",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-main-is-top-level",
+        "description": "Ensure the main landmark is at top level",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "description": "Ensure the document has at most one banner landmark",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-main",
+        "description": "Ensure the document has at most one main landmark",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "description": "Ensure landmarks are unique",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "nested-interactive",
+        "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+        "tags": [
+          "cat.keyboard",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      }
+    ],
+    "score": 100
+  },
+  {
+    "url": "/noticias",
+    "timestamp": "2025-08-31T07:59:24.826Z",
+    "summary": {
+      "total": 14,
+      "violations": 2,
+      "passes": 12,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  },
+  {
+    "url": "/contacto",
+    "timestamp": "2025-08-31T07:59:26.858Z",
+    "summary": {
+      "total": 24,
+      "violations": 2,
+      "passes": 22,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  },
+  {
+    "url": "/servicios-desarrollo-web",
+    "timestamp": "2025-08-31T07:59:28.841Z",
+    "summary": {
+      "total": 24,
+      "violations": 2,
+      "passes": 22,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  },
+  {
+    "url": "/privacidad",
+    "timestamp": "2025-08-31T07:59:30.849Z",
+    "summary": {
+      "total": 24,
+      "violations": 2,
+      "passes": 22,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  },
+  {
+    "url": "/terminos",
+    "timestamp": "2025-08-31T07:59:32.766Z",
+    "summary": {
+      "total": 24,
+      "violations": 2,
+      "passes": 22,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  },
+  {
+    "url": "/cookies",
+    "timestamp": "2025-08-31T07:59:34.710Z",
+    "summary": {
+      "total": 24,
+      "violations": 2,
+      "passes": 22,
+      "incomplete": 0
+    },
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "description": "Ensure the document has a main landmark",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "nodes": 2
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2"
+        ]
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "tags": [
+          "cat.structure",
+          "wcag21aa",
+          "wcag1412",
+          "EN-301-549",
+          "EN-9.1.4.12",
+          "ACT"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT"
+        ]
+      },
+      {
+        "id": "document-title",
+        "description": "Ensure each HTML document contains a non-empty <title> element",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "TTv5",
+          "TT12.a",
+          "EN-301-549",
+          "EN-9.2.4.2",
+          "ACT"
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "description": "Ensure headings have discernible text",
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "heading-order",
+        "description": "Ensure the order of headings is semantically correct",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "description": "Ensure every HTML document has a lang attribute",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "description": "Ensure the lang attribute of the <html> element has a valid value",
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311",
+          "TTv5",
+          "TT11.a",
+          "EN-301-549",
+          "EN-9.3.1.1",
+          "ACT"
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag2aa",
+          "wcag144",
+          "EN-301-549",
+          "EN-9.1.4.4",
+          "ACT"
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "id": "region",
+        "description": "Ensure all page content is contained by landmarks",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ]
+      }
+    ],
+    "incomplete": [],
+    "score": 100
+  }
+]

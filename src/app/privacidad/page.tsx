@@ -200,30 +200,7 @@ export default function Privacidad() {
               </div>
             </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">📞</span>
-                Contacto
-              </h2>
-              <div className="space-y-4 text-gray-700">
-                <p>
-                  Si tienes preguntas sobre esta política de privacidad o sobre cómo manejamos 
-                  tu información personal, contáctanos:
-                </p>
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Email:</h4>
-                      <p className="text-blue-600">privacidad@menteautonoma.com</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Dirección:</h4>
-                      <p>Mente Autónoma<br />Santiago, Chile</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+           
 
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">

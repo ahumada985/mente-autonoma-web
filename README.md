@@ -1,205 +1,351 @@
-# 🚀 AIStudio - Landing Page de Inteligencia Artificial
+# 🚀 Mente Autónoma - Plataforma Web de IA
 
-## ✨ Descripción
+Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad con Inteligencia Artificial.
 
-AIStudio es un landing page moderno y espectacular para una startup de inteligencia artificial, construido con las mejores tecnologías web modernas.
+## ✨ Características Principales
 
-## 🛠️ Stack Tecnológico
+- 🎯 **Diseño Moderno**: Interfaz elegante y profesional con Tailwind CSS
+- 📱 **Responsive**: Optimizado para todos los dispositivos
+- ⚡ **Performance**: Core Web Vitals optimizados
+- ♿ **Accesible**: Cumple estándares WCAG 2.1
+- 🔍 **SEO Optimizado**: Meta tags, Schema.org y Google Search Console
+- 📊 **Analytics**: Google Analytics 4 integrado
+- 🗄️ **Base de Datos**: Supabase para formularios y leads
+- 📧 **Email**: Sistema de envío automático con PDF adjunto
+- 🎭 **Animaciones**: Transiciones fluidas con Framer Motion
+- 🧪 **Testing**: Suite completa de tests automatizados
 
-- **Framework**: Next.js 14 con App Router
-- **Lenguaje**: TypeScript
+## 🏗️ Arquitectura Técnica
+
+### **Frontend**
+- **Framework**: Next.js 15.4.6 (App Router)
+- **Lenguaje**: TypeScript/JavaScript
 - **Estilos**: Tailwind CSS
-- **Componentes**: Shadcn/ui
-- **Iconos**: Lucide React
-- **Imágenes**: Cloudinary (optimización automática)
-- **Deploy**: Vercel Ready
+- **Animaciones**: Framer Motion
+- **Componentes**: UI personalizados y reutilizables
 
-## 🎨 Características del Diseño
+### **Backend**
+- **APIs**: Next.js API Routes
+- **Base de Datos**: Supabase (PostgreSQL)
+- **Email**: Nodemailer con Gmail
+- **Autenticación**: Row Level Security (RLS)
 
-### Paleta de Colores
-- **Primario**: Violeta (#7c3aed) a Índigo (#4f46e5)
-- **Secundario**: Gradientes personalizados para cada servicio
-- **Neutros**: Escala de grises modernos
-- **Acentos**: Verde, naranja, rojo para estadísticas
-
-### Elementos Visuales
-- 🌈 Gradientes modernos y atractivos
-- ✨ Efectos de hover y transiciones suaves
-- 🎭 Backdrop blur y transparencias
-- 📱 Diseño completamente responsivo
-- 🚀 Animaciones CSS optimizadas
-
-## 🎯 Servicios de IA Implementados
-
-### 1. 🤖 Chatbot Inteligente
-- NLP avanzado
-- Integración multi-canal
-- Aprendizaje continuo
-
-### 2. 👔 Asistente Secretario IA
-- Gestión de calendario
-- Priorización inteligente
-- Respuestas automáticas
-
-### 3. ✍️ Generador de Contenido RRSS
-- Tendencias en tiempo real
-- Optimización de engagement
-- Múltiples formatos
-
-### 4. ⚡ Automatización de Procesos
-- Workflows inteligentes
-- Análisis predictivo
-- Integración total
-
-### 5. 🔍 Optimización SEO IA
-- Análisis de keywords
-- Optimización automática
-- Ranking tracking
-
-### 6. 📈 Asistente de Ventas
-- Lead scoring
-- Personalización
-- Predicción de ventas
+### **Deploy & Hosting**
+- **Plataforma**: Vercel
+- **Build**: Generación estática optimizada
+- **CDN**: Distribución global automática
+- **SSL**: HTTPS automático
 
 ## 🚀 Instalación y Configuración
 
-### 1. Clonar el Proyecto
+### **Prerrequisitos**
+- Node.js 18+ 
+- npm o yarn
+- Cuenta de Supabase
+- Cuenta de Gmail (para emails)
+
+### **1. Clonar el repositorio**
 ```bash
 git clone <tu-repositorio>
-cd AIStudio
+cd mente-autonoma-web
 ```
 
-### 2. Instalar Dependencias
+### **2. Instalar dependencias**
 ```bash
 npm install
 ```
 
-### 3. Configurar Variables de Entorno
-Crea un archivo `.env.local`:
+### **3. Configurar variables de entorno**
+Crear archivo `.env.local` en la raíz:
 ```bash
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=tu_cloud_name
-NEXT_PUBLIC_CLOUDINARY_API_KEY=tu_api_key
-CLOUDINARY_API_SECRET=tu_api_secret
-NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=ml_default
+# Gmail App Password
+EMAIL_USER=tu-email@gmail.com
+EMAIL_PASS=tu-app-password
+
+# Google Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=tu-url-supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-clave-anonima
+
+# Cloudinary (opcional)
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=tu-cloud-name
+CLOUDINARY_API_KEY=tu-api-key
+CLOUDINARY_API_SECRET=tu-api-secret
 ```
 
-### 4. Ejecutar en Desarrollo
+### **4. Ejecutar en desarrollo**
 ```bash
 npm run dev
 ```
 
-### 5. Construir para Producción
+### **5. Build para producción**
 ```bash
 npm run build
 npm start
 ```
 
-## 📱 Características Responsivas
+## 🧪 Testing
 
-- **Mobile First**: Diseño optimizado para móviles
-- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
-- **Grid Adaptativo**: Secciones que se reorganizan automáticamente
-- **Tipografía Escalable**: Tamaños de texto que se adaptan al dispositivo
+### **Suite Completa de Testing**
+```bash
+# Instalar dependencias de testing
+npm install --save-dev puppeteer lighthouse chrome-launcher axe-core
 
-## 🎨 Componentes Shadcn/ui Utilizados
+# Ejecutar todos los tests
+node scripts/run-all-tests.js
 
-- **Button**: Botones con variantes y estados
-- **Card**: Tarjetas para servicios con hover effects
-- **Badge**: Etiquetas para destacar información
-
-## ☁️ Integración con Cloudinary
-
-### Funcionalidades
-- ✅ Subida automática de imágenes
-- ✅ Optimización automática de formatos
-- ✅ Redimensionamiento inteligente
-- ✅ Compresión de calidad
-- ✅ Soporte para WebP automático
-- ✅ URLs seguras (HTTPS)
-
-### Uso
-```typescript
-import { CloudinaryImage } from '@/components/ui/cloudinary-image'
-
-<CloudinaryImage
-  publicId="tu_imagen_id"
-  alt="Descripción de la imagen"
-  width={800}
-  height={600}
-  quality={80}
-/>
+# Tests individuales
+node scripts/test-usability.js      # Testing de usabilidad
+node scripts/test-accessibility.js  # Testing de accesibilidad  
+node scripts/test-performance.js    # Testing de performance
 ```
 
-## 🔧 Personalización
+### **Tipos de Testing**
+- **Usabilidad**: Diferentes dispositivos y navegadores
+- **Accesibilidad**: Estándares WCAG 2.1 con axe-core
+- **Performance**: Core Web Vitals con Lighthouse
+- **Responsive**: Adaptación a diferentes pantallas
 
-### Cambiar Colores
-Modifica las clases de Tailwind en `src/app/page.tsx`:
-```typescript
-// Cambiar color primario
-from-violet-600 to-indigo-600
-// Por ejemplo:
-from-blue-600 to-purple-600
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/                    # Páginas y rutas (App Router)
+│   ├── api/               # API Routes
+│   ├── contacto/          # Página de contacto
+│   ├── noticias/          # Sistema de noticias
+│   ├── servicios-desarrollo-web/ # Página de servicios
+│   ├── privacidad/        # Páginas legales
+│   ├── terminos/
+│   ├── cookies/
+│   └── layout.tsx         # Layout principal
+├── components/             # Componentes reutilizables
+│   ├── ui/                # Componentes de UI base
+│   ├── Header.jsx         # Header dinámico
+│   ├── Footer.jsx         # Footer
+│   ├── ContactModal.jsx   # Modal de contacto
+│   ├── DemoModal.jsx      # Modal de simulaciones
+│   └── SEO.jsx            # Componente SEO
+├── lib/                    # Utilidades y configuraciones
+│   ├── supabase.js        # Cliente de Supabase
+│   ├── antiSpam.js        # Protección anti-spam
+│   └── utils.ts           # Utilidades generales
+└── globals.css             # Estilos globales
+
+scripts/                    # Scripts de testing
+├── test-usability.js       # Testing de usabilidad
+├── test-accessibility.js   # Testing de accesibilidad
+├── test-performance.js     # Testing de performance
+└── run-all-tests.js        # Script principal
+
+public/                     # Archivos estáticos
+├── PDF/                    # PDFs para descarga
+├── logos/                  # Logos del sitio
+└── images/                 # Imágenes generales
 ```
 
-### Agregar Nuevos Servicios
-Edita el array `services` en `src/app/page.tsx`:
-```typescript
-{
-  icon: TuIcono,
-  title: "Nuevo Servicio",
-  description: "Descripción del servicio",
-  features: ["Característica 1", "Característica 2"],
-  gradient: "from-color1 to-color2"
-}
-```
+## 🔧 Configuración de Servicios
 
-## 📊 Estadísticas y Métricas
+### **Supabase**
+1. Crear proyecto en [supabase.com](https://supabase.com)
+2. Configurar tabla `contacts` con RLS
+3. Obtener URL y clave anónima
+4. Agregar a variables de entorno
 
-- **500+** Empresas confían en nosotros
-- **98%** Tasa de satisfacción
-- **24/7** Soporte disponible
-- **10K+** Proyectos exitosos
-- **99.9%** Uptime garantizado
+### **Gmail App Password**
+1. Activar verificación en 2 pasos
+2. Generar contraseña de aplicación
+3. Usar en `EMAIL_PASS`
+
+### **Google Analytics**
+1. Crear propiedad en [analytics.google.com](https://analytics.google.com)
+2. Obtener ID de medición (G-XXXXXXXXXX)
+3. Agregar a `NEXT_PUBLIC_GA_ID`
+
+### **Google Search Console**
+1. Verificar propiedad con etiqueta HTML meta
+2. La etiqueta ya está implementada en `layout.tsx`
+3. Esperar verificación automática
 
 ## 🚀 Deploy
 
-### Vercel (Recomendado)
-1. Conecta tu repositorio a Vercel
-2. Configura las variables de entorno
-3. Deploy automático en cada push
+### **Vercel (Recomendado)**
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
 
-### Otros Proveedores
-- Netlify
-- Railway
-- Heroku
-- AWS Amplify
+# Deploy
+vercel --prod
+```
 
-## 📈 SEO y Performance
+### **Variables de Entorno en Vercel**
+Agregar todas las variables de `.env.local` en el dashboard de Vercel.
 
-- **Meta Tags**: Optimizados para redes sociales
-- **Open Graph**: Imágenes y descripciones para compartir
-- **Lighthouse Score**: 95+ en todas las métricas
-- **Core Web Vitals**: Optimizados para Google
-- **Imágenes**: Optimizadas automáticamente con Cloudinary
+## 📊 Monitoreo y Analytics
 
-## 🤝 Contribuir
+### **Google Analytics 4**
+- Tracking automático de páginas
+- Eventos personalizados implementados
+- Core Web Vitals monitoreados
 
+### **Performance Monitoring**
+- Core Web Vitals en tiempo real
+- Métricas de rendimiento
+- Alertas automáticas
+
+### **Uptime Monitoring**
+- Verificación de disponibilidad
+- Alertas de caída
+- Reportes de performance
+
+## 🔒 Seguridad
+
+### **Protecciones Implementadas**
+- **Anti-spam**: Validación de formularios
+- **Rate Limiting**: Protección contra ataques
+- **Row Level Security**: Seguridad a nivel de base de datos
+- **HTTPS**: SSL automático en Vercel
+
+### **Buenas Prácticas**
+- Variables de entorno seguras
+- Validación de entrada
+- Sanitización de datos
+- Headers de seguridad
+
+## ♿ Accesibilidad
+
+### **Características Implementadas**
+- **ARIA Labels**: Etiquetas semánticas
+- **Skip Links**: Navegación por teclado
+- **Contraste**: Colores accesibles
+- **Semántica**: HTML semántico correcto
+- **Navegación**: Compatible con lectores de pantalla
+
+### **Estándares Cumplidos**
+- WCAG 2.1 AA
+- Section 508
+- EN 301 549
+
+## 📱 Responsive Design
+
+### **Breakpoints**
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+### **Características**
+- Imágenes adaptativas
+- Navegación móvil optimizada
+- Touch-friendly interfaces
+- Performance optimizado para móviles
+
+## 🔍 SEO
+
+### **Meta Tags**
+- Títulos únicos por página
+- Descripciones optimizadas
+- Open Graph tags
+- Twitter Cards
+
+### **Schema.org**
+- Structured data implementado
+- Información de organización
+- Breadcrumbs
+- Artículos de noticias
+
+### **Performance**
+- Core Web Vitals optimizados
+- Lazy loading de imágenes
+- Bundle splitting
+- Minificación automática
+
+## 🧪 Testing y Calidad
+
+### **Automatización**
+- Tests de usabilidad automatizados
+- Tests de accesibilidad con axe-core
+- Tests de performance con Lighthouse
+- Reportes detallados
+
+### **Cobertura**
+- Todas las páginas principales
+- Diferentes dispositivos
+- Navegadores modernos
+- Casos de uso críticos
+
+## 📈 Mantenimiento
+
+### **Tareas Regulares**
+- Revisar métricas de performance
+- Actualizar dependencias
+- Monitorear errores
+- Verificar accesibilidad
+
+### **Herramientas Recomendadas**
+- **Performance**: Lighthouse, WebPageTest
+- **Accesibilidad**: axe DevTools, WAVE
+- **SEO**: Google Search Console, PageSpeed Insights
+- **Monitoreo**: Vercel Analytics, Sentry
+
+## 🤝 Contribución
+
+### **Guidelines**
 1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
+2. Crea una rama para tu feature
+3. Commit tus cambios
+4. Push a la rama
 5. Abre un Pull Request
+
+### **Estándares de Código**
+- ESLint configurado
+- Prettier para formato
+- TypeScript para type safety
+- Componentes reutilizables
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 📞 Contacto
+## 🆘 Soporte
 
-- **Email**: contacto@aistudio.com
-- **Website**: [aistudio.com](https://aistudio.com)
-- **LinkedIn**: [AIStudio](https://linkedin.com/company/aistudio)
+### **Contacto**
+- **Email**: [tu-email@dominio.com]
+- **Issues**: [GitHub Issues]
+- **Documentación**: [Wiki del proyecto]
+
+### **Recursos Útiles**
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Supabase Docs](https://supabase.com/docs)
+- [Vercel Documentation](https://vercel.com/docs)
 
 ---
 
-⭐ **¡No olvides darle una estrella al proyecto si te gustó!**
+## 🎯 Roadmap
+
+### **Fase 1 (Completada) ✅**
+- [x] Sitio web base
+- [x] Sistema de noticias
+- [x] Formularios de contacto
+- [x] SEO básico
+- [x] Deploy en Vercel
+
+### **Fase 2 (En Progreso) 🔄**
+- [x] Google Analytics
+- [x] Google Search Console
+- [x] Testing automatizado
+- [x] Accesibilidad
+- [ ] Cloudinary integration
+
+### **Fase 3 (Futuro) 🚀**
+- [ ] Blog con CMS
+- [ ] Sistema de usuarios
+- [ ] Dashboard administrativo
+- [ ] API pública
+- [ ] PWA capabilities
+
+---
+
+**Desarrollado con ❤️ usando tecnologías modernas y mejores prácticas de la industria.**

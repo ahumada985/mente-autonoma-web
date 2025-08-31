@@ -17,7 +17,7 @@ export default function NoticiaAutomatizacion() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <>
       <SEO 
@@ -95,11 +95,11 @@ export default function NoticiaAutomatizacion() {
           </div>
         </div>
       </header>
-      
+
 
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -119,11 +119,11 @@ export default function NoticiaAutomatizacion() {
               </div>
               <div className="flex items-center space-x-2">
                 <span>15 de Enero, 2025</span>
-              </div>
+            </div>
               <div className="flex items-center space-x-2">
                 <span>5 min de lectura</span>
-              </div>
-            </div>
+          </div>
+        </div>
             
             <p className="text-xl text-gray-600 leading-relaxed">
               Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, 
@@ -135,10 +135,10 @@ export default function NoticiaAutomatizacion() {
           <div className="mb-12">
             <img 
               src="/noticia1.webp" 
-              alt="Automatización Inteligente Avanzada"
+                alt="Automatización Inteligente Avanzada"
               className="w-full h-96 object-cover rounded-lg"
-            />
-          </div>
+              />
+            </div>
 
           {/* Contenido del Artículo */}
           <div className="prose prose-lg max-w-none space-y-8">
@@ -167,25 +167,25 @@ export default function NoticiaAutomatizacion() {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Beneficios Cuantificables</h3>
               
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Productividad:</strong> Incremento del 40% en la eficiencia operativa</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Precisión:</strong> Reducción del 60% en errores operativos</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Costos:</strong> Ahorro del 30% en gastos operativos</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Escalabilidad:</strong> Capacidad de manejar volúmenes 10x mayores</span>
-                </li>
-              </ul>
-            </div>
-
+              </li>
+            </ul>
+              </div>
+              
             <h3>Casos de Uso Principales</h3>
             
             <h4>1. Gestión de Inventarios</h4>
@@ -262,7 +262,7 @@ export default function NoticiaAutomatizacion() {
                 ← Volver a Noticias
               </Link>
               <Link 
-                href="/noticias/chatbots-que-entienden-contexto" 
+                href="/noticias/chatbots-que-entienden-contexto"
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 Siguiente: Chatbots que Entienden Contexto →
@@ -273,7 +273,7 @@ export default function NoticiaAutomatizacion() {
       </article>
 
       <Footer />
-      </div>
+    </div>
     </>
   );
 }

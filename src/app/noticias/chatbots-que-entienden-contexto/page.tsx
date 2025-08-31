@@ -16,7 +16,7 @@ export default function NoticiaChatbots() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header especial para páginas legales */}
@@ -61,11 +61,11 @@ export default function NoticiaChatbots() {
           </div>
         </div>
       </header>
-      
+
 
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -85,11 +85,11 @@ export default function NoticiaChatbots() {
               </div>
               <div className="flex items-center space-x-2">
                 <span>12 de Enero, 2025</span>
-              </div>
+            </div>
               <div className="flex items-center space-x-2">
                 <span>4 min de lectura</span>
-              </div>
-            </div>
+          </div>
+        </div>
             
             <p className="text-xl text-gray-600 leading-relaxed">
               Los chatbots inteligentes están transformando la experiencia del cliente con capacidades 
@@ -99,12 +99,12 @@ export default function NoticiaChatbots() {
 
           {/* Imagen Principal */}
           <div className="mb-12">
-            <img 
-              src="/noticia2.webp" 
-              alt="Chatbots que Entienden Contexto"
+              <img 
+                src="/noticia2.webp" 
+                alt="Chatbots que Entienden Contexto"
               className="w-full h-96 object-cover rounded-lg"
-            />
-          </div>
+              />
+            </div>
 
           {/* Contenido del Artículo */}
           <div className="prose prose-lg max-w-none space-y-8">
@@ -133,25 +133,25 @@ export default function NoticiaChatbots() {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Componentes Clave de la Inteligencia Contextual</h3>
               
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Memoria de Conversación:</strong> Capacidad de recordar el contexto completo de la interacción</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Análisis de Sentimientos:</strong> Comprensión del estado emocional del usuario</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Personalización:</strong> Adaptación de respuestas según el historial del usuario</span>
-                </li>
-                <li className="flex items-start space-x-3">
+              </li>
+              <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
                   <span className="text-lg text-gray-700"><strong>Aprendizaje Continuo:</strong> Mejora constante basada en nuevas interacciones</span>
-                </li>
-              </ul>
-            </div>
-
+              </li>
+            </ul>
+              </div>
+              
             <h3>Aplicaciones Empresariales</h3>
             
             <h4>1. Atención al Cliente 24/7</h4>
@@ -224,7 +224,7 @@ export default function NoticiaChatbots() {
               Las empresas que adopten esta tecnología hoy estarán mejor posicionadas 
               para competir en un mercado cada vez más digital.
             </p>
-          </div>
+            </div>
 
           {/* Tags */}
           <div className="mt-12 pt-8 border-t border-gray-200">
@@ -240,7 +240,7 @@ export default function NoticiaChatbots() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex justify-between">
               <Link 
-                href="/noticias/automatizacion-inteligente-avanzada" 
+                href="/noticias/automatizacion-inteligente-avanzada"
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 ← Anterior: Automatización Inteligente Avanzada

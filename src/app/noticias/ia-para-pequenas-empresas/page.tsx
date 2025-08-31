@@ -40,13 +40,13 @@ export default function NoticiaIAPYMES() {
                 href="/#contacto" 
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
               >
-                Ver Demo
+                Ver Simulación
               </Link>
             </div>
           </div>
         </div>
       </header>
-      
+
       {/* Breadcrumb */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -59,7 +59,7 @@ export default function NoticiaIAPYMES() {
       </nav>
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -79,11 +79,11 @@ export default function NoticiaIAPYMES() {
               </div>
               <div className="flex items-center space-x-2">
                 <span>8 de Enero, 2025</span>
-              </div>
+            </div>
               <div className="flex items-center space-x-2">
                 <span>4 min de lectura</span>
-              </div>
-            </div>
+          </div>
+        </div>
             
             <p className="text-xl text-gray-600 leading-relaxed">
               Soluciones accesibles de inteligencia artificial que permiten a las pequeñas 
@@ -93,12 +93,12 @@ export default function NoticiaIAPYMES() {
 
           {/* Imagen Principal */}
           <div className="mb-12">
-            <img 
-              src="/noticia1.webp" 
-              alt="IA para Pequeñas Empresas"
+              <img 
+                src="/noticia1.webp" 
+                alt="IA para Pequeñas Empresas"
               className="w-full h-96 object-cover rounded-lg"
-            />
-          </div>
+              />
+            </div>
 
           {/* Contenido del Artículo */}
           <div className="prose prose-lg max-w-none">
@@ -158,15 +158,15 @@ export default function NoticiaIAPYMES() {
                 <div>
                   <strong>Restaurante Local:</strong> Implementó un sistema de IA para 
                   predecir la demanda y optimizar inventarios, reduciendo desperdicios en un 30%.
-                </div>
+              </div>
                 <div>
                   <strong>Tienda de Ropa:</strong> Utilizó chatbots para atención al cliente 
                   24/7, aumentando las ventas en un 25% durante horarios no laborables.
-                </div>
+              </div>
                 <div>
                   <strong>Consultoría:</strong> Automatizó la generación de reportes con IA, 
                   ahorrando 15 horas semanales en tareas administrativas.
-                </div>
+              </div>
               </div>
             </div>
 
@@ -264,7 +264,7 @@ export default function NoticiaIAPYMES() {
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Transformación Digital</span>
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Competitividad</span>
             </div>
-          </div>
+            </div>
 
           {/* Navegación */}
           <div className="mt-12 pt-8 border-t border-gray-200">

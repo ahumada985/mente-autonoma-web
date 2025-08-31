@@ -18,8 +18,8 @@ export default function NoticiaMachineLearning() {
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
                 <p className="text-sm text-gray-600">Soluciones Digitales</p>
-              </div>
-            </Link>
+                </div>
+              </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
@@ -40,13 +40,13 @@ export default function NoticiaMachineLearning() {
                 href="/#contacto" 
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
               >
-                Ver Demo
+                Ver Simulación
               </Link>
             </div>
           </div>
         </div>
       </header>
-      
+
       {/* Breadcrumb */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -59,7 +59,7 @@ export default function NoticiaMachineLearning() {
       </nav>
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -223,12 +223,12 @@ export default function NoticiaMachineLearning() {
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">TensorFlow y PyTorch</h4>
                 <p className="text-gray-600">Frameworks de deep learning para modelos complejos y redes neuronales.</p>
-              </div>
+                </div>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Scikit-learn</h4>
                 <p className="text-gray-600">Biblioteca de Python para algoritmos clásicos de machine learning.</p>
-              </div>
+                </div>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Plataformas Cloud</h4>
@@ -313,7 +313,7 @@ export default function NoticiaMachineLearning() {
       </article>
 
       <Footer />
-    </div>
+            </div>
   );
 }
 

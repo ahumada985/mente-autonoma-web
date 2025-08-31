@@ -18,8 +18,8 @@ export default function NoticiaIAGenerativa() {
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Mente Autónoma</h1>
                 <p className="text-sm text-gray-600">Soluciones Digitales</p>
-              </div>
-            </Link>
+                </div>
+              </Link>
             
             {/* Menu */}
             <nav className="hidden md:flex space-x-8">
@@ -40,13 +40,13 @@ export default function NoticiaIAGenerativa() {
                 href="/#contacto" 
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
               >
-                Ver Demo
+                Ver Simulación
               </Link>
             </div>
           </div>
         </div>
       </header>
-      
+
       {/* Breadcrumb */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -59,7 +59,7 @@ export default function NoticiaIAGenerativa() {
       </nav>
 
       {/* Artículo Principal */}
-      <article className="py-16">
+      <article className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
@@ -270,8 +270,8 @@ export default function NoticiaIAGenerativa() {
               hoy estarán mejor posicionadas para innovar, competir y prosperar en 
               un futuro donde la creatividad y la tecnología se fusionan de manera 
               inseparable.
-            </p>
-          </div>
+                    </p>
+                  </div>
 
           {/* Tags */}
           <div className="mt-12 pt-8 border-t border-gray-200">
@@ -280,8 +280,8 @@ export default function NoticiaIAGenerativa() {
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Contenido</span>
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Diseño</span>
               <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Innovación</span>
+              </div>
             </div>
-          </div>
 
           {/* Navegación */}
           <div className="mt-12 pt-8 border-t border-gray-200">
@@ -304,7 +304,7 @@ export default function NoticiaIAGenerativa() {
       </article>
 
       <Footer />
-    </div>
+            </div>
   );
 }
 

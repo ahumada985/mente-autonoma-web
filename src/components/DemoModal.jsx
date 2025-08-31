@@ -419,7 +419,7 @@ export default function DemoModal({ isOpen, onClose }) {
           <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold">🚀 Demos en Vivo</h2>
+                <h2 className="text-2xl font-bold">🚀 Simulaciones en Vivo</h2>
                 <p className="text-blue-100">Experimenta nuestros servicios de IA en acción</p>
               </div>
               <button
@@ -461,7 +461,7 @@ export default function DemoModal({ isOpen, onClose }) {
             <div className="mt-6 text-center">
               <div className="inline-flex items-center space-x-2 text-sm text-gray-500">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Demo en tiempo real</span>
+                <span>Simulación en tiempo real</span>
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                 <span>Interactivo</span>
                 <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
