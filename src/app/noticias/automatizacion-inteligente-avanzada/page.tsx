@@ -7,6 +7,7 @@ import SEO from '@/components/SEO';
 
 export default function NoticiaAutomatizacion() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +66,8 @@ export default function NoticiaAutomatizacion() {
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
               <div>
-                <h1 className={`text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-gray-900'}`}>Mente Autónoma</h1>
-                <p className={`text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-600'}`}>Soluciones Digitales</p>
+                <h1 className={`text-sm sm:text-lg md:text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-gray-900'}`}>Mente Autónoma</h1>
+                <p className={`text-xs sm:text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-600'}`}>Soluciones Digitales</p>
               </div>
             </Link>
             
@@ -92,6 +93,57 @@ export default function NoticiaAutomatizacion() {
                 Contacto
               </Link>
             </div>
+            
+            {/* Menú hamburguesa para móviles */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          {/* Menú móvil desplegable */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+              <div className="px-4 py-6 space-y-4">
+                <Link 
+                  href="/" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+                <Link 
+                  href="/servicios-desarrollo-web" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Servicios
+                </Link>
+                <Link 
+                  href="/noticias" 
+                  className="block px-4 py-3 text-blue-600 font-semibold rounded-lg bg-blue-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Noticias
+                </Link>
+                <Link 
+                  href="/contacto" 
+                  className="block px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contacto
+                </Link>
+              </div>
+            </div>
+          )}
           </div>
         </div>
       </header>
@@ -99,31 +151,21 @@ export default function NoticiaAutomatizacion() {
 
 
       {/* Artículo Principal */}
-      <article className="py-24">
+      <article className="py-28 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
           {/* Header del Artículo */}
           <header className="mb-12">
             <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+              <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">
                 Automatización
               </span>
             </div>
             
-            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Automatización Inteligente Avanzada: El Futuro de la Eficiencia Empresarial
             </h1>
             
-            <div className="flex items-center space-x-6 text-gray-600 mb-8">
-              <div className="flex items-center space-x-2">
-                <span className="font-medium">Dr. Carlos Méndez</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span>15 de Enero, 2025</span>
-            </div>
-              <div className="flex items-center space-x-2">
-                <span>5 min de lectura</span>
-          </div>
-        </div>
+
             
             <p className="text-xl text-gray-600 leading-relaxed">
               Descubre cómo la inteligencia artificial está revolucionando los procesos empresariales, 

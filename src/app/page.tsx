@@ -167,7 +167,7 @@ export default function Indigo() {
             </div>
             
             {/* Título principal completamente renovado - NUEVO ESTILO */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
               Transforma tu
               <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-2xl"> Empresa</span>
               <br />
@@ -1291,7 +1291,7 @@ export default function Indigo() {
           
           {/* Carrusel de logos - PRIMERA FILA (SIN REPETICIONES) */}
           <div className="mb-12">
-            <div className="flex space-x-16 animate-scroll">
+            <div className="flex space-x-16 animate-scroll-fast">
               {/* Logo 1 - Supabase */}
               <div className="flex-shrink-0 group">
                 <div className="w-24 h-24 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
@@ -1586,7 +1586,7 @@ export default function Indigo() {
           
           {/* Carrusel de logos - SEGUNDA FILA (SIN REPETICIONES) */}
           <div className="mb-12">
-            <div className="flex space-x-12 animate-scroll-slow">
+            <div className="flex space-x-12 animate-scroll-medium">
               {/* Logo 1 - PostgreSQL */}
               <div className="flex-shrink-0 group">
                 <div className="w-20 h-20 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-blue-200 hover:border-blue-400 hover:scale-110">
@@ -2005,6 +2005,24 @@ export default function Indigo() {
         
         .animate-tilt {
           animation: tilt 10s infinite linear;
+        }
+        
+        @keyframes scroll-fast {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll-fast {
+          animation: scroll-fast 12s linear infinite;
+        }
+        
+        @keyframes scroll-medium {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll-medium {
+          animation: scroll-medium 15s linear infinite;
         }
       `}      </style>
       </div>

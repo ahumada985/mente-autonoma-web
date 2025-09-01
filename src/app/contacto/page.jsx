@@ -8,6 +8,7 @@ import ContactModal from '@/components/ContactModal';
 export default function Contacto() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,14 +29,14 @@ export default function Contacto() {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex justify-between items-center h-16 sm:h-20">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                <h1 className={`text-sm sm:text-lg md:text-xl font-bold transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-900' : 'text-white'
                 }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
+                <p className={`text-xs sm:text-sm transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-600' : 'text-white/80'
                 }`}>Soluciones Digitales</p>
               </div>
@@ -68,12 +69,62 @@ export default function Contacto() {
            <div className="flex items-center space-x-4">
               <Link 
                 href="/contacto" 
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm text-xs sm:text-sm"
               >
                 Contacto
               </Link>
             </div>
+            
+            {/* Menú hamburguesa para móviles - Derecha */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-white/80'
+                }`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
+          
+          {/* Menú móvil desplegable */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+              <div className="px-4 py-6 space-y-4">
+                <Link 
+                  href="/" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+                <Link 
+                  href="/servicios-desarrollo-web" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Servicios
+                </Link>
+                <Link 
+                  href="/noticias" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Noticias
+                </Link>
+                <Link 
+                  href="/contacto" 
+                  className="block px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contacto
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
