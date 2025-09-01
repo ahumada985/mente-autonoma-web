@@ -255,7 +255,7 @@ export default function Indigo() {
             <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block">
               ⚡ Servicios de Vanguardia
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               Soluciones IA que
               <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Revolucionan tu Negocio</span>
             </h2>
@@ -920,7 +920,7 @@ export default function Indigo() {
             
             {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
             <div className="relative">
-              <div className="w-full max-w-[350px] sm:w-[400px] lg:w-[500px] xl:w-[550px] h-[350px] sm:h-[400px] lg:h-[500px] xl:h-[550px] mx-auto relative">
+              <div className="w-full max-w-[350px] sm:w-[400px] lg:w-[450px] xl:w-[450px] h-[350px] sm:h-[400px] lg:h-[450px] xl:h-[450px] mx-auto relative">
                 {/* Fondo animado con partículas flotantes */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl backdrop-blur-sm"></div>
                 
@@ -931,7 +931,7 @@ export default function Indigo() {
                 <div className="absolute top-28 right-20 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
                 
                 {/* Círculo central principal con Agentes IA */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 lg:w-36 lg:h-36 xl:w-36 xl:h-36 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
                   <div className="text-center text-white">
                     <div className="text-4xl lg:text-4xl xl:text-5xl mb-2">🤖</div>
                     <div className="text-base lg:text-base xl:text-lg font-bold">Agentes IA</div>
@@ -943,7 +943,7 @@ export default function Indigo() {
                 </div>
                 
                 {/* Tarjeta 1 - Superior Izquierda - Autonomia total */}
-                <div className="absolute top-10 left-10 lg:top-8 lg:left-8 xl:top-10 xl:left-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36">
+                <div className="absolute top-10 left-10 lg:top-10 lg:left-10 xl:top-10 xl:left-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-5 lg:p-5 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-28 lg:h-28 xl:w-28 xl:h-28">
                   <div className="text-center">
                     <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-spin">🚀</div>
                     <div className="text-sm lg:text-base xl:text-lg font-bold">Autonomia</div>
@@ -954,7 +954,7 @@ export default function Indigo() {
                 </div>
                 
                 {/* Tarjeta 2 - Superior Derecha - Escalable 100% */}
-                <div className="absolute top-10 right-10 lg:top-8 lg:right-8 xl:top-10 xl:right-10 bg-gradient-to-r from-orange-500 to-red-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '0.6s'}}>
+                <div className="absolute top-10 right-10 lg:top-10 lg:right-10 xl:top-10 xl:right-10 bg-gradient-to-r from-orange-500 to-red-500 text-white p-5 lg:p-5 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-28 lg:h-28 xl:w-28 xl:h-28" style={{animationDelay: '0.6s'}}>
                   <div className="text-center">
                     <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-bounce">⚡</div>
                     <div className="text-sm lg:text-base xl:text-lg font-bold">Escalable</div>
@@ -965,7 +965,7 @@ export default function Indigo() {
                 </div>
                 
                 {/* Tarjeta 3 - Inferior Izquierda - Uptime 99.9% */}
-                <div className="absolute bottom-10 left-10 lg:bottom-8 lg:left-8 xl:bottom-10 xl:left-10 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '0.3s'}}>
+                <div className="absolute bottom-10 left-10 lg:bottom-10 lg:left-10 xl:bottom-10 xl:left-10 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-5 lg:p-5 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-28 lg:h-28 xl:w-28 xl:h-28" style={{animationDelay: '0.3s'}}>
                   <div className="text-center">
                     <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-ping">⚡</div>
                     <div className="text-sm lg:text-base xl:text-lg font-bold">Uptime</div>
@@ -976,7 +976,7 @@ export default function Indigo() {
                 </div>
                 
                 {/* Tarjeta 4 - Inferior Derecha - Evolución continua */}
-                <div className="absolute bottom-10 right-10 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-10 right-10 lg:bottom-10 lg:right-10 xl:bottom-10 xl:right-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 lg:p-5 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-28 lg:h-28 xl:w-28 xl:h-28" style={{animationDelay: '1s'}}>
                   <div className="text-center">
                     <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-spin">🎯</div>
                     <div className="text-sm lg:text-base xl:text-lg font-bold">Evolución</div>
@@ -1023,7 +1023,7 @@ export default function Indigo() {
             <div className="mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
               📰 Últimas Noticias
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Mantente al Día con la
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"> Revolución IA</span>
             </h2>
@@ -1138,7 +1138,7 @@ export default function Indigo() {
             <div className="mb-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block animate-pulse">
               🚀 ACCESO EXCLUSIVO
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight">
               ¿Quieres Ser el Primero en
               <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent"> Implementar IA en tu Industria?</span>
             </h2>
@@ -1276,8 +1276,8 @@ export default function Indigo() {
                   </div>
                 </form>
 
-                {/* Beneficios destacados */}
-                <div className="mt-8 pt-8 border-t border-gray-700/30">
+                {/* Beneficios destacados - Solo visible en escritorio */}
+                <div className="hidden md:block mt-8 pt-8 border-t border-gray-700/30">
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center p-4 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl border border-emerald-500/20">
                       <div className="text-2xl mb-2">📊</div>
@@ -1318,7 +1318,7 @@ export default function Indigo() {
             <div className="mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
               🚀 Tecnologías de Vanguardia
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Construido con las Mejores
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Tecnologías</span>
             </h2>

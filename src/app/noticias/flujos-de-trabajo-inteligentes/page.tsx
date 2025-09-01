@@ -105,10 +105,10 @@ export default function NoticiaFlujosTrabajo() {
                   className="block px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contacto
-                </Link>
-              </div>
+                Contacto
+              </Link>
             </div>
+          </div>
           )}
         </div>
       </header>
