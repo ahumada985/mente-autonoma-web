@@ -88,7 +88,7 @@ export default function NoticiaAutomatizacion() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/contacto" 
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm text-xs sm:text-sm"
               >
                 Contacto
               </Link>
@@ -144,7 +144,6 @@ export default function NoticiaAutomatizacion() {
               </div>
             </div>
           )}
-          </div>
         </div>
       </header>
 

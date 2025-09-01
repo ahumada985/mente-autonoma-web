@@ -15,13 +15,12 @@ export default function Indigo() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [isClient, setIsClient] = useState(false);
+
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-    
     // Función para detectar cuando el header debe ser sticky
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -75,18 +74,7 @@ export default function Indigo() {
     }
   };
 
-  if (!isClient) {
-    return (
-      <div className="min-h-screen bg-white">
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Cargando...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <>
@@ -96,7 +84,7 @@ export default function Indigo() {
         keywords="inteligencia artificial, desarrollo web, chatbots, automatización, IA, tecnología, Chile, Santiago, transformación digital"
         ogImage="https://res.cloudinary.com/dysvptyfc/image/upload/v1756465870/logos/hp0ci35hkx5ld1azubdv.png"
       />
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Header con transparencia dinámica */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHeaderSticky 
@@ -104,14 +92,14 @@ export default function Indigo() {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex justify-between items-center h-16 sm:h-20">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
-                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                <h1 className={`text-sm sm:text-lg md:text-xl font-bold transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-900' : 'text-white'
                 }`}>Mente Autónoma</h1>
-                <p className={`text-sm transition-colors duration-300 ${
+                <p className={`text-xs sm:text-sm transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-600' : 'text-white/80'
                 }`}>Soluciones Digitales</p>
               </div>
@@ -142,11 +130,61 @@ export default function Indigo() {
             </nav>
             
             <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
+              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm text-xs sm:text-sm">
                 Contacto
               </Link>
             </div>
+            
+            {/* Menú hamburguesa para móviles */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-white/80'
+                }`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
           </div>
+          </div>
+          
+          {/* Menú móvil desplegable */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+              <div className="px-4 py-6 space-y-4">
+                <Link 
+                  href="/" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+                <Link 
+                  href="/servicios-desarrollo-web" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Servicios
+                </Link>
+                <Link 
+                  href="/noticias" 
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Noticias
+                </Link>
+                <Link 
+                  href="/contacto" 
+                  className="block px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contacto
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
@@ -167,7 +205,7 @@ export default function Indigo() {
             </div>
             
             {/* Título principal completamente renovado - NUEVO ESTILO */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Transforma tu
               <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-2xl"> Empresa</span>
               <br />
@@ -184,7 +222,7 @@ export default function Indigo() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button 
                 onClick={() => setIsDemoModalOpen(true)}
-                className="group relative overflow-hidden bg-white text-purple-600 text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400"
+                className="group relative overflow-hidden bg-white text-purple-600 text-sm sm:text-lg px-6 sm:px-10 py-3 sm:py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
@@ -197,7 +235,7 @@ export default function Indigo() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </button>
               
-              <a href="#servicios" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
+              <a href="#servicios" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-sm sm:text-lg px-6 sm:px-10 py-3 sm:py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-45"></div>
@@ -882,7 +920,7 @@ export default function Indigo() {
             
             {/* Columna Derecha - NUEVO DISEÑO INTERACTIVO Y CREATIVO */}
             <div className="relative">
-              <div className="w-full max-w-[350px] sm:w-[400px] lg:w-[450px] h-[350px] sm:h-[400px] lg:h-[450px] mx-auto relative">
+              <div className="w-full max-w-[350px] sm:w-[400px] lg:w-[500px] xl:w-[550px] h-[350px] sm:h-[400px] lg:h-[500px] xl:h-[550px] mx-auto relative">
                 {/* Fondo animado con partículas flotantes */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl backdrop-blur-sm"></div>
                 
@@ -893,10 +931,10 @@ export default function Indigo() {
                 <div className="absolute top-28 right-20 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
                 
                 {/* Círculo central principal con Agentes IA */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 animate-pulse">
                   <div className="text-center text-white">
-                    <div className="text-4xl mb-2">🤖</div>
-                    <div className="text-base font-bold">Agentes IA</div>
+                    <div className="text-4xl lg:text-4xl xl:text-5xl mb-2">🤖</div>
+                    <div className="text-base lg:text-base xl:text-lg font-bold">Agentes IA</div>
                   </div>
                   
                   {/* Anillos concéntricos giratorios */}
@@ -905,44 +943,44 @@ export default function Indigo() {
                 </div>
                 
                 {/* Tarjeta 1 - Superior Izquierda - Autonomia total */}
-                <div className="absolute top-10 left-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28">
+                <div className="absolute top-10 left-10 lg:top-8 lg:left-8 xl:top-10 xl:left-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36">
                   <div className="text-center">
-                    <div className="text-2xl mb-1 group-hover:animate-spin">🚀</div>
-                    <div className="text-sm font-bold">Autonomia</div>
-                    <div className="text-xs opacity-90">total</div>
+                    <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-spin">🚀</div>
+                    <div className="text-sm lg:text-base xl:text-lg font-bold">Autonomia</div>
+                    <div className="text-xs lg:text-sm xl:text-base opacity-90">total</div>
                   </div>
                   {/* Efecto de brillo */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
                 {/* Tarjeta 2 - Superior Derecha - Escalable 100% */}
-                <div className="absolute top-10 right-10 bg-gradient-to-r from-orange-500 to-red-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '0.6s'}}>
+                <div className="absolute top-10 right-10 lg:top-8 lg:right-8 xl:top-10 xl:right-10 bg-gradient-to-r from-orange-500 to-red-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '0.6s'}}>
                   <div className="text-center">
-                    <div className="text-2xl mb-1 group-hover:animate-bounce">⚡</div>
-                    <div className="text-sm font-bold">Escalable</div>
-                    <div className="text-xs opacity-90">100%</div>
+                    <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-bounce">⚡</div>
+                    <div className="text-sm lg:text-base xl:text-lg font-bold">Escalable</div>
+                    <div className="text-xs lg:text-sm xl:text-base opacity-90">100%</div>
                   </div>
                   {/* Efecto de energía */}
                   <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-l-yellow-300 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent transform rotate-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
                 {/* Tarjeta 3 - Inferior Izquierda - Uptime 99.9% */}
-                <div className="absolute bottom-10 left-10 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '0.3s'}}>
+                <div className="absolute bottom-10 left-10 lg:bottom-8 lg:left-8 xl:bottom-10 xl:left-10 bg-gradient-to-r from-violet-500 to-purple-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform -rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '0.3s'}}>
                   <div className="text-center">
-                    <div className="text-2xl mb-1 group-hover:animate-ping">⚡</div>
-                    <div className="text-sm font-bold">Uptime</div>
-                    <div className="text-xs opacity-90">99.9%</div>
+                    <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-ping">⚡</div>
+                    <div className="text-sm lg:text-base xl:text-lg font-bold">Uptime</div>
+                    <div className="text-xs lg:text-sm xl:text-base opacity-90">99.9%</div>
                   </div>
                   {/* Efecto de cristal */}
                   <div className="absolute inset-0 border border-white/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
                 
                 {/* Tarjeta 4 - Inferior Derecha - Evolución continua */}
-                <div className="absolute bottom-10 right-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-10 right-10 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 lg:p-4 xl:p-5 rounded-2xl shadow-xl border-2 border-white/30 transform rotate-12 hover:rotate-0 transition-all duration-700 cursor-pointer group hover:scale-125 animate-bounce w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36" style={{animationDelay: '1s'}}>
                   <div className="text-center">
-                    <div className="text-2xl mb-1 group-hover:animate-spin">🎯</div>
-                    <div className="text-sm font-bold">Evolución</div>
-                    <div className="text-xs opacity-90">continua</div>
+                    <div className="text-2xl lg:text-3xl xl:text-4xl mb-1 group-hover:animate-spin">🎯</div>
+                    <div className="text-sm lg:text-base xl:text-lg font-bold">Evolución</div>
+                    <div className="text-xs lg:text-sm xl:text-base opacity-90">continua</div>
                   </div>
                   {/* Efecto de red */}
                   <div className="absolute inset-0 border-2 border-white/20 border-dashed rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
@@ -2025,7 +2063,7 @@ export default function Indigo() {
           animation: scroll-medium 15s linear infinite;
         }
       `}      </style>
-      </div>
+    </div>
     </>
   )
 }
