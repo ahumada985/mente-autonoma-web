@@ -377,7 +377,7 @@ export default function ServiciosDesarrolloWeb() {
       </header>
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white py-24 sm:py-28 lg:py-32">
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-24 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32">
         {/* Elementos de fondo decorativos */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
@@ -424,7 +424,7 @@ export default function ServiciosDesarrolloWeb() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
               🌟 WordPress Profesional
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Soluciones WordPress para tu Negocio
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -514,7 +514,7 @@ export default function ServiciosDesarrolloWeb() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
               ⚡ Tecnologías de Vanguardia
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Stack Tecnológico Moderno
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -622,7 +622,7 @@ export default function ServiciosDesarrolloWeb() {
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">
             ¿Listo para Transformar tu Negocio?
           </h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">

@@ -177,7 +177,7 @@ export default function Noticias() {
       </header>
       
       {/* Header de la Página */}
-      <section className="bg-white">
+      <section className="bg-white pt-24">
         <div className="max-w-4xl mx-auto px-6 py-16">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -228,13 +228,7 @@ export default function Noticias() {
                   </p>
                   
                   {/* Footer del artículo */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <span>{noticia.autor}</span>
-                      <span>•</span>
-                      <span>{noticia.tiempoLectura}</span>
-                    </div>
-                    
+                  <div className="flex items-center justify-end">
                     <Link 
                       href={`/noticias/${noticia.id}`}
                       className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"

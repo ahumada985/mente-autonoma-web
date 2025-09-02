@@ -153,7 +153,7 @@ export default function Contacto() {
             📞 Contacto Directo
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Hablemos de tu
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Proyecto
@@ -227,15 +227,7 @@ export default function Contacto() {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">⏰</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Horario de Atención</h3>
-                    <p className="text-gray-600">Lunes a Viernes: 9:00 - 18:00</p>
-                  </div>
-                </div>
+
               </div>
               
               <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">

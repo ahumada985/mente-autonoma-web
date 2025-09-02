@@ -306,11 +306,7 @@ export default function NoticiaIndividual() {
             {noticia.resumen}
           </p>
           
-          <div className="flex items-center space-x-6 text-sm text-gray-300">
-            <span>Por {noticia.autor}</span>
-            <span>•</span>
-            <span>{noticia.tiempoLectura} de lectura</span>
-          </div>
+
         </div>
       </section>
 
