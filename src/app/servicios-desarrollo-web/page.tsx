@@ -424,10 +424,10 @@ export default function ServiciosDesarrolloWeb() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
               🌟 WordPress Profesional
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Soluciones WordPress para tu Negocio
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               Desarrollamos sitios web profesionales con WordPress, la plataforma más popular del mundo. 
               Perfecto para negocios que quieren una solución confiable y fácil de gestionar.
             </p>
