@@ -15,13 +15,12 @@ export default function Indigo() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [isClient, setIsClient] = useState(false);
+
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-    
     // Función para detectar cuando el header debe ser sticky
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -75,18 +74,7 @@ export default function Indigo() {
     }
   };
 
-  if (!isClient) {
-    return (
-      <div className="min-h-screen bg-white">
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Cargando...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <>
@@ -104,7 +92,9 @@ export default function Indigo() {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          {/* Header Desktop */}
+          <div className="hidden md:flex justify-between items-center h-20">
+            {/* Logo y texto */}
             <Link href="/" className="flex items-center space-x-3 group">
               <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
@@ -117,7 +107,8 @@ export default function Indigo() {
               </div>
             </Link>
             
-            <nav className="hidden md:flex space-x-8">
+            {/* Navegación desktop */}
+            <nav className="flex space-x-8">
               <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
                 isHeaderSticky 
                   ? 'text-gray-700 hover:text-blue-600' 
@@ -141,18 +132,83 @@ export default function Indigo() {
               </Link>
             </nav>
             
-            <div className="flex items-center space-x-4">
-              <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
-                Contacto
-              </Link>
-            </div>
+            {/* Botón Contacto desktop */}
+            <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
+              Contacto
+            </Link>
           </div>
+          
+          {/* Header Móvil - Layout: Logo | Contacto | Hamburger */}
+          <div className="md:hidden flex items-center justify-between h-20">
+            {/* Logo y texto - MÁS PEQUEÑO en móvil */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <h1 className={`text-base font-bold transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-900' : 'text-white'
+                }`}>Mente Autónoma</h1>
+                <p className={`text-xs transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-600' : 'text-white/80'
+                }`}>Soluciones Digitales</p>
+              </div>
+            </Link>
+            
+            {/* Botón Contacto CENTRADO en móvil - MÁS PEQUEÑO */}
+            <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm text-xs">
+              Contacto
+            </Link>
+            
+            {/* Menú hamburguesa - DERECHA en móvil */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="flex flex-col space-y-1 p-2"
+            >
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-white'
+              } ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-white'
+              } ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-white'
+              } ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </button>
+          </div>
+          
+          {/* Menú móvil desplegable */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 mt-2 rounded-lg shadow-lg">
+              <nav className="flex flex-col space-y-2 p-4">
+                <Link 
+                  href="/" 
+                  className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+                <Link 
+                  href="/servicios-desarrollo-web" 
+                  className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Servicios
+                </Link>
+                <Link 
+                  href="/noticias" 
+                  className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Noticias
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
 
-{/* Hero Section - Fondo púrpura a azul */}
-      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
+      {/* Hero Section - Fondo púrpura a azul */}
+      <section className="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 text-white pt-36 sm:pt-32 pb-20 relative overflow-hidden">
         {/* Elementos de fondo decorativos */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
@@ -162,12 +218,12 @@ export default function Indigo() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge superior completamente renovado - NUEVO DISEÑO */}
-            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
+            <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm shadow-lg rounded-full inline-block backdrop-blur-sm border border-white/20">
               ⚡ La IA del Futuro, Hoy
             </div>
             
             {/* Título principal completamente renovado - NUEVO ESTILO */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Transforma tu
               <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-2xl"> Empresa</span>
               <br />
@@ -175,7 +231,7 @@ export default function Indigo() {
             </h1>
             
             {/* Descripción completamente renovada - NUEVO TONO */}
-            <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed">
               Llevamos la IA de vanguardia a tu negocio.<br/>
               <span className="text-emerald-300 font-semibold">Soluciones personalizadas que generan resultados reales.</span>
             </p>
@@ -184,7 +240,7 @@ export default function Indigo() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button 
                 onClick={() => setIsDemoModalOpen(true)}
-                className="group relative overflow-hidden bg-white text-purple-600 text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400"
+                className="group relative overflow-hidden bg-white text-purple-600 text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-purple-200 backdrop-blur-sm hover:border-purple-400"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
@@ -197,7 +253,7 @@ export default function Indigo() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </button>
               
-              <a href="#servicios" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg px-10 py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
+              <a href="#servicios" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-3xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent transform rotate-45"></div>
@@ -217,7 +273,7 @@ export default function Indigo() {
             <div className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block">
               ⚡ Servicios de Vanguardia
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-8 leading-tight">
               Soluciones IA que
               <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Revolucionan tu Negocio</span>
             </h2>
@@ -985,7 +1041,7 @@ export default function Indigo() {
             <div className="mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
               📰 Últimas Noticias
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Mantente al Día con la
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"> Revolución IA</span>
             </h2>
@@ -1100,7 +1156,7 @@ export default function Indigo() {
             <div className="mb-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white px-8 py-3 text-sm shadow-2xl rounded-full inline-block animate-pulse">
               🚀 ACCESO EXCLUSIVO
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-8 leading-tight">
               ¿Quieres Ser el Primero en
               <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent"> Implementar IA en tu Industria?</span>
             </h2>
@@ -1229,8 +1285,8 @@ export default function Indigo() {
                     </div>
                   </button>
 
-                  {/* Garantía de seguridad */}
-                  <div className="text-center pt-4">
+                  {/* Garantía de seguridad - OCULTO EN MÓVIL */}
+                  <div className="hidden md:block text-center pt-4">
                     <p className="text-sm text-gray-400 flex items-center justify-center space-x-2">
                       <span>🔒</span>
                       <span>100% seguro. Sin spam. Cancela cuando quieras.</span>
@@ -1238,8 +1294,8 @@ export default function Indigo() {
                   </div>
                 </form>
 
-                {/* Beneficios destacados */}
-                <div className="mt-8 pt-8 border-t border-gray-700/30">
+                {/* Beneficios destacados - OCULTOS EN MÓVIL */}
+                <div className="hidden md:block mt-8 pt-8 border-t border-gray-700/30">
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center p-4 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl border border-emerald-500/20">
                       <div className="text-2xl mb-2">📊</div>
@@ -1280,7 +1336,7 @@ export default function Indigo() {
             <div className="mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 text-sm shadow-lg rounded-full inline-block">
               🚀 Tecnologías de Vanguardia
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Construido con las Mejores
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Tecnologías</span>
             </h2>

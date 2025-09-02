@@ -27,90 +27,117 @@ export default function NoticiaFlujosTrabajo() {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
+          {/* Header Desktop */}
+          <div className="hidden md:flex justify-between items-center h-20">
+            {/* Logo y texto */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain" />
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <div>
-                <h1 className={`text-sm sm:text-lg md:text-xl font-bold ${isHeaderSticky ? 'text-gray-900' : 'text-gray-900'}`}>Mente Autónoma</h1>
-                <p className={`text-xs sm:text-sm ${isHeaderSticky ? 'text-gray-600' : 'text-gray-600'}`}>Soluciones Digitales</p>
+                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-900' : 'text-gray-900'
+                }`}>Mente Autónoma</h1>
+                <p className={`text-sm transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-600' : 'text-gray-600'
+                }`}>Soluciones Digitales</p>
               </div>
             </Link>
             
-            {/* Menu */}
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+            {/* Navegación desktop */}
+            <nav className="flex space-x-8">
+              <Link href="/" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}>
                 Inicio
               </Link>
-              <Link href="/noticias" className={`${isHeaderSticky ? 'text-blue-600' : 'text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
-                Noticias
-              </Link>
-              <Link href="/servicios-desarrollo-web" className={`${isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105`}>
+              <Link href="/servicios-desarrollo-web" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-gray-700 hover:text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}>
                 Servicios
+              </Link>
+              <Link href="/noticias" className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                isHeaderSticky 
+                  ? 'text-blue-600' 
+                  : 'text-blue-600'
+              }`}>
+                Noticias
               </Link>
             </nav>
             
-            {/* CTA Button */}
-            <div className="flex items-center space-x-4">
-              <Link 
-                href="/contacto" 
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm"
-              >
-                Contacto
-              </Link>
-            </div>
-            
-            {/* Menú hamburguesa para móviles */}
-            <div className="md:hidden">
-              <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`p-2 rounded-lg transition-colors duration-300 ${
-                  isHeaderSticky ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+            {/* Botón Contacto desktop */}
+            <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm">
+              Contacto
+            </Link>
           </div>
           
-          {/* Menú móvil desplegable */}
+          {/* Header Móvil - Layout: Logo | Contacto | Hamburger */}
+          <div className="md:hidden flex items-center justify-between h-20">
+            {/* Logo y texto - MÁS PEQUEÑO en móvil */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <h1 className={`text-base font-bold transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-900' : 'text-gray-900'
+                }`}>Mente Autónoma</h1>
+                <p className={`text-xs transition-colors duration-300 ${
+                  isHeaderSticky ? 'text-gray-600' : 'text-gray-600'
+                }`}>Soluciones Digitales</p>
+              </div>
+            </Link>
+            
+            {/* Botón Contacto CENTRADO en móvil - MÁS PEQUEÑO */}
+            <Link href="/contacto" className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl border-0 backdrop-blur-sm text-xs">
+              Contacto
+            </Link>
+            
+            {/* Menú hamburguesa - DERECHA en móvil */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="flex flex-col space-y-1 p-2"
+            >
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-gray-900'
+              } ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-gray-900'
+              } ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+                isHeaderSticky ? 'text-gray-900' : 'text-gray-900'
+              } ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </button>
+          </div>
+          
+          {/* Menú móvil desplegable - DISEÑO CREATIVO */}
           {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
-              <div className="px-4 py-6 space-y-4">
+            <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 mt-2 rounded-lg shadow-lg">
+              <nav className="flex flex-col space-y-2 p-4">
                 <Link 
                   href="/" 
-                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Inicio
                 </Link>
                 <Link 
                   href="/servicios-desarrollo-web" 
-                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Servicios
                 </Link>
                 <Link 
                   href="/noticias" 
-                  className="block px-4 py-3 text-blue-600 font-semibold rounded-lg bg-blue-50 transition-all duration-300"
+                  className="px-4 py-3 rounded-lg font-semibold text-blue-600 bg-blue-50 transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Noticias
                 </Link>
-                <Link 
-                  href="/contacto" 
-                  className="block px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contacto
-                </Link>
-              </div>
+              </nav>
             </div>
           )}
-          </div>
         </div>
       </header>
 
