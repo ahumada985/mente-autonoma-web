@@ -424,10 +424,10 @@ export default function ServiciosDesarrolloWeb() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
               🌟 WordPress Profesional
             </div>
-            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Soluciones WordPress para tu Negocio
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Desarrollamos sitios web profesionales con WordPress, la plataforma más popular del mundo. 
               Perfecto para negocios que quieren una solución confiable y fácil de gestionar.
             </p>
@@ -514,10 +514,10 @@ export default function ServiciosDesarrolloWeb() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
               ⚡ Tecnologías de Vanguardia
             </div>
-            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Stack Tecnológico Moderno
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Desarrollamos con las tecnologías más avanzadas: Next.js, Supabase, Prisma, Tailwind CSS, 
               shadcn/ui y más. Para proyectos que requieren rendimiento, escalabilidad y experiencia de usuario excepcional.
             </p>
@@ -622,10 +622,10 @@ export default function ServiciosDesarrolloWeb() {
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
             ¿Listo para Transformar tu Negocio?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
             Estos precios de lanzamiento son por tiempo limitado. No pierdas la oportunidad 
             de tener una presencia digital profesional que impulse tu negocio al siguiente nivel.
           </p>
