@@ -2080,7 +2080,7 @@ export default function Indigo() {
         .animate-scroll-medium {
           animation: scroll-medium 15s linear infinite;
         }
-      `}      </style>
+      `}</style>
       </div>
     </>
   )

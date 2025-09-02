@@ -39,3 +39,4 @@ COMMENT ON COLUMN contacts.created_at IS 'Fecha y hora de creación del contacto
 COMMENT ON COLUMN contacts.status IS 'Estado del contacto: new, read, replied, closed';
 COMMENT ON COLUMN contacts.source IS 'Origen del contacto: contact_form, header_button, etc.';
 
+
