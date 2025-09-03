@@ -1,37 +1,100 @@
 [
   {
     "url": "/",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:29.563Z"
+    "timestamp": "2025-09-03T20:12:58.260Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/noticias",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:30.113Z"
+    "timestamp": "2025-09-03T20:13:06.597Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/contacto",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:31.419Z"
+    "timestamp": "2025-09-03T20:13:12.273Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/servicios-desarrollo-web",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:33.039Z"
+    "timestamp": "2025-09-03T20:13:17.810Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/privacidad",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:36.582Z"
+    "timestamp": "2025-09-03T20:13:23.460Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/terminos",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:38.079Z"
+    "timestamp": "2025-09-03T20:13:29.140Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   },
   {
     "url": "/cookies",
-    "error": "lighthouse is not a function",
-    "timestamp": "2025-08-31T09:34:39.448Z"
+    "timestamp": "2025-09-03T20:13:35.145Z",
+    "performanceScore": 0,
+    "accessibilityScore": 0,
+    "bestPracticesScore": 0,
+    "seoScore": 0,
+    "firstContentfulPaint": 0,
+    "largestContentfulPaint": 0,
+    "firstInputDelay": 0,
+    "cumulativeLayoutShift": 0,
+    "totalBlockingTime": 0,
+    "speedIndex": 0
   }
 ]

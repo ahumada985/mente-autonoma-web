@@ -71,7 +71,7 @@ git reset --hard HEAD~1  # Retrocede 1 commit
 git reset --hard HEAD~2  # Retrocede 2 commits
 
 6. Restaurar a un Commit Específico por Hash
-git reset --hard abc1234  # Reemplaza abc1234 con el hash del commit
+ 		
 
 
 🔄 Comandos que Usamos:
@@ -83,5 +83,20 @@ git checkout -- archivo es seguro y solo afecta el archivo especificado
 git reset --hard es más peligroso porque elimina TODOS los cambios no confirmados
 Siempre usa git status antes de restaurar para ver qué archivos están modificados
 
+
+git log --oneline
+
+. BACKUP AUTOMÁTICO   
+¿Dónde se guardan las copias?
+Directorio: C:\Users\usuario\Desktop\Proyectos_IA\Cursor_oficial\backups\
+Formato: Archivos ZIP con timestamp
+Ejemplo: backup-2025-09-03T17-30-19-760Z.zip
+¿Cómo restaurar?
+Script automático: backups/restore.sh
+Comando: bash backups/restore.sh
+¿Cada cuánto tiempo?
+Frecuencia: Diario a las 2:00 AM
+Retención: 7 backups máximo
+Configuración: backup-cron.txt
 
 

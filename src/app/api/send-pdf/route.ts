@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
+import { withAdvancedSecurity } from '@/lib/advanced-security';
+import { withPerformanceOptimization as withPerfOpt } from '@/lib/performance-optimization';
 
-export async function POST(request: NextRequest) {
+async function handleSendPDF(request: NextRequest) {
   try {
     const { name, email, company } = await request.json();
 
@@ -100,3 +102,6 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+// Exportar con optimizaciones de seguridad y performance
+export const POST = withAdvancedSecurity(withPerfOpt(handleSendPDF, 'api'));

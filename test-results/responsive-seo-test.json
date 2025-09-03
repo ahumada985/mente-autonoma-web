@@ -1,0 +1,513 @@
+{
+  "timestamp": "2025-09-03T17:34:48.677Z",
+  "responsive": [
+    {
+      "device": "Desktop",
+      "dimensions": "1920x1080",
+      "results": [
+        {
+          "url": "/",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/noticias",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/contacto",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/servicios-desarrollo-web",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/privacidad",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/terminos",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/cookies",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "device": "Laptop",
+      "dimensions": "1366x768",
+      "results": [
+        {
+          "url": "/",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/noticias",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/contacto",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/servicios-desarrollo-web",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/privacidad",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/terminos",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/cookies",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "device": "Tablet",
+      "dimensions": "768x1024",
+      "results": [
+        {
+          "url": "/",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/noticias",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/contacto",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/servicios-desarrollo-web",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/privacidad",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/terminos",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/cookies",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "device": "Mobile Large",
+      "dimensions": "425x800",
+      "results": [
+        {
+          "url": "/",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/noticias",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/contacto",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/servicios-desarrollo-web",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/privacidad",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/terminos",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/cookies",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "device": "Mobile Small",
+      "dimensions": "375x667",
+      "results": [
+        {
+          "url": "/",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/noticias",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/contacto",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/servicios-desarrollo-web",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/privacidad",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/terminos",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        },
+        {
+          "url": "/cookies",
+          "hasViewportMeta": true,
+          "hasResponsiveImages": false,
+          "hasFlexibleLayout": true,
+          "hasMobileMenu": false,
+          "textReadable": true,
+          "buttonsClickable": true,
+          "status": "success"
+        }
+      ]
+    }
+  ],
+  "seo": [
+    {
+      "url": "/",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/noticias",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/contacto",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/servicios-desarrollo-web",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/privacidad",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/terminos",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    },
+    {
+      "url": "/cookies",
+      "title": "MiApp - Construye algo increíble",
+      "description": "Una plataforma moderna y potente que te permite crear, innovar y transformar tus ideas en realidad.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": "",
+      "canonical": "",
+      "robots": "",
+      "hasH1": true,
+      "hasH2": true,
+      "hasAltImages": true,
+      "hasInternalLinks": true,
+      "hasExternalLinks": false,
+      "pageLoadTime": 0,
+      "status": "success"
+    }
+  ]
+}

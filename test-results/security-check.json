@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-03T08:58:49.295Z",
+  "score": 60,
+  "passedChecks": 6,
+  "totalChecks": 10,
+  "headers": {
+    "implemented": 0,
+    "missing": [
+      "X-Content-Type-Options",
+      "X-Frame-Options",
+      "X-XSS-Protection",
+      "Referrer-Policy",
+      "Permissions-Policy",
+      "Strict-Transport-Security",
+      "Content-Security-Policy"
+    ],
+    "total": 7
+  },
+  "rateLimit": {
+    "implemented": true,
+    "config": true
+  },
+  "validation": {
+    "validation": true,
+    "sanitization": true
+  },
+  "attackDetection": {
+    "botDetection": true,
+    "sqlInjection": true,
+    "xss": false
+  }
+}

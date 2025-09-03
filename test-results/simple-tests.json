@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-09-03T08:56:09.899Z",
+  "duration": 127,
+  "accessibility": {
+    "altTags": 31,
+    "headings": 364,
+    "links": 202,
+    "forms": 11,
+    "issues": [
+      "index.html: Botones sin aria-label",
+      "30-ideas\\index.html: Botones sin aria-label",
+      "cookies\\index.html: Botones sin aria-label",
+      "dashboard\\index.html: Botones sin aria-label",
+      "noticias\\index.html: Botones sin aria-label",
+      "privacidad\\index.html: Botones sin aria-label",
+      "servicios-desarrollo-web\\index.html: Botones sin aria-label",
+      "terminos\\index.html: Botones sin aria-label",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Botones sin aria-label",
+      "noticias\\chatbots-que-entienden-contexto\\index.html: Botones sin aria-label",
+      "noticias\\flujos-de-trabajo-inteligentes\\index.html: Botones sin aria-label",
+      "noticias\\ia-para-pequenas-empresas\\index.html: Botones sin aria-label",
+      "noticias\\noticia1\\index.html: Botones sin aria-label",
+      "noticias\\noticia2\\index.html: Botones sin aria-label",
+      "noticias\\noticia3\\index.html: Botones sin aria-label"
+    ]
+  },
+  "performance": {
+    "totalSize": 4456537,
+    "jsFiles": 40,
+    "cssFiles": 2,
+    "imageFiles": 7,
+    "issues": [
+      "_next\\static\\css\\33b28b48f0449e4d.css: CSS file muy grande (111.9KB)"
+    ]
+  },
+  "usability": {
+    "pages": 3,
+    "navigation": 3,
+    "forms": 2,
+    "issues": [
+      "index.html: Formulario sin method",
+      "index.html: Formulario sin action",
+      "contacto/index.html: Página no encontrada",
+      "servicios-desarrollo-web/index.html: Formulario sin method",
+      "servicios-desarrollo-web/index.html: Formulario sin action"
+    ]
+  },
+  "seo": {
+    "metaTags": 1,
+    "structuredData": 0,
+    "issues": [
+      "index.html: Falta structured data",
+      "Falta sitemap.xml",
+      "Falta robots.txt"
+    ]
+  },
+  "totalIssues": 24
+}

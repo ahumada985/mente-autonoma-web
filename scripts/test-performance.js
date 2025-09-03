@@ -5,7 +5,7 @@
  * Prueba el rendimiento del sitio usando Lighthouse
  */
 
-const { lighthouse } = require('lighthouse');
+const { default: lighthouse } = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 const fs = require('fs');
 const path = require('path');
@@ -65,7 +65,8 @@ async function testPerformance() {
       // Ejecutar Lighthouse
       const runnerResult = await lighthouse(fullUrl, {
         port: chrome.port,
-        ...lighthouseConfig
+        output: 'json',
+        onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo']
       });
       
       // Analizar resultados
@@ -107,41 +108,20 @@ function analyzeLighthouseResults(lhr, url) {
   const categories = lhr.categories;
   
   return {
-    performanceScore: Math.round(categories.performance.score * 100),
-    accessibilityScore: Math.round(categories.accessibility.score * 100),
-    bestPracticesScore: Math.round(categories['best-practices'].score * 100),
-    seoScore: Math.round(categories.seo.score * 100),
+    performanceScore: Math.round((categories.performance?.score || 0) * 100),
+    accessibilityScore: Math.round((categories.accessibility?.score || 0) * 100),
+    bestPracticesScore: Math.round((categories['best-practices']?.score || 0) * 100),
+    seoScore: Math.round((categories.seo?.score || 0) * 100),
     
     // Métricas de Core Web Vitals
-    firstContentfulPaint: lhr.audits['first-contentful-paint'].numericValue,
-    largestContentfulPaint: lhr.audits['largest-contentful-paint'].numericValue,
-    firstInputDelay: lhr.audits['max-potential-fid'].numericValue,
-    cumulativeLayoutShift: lhr.audits['cumulative-layout-shift'].numericValue,
+    firstContentfulPaint: lhr.audits['first-contentful-paint']?.numericValue || 0,
+    largestContentfulPaint: lhr.audits['largest-contentful-paint']?.numericValue || 0,
+    firstInputDelay: lhr.audits['max-potential-fid']?.numericValue || 0,
+    cumulativeLayoutShift: lhr.audits['cumulative-layout-shift']?.numericValue || 0,
     
     // Otras métricas importantes
-    totalBlockingTime: lhr.audits['total-blocking-time'].numericValue,
-    speedIndex: lhr.audits['speed-index'].numericValue,
-    
-    // Oportunidades de mejora
-    opportunities: lhr.audits['opportunities'] ? 
-      Object.values(lhr.audits['opportunities']).map(audit => ({
-        id: audit.id,
-        title: audit.title,
-        description: audit.description,
-        score: audit.score,
-        numericValue: audit.numericValue,
-        displayValue: audit.displayValue
-      })) : [],
-    
-    // Diagnósticos
-    diagnostics: lhr.audits['diagnostics'] ? 
-      Object.values(lhr.audits['diagnostics']).map(audit => ({
-        id: audit.id,
-        title: audit.title,
-        description: audit.description,
-        score: audit.score,
-        details: audit.details
-      })) : []
+    totalBlockingTime: lhr.audits['total-blocking-time']?.numericValue || 0,
+    speedIndex: lhr.audits['speed-index']?.numericValue || 0
   };
 }
 
