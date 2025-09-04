@@ -1,0 +1,167 @@
+{
+  "fecha": "2025-09-04T03:56:34.239Z",
+  "resumen": {
+    "totalCompetidores": 3,
+    "palabrasClaveAnalizadas": 10,
+    "oportunidadesIdentificadas": 3,
+    "ventajasCompetitivas": 5
+  },
+  "competidores": [
+    {
+      "name": "Competidor 1",
+      "domain": "ejemplo1.com",
+      "services": [
+        "desarrollo web",
+        "diseño web",
+        "marketing digital"
+      ],
+      "location": "Antofagasta",
+      "strengths": [
+        "SEO local",
+        "precios competitivos"
+      ],
+      "weaknesses": [
+        "tecnología obsoleta",
+        "sin IA"
+      ]
+    },
+    {
+      "name": "Competidor 2",
+      "domain": "ejemplo2.com",
+      "services": [
+        "desarrollo web",
+        "ecommerce",
+        "hosting"
+      ],
+      "location": "Antofagasta",
+      "strengths": [
+        "experiencia local",
+        "soporte técnico"
+      ],
+      "weaknesses": [
+        "diseño básico",
+        "sin automatización"
+      ]
+    },
+    {
+      "name": "Competidor 3",
+      "domain": "ejemplo3.com",
+      "services": [
+        "diseño web",
+        "branding",
+        "redes sociales"
+      ],
+      "location": "Antofagasta",
+      "strengths": [
+        "diseño creativo",
+        "presencia en redes"
+      ],
+      "weaknesses": [
+        "sin desarrollo técnico",
+        "precios altos"
+      ]
+    }
+  ],
+  "palabrasClave": [
+    "desarrollo web Antofagasta",
+    "creación páginas web Antofagasta",
+    "diseño web Antofagasta",
+    "agencia digital Antofagasta",
+    "desarrollo web profesional Antofagasta",
+    "WordPress Antofagasta",
+    "creación sitios web Antofagasta",
+    "diseño páginas web Antofagasta",
+    "agencia desarrollo web Antofagasta",
+    "servicios desarrollo web Antofagasta"
+  ],
+  "oportunidades": [
+    {
+      "keyword": "desarrollo web con IA Antofagasta",
+      "volume": "Bajo",
+      "competition": "Muy Baja",
+      "opportunity": "Alta",
+      "reason": "Ningún competidor local ofrece IA"
+    },
+    {
+      "keyword": "automatización web Antofagasta",
+      "volume": "Muy Bajo",
+      "competition": "Nula",
+      "opportunity": "Muy Alta",
+      "reason": "Mercado sin explotar"
+    },
+    {
+      "keyword": "desarrollo web moderno Antofagasta",
+      "volume": "Medio",
+      "competition": "Baja",
+      "opportunity": "Alta",
+      "reason": "Competidores usan tecnologías obsoletas"
+    }
+  ],
+  "ventajasCompetitivas": [
+    {
+      "advantage": "Tecnologías Modernas",
+      "description": "Next.js, Supabase, Tailwind CSS, shadcn/ui",
+      "impact": "Alto"
+    },
+    {
+      "advantage": "Integración con IA",
+      "description": "Soluciones inteligentes y automatización",
+      "impact": "Muy Alto"
+    },
+    {
+      "advantage": "Hosting Gratuito",
+      "description": "1 año de hosting incluido en todos los planes",
+      "impact": "Alto"
+    },
+    {
+      "advantage": "Soporte Técnico Extendido",
+      "description": "30-180 días de soporte según el plan",
+      "impact": "Medio"
+    },
+    {
+      "advantage": "Precios Competitivos",
+      "description": "Ofertas de lanzamiento con descuentos significativos",
+      "impact": "Alto"
+    }
+  ],
+  "estrategiaContenido": [
+    {
+      "type": "Blog Posts",
+      "topics": [
+        "Cómo elegir la mejor agencia de desarrollo web en Antofagasta",
+        "WordPress vs Desarrollo Web Moderno: ¿Cuál elegir?",
+        "5 beneficios de integrar IA en tu sitio web",
+        "Guía completa de SEO local para empresas en Antofagasta",
+        "Desarrollo web responsive: ¿Por qué es importante?"
+      ],
+      "frequency": "2-3 posts por mes"
+    },
+    {
+      "type": "Case Studies",
+      "topics": [
+        "Caso de éxito: Restaurante en Antofagasta aumenta ventas 300%",
+        "Transformación digital: De tienda física a ecommerce exitoso",
+        "Automatización con IA: Ahorro de 20 horas semanales"
+      ],
+      "frequency": "1 caso por mes"
+    },
+    {
+      "type": "Landing Pages",
+      "topics": [
+        "Desarrollo web para restaurantes en Antofagasta",
+        "Ecommerce para PyMEs en Antofagasta",
+        "Landing pages de alta conversión",
+        "Sitios web para profesionales en Antofagasta"
+      ],
+      "frequency": "1 landing por mes"
+    }
+  ],
+  "recomendaciones": [
+    "Enfocarse en palabras clave de IA (baja competencia, alta oportunidad)",
+    "Crear contenido educativo sobre tecnologías modernas",
+    "Desarrollar casos de éxito locales",
+    "Optimizar para búsquedas de voz ('mejor agencia desarrollo web Antofagasta')",
+    "Implementar schema markup para SEO local",
+    "Crear perfiles en Google My Business y directorios locales"
+  ]
+}

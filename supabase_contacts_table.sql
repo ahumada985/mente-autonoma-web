@@ -40,3 +40,4 @@ COMMENT ON COLUMN contacts.status IS 'Estado del contacto: new, read, replied, c
 COMMENT ON COLUMN contacts.source IS 'Origen del contacto: contact_form, header_button, etc.';
 
 
+

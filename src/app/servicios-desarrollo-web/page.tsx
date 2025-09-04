@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import QuoteForm from '@/components/QuoteForm';
 import ContactModal from '@/components/ContactModal';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function ServiciosDesarrolloWeb() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
@@ -252,7 +253,21 @@ export default function ServiciosDesarrolloWeb() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Head>
+        <title>Desarrollo Web Profesional en Antofagasta | Mente Autónoma - Agencia de IA</title>
+        <meta name="description" content="Agencia líder en desarrollo web en Antofagasta. Creamos páginas web profesionales, sitios WordPress y aplicaciones modernas con IA. ¡Hosting gratuito por 1 año!" />
+        <meta name="keywords" content="desarrollo web Antofagasta, creación páginas web Antofagasta, diseño web Antofagasta, agencia digital Antofagasta, WordPress Antofagasta, desarrollo web profesional Antofagasta" />
+        <meta property="og:title" content="Desarrollo Web Profesional en Antofagasta | Mente Autónoma" />
+        <meta property="og:description" content="Agencia líder en desarrollo web en Antofagasta. Creamos páginas web profesionales, sitios WordPress y aplicaciones modernas con IA." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://menteautonoma.com/servicios-desarrollo-web" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Desarrollo Web Profesional en Antofagasta | Mente Autónoma" />
+        <meta name="twitter:description" content="Agencia líder en desarrollo web en Antofagasta. Creamos páginas web profesionales, sitios WordPress y aplicaciones modernas con IA." />
+        <link rel="canonical" href="https://menteautonoma.com/servicios-desarrollo-web" />
+      </Head>
+      <div className="min-h-screen bg-white">
       {/* Header Personalizado para Servicios */}
       
       {/* Header con transparencia dinámica */}
@@ -392,12 +407,13 @@ export default function ServiciosDesarrolloWeb() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Desarrollo Web
               <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Profesional
+                Profesional en Antofagasta
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4">
-              Transforma tu idea en una presencia digital impactante. Ofrecemos soluciones con WordPress 
-              y tecnologías modernas para llevar tu negocio al siguiente nivel.
+              Transforma tu idea en una presencia digital impactante. Somos la agencia de desarrollo web 
+              líder en Antofagasta, ofreciendo soluciones con WordPress y tecnologías modernas con IA 
+              para llevar tu negocio al siguiente nivel.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <div className="flex items-center space-x-2 text-green-300 font-semibold text-sm sm:text-base">
@@ -425,11 +441,11 @@ export default function ServiciosDesarrolloWeb() {
               🌟 WordPress Profesional
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Soluciones WordPress para tu Negocio
+              Soluciones WordPress para Empresas en Antofagasta
             </h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">
-              Desarrollamos sitios web profesionales con WordPress, la plataforma más popular del mundo. 
-              Perfecto para negocios que quieren una solución confiable y fácil de gestionar.
+              Desarrollamos sitios web profesionales con WordPress en Antofagasta, la plataforma más popular del mundo. 
+              Perfecto para negocios locales que quieren una solución confiable y fácil de gestionar.
             </p>
           </div>
 
@@ -515,11 +531,11 @@ export default function ServiciosDesarrolloWeb() {
               ⚡ Tecnologías de Vanguardia
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Stack Tecnológico Moderno
+              Desarrollo Web Moderno con IA en Antofagasta
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Desarrollamos con las tecnologías más avanzadas: Next.js, Supabase, Prisma, Tailwind CSS, 
-              shadcn/ui y más. Para proyectos que requieren rendimiento, escalabilidad y experiencia de usuario excepcional.
+              shadcn/ui y más. Para proyectos en Antofagasta que requieren rendimiento, escalabilidad y experiencia de usuario excepcional.
             </p>
           </div>
 
@@ -745,6 +761,7 @@ export default function ServiciosDesarrolloWeb() {
           onClose={() => setShowQuoteForm(false)} 
         />
       )}
-    </div>
+      </div>
+    </>
   );
 }

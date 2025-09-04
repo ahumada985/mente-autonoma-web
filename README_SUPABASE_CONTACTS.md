@@ -47,3 +47,4 @@ La función `saveContact` en `src/lib/supabase.js` ya está configurada para usa
 - El campo `source` permite identificar desde dónde vino el contacto
 
 
+
