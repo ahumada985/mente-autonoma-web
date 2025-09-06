@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 // ID de Google Analytics (reemplazar con el tuyo)
-const GA_TRACKING_ID = 'G-X4S9P9FZS4'; // Cambiar por tu ID real
+const GA_TRACKING_ID = 'G-M0L8D041W7'; // ID correcto de Google Analytics
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
