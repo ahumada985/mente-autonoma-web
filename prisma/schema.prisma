@@ -21,6 +21,7 @@ model User {
   // Relaciones
   clients   Client[]
   appointments Appointment[]
+  medicalRecords MedicalRecord[]
 
   @@map("users")
 }
