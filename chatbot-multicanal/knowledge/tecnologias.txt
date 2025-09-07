@@ -1,0 +1,49 @@
+TECNOLOGÍAS Y HERRAMIENTAS
+
+TECNOLOGÍAS QUE MANEJAMOS:
+
+DESARROLLO WEB:
+- HTML5, CSS3, JavaScript (ES6+)
+- React, Vue.js, Angular
+- Node.js, Express.js
+- Python (Django, Flask)
+- PHP (Laravel, CodeIgniter)
+- Bases de datos: MySQL, PostgreSQL, MongoDB
+- Cloud: AWS, Google Cloud, Azure
+
+INTELIGENCIA ARTIFICIAL:
+- Machine Learning: TensorFlow, PyTorch, Scikit-learn
+- Procesamiento de lenguaje natural: NLTK, spaCy
+- Chatbots: LangChain, OpenAI GPT, Claude
+- Análisis de datos: Pandas, NumPy, Matplotlib
+- Automatización: RPA, Selenium, BeautifulSoup
+
+HERRAMIENTAS DE DESARROLLO:
+- Control de versiones: Git, GitHub, GitLab
+- Contenedores: Docker, Kubernetes
+- CI/CD: Jenkins, GitHub Actions
+- Monitoreo: Prometheus, Grafana
+- Testing: Jest, Pytest, Selenium
+
+FRAMEWORKS Y LIBRERÍAS:
+- Frontend: React, Vue.js, Angular, Bootstrap
+- Backend: Express.js, Django, Flask, Laravel
+- Mobile: React Native, Flutter
+- Desktop: Electron, Tauri
+
+BASES DE DATOS:
+- Relacionales: MySQL, PostgreSQL, SQLite
+- NoSQL: MongoDB, Redis, Elasticsearch
+- Cloud: Firebase, Supabase, PlanetScale
+
+SERVICIOS EN LA NUBE:
+- AWS: EC2, S3, Lambda, RDS
+- Google Cloud: Compute Engine, Cloud Storage
+- Azure: Virtual Machines, Blob Storage
+- Vercel, Netlify, Heroku
+
+METODOLOGÍAS:
+- Agile, Scrum, Kanban
+- DevOps, CI/CD
+- Microservicios
+- API REST, GraphQL

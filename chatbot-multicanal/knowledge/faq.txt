@@ -1,0 +1,64 @@
+PREGUNTAS FRECUENTES (FAQ)
+
+¿CUÁNTO CUESTA UN SITIO WEB?
+Un sitio web básico cuesta desde $500.000 CLP. El precio final depende de las funcionalidades, diseño y complejidad del proyecto.
+
+¿CUÁNTO TARDA EN DESARROLLARSE UN PROYECTO?
+Un sitio web básico: 2-4 semanas
+E-commerce: 4-8 semanas
+Chatbot: 2-3 semanas
+Aplicación web: 6-12 semanas
+
+¿INCLUYEN HOSTING Y DOMINIO?
+El hosting y dominio no están incluidos en el precio base, pero podemos ayudarte a configurarlos.
+
+¿QUÉ TECNOLOGÍAS USAN?
+Utilizamos las tecnologías más modernas: React, Node.js, Python, bases de datos SQL y NoSQL, servicios en la nube.
+
+¿DAN SOPORTE DESPUÉS DE LA ENTREGA?
+Sí, incluimos 6 meses de soporte técnico gratuito y mantenimiento básico.
+
+¿PUEDEN INTEGRAR MI SISTEMA ACTUAL?
+Sí, especializamos en integración de sistemas existentes con nuevas tecnologías.
+
+¿HACEN DISEÑO GRÁFICO?
+Sí, tenemos diseñadores UX/UI que crean interfaces modernas y funcionales.
+
+¿CUÁL ES EL PROCESO DE TRABAJO?
+1. Consulta inicial gratuita
+2. Análisis de necesidades
+3. Propuesta detallada
+4. Desarrollo del proyecto
+5. Testing y entrega
+6. Capacitación y soporte
+
+¿PUEDEN OPTIMIZAR MI SITIO ACTUAL?
+Sí, ofrecemos servicios de optimización, actualización y modernización de sitios existentes.
+
+¿QUÉ INCLUYE EL MANTENIMIENTO?
+- Actualizaciones de seguridad
+- Backup automático
+- Monitoreo 24/7
+- Soporte técnico
+- Optimización de rendimiento
+
+¿TRABAJAN CON EMPRESAS DE TODOS LOS TAMAÑOS?
+Sí, trabajamos con startups, PYMEs y grandes empresas.
+
+¿OFRECEN CAPACITACIÓN?
+Sí, capacitamos a tu equipo en el uso y mantenimiento de las soluciones desarrolladas.
+
+¿CUÁL ES SU EXPERIENCIA?
+Tenemos más de 50 proyectos exitosos y 3 años de experiencia en el mercado.
+
+¿DÓNDE ESTÁN UBICADOS?
+Estamos en Antofagasta, Chile, pero trabajamos con clientes de todo el país.
+
+¿CÓMO PUEDO CONTACTARLOS?
+Puedes contactarnos por teléfono (+56 9 1234 5678), email (contacto@menteautonoma.cl) o a través de nuestro sitio web.
+
+¿HACEN PROYECTOS URGENTES?
+Sí, pero puede haber un costo adicional por la urgencia del proyecto.
+
+¿QUÉ GARANTÍAS OFRECEN?
+6 meses de garantía en desarrollo, soporte técnico incluido y corrección de bugs sin costo.

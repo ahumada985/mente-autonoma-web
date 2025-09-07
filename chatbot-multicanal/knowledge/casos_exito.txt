@@ -1,0 +1,63 @@
+CASOS DE ÉXITO Y PROYECTOS
+
+PROYECTOS DESTACADOS:
+
+E-COMMERCE PARA PYME:
+- Cliente: Tienda de ropa local en Antofagasta
+- Tecnologías: React, Node.js, MongoDB, Stripe
+- Resultado: 300% aumento en ventas online
+- Tiempo: 6 semanas
+- Presupuesto: $800.000 CLP
+
+CHATBOT INTELIGENTE:
+- Cliente: Clínica dental
+- Tecnologías: OpenAI GPT, LangChain, Python
+- Resultado: 80% reducción en consultas telefónicas
+- Tiempo: 4 semanas
+- Presupuesto: $600.000 CLP
+
+AUTOMATIZACIÓN DE PROCESOS:
+- Cliente: Empresa de servicios
+- Tecnologías: Python, Selenium, APIs
+- Resultado: 50% reducción en tiempo de tareas repetitivas
+- Tiempo: 3 semanas
+- Presupuesto: $400.000 CLP
+
+SISTEMA DE GESTIÓN:
+- Cliente: Restaurante
+- Tecnologías: Django, PostgreSQL, React
+- Resultado: Control total de inventario y ventas
+- Tiempo: 8 semanas
+- Presupuesto: $1.200.000 CLP
+
+TESTIMONIOS DE CLIENTES:
+
+"Excelente trabajo, superaron nuestras expectativas. El chatbot ha mejorado mucho la atención al cliente." - María González, Clínica Dental
+
+"La página web que nos hicieron es perfecta. Hemos aumentado nuestras ventas significativamente." - Carlos Pérez, Tienda de Ropa
+
+"La automatización nos ahorra horas de trabajo diario. Muy recomendable." - Ana Rodríguez, Empresa de Servicios
+
+"Profesionales, puntuales y con excelentes resultados. Los recomiendo 100%." - Luis Martínez, Restaurante
+
+BENEFICIOS COMPROBADOS:
+
+AUMENTO DE VENTAS:
+- E-commerce: 200-400% promedio
+- Páginas web: 150-300% promedio
+- Chatbots: 25-50% conversión
+
+AHORRO DE TIEMPO:
+- Automatización: 40-70% reducción
+- Chatbots: 60-80% menos consultas manuales
+- Sistemas de gestión: 50-80% eficiencia
+
+MEJORA EN ATENCIÓN:
+- Chatbots: 24/7 disponible
+- Tiempo de respuesta: 90% más rápido
+- Satisfacción del cliente: 85%+
+
+ROI PROMEDIO:
+- Inversión inicial: $500.000 - $1.500.000 CLP
+- Retorno: 200-500% en 6-12 meses
+- Ahorro anual: $2.000.000 - $5.000.000 CLP

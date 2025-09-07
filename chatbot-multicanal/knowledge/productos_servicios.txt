@@ -1,0 +1,78 @@
+PRODUCTOS Y SERVICIOS
+
+DESARROLLO WEB:
+- Sitios web responsivos
+- E-commerce personalizados
+- Aplicaciones web progresivas (PWA)
+- Portales corporativos
+- Landing pages optimizadas
+- Blogs y CMS personalizados
+- Integración con APIs externas
+- Optimización SEO
+
+CHATBOTS INTELIGENTES:
+- Chatbots para WhatsApp
+- Chatbots para sitios web
+- Asistentes virtuales
+- Automatización de atención al cliente
+- Integración con sistemas existentes
+- Análisis de conversaciones
+- Personalización avanzada
+
+AUTOMATIZACIÓN DE PROCESOS:
+- Automatización de tareas repetitivas
+- Integración de sistemas
+- Workflows automatizados
+- Scraping de datos
+- Procesamiento de documentos
+- Notificaciones automáticas
+- Reportes automatizados
+
+CONSULTORÍA EN IA:
+- Análisis de datos
+- Machine Learning
+- Procesamiento de lenguaje natural
+- Visión por computadora
+- Recomendaciones personalizadas
+- Predicciones y forecasting
+- Optimización de procesos
+
+CAPACITACIÓN TECNOLÓGICA:
+- Cursos de programación
+- Talleres de IA
+- Capacitación en herramientas
+- Mentoring técnico
+- Certificaciones
+- Formación empresarial
+
+SOPORTE TÉCNICO:
+- Mantenimiento de sitios web
+- Actualizaciones de seguridad
+- Monitoreo 24/7
+- Backup y recuperación
+- Optimización de rendimiento
+- Resolución de problemas
+
+PRECIOS:
+- Desarrollo web: Desde $500.000 CLP
+- Chatbots: Desde $300.000 CLP
+- Automatización: Desde $400.000 CLP
+- Consultoría IA: $150.000 CLP/hora
+- Capacitación: $100.000 CLP/día
+- Soporte: $200.000 CLP/mes
+
+PROCESO DE TRABAJO:
+1. Consulta inicial gratuita
+2. Análisis de necesidades
+3. Propuesta detallada
+4. Desarrollo del proyecto
+5. Testing y optimización
+6. Entrega y capacitación
+7. Soporte post-entrega
+
+GARANTÍAS:
+- 6 meses de garantía en desarrollo
+- Soporte técnico incluido
+- Actualizaciones menores gratuitas
+- Capacitación del personal
+- Documentación completa
