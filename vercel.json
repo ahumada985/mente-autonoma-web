@@ -2,18 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/simple_chatbot.py",
+      "src": "api/chatbot_completo.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/simple_chatbot.py"
+      "dest": "api/chatbot_completo.py"
     },
     {
       "src": "/(.*)",
-      "dest": "api/simple_chatbot.py"
+      "dest": "api/chatbot_completo.py"
     }
   ]
 }
