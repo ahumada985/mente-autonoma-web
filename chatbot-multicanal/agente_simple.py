@@ -18,6 +18,7 @@ from langchain.tools import Tool
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_monitor import langchain_monitor
 
 # Cargar variables de entorno
 load_dotenv()
@@ -209,6 +210,14 @@ HERRAMIENTAS DISPONIBLES:
             # Log de conversación
             print(f"💬 [{channel}] {user_id}: {message[:50]}...")
             print(f"🤖 Respuesta: {response[:50]}...")
+            
+            # Registrar en LangChain Suite
+            langchain_monitor.log_conversation(
+                user_message=message,
+                bot_response=response,
+                user_id=user_id,
+                channel=channel
+            )
         
         return response
     

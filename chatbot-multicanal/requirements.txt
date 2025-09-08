@@ -13,4 +13,5 @@ python-telegram-bot==20.7
 flask==3.0.0
 redis==5.0.1
 chromadb==0.4.18
+langsmith==0.0.69
 
