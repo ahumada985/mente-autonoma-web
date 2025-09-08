@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Mente Autónoma</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+        .chat-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+        .message {
+            margin: 15px 0;
+            padding: 15px 20px;
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-in;
+        }
+        .user-message {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+        .bot-message {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            margin-right: auto;
+        }
+        .chat-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .chat-input input:focus {
+            border-color: #007bff;
+        }
+        .chat-input button {
+            padding: 15px 25px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .chat-input button:hover {
+            background: #0056b3;
+        }
+        .status {
+            text-align: center;
+            padding: 10px;
+            color: #28a745;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>🤖 Chatbot Mente Autónoma</h1>
+            <p>Asistente virtual inteligente</p>
+        </div>
+        
+        <div class="status">Conectado ✅ - Sistema activo</div>
+        
+        <div class="chat-messages" id="messages">
+            <div class="message bot-message">
+                ¡Hola! Soy tu asistente virtual de Mente Autónoma. Puedo ayudarte con información sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito. ¿En qué puedo ayudarte?
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe tu mensaje aquí..." />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById('messageInput');
+        const messages = document.getElementById('messages');
+
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = content;
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+            
+            if (msg.includes('hola') || msg.includes('buenos') || msg.includes('buenas')) {
+                return "¡Hola! ¿En qué puedo ayudarte? Puedo informarte sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito.";
+            }
+            
+            if (msg.includes('servicios') || msg.includes('servicio')) {
+                return "Ofrecemos:\n• Desarrollo web responsivo\n• Chatbots inteligentes\n• Automatización de procesos\n• Consultoría en IA\n• Capacitación tecnológica\n\n¿Te interesa alguno en particular?";
+            }
+            
+            if (msg.includes('precios') || msg.includes('precio') || msg.includes('costo') || msg.includes('cuesta')) {
+                return "Nuestros precios:\n• Desarrollo web: desde $500.000 CLP\n• Chatbots: desde $300.000 CLP\n• Consultoría: $150.000 CLP/hora\n• Capacitación: $200.000 CLP/día\n\n¿Quieres una cotización personalizada?";
+            }
+            
+            if (msg.includes('contacto') || msg.includes('contactar') || msg.includes('llamar') || msg.includes('telefono')) {
+                return "Información de contacto:\n• Teléfono: +56 9 1234 5678\n• Email: contacto@empresa.com\n• Ubicación: Antofagasta, Chile\n• Horarios: Lunes a Viernes 9:00-18:00\n\n¡Estamos aquí para ayudarte!";
+            }
+            
+            if (msg.includes('horarios') || msg.includes('horario') || msg.includes('atencion') || msg.includes('abierto')) {
+                return "Horarios de atención:\n• Lunes a Viernes: 9:00 - 18:00\n• Sábados: 9:00 - 14:00\n• Domingos: Cerrado\n\n¿Necesitas una cita fuera de estos horarios?";
+            }
+            
+            if (msg.includes('tecnologias') || msg.includes('tecnologia') || msg.includes('lenguajes') || msg.includes('programacion')) {
+                return "Tecnologías que manejamos:\n• Frontend: React, Vue.js, Angular\n• Backend: Node.js, Python, Django, Flask\n• IA: OpenAI GPT, LangChain, TensorFlow\n• Bases de datos: MongoDB, PostgreSQL, MySQL\n• Cloud: AWS, Google Cloud, Azure\n\n¿Te interesa alguna tecnología específica?";
+            }
+            
+            if (msg.includes('casos') || msg.includes('exito') || msg.includes('proyectos') || msg.includes('trabajos')) {
+                return "Casos de éxito:\n• E-commerce con 300% aumento en ventas\n• Chatbot que redujo 80% consultas telefónicas\n• Automatización que ahorra 50% tiempo\n• Sistema de IA para análisis de datos\n\n¿Quieres conocer más detalles de algún caso?";
+            }
+            
+            if (msg.includes('gracias') || msg.includes('muchas gracias')) {
+                return "¡De nada! Es un placer ayudarte. ¿Hay algo más en lo que pueda asistirte?";
+            }
+            
+            if (msg.includes('adios') || msg.includes('chao') || msg.includes('hasta luego')) {
+                return "¡Hasta luego! Fue un gusto ayudarte. ¡Que tengas un excelente día!";
+            }
+            
+            // Respuesta por defecto
+            return "Interesante pregunta. Aunque no tengo información específica sobre eso, puedo ayudarte con información sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito. ¿En qué más puedo asistirte?";
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Agregar mensaje del usuario
+            addMessage(message, true);
+            messageInput.value = '';
+
+            // Simular delay de respuesta
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response);
+            }, 500);
+        }
+
+        // Enviar mensaje con Enter
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Enfocar el input al cargar
+        messageInput.focus();
+    </script>
+</body>
+</html>
