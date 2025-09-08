@@ -4,17 +4,9 @@
     {
       "src": "package.json",
       "use": "@vercel/next"
-    },
-    {
-      "src": "api/chatbot_completo.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "api/chatbot_completo.py"
-    },
     {
       "src": "/(.*)",
       "dest": "/$1"
