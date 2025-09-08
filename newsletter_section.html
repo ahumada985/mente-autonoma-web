@@ -1,0 +1,130 @@
+<!-- Sección CTA para Newsletter -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>🚀 Mantente al día con las últimas tendencias</h2>
+            <p>Suscríbete a nuestro newsletter y recibe:</p>
+            <ul>
+                <li>✅ Tips de desarrollo web e IA</li>
+                <li>✅ Casos de éxito y testimonios</li>
+                <li>✅ Ofertas especiales y promociones</li>
+                <li>✅ Nuevos proyectos y tecnologías</li>
+            </ul>
+            
+            <form id="newsletter-form" class="newsletter-form">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="newsletter-name" 
+                        placeholder="Tu nombre (opcional)"
+                        class="form-input"
+                    >
+                </div>
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        id="newsletter-email" 
+                        placeholder="Tu email"
+                        class="form-input"
+                        required
+                    >
+                </div>
+                <button type="submit" class="btn-subscribe">
+                    📧 Suscribirse Gratis
+                </button>
+            </form>
+            
+            <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+.newsletter-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.newsletter-content li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-subscribe {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-subscribe:hover {
+    background: #ff5252;
+}
+
+.newsletter-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.newsletter-message.success {
+    background: #4caf50;
+    color: white;
+}
+
+.newsletter-message.error {
+    background: #f44336;
+    color: white;
+}
+
+.newsletter-message.loading {
+    background: #2196f3;
+    color: white;
+}
+</style>
+
+<script src="newsletter_form.js"></script>
