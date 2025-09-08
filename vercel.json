@@ -14,7 +14,15 @@
   ],
   "routes": [
     {
-      "src": "/api/chatbot/(.*)",
+      "src": "/api/chat",
+      "dest": "api/chatbot_completo.py"
+    },
+    {
+      "src": "/api/health",
+      "dest": "api/chatbot_completo.py"
+    },
+    {
+      "src": "/chatbot",
       "dest": "api/chatbot_completo.py"
     },
     {
