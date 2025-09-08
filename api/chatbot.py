@@ -1,12 +1,8 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse
-import openai
 import os
 
 app = FastAPI()
-
-# Configurar OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.get("/", response_class=HTMLResponse)
 async def get_chat():
@@ -34,9 +30,9 @@ async def get_chat():
         <div class="container">
             <div class="header">
                 <h1>🤖 Chatbot Mente Autónoma</h1>
-                <p>Asistente virtual con IA</p>
+                <p>Asistente virtual</p>
             </div>
-            <div class="status" id="status">Conectado ✅ - OpenAI activo</div>
+            <div class="status">Conectado ✅ - Sistema activo</div>
             <div class="chat" id="chat">
                 <div class="message bot">¡Hola! Soy tu asistente virtual de Mente Autónoma. ¿En qué puedo ayudarte?</div>
             </div>
@@ -46,7 +42,7 @@ async def get_chat():
             </div>
         </div>
         <script>
-            async function sendMessage() {
+            function sendMessage() {
                 const input = document.getElementById('messageInput');
                 const message = input.value.trim();
                 if (!message) return;
@@ -56,19 +52,25 @@ async def get_chat():
                 input.value = '';
                 chat.scrollTop = chat.scrollHeight;
                 
-                try {
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: message })
-                    });
-                    const data = await response.json();
-                    chat.innerHTML += `<div class="message bot">${data.response}</div>`;
-                    chat.scrollTop = chat.scrollHeight;
-                } catch (error) {
-                    chat.innerHTML += `<div class="message bot">Error: ${error.message}</div>`;
-                    chat.scrollTop = chat.scrollHeight;
+                // Respuesta simple
+                let response = "Lo siento, no puedo responder en este momento. Por favor contacta a +56 9 1234 5678";
+                
+                if (message.toLowerCase().includes('hola')) {
+                    response = "¡Hola! ¿En qué puedo ayudarte?";
+                } else if (message.toLowerCase().includes('servicios')) {
+                    response = "Ofrecemos: Desarrollo web, Chatbots, Automatización, Consultoría en IA";
+                } else if (message.toLowerCase().includes('precios')) {
+                    response = "Desarrollo web desde $500.000 CLP, Chatbots desde $300.000 CLP";
+                } else if (message.toLowerCase().includes('contacto')) {
+                    response = "Contacto: +56 9 1234 5678, email: contacto@empresa.com";
+                } else if (message.toLowerCase().includes('horarios')) {
+                    response = "Horarios: Lunes a Viernes 9:00-18:00, Sábados 9:00-14:00";
                 }
+                
+                setTimeout(() => {
+                    chat.innerHTML += `<div class="message bot">${response}</div>`;
+                    chat.scrollTop = chat.scrollHeight;
+                }, 500);
             }
             
             document.getElementById('messageInput').addEventListener('keypress', function(e) {
@@ -80,29 +82,12 @@ async def get_chat():
     """
 
 @app.post("/api/chat")
-async def chat(request: Request):
-    try:
-        body = await request.json()
-        message = body.get("message", "")
-        
-        if not openai.api_key:
-            return JSONResponse({"response": "Error: OpenAI API key no configurada"})
-        
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "Eres un asistente de Mente Autónoma. Responde en español de manera profesional y útil."},
-                {"role": "user", "content": message}
-            ],
-            max_tokens=300
-        )
-        return JSONResponse({"response": response.choices[0].message.content})
-    except Exception as e:
-        return JSONResponse({"response": f"Error: {str(e)}"})
+async def chat():
+    return JSONResponse({"response": "Chatbot funcionando correctamente"})
 
 @app.get("/api/health")
 async def health():
-    return JSONResponse({"status": "ok", "openai": bool(openai.api_key)})
+    return JSONResponse({"status": "ok", "message": "Chatbot funcionando"})
 
 # Para Vercel
 handler = app
