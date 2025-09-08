@@ -1,15 +1,5 @@
 {
   "version": 2,
   "buildCommand": "prisma generate && npm run build",
-  "installCommand": "npm install && npx prisma generate",
-  "routes": [
-    {
-      "src": "/chatbot",
-      "dest": "/public/chatbot.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "installCommand": "npm install && npx prisma generate"
 }
