@@ -1,0 +1,40 @@
+{
+  "name": "chatbot-multicanal",
+  "description": "Chatbot inteligente con LangChain y OpenAI",
+  "repository": "https://github.com/ahumada985/mente-autonoma-web",
+  "logo": "https://via.placeholder.com/150x150/007bff/ffffff?text=Chatbot",
+  "keywords": ["python", "chatbot", "langchain", "openai", "telegram"],
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "Tu clave de OpenAI",
+      "required": true
+    },
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Tu token de Telegram Bot",
+      "required": true
+    },
+    "LANGSMITH_API_KEY": {
+      "description": "Tu clave de LangSmith",
+      "required": false
+    },
+    "EMAIL_USER": {
+      "description": "Email para newsletter",
+      "required": false
+    },
+    "EMAIL_PASS": {
+      "description": "Contraseña de email",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
