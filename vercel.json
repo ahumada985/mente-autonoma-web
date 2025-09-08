@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "prisma generate && npm run build",
+  "installCommand": "npm install && npx prisma generate",
   "builds": [
     {
       "src": "package.json",
@@ -12,7 +14,7 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/chatbot/(.*)",
       "dest": "api/chatbot_completo.py"
     },
     {
