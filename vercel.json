@@ -2,28 +2,23 @@
   "version": 2,
   "buildCommand": "prisma generate && npm run build",
   "installCommand": "npm install && npx prisma generate",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    },
-    {
-      "src": "api/chatbot.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/chatbot.py": {
+      "runtime": "python3.9"
     }
-  ],
+  },
   "routes": [
     {
+      "src": "/chatbot",
+      "dest": "/api/chatbot.py"
+    },
+    {
       "src": "/api/chat",
-      "dest": "api/chatbot.py"
+      "dest": "/api/chatbot.py"
     },
     {
       "src": "/api/health",
-      "dest": "api/chatbot.py"
-    },
-    {
-      "src": "/chatbot",
-      "dest": "api/chatbot.py"
+      "dest": "/api/chatbot.py"
     },
     {
       "src": "/(.*)",

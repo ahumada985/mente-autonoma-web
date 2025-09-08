@@ -1,6 +1,5 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-from pydantic import BaseModel
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse, JSONResponse
 import openai
 import os
 
@@ -8,9 +7,6 @@ app = FastAPI()
 
 # Configurar OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
-class Message(BaseModel):
-    message: str
 
 @app.get("/", response_class=HTMLResponse)
 async def get_chat():
@@ -84,23 +80,29 @@ async def get_chat():
     """
 
 @app.post("/api/chat")
-async def chat(message: Message):
+async def chat(request: Request):
     try:
+        body = await request.json()
+        message = body.get("message", "")
+        
         if not openai.api_key:
-            return {"response": "Error: OpenAI API key no configurada"}
+            return JSONResponse({"response": "Error: OpenAI API key no configurada"})
         
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "Eres un asistente de Mente Autónoma. Responde en español de manera profesional y útil."},
-                {"role": "user", "content": message.message}
+                {"role": "user", "content": message}
             ],
             max_tokens=300
         )
-        return {"response": response.choices[0].message.content}
+        return JSONResponse({"response": response.choices[0].message.content})
     except Exception as e:
-        return {"response": f"Error: {str(e)}"}
+        return JSONResponse({"response": f"Error: {str(e)}"})
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "openai": bool(openai.api_key)}
+    return JSONResponse({"status": "ok", "openai": bool(openai.api_key)})
+
+# Para Vercel
+handler = app
