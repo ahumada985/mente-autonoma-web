@@ -6,11 +6,8 @@ import os
 import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from dotenv import load_dotenv
 
-# Cargar variables de entorno
-load_dotenv()
-
+# No usar dotenv en Vercel (usa variables de entorno directamente)
 app = FastAPI()
 
 class ChatMessage(BaseModel):
