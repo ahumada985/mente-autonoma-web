@@ -8,22 +8,22 @@
       "use": "@vercel/next"
     },
     {
-      "src": "api/chatbot_openai.py",
+      "src": "api/chatbot.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/chat",
-      "dest": "api/chatbot_openai.py"
+      "dest": "api/chatbot.py"
     },
     {
       "src": "/api/health",
-      "dest": "api/chatbot_openai.py"
+      "dest": "api/chatbot.py"
     },
     {
       "src": "/chatbot",
-      "dest": "api/chatbot_openai.py"
+      "dest": "api/chatbot.py"
     },
     {
       "src": "/(.*)",

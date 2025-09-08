@@ -1,79 +1,106 @@
-"""
-API de Chatbot para Vercel
-"""
-
-import os
-import json
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
+import openai
+import os
 
-# No usar dotenv en Vercel (usa variables de entorno directamente)
 app = FastAPI()
 
-class ChatMessage(BaseModel):
+# Configurar OpenAI
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+class Message(BaseModel):
     message: str
-    user_id: str = "web_user"
-    channel: str = "web"
 
-# Simulación de respuesta del chatbot (sin LangChain para Vercel)
-def get_chatbot_response(message: str) -> str:
-    """Simular respuesta del chatbot"""
-    message_lower = message.lower()
-    
-    if "horarios" in message_lower or "horario" in message_lower:
-        return "Horarios de atención: Lunes a Viernes 9:00-18:00, Sábados 9:00-14:00"
-    
-    elif "servicios" in message_lower or "servicio" in message_lower:
-        return "Servicios: Desarrollo web responsivo, Chatbots inteligentes, Automatización de procesos, Consultoría en IA, Capacitación tecnológica"
-    
-    elif "precios" in message_lower or "precio" in message_lower:
-        return "Precios: Desarrollo web desde $500.000 CLP, Chatbots desde $300.000 CLP, Consultoría $150.000 CLP/hora"
-    
-    elif "contacto" in message_lower or "contactar" in message_lower:
-        return "Contacto: +56 9 1234 5678, email: contacto@empresa.com, ubicación: Antofagasta, Chile"
-    
-    elif "tecnologías" in message_lower or "tecnologia" in message_lower:
-        return "Tecnologías: React, Node.js, Python, Django, Flask, OpenAI GPT, LangChain, MongoDB, PostgreSQL, AWS, Google Cloud"
-    
-    elif "casos" in message_lower or "éxito" in message_lower:
-        return "Casos de éxito: E-commerce con 300% aumento en ventas, Chatbot que redujo 80% consultas telefónicas, Automatización que ahorra 50% tiempo"
-    
-    else:
-        return f"¡Hola! Soy el asistente de Mente Autónoma. Recibí tu mensaje: '{message}'. ¿En qué puedo ayudarte? Puedo informarte sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito."
-
-@app.get("/")
-async def root():
-    return {
-        "message": "Chatbot API de Mente Autónoma",
-        "status": "active",
-        "endpoints": {
-            "chat": "/api/chat",
-            "health": "/api/health"
-        }
-    }
+@app.get("/", response_class=HTMLResponse)
+async def get_chat():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Chatbot Mente Autónoma</title>
+        <meta charset="UTF-8">
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f0f0f0; }
+            .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            .header { text-align: center; color: #007bff; margin-bottom: 20px; }
+            .chat { border: 1px solid #ddd; height: 400px; overflow-y: auto; padding: 10px; margin-bottom: 20px; background: #f9f9f9; }
+            .message { margin: 10px 0; padding: 10px; border-radius: 5px; }
+            .user { background: #007bff; color: white; text-align: right; }
+            .bot { background: #e9ecef; color: #333; }
+            .input-area { display: flex; gap: 10px; }
+            .input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+            .input-area button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+            .status { text-align: center; color: #28a745; font-weight: bold; margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 Chatbot Mente Autónoma</h1>
+                <p>Asistente virtual con IA</p>
+            </div>
+            <div class="status" id="status">Conectado ✅ - OpenAI activo</div>
+            <div class="chat" id="chat">
+                <div class="message bot">¡Hola! Soy tu asistente virtual de Mente Autónoma. ¿En qué puedo ayudarte?</div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+        <script>
+            async function sendMessage() {
+                const input = document.getElementById('messageInput');
+                const message = input.value.trim();
+                if (!message) return;
+                
+                const chat = document.getElementById('chat');
+                chat.innerHTML += `<div class="message user">${message}</div>`;
+                input.value = '';
+                chat.scrollTop = chat.scrollHeight;
+                
+                try {
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: message })
+                    });
+                    const data = await response.json();
+                    chat.innerHTML += `<div class="message bot">${data.response}</div>`;
+                    chat.scrollTop = chat.scrollHeight;
+                } catch (error) {
+                    chat.innerHTML += `<div class="message bot">Error: ${error.message}</div>`;
+                    chat.scrollTop = chat.scrollHeight;
+                }
+            }
+            
+            document.getElementById('messageInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') sendMessage();
+            });
+        </script>
+    </body>
+    </html>
+    """
 
 @app.post("/api/chat")
-async def chat_endpoint(chat_message: ChatMessage):
-    """Endpoint para chat"""
+async def chat(message: Message):
     try:
-        response = get_chatbot_response(chat_message.message)
-        return {
-            "response": response,
-            "user_id": chat_message.user_id,
-            "channel": chat_message.channel,
-            "status": "success"
-        }
+        if not openai.api_key:
+            return {"response": "Error: OpenAI API key no configurada"}
+        
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Eres un asistente de Mente Autónoma. Responde en español de manera profesional y útil."},
+                {"role": "user", "content": message.message}
+            ],
+            max_tokens=300
+        )
+        return {"response": response.choices[0].message.content}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
+        return {"response": f"Error: {str(e)}"}
 
 @app.get("/api/health")
-async def health_check():
-    """Health check"""
-    return {
-        "status": "healthy",
-        "message": "Chatbot API funcionando correctamente"
-    }
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+async def health():
+    return {"status": "ok", "openai": bool(openai.api_key)}
