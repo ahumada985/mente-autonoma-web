@@ -11,9 +11,56 @@ export default function ChatbotPage() {
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
+  const [isOpenAIWorking, setIsOpenAIWorking] = useState(false);
+  const [debugInfo, setDebugInfo] = useState('');
+
+  // Respuestas predefinidas como fallback
+  const getPredefinedResponse = (message: string) => {
+    const msg = message.toLowerCase();
+    
+    if (msg.includes('hola') || msg.includes('buenos') || msg.includes('buenas')) {
+      return "¡Hola! ¿En qué puedo ayudarte? Puedo informarte sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito.";
+    }
+    
+    if (msg.includes('servicios') || msg.includes('servicio')) {
+      return "Ofrecemos:\n• Desarrollo web responsivo\n• Chatbots inteligentes\n• Automatización de procesos\n• Consultoría en IA\n• Capacitación tecnológica\n\n¿Te interesa alguno en particular?";
+    }
+    
+    if (msg.includes('precios') || msg.includes('precio') || msg.includes('costo') || msg.includes('cuesta')) {
+      return "Nuestros precios:\n• Desarrollo web: desde $500.000 CLP\n• Chatbots: desde $300.000 CLP\n• Consultoría: $150.000 CLP/hora\n• Capacitación: $200.000 CLP/día\n\n¿Quieres una cotización personalizada?";
+    }
+    
+    if (msg.includes('contacto') || msg.includes('contactar') || msg.includes('llamar') || msg.includes('telefono')) {
+      return "Información de contacto:\n• Teléfono: +56 9 1234 5678\n• Email: contacto@empresa.com\n• Ubicación: Antofagasta, Chile\n• Horarios: Lunes a Viernes 9:00-18:00\n\n¡Estamos aquí para ayudarte!";
+    }
+    
+    if (msg.includes('horarios') || msg.includes('horario') || msg.includes('atencion') || msg.includes('abierto')) {
+      return "Horarios de atención:\n• Lunes a Viernes: 9:00 - 18:00\n• Sábados: 9:00 - 14:00\n• Domingos: Cerrado\n\n¿Necesitas una cita fuera de estos horarios?";
+    }
+    
+    if (msg.includes('tecnologias') || msg.includes('tecnologia') || msg.includes('lenguajes') || msg.includes('programacion')) {
+      return "Tecnologías que manejamos:\n• Frontend: React, Vue.js, Angular\n• Backend: Node.js, Python, Django, Flask\n• IA: OpenAI GPT, LangChain, TensorFlow\n• Bases de datos: MongoDB, PostgreSQL, MySQL\n• Cloud: AWS, Google Cloud, Azure\n\n¿Te interesa alguna tecnología específica?";
+    }
+    
+    if (msg.includes('casos') || msg.includes('exito') || msg.includes('proyectos') || msg.includes('trabajos')) {
+      return "Casos de éxito:\n• E-commerce con 300% aumento en ventas\n• Chatbot que redujo 80% consultas telefónicas\n• Automatización que ahorra 50% tiempo\n• Sistema de IA para análisis de datos\n\n¿Quieres conocer más detalles de algún caso?";
+    }
+    
+    if (msg.includes('gracias') || msg.includes('muchas gracias')) {
+      return "¡De nada! Es un placer ayudarte. ¿Hay algo más en lo que pueda asistirte?";
+    }
+    
+    if (msg.includes('adios') || msg.includes('chao') || msg.includes('hasta luego')) {
+      return "¡Hasta luego! Fue un gusto ayudarte. ¡Que tengas un excelente día!";
+    }
+    
+    return "Interesante pregunta. Aunque no tengo información específica sobre eso, puedo ayudarte con información sobre nuestros servicios, precios, horarios, tecnologías y casos de éxito. ¿En qué más puedo asistirte?";
+  };
 
   const getBotResponse = async (message: string) => {
     try {
+      setDebugInfo('🔄 Enviando mensaje a OpenAI...');
+      
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -25,13 +72,19 @@ export default function ChatbotPage() {
       const data = await response.json();
       
       if (data.error) {
-        return `Lo siento, hay un problema técnico: ${data.error}. Por favor contacta directamente a +56 9 1234 5678.`;
+        setDebugInfo(`❌ Error de OpenAI: ${data.error}`);
+        setIsOpenAIWorking(false);
+        return `⚠️ OpenAI no disponible: ${data.error}\n\n${getPredefinedResponse(message)}`;
       }
 
+      setDebugInfo('✅ OpenAI respondió correctamente');
+      setIsOpenAIWorking(true);
       return data.response || 'Lo siento, no pude procesar tu mensaje.';
     } catch (error) {
       console.error('Error al obtener respuesta:', error);
-      return 'Lo siento, hay un problema de conexión. Por favor intenta de nuevo o contacta directamente a +56 9 1234 5678.';
+      setDebugInfo(`❌ Error de conexión: ${error}`);
+      setIsOpenAIWorking(false);
+      return `⚠️ Sin conexión a OpenAI\n\n${getPredefinedResponse(message)}`;
     }
   };
 
@@ -98,9 +151,18 @@ export default function ChatbotPage() {
         </div>
         
         {/* Status */}
-        <div className="text-center py-2 sm:py-3 bg-green-50 text-green-600 font-semibold text-sm sm:text-base">
-          Conectado ✅ - OpenAI activo
+        <div className={`text-center py-2 sm:py-3 font-semibold text-sm sm:text-base ${
+          isOpenAIWorking ? 'bg-green-50 text-green-600' : 'bg-yellow-50 text-yellow-600'
+        }`}>
+          {isOpenAIWorking ? 'Conectado ✅ - OpenAI activo' : 'Modo fallback ⚠️ - Respuestas predefinidas'}
         </div>
+        
+        {/* Debug Info */}
+        {debugInfo && (
+          <div className="text-center py-1 bg-blue-50 text-blue-600 text-xs sm:text-sm">
+            {debugInfo}
+          </div>
+        )}
         
         {/* Messages */}
         <div className="flex-1 p-3 sm:p-6 overflow-y-auto bg-gray-50">
@@ -121,22 +183,52 @@ export default function ChatbotPage() {
         </div>
         
         {/* Input */}
-        <div className="p-3 sm:p-6 bg-white border-t border-gray-200 flex gap-2 sm:gap-3">
-          <input
-            type="text"
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-            onKeyPress={handleKeyPress}
-            placeholder="Escribe tu mensaje aquí..."
-            className="flex-1 px-3 sm:px-5 py-2 sm:py-3 border-2 border-gray-200 rounded-full text-sm sm:text-base outline-none focus:border-blue-500 transition-colors"
-          />
-          <button
-            onClick={sendMessage}
-            disabled={!inputMessage.trim()}
-            className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed text-sm sm:text-base"
-          >
-            Enviar
-          </button>
+        <div className="p-3 sm:p-6 bg-white border-t border-gray-200">
+          <div className="flex gap-2 sm:gap-3 mb-2">
+            <input
+              type="text"
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Escribe tu mensaje aquí..."
+              className="flex-1 px-3 sm:px-5 py-2 sm:py-3 border-2 border-gray-200 rounded-full text-sm sm:text-base outline-none focus:border-blue-500 transition-colors"
+            />
+            <button
+              onClick={sendMessage}
+              disabled={!inputMessage.trim()}
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed text-sm sm:text-base"
+            >
+              Enviar
+            </button>
+          </div>
+          
+          {/* Botones de prueba */}
+          <div className="flex flex-wrap gap-2 justify-center">
+            <button
+              onClick={() => setInputMessage('Hola')}
+              className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs hover:bg-gray-300"
+            >
+              Prueba: Hola
+            </button>
+            <button
+              onClick={() => setInputMessage('Servicios')}
+              className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs hover:bg-gray-300"
+            >
+              Prueba: Servicios
+            </button>
+            <button
+              onClick={() => setInputMessage('Precios')}
+              className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs hover:bg-gray-300"
+            >
+              Prueba: Precios
+            </button>
+            <button
+              onClick={() => setInputMessage('¿Qué es la inteligencia artificial?')}
+              className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs hover:bg-gray-300"
+            >
+              Prueba: IA
+            </button>
+          </div>
         </div>
       </div>
     </div>
