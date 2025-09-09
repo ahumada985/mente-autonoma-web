@@ -13,6 +13,7 @@ export default function ChatbotPage() {
   const [inputMessage, setInputMessage] = useState('');
   const [isOpenAIWorking, setIsOpenAIWorking] = useState(false);
   const [debugInfo, setDebugInfo] = useState('');
+  const [langSmithEnabled, setLangSmithEnabled] = useState(false);
 
   // Respuestas predefinidas como fallback
   const getPredefinedResponse = (message: string) => {
@@ -79,6 +80,7 @@ export default function ChatbotPage() {
 
       setDebugInfo('✅ OpenAI respondió correctamente');
       setIsOpenAIWorking(true);
+      setLangSmithEnabled(data.langsmith_enabled || false);
       return data.response || 'Lo siento, no pude procesar tu mensaje.';
     } catch (error) {
       console.error('Error al obtener respuesta:', error);
@@ -155,6 +157,13 @@ export default function ChatbotPage() {
           isOpenAIWorking ? 'bg-green-50 text-green-600' : 'bg-yellow-50 text-yellow-600'
         }`}>
           {isOpenAIWorking ? 'Conectado ✅ - OpenAI activo' : 'Modo fallback ⚠️ - Respuestas predefinidas'}
+        </div>
+        
+        {/* LangSmith Status */}
+        <div className={`text-center py-1 text-xs sm:text-sm ${
+          langSmithEnabled ? 'bg-blue-50 text-blue-600' : 'bg-gray-50 text-gray-500'
+        }`}>
+          {langSmithEnabled ? '📊 LangSmith: Monitoreando conversaciones' : '📊 LangSmith: No configurado'}
         </div>
         
         {/* Debug Info */}

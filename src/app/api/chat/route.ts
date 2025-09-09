@@ -1,21 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { langSmithTracker } from '@/lib/langsmith';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  let userMessage = '';
+  let botResponse = '';
+
   try {
-    const { message } = await request.json();
+    const { message, userId = 'web_user' } = await request.json();
+    userMessage = message;
 
     if (!message) {
       return NextResponse.json({ error: 'Mensaje requerido' }, { status: 400 });
     }
 
     if (!process.env.OPENAI_API_KEY) {
+      const errorMsg = 'OpenAI API key no configurada';
+      await langSmithTracker.trackError(userMessage, errorMsg, userId);
       return NextResponse.json({ 
-        error: 'OpenAI API key no configurada' 
+        error: errorMsg
       }, { status: 500 });
     }
 
@@ -51,18 +59,33 @@ INSTRUCCIONES:
       temperature: 0.7,
     });
 
-    const response = completion.choices[0]?.message?.content || 'Lo siento, no pude procesar tu mensaje.';
+    botResponse = completion.choices[0]?.message?.content || 'Lo siento, no pude procesar tu mensaje.';
+
+    // Registrar conversación en LangSmith
+    await langSmithTracker.trackConversation(
+      userMessage, 
+      botResponse, 
+      userId, 
+      'web'
+    );
 
     return NextResponse.json({ 
-      response: response,
-      status: 'success'
+      response: botResponse,
+      status: 'success',
+      langsmith_enabled: langSmithTracker.isEnabled()
     });
 
   } catch (error) {
     console.error('Error en OpenAI API:', error);
+    const errorMsg = 'Error interno del servidor';
+    
+    // Registrar error en LangSmith
+    await langSmithTracker.trackError(userMessage, errorMsg, 'web_user');
+    
     return NextResponse.json({ 
-      error: 'Error interno del servidor',
-      response: 'Lo siento, hay un problema técnico. Por favor intenta de nuevo o contacta directamente a +56 9 1234 5678.'
+      error: errorMsg,
+      response: 'Lo siento, hay un problema técnico. Por favor intenta de nuevo o contacta directamente a +56 9 1234 5678.',
+      langsmith_enabled: langSmithTracker.isEnabled()
     }, { status: 500 });
   }
 }
