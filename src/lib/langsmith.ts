@@ -5,15 +5,17 @@ class LangSmithTracker {
   private projectName: string;
 
   constructor() {
-    this.projectName = process.env.LANGCHAIN_PROJECT || 'mente-autonoma-chatbot';
+    this.projectName = process.env.LANGSMITH_PROJECT || 'mente-autonoma-chatbot';
     
-    if (process.env.LANGSMITH_API_KEY) {
+    if (process.env.LANGSMITH_API_KEY && process.env.LANGSMITH_TRACING === 'true') {
       this.client = new Client({
         apiKey: process.env.LANGSMITH_API_KEY,
+        apiUrl: process.env.LANGSMITH_ENDPOINT || 'https://api.smith.langchain.com',
       });
       console.log(`✅ LangSmith conectado al proyecto: ${this.projectName}`);
+      console.log(`📊 Endpoint: ${process.env.LANGSMITH_ENDPOINT}`);
     } else {
-      console.log('⚠️ LANGSMITH_API_KEY no configurada. LangSmith deshabilitado.');
+      console.log('⚠️ LangSmith no configurado. Variables requeridas: LANGSMITH_API_KEY, LANGSMITH_TRACING=true');
     }
   }
 
