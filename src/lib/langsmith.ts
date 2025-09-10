@@ -39,18 +39,17 @@ class LangSmithTracker {
       return;
     }
 
+    let runId: string | undefined;
+
     try {
-      await this.client.createRun({
+      // Crear el run
+      const run = await this.client.createRun({
         name: 'chatbot-conversation',
         inputs: {
           user_message: userMessage,
           user_id: userId,
           channel: channel,
           timestamp: new Date().toISOString()
-        },
-        outputs: {
-          bot_response: botResponse,
-          response_time: new Date().toISOString()
         },
         project_name: this.projectName,
         run_type: 'llm',
@@ -61,10 +60,36 @@ class LangSmithTracker {
           max_tokens: 500
         }
       });
+
+      runId = run.id;
+
+      // Actualizar el run con la respuesta
+      await this.client.updateRun(runId, {
+        outputs: {
+          bot_response: botResponse,
+          response_time: new Date().toISOString(),
+          status: 'completed'
+        },
+        status: 'success'
+      });
       
-      console.log('📊 Conversación registrada en LangSmith');
+      console.log('📊 Conversación registrada y completada en LangSmith');
     } catch (error) {
       console.error('❌ Error al registrar en LangSmith:', error);
+      
+      // Intentar cerrar el run si existe
+      if (runId) {
+        try {
+          await this.client.updateRun(runId, {
+            status: 'error',
+            outputs: {
+              error: error instanceof Error ? error.message : 'Unknown error'
+            }
+          });
+        } catch (closeError) {
+          console.error('❌ Error al cerrar run en LangSmith:', closeError);
+        }
+      }
     }
   }
 
