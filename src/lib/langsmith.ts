@@ -7,6 +7,13 @@ class LangSmithTracker {
   constructor() {
     this.projectName = process.env.LANGSMITH_PROJECT || 'mente-autonoma-chatbot';
     
+    // Debug: Mostrar todas las variables de entorno
+    console.log('🔍 DEBUG LANGSMITH:');
+    console.log('LANGSMITH_API_KEY:', process.env.LANGSMITH_API_KEY ? '✅ Configurada' : '❌ No configurada');
+    console.log('LANGSMITH_TRACING:', process.env.LANGSMITH_TRACING);
+    console.log('LANGSMITH_ENDPOINT:', process.env.LANGSMITH_ENDPOINT);
+    console.log('LANGSMITH_PROJECT:', process.env.LANGSMITH_PROJECT);
+    
     if (process.env.LANGSMITH_API_KEY && process.env.LANGSMITH_TRACING === 'true') {
       this.client = new Client({
         apiKey: process.env.LANGSMITH_API_KEY,
@@ -16,6 +23,9 @@ class LangSmithTracker {
       console.log(`📊 Endpoint: ${process.env.LANGSMITH_ENDPOINT}`);
     } else {
       console.log('⚠️ LangSmith no configurado. Variables requeridas: LANGSMITH_API_KEY, LANGSMITH_TRACING=true');
+      console.log('🔍 Variables actuales:');
+      console.log('- LANGSMITH_API_KEY:', process.env.LANGSMITH_API_KEY ? 'Presente' : 'Ausente');
+      console.log('- LANGSMITH_TRACING:', process.env.LANGSMITH_TRACING);
     }
   }
 
