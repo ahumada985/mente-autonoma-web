@@ -39,9 +39,11 @@ class LangSmithTracker {
       return;
     }
 
+    let runId: string | undefined;
+
     try {
-      // Crear el run completo de una vez
-      await this.client.createRun({
+      // Crear el run inicial
+      const run = await this.client.createRun({
         name: 'chatbot-conversation',
         inputs: {
           user_message: userMessage,
@@ -49,24 +51,51 @@ class LangSmithTracker {
           channel: channel,
           timestamp: new Date().toISOString()
         },
-        outputs: {
-          bot_response: botResponse,
-          response_time: new Date().toISOString()
-        },
         project_name: this.projectName,
         run_type: 'llm',
         tags: ['chatbot', 'openai', 'web'],
         metadata: {
           model: 'gpt-3.5-turbo',
           temperature: 0.7,
-          max_tokens: 500,
-          status: 'completed'
+          max_tokens: 500
         }
       });
+
+      runId = run.id;
+
+      // Esperar un momento y luego cerrar el run
+      setTimeout(async () => {
+        try {
+          await this.client?.updateRun(runId!, {
+            outputs: {
+              bot_response: botResponse,
+              response_time: new Date().toISOString()
+            },
+            status: 'success'
+          });
+          console.log('📊 Conversación completada en LangSmith');
+        } catch (closeError) {
+          console.error('❌ Error al cerrar run:', closeError);
+        }
+      }, 1000); // Esperar 1 segundo antes de cerrar
       
-      console.log('📊 Conversación registrada exitosamente en LangSmith');
+      console.log('📊 Conversación iniciada en LangSmith');
     } catch (error) {
       console.error('❌ Error al registrar en LangSmith:', error);
+      
+      // Si hay error, intentar cerrar el run
+      if (runId) {
+        try {
+          await this.client?.updateRun(runId, {
+            status: 'error',
+            outputs: {
+              error: error instanceof Error ? error.message : 'Unknown error'
+            }
+          });
+        } catch (closeError) {
+          console.error('❌ Error al cerrar run con error:', closeError);
+        }
+      }
     }
   }
 
