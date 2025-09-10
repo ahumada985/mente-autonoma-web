@@ -62,7 +62,12 @@ class LangSmithTracker {
           temperature: 0.7,
           max_tokens: 500,
           status: 'success',
-          completed_at: new Date().toISOString()
+          completed_at: new Date().toISOString(),
+          // Información de tokens estimada
+          estimated_tokens: Math.ceil((userMessage.length + botResponse.length) / 4),
+          input_tokens: Math.ceil(userMessage.length / 4),
+          output_tokens: Math.ceil(botResponse.length / 4),
+          total_tokens: Math.ceil((userMessage.length + botResponse.length) / 4)
         },
         // Forzar el estado como completado
         status: 'success'
