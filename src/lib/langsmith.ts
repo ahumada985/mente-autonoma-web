@@ -39,11 +39,9 @@ class LangSmithTracker {
       return;
     }
 
-    let runId: string | undefined;
-
     try {
-      // Crear el run inicial
-      const run = await this.client.createRun({
+      // Crear el run completo de una vez con todos los datos
+      await this.client.createRun({
         name: 'chatbot-conversation',
         inputs: {
           user_message: userMessage,
@@ -51,50 +49,49 @@ class LangSmithTracker {
           channel: channel,
           timestamp: new Date().toISOString()
         },
+        outputs: {
+          bot_response: botResponse,
+          response_time: new Date().toISOString(),
+          status: 'completed'
+        },
         project_name: this.projectName,
         run_type: 'llm',
-        tags: ['chatbot', 'openai', 'web'],
+        tags: ['chatbot', 'openai', 'web', 'completed'],
         metadata: {
           model: 'gpt-3.5-turbo',
           temperature: 0.7,
-          max_tokens: 500
-        }
+          max_tokens: 500,
+          status: 'success',
+          completed_at: new Date().toISOString()
+        },
+        // Forzar el estado como completado
+        status: 'success'
       });
-
-      runId = run.id;
-
-      // Esperar un momento y luego cerrar el run
-      setTimeout(async () => {
-        try {
-          await this.client?.updateRun(runId!, {
-            outputs: {
-              bot_response: botResponse,
-              response_time: new Date().toISOString()
-            },
-            status: 'success'
-          });
-          console.log('📊 Conversación completada en LangSmith');
-        } catch (closeError) {
-          console.error('❌ Error al cerrar run:', closeError);
-        }
-      }, 1000); // Esperar 1 segundo antes de cerrar
       
-      console.log('📊 Conversación iniciada en LangSmith');
+      console.log('📊 Conversación registrada y completada en LangSmith');
     } catch (error) {
       console.error('❌ Error al registrar en LangSmith:', error);
       
-      // Si hay error, intentar cerrar el run
-      if (runId) {
-        try {
-          await this.client?.updateRun(runId, {
-            status: 'error',
-            outputs: {
-              error: error instanceof Error ? error.message : 'Unknown error'
-            }
-          });
-        } catch (closeError) {
-          console.error('❌ Error al cerrar run con error:', closeError);
-        }
+      // Crear un run de error
+      try {
+        await this.client.createRun({
+          name: 'chatbot-error',
+          inputs: {
+            user_message: userMessage,
+            user_id: userId,
+            error: error instanceof Error ? error.message : 'Unknown error'
+          },
+          outputs: {
+            error: error instanceof Error ? error.message : 'Unknown error',
+            timestamp: new Date().toISOString()
+          },
+          project_name: this.projectName,
+          run_type: 'tool',
+          tags: ['chatbot', 'error', 'web'],
+          status: 'error'
+        });
+      } catch (errorRunError) {
+        console.error('❌ Error al crear run de error:', errorRunError);
       }
     }
   }
