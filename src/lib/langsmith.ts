@@ -14,7 +14,7 @@ class LangSmithTracker {
     console.log('LANGSMITH_ENDPOINT:', process.env.LANGSMITH_ENDPOINT);
     console.log('LANGSMITH_PROJECT:', process.env.LANGSMITH_PROJECT);
     
-    if (process.env.LANGSMITH_API_KEY && process.env.LANGSMITH_TRACING === 'true') {
+    if (process.env.LANGSMITH_API_KEY && process.env.LANGSMITH_TRACING?.toLowerCase() === 'true') {
       this.client = new Client({
         apiKey: process.env.LANGSMITH_API_KEY,
         apiUrl: process.env.LANGSMITH_ENDPOINT || 'https://api.smith.langchain.com',
