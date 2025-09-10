@@ -40,9 +40,11 @@ class LangSmithTracker {
     }
 
     try {
-      // Crear el run completo de una vez con todos los datos
-      await this.client.createRun({
-        name: 'chatbot-conversation',
+      console.log('📊 Registrando conversación en LangSmith...');
+      
+      // SOLUCIÓN DEFINITIVA: Crear run con status 'success' desde el inicio
+      const run = await this.client.createRun({
+        name: `chatbot-${Date.now()}`,
         inputs: {
           user_message: userMessage,
           user_id: userId,
@@ -56,7 +58,7 @@ class LangSmithTracker {
         },
         project_name: this.projectName,
         run_type: 'llm',
-        tags: ['chatbot', 'openai', 'web', 'completed'],
+        tags: ['chatbot', 'openai', 'web', 'success'],
         metadata: {
           model: 'gpt-3.5-turbo',
           temperature: 0.7,
@@ -69,9 +71,37 @@ class LangSmithTracker {
           output_tokens: Math.ceil(botResponse.length / 4),
           total_tokens: Math.ceil((userMessage.length + botResponse.length) / 4)
         },
-        // Forzar el estado como completado
+        // ESTADO COMPLETADO DESDE EL INICIO
         status: 'success'
       });
+
+      // FORZAR CIERRE INMEDIATO con updateRun
+      try {
+        await this.client.updateRun(run.id, {
+          status: 'success',
+          outputs: {
+            bot_response: botResponse,
+            response_time: new Date().toISOString(),
+            status: 'completed'
+          },
+          metadata: {
+            model: 'gpt-3.5-turbo',
+            temperature: 0.7,
+            max_tokens: 500,
+            status: 'success',
+            completed_at: new Date().toISOString(),
+            final_status: 'success',
+            closed_at: new Date().toISOString(),
+            estimated_tokens: Math.ceil((userMessage.length + botResponse.length) / 4),
+            input_tokens: Math.ceil(userMessage.length / 4),
+            output_tokens: Math.ceil(botResponse.length / 4),
+            total_tokens: Math.ceil((userMessage.length + botResponse.length) / 4)
+          }
+        });
+        console.log('✅ Run cerrado exitosamente en LangSmith');
+      } catch (updateError) {
+        console.log('⚠️ Run creado pero no se pudo cerrar automáticamente');
+      }
       
       console.log('📊 Conversación registrada y completada en LangSmith');
     } catch (error) {
