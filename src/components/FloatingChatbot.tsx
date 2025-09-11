@@ -32,6 +32,20 @@ export default function FloatingChatbot({
     scrollToBottom();
   }, [messages]);
 
+  // Mostrar mensaje de bienvenida
+  useEffect(() => {
+    if (messages.length === 0) {
+      const welcomeMessage = {
+        id: 'welcome',
+        text: '¡Hola! 👋 ¿En qué puedo ayudarte hoy?',
+        sender: 'bot' as const,
+        timestamp: new Date(),
+        userMessage: undefined // No mostrar feedback para mensaje de bienvenida
+      };
+      setMessages([welcomeMessage]);
+    }
+  }, []);
+
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
@@ -189,15 +203,8 @@ export default function FloatingChatbot({
 
           {/* Mensajes */}
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
-            {messages.length === 0 ? (
-              <div className="text-center text-gray-500 mt-8">
-                <div className="text-4xl mb-2">🤖</div>
-                <p>¡Hola! Soy tu asistente de IA.</p>
-                <p className="text-sm">¿En qué puedo ayudarte?</p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {messages.map((message) => (
+            <div className="space-y-3">
+              {messages.map((message) => (
                   <div
                     key={message.id}
                     className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
@@ -223,10 +230,9 @@ export default function FloatingChatbot({
                       )}
                     </div>
                   </div>
-                ))}
-                <div ref={messagesEndRef} />
-              </div>
-            )}
+              ))}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
 
           {/* Input */}
