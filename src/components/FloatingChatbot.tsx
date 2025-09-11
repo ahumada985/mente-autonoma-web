@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { chatbotAnalytics } from '../lib/chatbot-analytics';
+import FeedbackSystem from './FeedbackSystem';
 
 interface FloatingChatbotProps {
   apiUrl?: string;
@@ -210,6 +211,14 @@ export default function FloatingChatbot({
                       <p className="text-xs opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString()}
                       </p>
+                      {message.sender === 'bot' && !message.isLoading && (
+                        <FeedbackSystem
+                          messageId={message.id}
+                          userMessage={userMessage}
+                          botResponse={message.text}
+                          userId="web_user"
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
