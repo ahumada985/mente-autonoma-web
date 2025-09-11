@@ -43,10 +43,10 @@ class LangSmithTracker {
     try {
       console.log('📊 Registrando conversación en LangSmith...');
       
-      // NUEVA ESTRATEGIA: Usar createRun con todos los datos completos desde el inicio
-      const runId = `chatbot-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      // SOLUCIÓN DEFINITIVA: Usar createRun con end_time para completar automáticamente
+      const runId = `chatbot-${Date.now()}`;
       
-      const runData = {
+      const run = await this.client.createRun({
         name: runId,
         inputs: {
           user_message: userMessage,
@@ -61,69 +61,18 @@ class LangSmithTracker {
           success: true
         },
         project_name: this.projectName,
-        run_type: 'llm' as const,
-        tags: ['chatbot', 'openai', 'web', 'success', 'completed'],
-        metadata: {
-          model: 'gpt-3.5-turbo',
-          temperature: 0.7,
-          max_tokens: 500,
-          status: 'success',
-          completed_at: new Date().toISOString(),
-          final_status: 'success',
-          // Información de tokens estimada
-          estimated_tokens: Math.ceil((userMessage.length + botResponse.length) / 4),
-          input_tokens: Math.ceil(userMessage.length / 4),
-          output_tokens: Math.ceil(botResponse.length / 4),
-          total_tokens: Math.ceil((userMessage.length + botResponse.length) / 4),
-          // Metadatos adicionales para evitar incomplete
-          run_duration_ms: 1000,
-          end_time: new Date().toISOString(),
-          is_complete: true
-        },
-        // ESTADO SUCCESS DESDE EL INICIO
-        status: 'success' as const
-      };
+        run_type: 'llm',
+        // CLAVE: Usar end_time para marcar como completado
+        end_time: new Date().toISOString()
+      });
 
-      console.log('🔧 Creando run con datos completos...');
-      const run = await this.client.createRun(runData);
-      console.log(`✅ Run creado exitosamente: ${run.id}`);
-
-      // Verificar que el run se creó correctamente
-      try {
-        const createdRun = await this.client.readRun(run.id);
-        console.log(`📊 Estado del run: ${createdRun.status}`);
-        
-        if (createdRun.status === 'success') {
-          console.log('✅ Run completado exitosamente en LangSmith');
-        } else {
-          console.log(`⚠️ Run creado pero con estado: ${createdRun.status}`);
-          
-          // Intentar actualizar a success si no lo está
-          try {
-            await this.client.updateRun(run.id, {
-              status: 'success',
-              end_time: new Date().toISOString(),
-              outputs: runData.outputs,
-              metadata: {
-                ...runData.metadata,
-                final_update: new Date().toISOString()
-              }
-            });
-            console.log('✅ Run actualizado a success');
-          } catch (updateError) {
-            console.log('⚠️ No se pudo actualizar el run:', updateError);
-          }
-        }
-      } catch (readError) {
-        console.log('⚠️ No se pudo leer el run creado:', readError);
-      }
-      
-      console.log('📊 Conversación registrada y completada en LangSmith');
-      return run.id;
+      console.log(`✅ Run creado y completado: ${runId}`);
+      console.log('✅ Conversación registrada exitosamente en LangSmith');
+      return runId;
     } catch (error) {
       console.error('❌ Error al registrar en LangSmith:', error);
       
-      // Crear un run de error con estado definido
+      // Registrar error
       try {
         const errorRun = await this.client.createRun({
           name: `chatbot-error-${Date.now()}`,
@@ -139,18 +88,14 @@ class LangSmithTracker {
             status: 'error'
           },
           project_name: this.projectName,
-          run_type: 'tool' as const,
-          tags: ['chatbot', 'error', 'web', 'failed'],
-          metadata: {
-            error_type: 'api_error',
-            failed_at: new Date().toISOString()
-          },
-          status: 'error' as const
+          run_type: 'tool',
+          end_time: new Date().toISOString()
         });
+        
         console.log('📊 Error registrado en LangSmith');
-        return errorRun.id;
+        return `error-${Date.now()}`;
       } catch (errorRunError) {
-        console.error('❌ Error al crear run de error:', errorRunError);
+        console.error('❌ Error al registrar error en LangSmith:', errorRunError);
         return null;
       }
     }
@@ -167,10 +112,8 @@ class LangSmithTracker {
     }
 
     try {
-      const errorRunId = `chatbot-error-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-      
       const errorRun = await this.client.createRun({
-        name: errorRunId,
+        name: `chatbot-error-${Date.now()}`,
         inputs: {
           user_message: userMessage,
           user_id: userId,
@@ -182,18 +125,12 @@ class LangSmithTracker {
           status: 'error'
         },
         project_name: this.projectName,
-        run_type: 'tool' as const,
-        tags: ['chatbot', 'error', 'web', 'failed'],
-        metadata: {
-          error_type: 'api_error',
-          failed_at: new Date().toISOString(),
-          is_complete: true
-        },
-        status: 'error' as const
+        run_type: 'tool',
+        end_time: new Date().toISOString()
       });
       
       console.log('📊 Error registrado en LangSmith');
-      return errorRun.id;
+      return `error-${Date.now()}`;
     } catch (error) {
       console.error('❌ Error al registrar error en LangSmith:', error);
       return null;
