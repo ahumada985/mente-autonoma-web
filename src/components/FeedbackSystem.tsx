@@ -5,7 +5,7 @@ import { langSmithTracker } from '../lib/langsmith';
 
 interface FeedbackSystemProps {
   messageId: string;
-  userMessage: string;
+  userMessage?: string;
   botResponse: string;
   userId: string;
   onFeedbackSubmitted?: (feedback: FeedbackData) => void;
@@ -31,6 +31,11 @@ export default function FeedbackSystem({
   const [category, setCategory] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // No mostrar feedback si no hay userMessage
+  if (!userMessage) {
+    return null;
+  }
+
   const handleSubmitFeedback = async () => {
     if (rating === 0) return;
 
@@ -45,27 +50,29 @@ export default function FeedbackSystem({
 
     try {
       // Trackear feedback en LangSmith
-      await langSmithTracker.trackConversation(
-        userMessage,
-        botResponse,
-        userId,
-        'web',
-        {
-          feedback_rating: rating,
-          feedback_comment: comment,
-          feedback_helpful: feedbackData.helpful,
-          feedback_category: category,
-          message_id: messageId,
-          feedback_timestamp: new Date().toISOString()
-        }
-      );
+      if (userMessage) {
+        await langSmithTracker.trackConversation(
+          userMessage,
+          botResponse,
+          userId,
+          'web',
+          {
+            feedback_rating: rating,
+            feedback_comment: comment,
+            feedback_helpful: feedbackData.helpful,
+            feedback_category: category,
+            message_id: messageId,
+            feedback_timestamp: new Date().toISOString()
+          }
+        );
+      }
 
       // Guardar en localStorage para análisis local
       const localFeedback = JSON.parse(localStorage.getItem('chatbot_feedback') || '[]');
       localFeedback.push({
         ...feedbackData,
         messageId,
-        userMessage,
+        userMessage: userMessage || 'unknown',
         botResponse,
         timestamp: new Date().toISOString()
       });
