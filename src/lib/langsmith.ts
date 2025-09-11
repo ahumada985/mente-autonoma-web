@@ -33,7 +33,17 @@ class LangSmithTracker {
     userMessage: string,
     botResponse: string,
     userId: string = 'web_user',
-    channel: string = 'web'
+    channel: string = 'web',
+    metadata: {
+      session_id?: string;
+      user_type?: string;
+      response_time_ms?: number;
+      tokens_used?: number;
+      cost_estimate?: number;
+      user_agent?: string;
+      ip_address?: string;
+      page_url?: string;
+    } = {}
   ) {
     if (!this.client) {
       console.log('⚠️ LangSmith no está configurado. Verifica las variables de entorno.');
@@ -58,7 +68,17 @@ class LangSmithTracker {
           bot_response: botResponse,
           response_time: new Date().toISOString(),
           status: 'completed',
-          success: true
+          success: true,
+          // Métricas de rendimiento
+          response_time_ms: metadata.response_time_ms || 0,
+          tokens_used: metadata.tokens_used || 0,
+          cost_estimate: metadata.cost_estimate || 0,
+          // Información del usuario
+          session_id: metadata.session_id || 'unknown',
+          user_type: metadata.user_type || 'free',
+          user_agent: metadata.user_agent || 'unknown',
+          ip_address: metadata.ip_address || 'unknown',
+          page_url: metadata.page_url || 'unknown'
         },
         project_name: this.projectName,
         run_type: 'llm',
