@@ -12,6 +12,10 @@ export class PerformanceTracker {
     return this.getDuration();
   }
 
+  endTiming() {
+    return this.end();
+  }
+
   getDuration(): number {
     return Math.round(this.endTime - this.startTime);
   }

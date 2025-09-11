@@ -19,6 +19,7 @@ export default function FloatingChatbot({
   const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date}>>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [userMessage, setUserMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Generar ID de sesión único
@@ -35,13 +36,14 @@ export default function FloatingChatbot({
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
-    const userMessage = inputValue.trim();
+    const messageText = inputValue.trim();
     setInputValue('');
+    setUserMessage(messageText);
     
     // Agregar mensaje del usuario
     const userMessageObj = {
       id: `user_${Date.now()}`,
-      text: userMessage,
+      text: messageText,
       sender: 'user' as const,
       timestamp: new Date()
     };
@@ -68,7 +70,7 @@ export default function FloatingChatbot({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: userMessage,
+          message: messageText,
           session_id: sessionId.current,
           user_id: 'web_user'
         })
@@ -95,7 +97,7 @@ export default function FloatingChatbot({
       // Trackear en LangSmith con métricas
       const responseTime = chatbotAnalytics.endTiming();
       await chatbotAnalytics.trackConversationWithMetrics(
-        userMessage,
+        messageText,
         botMessage.text,
         'web_user',
         'web'
@@ -214,7 +216,7 @@ export default function FloatingChatbot({
                       {message.sender === 'bot' && !message.isLoading && (
                         <FeedbackSystem
                           messageId={message.id}
-                          userMessage={userMessage}
+                          userMessage={userMessage || message.text}
                           botResponse={message.text}
                           userId="web_user"
                         />
