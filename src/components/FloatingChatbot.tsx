@@ -16,10 +16,9 @@ export default function FloatingChatbot({
   theme = 'default'
 }: FloatingChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date}>>([]);
+  const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date, userMessage?: string}>>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [userMessage, setUserMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Generar ID de sesión único
@@ -38,14 +37,14 @@ export default function FloatingChatbot({
 
     const messageText = inputValue.trim();
     setInputValue('');
-    setUserMessage(messageText);
     
     // Agregar mensaje del usuario
     const userMessageObj = {
       id: `user_${Date.now()}`,
       text: messageText,
       sender: 'user' as const,
-      timestamp: new Date()
+      timestamp: new Date(),
+      userMessage: messageText
     };
     setMessages(prev => [...prev, userMessageObj]);
 
@@ -90,7 +89,8 @@ export default function FloatingChatbot({
         id: `bot_${Date.now()}`,
         text: data.response || 'Lo siento, no pude procesar tu mensaje.',
         sender: 'bot' as const,
-        timestamp: new Date()
+        timestamp: new Date(),
+        userMessage: messageText
       };
       setMessages(prev => [...prev, botMessage]);
 
@@ -213,10 +213,10 @@ export default function FloatingChatbot({
                       <p className="text-xs opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString()}
                       </p>
-                      {message.sender === 'bot' && !message.isLoading && (
+                      {message.sender === 'bot' && !message.isLoading && message.userMessage && (
                         <FeedbackSystem
                           messageId={message.id}
-                          userMessage={userMessage || message.text}
+                          userMessage={message.userMessage}
                           botResponse={message.text}
                           userId="web_user"
                         />
