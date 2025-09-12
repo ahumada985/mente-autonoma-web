@@ -231,13 +231,16 @@ class KnowledgeBase {
     return category ? category.items : [];
   }
 
-  // Guardar en localStorage
+  // Guardar en localStorage (solo en el cliente)
   private saveToLocalStorage() {
+    if (typeof window === 'undefined') return; // No ejecutar en el servidor
     localStorage.setItem('knowledge_base', JSON.stringify(this.categories));
   }
 
-  // Cargar desde localStorage
+  // Cargar desde localStorage (solo en el cliente)
   loadFromLocalStorage() {
+    if (typeof window === 'undefined') return; // No ejecutar en el servidor
+    
     const stored = localStorage.getItem('knowledge_base');
     if (stored) {
       try {
