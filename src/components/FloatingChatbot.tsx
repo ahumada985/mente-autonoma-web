@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { chatbotAnalytics } from '../lib/chatbot-analytics';
-import FeedbackSystem from './FeedbackSystem';
 
 interface FloatingChatbotProps {
   apiUrl?: string;
@@ -16,7 +15,7 @@ export default function FloatingChatbot({
   theme = 'default'
 }: FloatingChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date, userMessage?: string}>>([]);
+  const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date}>>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -39,8 +38,7 @@ export default function FloatingChatbot({
         id: 'welcome',
         text: '¡Hola! 👋 ¿En qué puedo ayudarte hoy?',
         sender: 'bot' as const,
-        timestamp: new Date(),
-        userMessage: undefined // No mostrar feedback para mensaje de bienvenida
+        timestamp: new Date()
       };
       setMessages([welcomeMessage]);
     }
@@ -57,8 +55,7 @@ export default function FloatingChatbot({
       id: `user_${Date.now()}`,
       text: messageText,
       sender: 'user' as const,
-      timestamp: new Date(),
-      userMessage: messageText
+      timestamp: new Date()
     };
     setMessages(prev => [...prev, userMessageObj]);
 
@@ -103,8 +100,7 @@ export default function FloatingChatbot({
         id: `bot_${Date.now()}`,
         text: data.response || 'Lo siento, no pude procesar tu mensaje.',
         sender: 'bot' as const,
-        timestamp: new Date(),
-        userMessage: messageText
+        timestamp: new Date()
       };
       setMessages(prev => [...prev, botMessage]);
 
@@ -220,14 +216,6 @@ export default function FloatingChatbot({
                       <p className="text-xs opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString()}
                       </p>
-                      {message.sender === 'bot' && message.userMessage && (
-                        <FeedbackSystem
-                          messageId={message.id}
-                          userMessage={message.userMessage}
-                          botResponse={message.text}
-                          userId="web_user"
-                        />
-                      )}
                     </div>
                   </div>
               ))}
