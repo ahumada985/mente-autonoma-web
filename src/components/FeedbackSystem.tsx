@@ -60,27 +60,8 @@ export default function FeedbackSystem({
       });
       localStorage.setItem('chatbot_feedback', JSON.stringify(localFeedback));
 
-      // Intentar trackear en LangSmith (opcional, no crítico)
-      try {
-        if (userMessage) {
-          await langSmithTracker.trackConversation(
-            userMessage,
-            botResponse,
-            userId,
-            'web',
-            {
-              feedback_rating: rating,
-              feedback_comment: comment,
-              feedback_helpful: feedbackData.helpful,
-              feedback_category: category,
-              message_id: messageId,
-              feedback_timestamp: new Date().toISOString()
-            }
-          );
-        }
-      } catch (langsmithError) {
-        console.log('LangSmith feedback tracking failed (non-critical):', langsmithError);
-      }
+      // Feedback guardado exitosamente - no necesitamos LangSmith para feedback
+      console.log('✅ Feedback guardado:', feedbackData);
 
       onFeedbackSubmitted?.(feedbackData);
       setShowFeedback(false);
