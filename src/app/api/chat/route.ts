@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { langSmithTracker } from '@/lib/langsmith';
-import { knowledgeBase } from '@/lib/knowledge-base';
+import { documentKnowledge } from '@/lib/document-knowledge';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
       }, { status: 500 });
     }
 
-    // Obtener contexto relevante de la base de conocimiento
-    const knowledgeContext = knowledgeBase.getContextForPrompt(userMessage);
+    // Obtener contexto relevante de los documentos
+    const knowledgeContext = documentKnowledge.getContextForPrompt(userMessage);
 
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
