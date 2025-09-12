@@ -120,6 +120,12 @@ export class ChatbotAnalytics {
     this.performanceTracker.start();
   }
 
+  // Finalizar medición de tiempo y obtener duración
+  endTiming() {
+    this.performanceTracker.end();
+    return this.performanceTracker.getDuration();
+  }
+
   // Obtener estadísticas en tiempo real
   getRealTimeStats() {
     const metrics = this.getLocalMetrics();
