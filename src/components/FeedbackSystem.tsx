@@ -85,9 +85,6 @@ export default function FeedbackSystem({
       onFeedbackSubmitted?.(feedbackData);
       setShowFeedback(false);
       
-      // Mostrar mensaje de confirmación
-      alert('¡Gracias por tu feedback! Tu calificación ha sido registrada.');
-      
     } catch (error) {
       console.error('Error al enviar feedback:', error);
     } finally {
