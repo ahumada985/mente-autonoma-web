@@ -197,7 +197,7 @@ export default function FloatingChatbot({
 
       {/* Widget del chatbot */}
       {isOpen && (
-        <div className={`fixed ${getPositionClasses()} z-50 w-80 h-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col transition-all duration-300`}>
+        <div className={`fixed ${getPositionClasses()} z-50 w-80 h-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col transition-all duration-300`}>
           {/* Header */}
           <div className={`p-4 rounded-t-lg ${getThemeClasses()} flex justify-between items-center`}>
             <h3 className="text-lg font-semibold">Mente Autónoma</h3>
