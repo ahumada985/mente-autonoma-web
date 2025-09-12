@@ -48,15 +48,15 @@ export default function ChatbotDemoPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="group p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 transition-all duration-300 transform hover:-translate-y-2 text-center md:text-left">
+              <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-2xl">🤖</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">IA Avanzada</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-center md:text-left">
                 Powered by OpenAI GPT-3.5-turbo para respuestas inteligentes y contextuales
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
+              <ul className="text-sm text-gray-500 space-y-1 text-center md:text-left">
                 <li>• Comprensión natural del lenguaje</li>
                 <li>• Respuestas contextuales</li>
                 <li>• Aprendizaje continuo</li>
@@ -64,15 +64,15 @@ export default function ChatbotDemoPage() {
             </div>
 
             {/* Feature 2 */}
-            <div className="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 transition-all duration-300 transform hover:-translate-y-2 text-center md:text-left">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-2xl">📊</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Analytics en Tiempo Real</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-center md:text-left">
                 Monitoreo completo con LangSmith para métricas detalladas de rendimiento
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
+              <ul className="text-sm text-gray-500 space-y-1 text-center md:text-left">
                 <li>• Tiempo de respuesta</li>
                 <li>• Tokens utilizados</li>
                 <li>• Análisis de patrones</li>
@@ -80,15 +80,15 @@ export default function ChatbotDemoPage() {
             </div>
 
             {/* Feature 3 */}
-            <div className="group p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 transition-all duration-300 transform hover:-translate-y-2 text-center md:text-left">
+              <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Respuesta Instantánea</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-center md:text-left">
                 Respuestas rápidas y precisas para mejorar la experiencia del usuario
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
+              <ul className="text-sm text-gray-500 space-y-1 text-center md:text-left">
                 <li>• Respuesta en segundos</li>
                 <li>• Disponible 24/7</li>
                 <li>• Sin límites de consultas</li>
