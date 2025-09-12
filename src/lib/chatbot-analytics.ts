@@ -79,8 +79,8 @@ export class ChatbotAnalytics {
   }
 
   private trackLocalMetrics(data: any) {
-    // Guardar métricas en localStorage para análisis local
-    const metrics = JSON.parse(localStorage.getItem('chatbot_metrics') || '[]');
+    // Guardar métricas en sessionStorage para análisis de sesión actual
+    const metrics = JSON.parse(sessionStorage.getItem('chatbot_metrics') || '[]');
     metrics.push(data);
     
     // Mantener solo los últimos 100 registros
@@ -88,12 +88,12 @@ export class ChatbotAnalytics {
       metrics.splice(0, metrics.length - 100);
     }
     
-    localStorage.setItem('chatbot_metrics', JSON.stringify(metrics));
+    sessionStorage.setItem('chatbot_metrics', JSON.stringify(metrics));
   }
 
   // Obtener métricas locales para análisis
   getLocalMetrics() {
-    const metrics = JSON.parse(localStorage.getItem('chatbot_metrics') || '[]');
+    const metrics = JSON.parse(sessionStorage.getItem('chatbot_metrics') || '[]');
     return this.analyzeMetrics(metrics);
   }
 

@@ -31,8 +31,8 @@ export default function AnalyticsPage() {
 
   const loadMetrics = () => {
     try {
-      // Cargar métricas desde localStorage
-      const storedMetrics = localStorage.getItem('chatbot_metrics');
+      // Cargar métricas desde sessionStorage (solo sesión actual)
+      const storedMetrics = sessionStorage.getItem('chatbot_metrics');
       if (storedMetrics) {
         const parsedMetrics = JSON.parse(storedMetrics);
         setMetrics(parsedMetrics);
@@ -76,8 +76,8 @@ export default function AnalyticsPage() {
   };
 
   const clearMetrics = () => {
-    if (confirm('¿Estás seguro de que quieres borrar todas las métricas?')) {
-      localStorage.removeItem('chatbot_metrics');
+    if (confirm('¿Estás seguro de que quieres borrar todas las métricas de esta sesión?')) {
+      sessionStorage.removeItem('chatbot_metrics');
       setMetrics([]);
       setAnalytics(null);
     }
@@ -110,7 +110,11 @@ export default function AnalyticsPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Analytics del Chatbot</h1>
-          <p className="mt-2 text-gray-600">Métricas de rendimiento y uso en tiempo real</p>
+          <p className="mt-2 text-gray-600">Métricas de rendimiento de la sesión actual</p>
+          <div className="mt-2 inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            <span className="mr-2">🔄</span>
+            Sesión Actual
+          </div>
         </div>
 
         {/* Stats Cards */}
