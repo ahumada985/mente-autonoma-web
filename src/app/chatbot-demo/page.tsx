@@ -23,10 +23,19 @@ export default function ChatbotDemoPage() {
               Experimenta la potencia de la IA conversacional con nuestro chatbot avanzado
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button 
+                onClick={() => {
+                  const chatbotButton = document.querySelector('[data-chatbot-button]') as HTMLElement;
+                  if (chatbotButton) chatbotButton.click();
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
                 🚀 Probar Ahora
               </button>
-              <button className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
+              <button 
+                onClick={() => window.open('/analytics', '_blank')}
+                className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300"
+              >
                 📊 Ver Analytics
               </button>
             </div>
@@ -168,10 +177,19 @@ export default function ChatbotDemoPage() {
             Haz clic en el botón flotante y comienza a chatear con nuestro chatbot inteligente
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button 
+              onClick={() => {
+                const chatbotButton = document.querySelector('[data-chatbot-button]') as HTMLElement;
+                if (chatbotButton) chatbotButton.click();
+              }}
+              className="px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
               💬 Iniciar Chat
             </button>
-            <button className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
+            <button 
+              onClick={() => window.open('/analytics', '_blank')}
+              className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300"
+            >
               📈 Ver Métricas
             </button>
           </div>
@@ -179,11 +197,56 @@ export default function ChatbotDemoPage() {
       </div>
 
       {/* Footer */}
-      <div className="bg-gray-900 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Mente Autónoma. Chatbot con IA integrada.
-          </p>
+      <div className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Columna 1 */}
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-white mb-4">Mente Autónoma</h3>
+              <p className="text-gray-300 mb-4">
+                Soluciones de IA para empresas que buscan innovar y automatizar sus procesos.
+              </p>
+              <div className="flex justify-center md:justify-start space-x-4">
+                <span className="text-2xl">🚀</span>
+                <span className="text-2xl">🤖</span>
+                <span className="text-2xl">⚡</span>
+              </div>
+            </div>
+
+            {/* Columna 2 */}
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-white mb-4">Servicios</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>Desarrollo Web</li>
+                <li>Chatbots Inteligentes</li>
+                <li>Automatización</li>
+                <li>Consultoría IA</li>
+              </ul>
+            </div>
+
+            {/* Columna 3 */}
+            <div className="text-center md:text-right">
+              <h3 className="text-xl font-bold text-white mb-4">Contacto</h3>
+              <div className="space-y-2 text-gray-300">
+                <p>📧 contacto@menteautonoma.cl</p>
+                <p>📱 +56 9 1234 5678</p>
+                <p>📍 Antofagasta, Chile</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-700 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 text-sm mb-4 md:mb-0">
+                © 2024 Mente Autónoma. Todos los derechos reservados.
+              </p>
+              <div className="flex space-x-6 text-sm text-gray-400">
+                <a href="/knowledge-docs" className="hover:text-white transition-colors">Base de Conocimiento</a>
+                <a href="/analytics" className="hover:text-white transition-colors">Analytics</a>
+                <a href="/chatbot-demo" className="hover:text-white transition-colors">Demo</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

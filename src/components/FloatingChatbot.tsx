@@ -187,6 +187,7 @@ export default function FloatingChatbot({
       <div 
         className={`fixed ${getPositionClasses()} z-50 cursor-pointer transition-all duration-300 hover:scale-110`}
         onClick={toggleChatbot}
+        data-chatbot-button
       >
         <div className={`w-16 h-16 rounded-full ${getThemeClasses()} shadow-lg flex items-center justify-center relative`}>
           <div className="text-2xl">💬</div>
