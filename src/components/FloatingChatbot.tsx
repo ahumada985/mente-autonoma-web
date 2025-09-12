@@ -70,6 +70,10 @@ export default function FloatingChatbot({
     setIsLoading(true);
 
     try {
+      console.log('🚀 Iniciando llamada a la API...');
+      console.log('📤 Mensaje:', messageText);
+      console.log('🔗 URL:', apiUrl);
+      
       // Iniciar medición de tiempo
       chatbotAnalytics.startTiming();
 
@@ -86,11 +90,17 @@ export default function FloatingChatbot({
         })
       });
 
+      console.log('📊 Response status:', response.status);
+      console.log('📊 Response ok:', response.ok);
+
       if (!response.ok) {
-        throw new Error('Error en la respuesta del servidor');
+        const errorText = await response.text();
+        console.error('❌ Error response:', errorText);
+        throw new Error(`Error en la respuesta del servidor: ${response.status}`);
       }
 
       const data = await response.json();
+      console.log('✅ Data recibida:', data);
       
       // Remover mensaje de carga
       setMessages(prev => prev.filter(msg => msg.id !== loadingMessage.id));
@@ -114,7 +124,9 @@ export default function FloatingChatbot({
       );
 
     } catch (error) {
-      console.error('Error al enviar mensaje:', error);
+      console.error('❌ ERROR COMPLETO:', error);
+      console.error('❌ Error message:', error.message);
+      console.error('❌ Error stack:', error.stack);
       
       // Remover mensaje de carga
       setMessages(prev => prev.filter(msg => msg.id !== loadingMessage.id));
