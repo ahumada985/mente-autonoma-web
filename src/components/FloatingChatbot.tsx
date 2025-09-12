@@ -220,7 +220,7 @@ export default function FloatingChatbot({
                       <p className="text-xs opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString()}
                       </p>
-                      {message.sender === 'bot' && !message.isLoading && message.userMessage && (
+                      {message.sender === 'bot' && message.userMessage && (
                         <FeedbackSystem
                           messageId={message.id}
                           userMessage={message.userMessage}
