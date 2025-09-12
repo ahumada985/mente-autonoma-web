@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { langSmithTracker } from '@/lib/langsmith';
+import { knowledgeBase } from '@/lib/knowledge-base';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -27,6 +28,9 @@ export async function POST(request: NextRequest) {
       }, { status: 500 });
     }
 
+    // Obtener contexto relevante de la base de conocimiento
+    const knowledgeContext = knowledgeBase.getContextForPrompt(userMessage);
+
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -48,7 +52,7 @@ INSTRUCCIONES:
 - Proporciona información específica cuando sea posible
 - Si no sabes algo, ofrece contactar con el equipo
 - Mantén las respuestas concisas pero informativas
-- Usa emojis ocasionalmente para ser más amigable`
+- Usa emojis ocasionalmente para ser más amigable${knowledgeContext}`
         },
         {
           role: "user",
