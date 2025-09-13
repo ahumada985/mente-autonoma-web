@@ -70,6 +70,7 @@ export default function AnalyticsPage() {
   const [viewMode, setViewMode] = useState<'overview' | 'detailed'>('overview');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
+  const [isDemoData, setIsDemoData] = useState(false);
 
   useEffect(() => {
     loadMetrics();
@@ -82,6 +83,7 @@ export default function AnalyticsPage() {
       if (storedMetrics) {
         const parsedMetrics = JSON.parse(storedMetrics);
         setMetrics(parsedMetrics);
+        setIsDemoData(false); // Datos reales
         
         // Calcular analytics
         const analyticsData = calculateAnalytics(parsedMetrics);
@@ -96,6 +98,84 @@ export default function AnalyticsPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const createDemoData = () => {
+    // Crear datos de demostración para mostrar cómo se vería el chatbot a largo plazo
+    const now = new Date();
+    const demoMetrics: MetricData[] = [];
+    
+    // Generar datos de las últimas 7 días para simular uso a largo plazo
+    for (let day = 0; day < 7; day++) {
+      const currentDay = new Date(now.getTime() - day * 24 * 60 * 60 * 1000);
+      
+      // Generar entre 5-15 conversaciones por día
+      const conversationsPerDay = Math.floor(Math.random() * 11) + 5;
+      
+      for (let i = 0; i < conversationsPerDay; i++) {
+        const hour = Math.floor(Math.random() * 24);
+        const timestamp = new Date(currentDay.getTime() + hour * 60 * 60 * 1000);
+        
+        // Mensajes más realistas
+        const userMessages = [
+          "¿Cómo puedo optimizar mi sitio web?",
+          "Necesito ayuda con SEO",
+          "¿Cuál es el mejor framework para mi proyecto?",
+          "¿Cómo implemento autenticación?",
+          "¿Puedes revisar mi código?",
+          "¿Qué tecnologías me recomiendas?",
+          "¿Cómo mejoro el rendimiento?",
+          "¿Cuál es la mejor práctica para esto?",
+          "¿Puedes explicarme este concepto?",
+          "¿Cómo resuelvo este error?",
+          "¿Qué opinas de esta arquitectura?",
+          "¿Cómo escalo mi aplicación?",
+          "¿Cuál es la diferencia entre estas opciones?",
+          "¿Puedes ayudarme con la documentación?",
+          "¿Cómo implemento esta funcionalidad?"
+        ];
+        
+        const botResponses = [
+          "Te ayudo a optimizar tu sitio web. Primero necesito revisar tu código actual...",
+          "Para mejorar tu SEO, te recomiendo implementar estas estrategias...",
+          "Basándome en tu proyecto, te sugiero usar React con Next.js...",
+          "La autenticación se puede implementar de varias formas. Te explico las opciones...",
+          "He revisado tu código y encontré algunas mejoras que puedes implementar...",
+          "Para tu caso específico, te recomiendo estas tecnologías...",
+          "Para mejorar el rendimiento, puedes implementar estas optimizaciones...",
+          "La mejor práctica en este caso sería seguir estos principios...",
+          "Te explico este concepto paso a paso con ejemplos prácticos...",
+          "Este error es común. Te muestro cómo solucionarlo...",
+          "Tu arquitectura está bien estructurada, pero puedes mejorar estos aspectos...",
+          "Para escalar tu aplicación, considera implementar estas estrategias...",
+          "La diferencia principal entre estas opciones es que...",
+          "Te ayudo con la documentación. Aquí tienes los pasos detallados...",
+          "Para implementar esta funcionalidad, necesitas seguir estos pasos..."
+        ];
+        
+        const userMessage = userMessages[Math.floor(Math.random() * userMessages.length)];
+        const botResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+        
+        demoMetrics.push({
+          userMessage,
+          botResponse,
+          responseTime: Math.floor(Math.random() * 2000) + 800, // 800-2800ms
+          totalTokens: Math.floor(Math.random() * 400) + 150, // 150-550 tokens
+          timestamp: timestamp.toISOString()
+        });
+      }
+    }
+    
+    setMetrics(demoMetrics);
+    setIsDemoData(true); // Marcar como datos demo
+    
+    // Calcular analytics
+    const analyticsData = calculateAnalytics(demoMetrics);
+    setAnalytics(analyticsData);
+    
+    // Procesar datos para gráficos
+    processChartData(demoMetrics);
+    processPieData(demoMetrics);
   };
 
   const processChartData = (data: MetricData[]) => {
@@ -244,11 +324,27 @@ export default function AnalyticsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Analytics del Chatbot</h1>
-          <p className="mt-2 text-gray-600">Métricas de rendimiento de la sesión actual</p>
-          <div className="mt-2 inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-            <span className="mr-2">🔄</span>
-            Sesión Actual
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Analytics del Chatbot</h1>
+              <p className="mt-2 text-gray-600">
+                {isDemoData ? 'Métricas de demostración (7 días simulados)' : 'Métricas de rendimiento de la sesión actual'}
+              </p>
+              <div className={`mt-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                isDemoData 
+                  ? 'bg-purple-100 text-purple-800' 
+                  : 'bg-blue-100 text-blue-800'
+              }`}>
+                <span className="mr-2">{isDemoData ? '🎯' : '🔄'}</span>
+                {isDemoData ? 'Datos Demo' : 'Datos Reales'}
+              </div>
+            </div>
+            {isDemoData && (
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                <p className="text-sm text-purple-700 font-medium">Modo Demostración</p>
+                <p className="text-xs text-purple-600">Simulación de uso a largo plazo</p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -345,6 +441,13 @@ export default function AnalyticsPage() {
               <Trash2 className="w-4 h-4 mr-2" />
               Limpiar
             </button>
+            <button
+              onClick={createDemoData}
+              className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors flex items-center"
+            >
+              <Activity className="w-4 h-4 mr-2" />
+              Datos Demo
+            </button>
           </div>
           
           <div className="flex space-x-2">
@@ -381,16 +484,37 @@ export default function AnalyticsPage() {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">No hay datos para mostrar</h3>
             <p className="text-gray-500 mb-6">
-              Para ver los gráficos de analytics, necesitas tener conversaciones con el chatbot o generar datos de demostración.
+              Tienes dos opciones para ver los analytics del chatbot:
             </p>
-            <div className="flex justify-center">
-              <a
-                href="/chatbot-demo"
-                className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center"
-              >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Ir al Chatbot para Generar Datos
-              </a>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-blue-900 mb-2">📊 Datos Reales</h4>
+                <p className="text-sm text-blue-700 mb-3">
+                  Basados en conversaciones reales con el chatbot. Se generan automáticamente cuando usas el chatbot.
+                </p>
+                <a
+                  href="/chatbot-demo"
+                  className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
+                >
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Ir al Chatbot
+                </a>
+              </div>
+              
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-purple-900 mb-2">🎯 Datos Demo</h4>
+                <p className="text-sm text-purple-700 mb-3">
+                  Simulación de cómo se vería el chatbot con uso a largo plazo (7 días de datos).
+                </p>
+                <button
+                  onClick={createDemoData}
+                  className="inline-flex items-center px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors text-sm"
+                >
+                  <Activity className="w-4 h-4 mr-2" />
+                  Generar Demo
+                </button>
+              </div>
             </div>
           </div>
         )}
