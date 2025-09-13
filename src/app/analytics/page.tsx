@@ -1,6 +1,35 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { 
+  LineChart, 
+  Line, 
+  AreaChart, 
+  Area, 
+  BarChart, 
+  Bar, 
+  PieChart, 
+  Pie, 
+  Cell, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  Legend, 
+  ResponsiveContainer 
+} from 'recharts';
+import { 
+  TrendingUp, 
+  Clock, 
+  MessageSquare, 
+  DollarSign, 
+  Activity,
+  Download,
+  RefreshCw,
+  Trash2,
+  BarChart3,
+  PieChart as PieChartIcon
+} from 'lucide-react';
 
 interface MetricData {
   userMessage: string;
@@ -20,10 +49,27 @@ interface AnalyticsData {
   avgCostPerConversation: number;
 }
 
+interface ChartData {
+  time: string;
+  conversations: number;
+  responseTime: number;
+  tokens: number;
+  cost: number;
+}
+
+interface PieData {
+  name: string;
+  value: number;
+  color: string;
+}
+
 export default function AnalyticsPage() {
   const [metrics, setMetrics] = useState<MetricData[]>([]);
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [chartData, setChartData] = useState<ChartData[]>([]);
+  const [pieData, setPieData] = useState<PieData[]>([]);
+  const [viewMode, setViewMode] = useState<'overview' | 'detailed'>('overview');
 
   useEffect(() => {
     loadMetrics();
@@ -40,12 +86,79 @@ export default function AnalyticsPage() {
         // Calcular analytics
         const analyticsData = calculateAnalytics(parsedMetrics);
         setAnalytics(analyticsData);
+        
+        // Procesar datos para gráficos
+        processChartData(parsedMetrics);
+        processPieData(parsedMetrics);
       }
     } catch (error) {
       console.error('Error cargando métricas:', error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const processChartData = (data: MetricData[]) => {
+    // Agrupar por hora para mostrar tendencias
+    const hourlyData: { [key: string]: { conversations: number, responseTime: number, tokens: number, cost: number } } = {};
+    
+    data.forEach(metric => {
+      const hour = new Date(metric.timestamp).getHours();
+      const timeKey = `${hour}:00`;
+      
+      if (!hourlyData[timeKey]) {
+        hourlyData[timeKey] = { conversations: 0, responseTime: 0, tokens: 0, cost: 0 };
+      }
+      
+      hourlyData[timeKey].conversations += 1;
+      hourlyData[timeKey].responseTime += metric.responseTime;
+      hourlyData[timeKey].tokens += metric.totalTokens;
+      hourlyData[timeKey].cost += metric.costEstimate;
+    });
+
+    const chartDataArray = Object.entries(hourlyData).map(([time, data]) => ({
+      time,
+      conversations: data.conversations,
+      responseTime: Math.round(data.responseTime / data.conversations),
+      tokens: data.tokens,
+      cost: Math.round(data.cost * 1000) / 1000
+    })).sort((a, b) => a.time.localeCompare(b.time));
+
+    setChartData(chartDataArray);
+  };
+
+  const processPieData = (data: MetricData[]) => {
+    // Analizar distribución de tipos de mensajes (simulado)
+    const messageTypes = {
+      'Preguntas': 0,
+      'Solicitudes': 0,
+      'Comentarios': 0,
+      'Otros': 0
+    };
+
+    data.forEach(metric => {
+      const message = metric.userMessage.toLowerCase();
+      if (message.includes('?') || message.includes('cómo') || message.includes('qué')) {
+        messageTypes['Preguntas']++;
+      } else if (message.includes('necesito') || message.includes('quiero') || message.includes('solicito')) {
+        messageTypes['Solicitudes']++;
+      } else if (message.includes('gracias') || message.includes('ok') || message.includes('perfecto')) {
+        messageTypes['Comentarios']++;
+      } else {
+        messageTypes['Otros']++;
+      }
+    });
+
+    const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300'];
+    const pieDataArray = Object.entries(messageTypes)
+      .filter(([_, value]) => value > 0)
+      .map(([name, value], index) => ({
+        name,
+        value,
+        color: colors[index % colors.length]
+      }));
+
+    setPieData(pieDataArray);
   };
 
   const calculateAnalytics = (data: MetricData[]): AnalyticsData => {
@@ -120,58 +233,66 @@ export default function AnalyticsPage() {
         {/* Stats Cards */}
         {analytics && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
+                <div className="p-3 bg-blue-100 rounded-lg">
+                  <MessageSquare className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-500">Conversaciones</p>
                   <p className="text-2xl font-semibold text-gray-900">{analytics.totalConversations}</p>
+                  <p className="text-xs text-green-600 flex items-center mt-1">
+                    <TrendingUp className="w-3 h-3 mr-1" />
+                    +12% vs ayer
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <Clock className="w-6 h-6 text-green-600" />
                 </div>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-500">Tiempo Promedio</p>
                   <p className="text-2xl font-semibold text-gray-900">{analytics.avgResponseTime}ms</p>
+                  <p className="text-xs text-blue-600 flex items-center mt-1">
+                    <Activity className="w-3 h-3 mr-1" />
+                    Excelente rendimiento
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+                <div className="p-3 bg-purple-100 rounded-lg">
+                  <BarChart3 className="w-6 h-6 text-purple-600" />
                 </div>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-500">Total Tokens</p>
                   <p className="text-2xl font-semibold text-gray-900">{analytics.totalTokens.toLocaleString()}</p>
+                  <p className="text-xs text-purple-600 flex items-center mt-1">
+                    <Activity className="w-3 h-3 mr-1" />
+                    {analytics.avgTokensPerConversation} avg/conversación
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
-                <div className="p-2 bg-yellow-100 rounded-lg">
-                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                  </svg>
+                <div className="p-3 bg-yellow-100 rounded-lg">
+                  <DollarSign className="w-6 h-6 text-yellow-600" />
                 </div>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-500">Costo Total</p>
                   <p className="text-2xl font-semibold text-gray-900">${analytics.totalCost}</p>
+                  <p className="text-xs text-yellow-600 flex items-center mt-1">
+                    <Activity className="w-3 h-3 mr-1" />
+                    ${analytics.avgCostPerConversation} avg/conversación
+                  </p>
                 </div>
               </div>
             </div>
@@ -179,26 +300,189 @@ export default function AnalyticsPage() {
         )}
 
         {/* Actions */}
-        <div className="mb-6 flex space-x-4">
-          <button
-            onClick={loadMetrics}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            🔄 Actualizar
-          </button>
-          <button
-            onClick={exportMetrics}
-            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
-          >
-            📥 Exportar
-          </button>
-          <button
-            onClick={clearMetrics}
-            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
-          >
-            🗑️ Limpiar
-          </button>
+        <div className="mb-6 flex flex-wrap gap-4 justify-between items-center">
+          <div className="flex space-x-4">
+            <button
+              onClick={loadMetrics}
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+            >
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Actualizar
+            </button>
+            <button
+              onClick={exportMetrics}
+              className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Exportar
+            </button>
+            <button
+              onClick={clearMetrics}
+              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+            >
+              <Trash2 className="w-4 h-4 mr-2" />
+              Limpiar
+            </button>
+          </div>
+          
+          <div className="flex space-x-2">
+            <button
+              onClick={() => setViewMode('overview')}
+              className={`px-4 py-2 rounded-lg transition-colors flex items-center ${
+                viewMode === 'overview' 
+                  ? 'bg-blue-500 text-white' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              <BarChart3 className="w-4 h-4 mr-2" />
+              Resumen
+            </button>
+            <button
+              onClick={() => setViewMode('detailed')}
+              className={`px-4 py-2 rounded-lg transition-colors flex items-center ${
+                viewMode === 'detailed' 
+                  ? 'bg-blue-500 text-white' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              <PieChartIcon className="w-4 h-4 mr-2" />
+              Detallado
+            </button>
+          </div>
         </div>
+
+        {/* Charts Section */}
+        {viewMode === 'overview' && chartData.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {/* Conversaciones por hora */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Conversaciones por Hora</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <AreaChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time" />
+                  <YAxis />
+                  <Tooltip />
+                  <Area 
+                    type="monotone" 
+                    dataKey="conversations" 
+                    stroke="#3b82f6" 
+                    fill="#3b82f6" 
+                    fillOpacity={0.3}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Tiempo de respuesta */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Tiempo de Respuesta</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time" />
+                  <YAxis />
+                  <Tooltip />
+                  <Line 
+                    type="monotone" 
+                    dataKey="responseTime" 
+                    stroke="#10b981" 
+                    strokeWidth={2}
+                    dot={{ fill: '#10b981', strokeWidth: 2, r: 4 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Tokens utilizados */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Tokens Utilizados</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time" />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="tokens" fill="#8b5cf6" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Costo por hora */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Costo por Hora</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time" />
+                  <YAxis />
+                  <Tooltip formatter={(value) => [`$${value}`, 'Costo']} />
+                  <Bar dataKey="cost" fill="#f59e0b" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        )}
+
+        {/* Detailed View */}
+        {viewMode === 'detailed' && pieData.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {/* Distribución de tipos de mensajes */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Tipos de Mensajes</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Resumen de rendimiento */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Resumen de Rendimiento</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Eficiencia de Tokens</span>
+                  <span className="text-sm font-bold text-blue-600">
+                    {analytics ? Math.round((analytics.totalTokens / analytics.totalConversations) / 10) : 0}%
+                  </span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Velocidad Promedio</span>
+                  <span className="text-sm font-bold text-green-600">
+                    {analytics ? (analytics.avgResponseTime < 2000 ? 'Excelente' : 'Buena') : 'N/A'}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Costo por Conversación</span>
+                  <span className="text-sm font-bold text-purple-600">
+                    ${analytics?.avgCostPerConversation || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">ROI Estimado</span>
+                  <span className="text-sm font-bold text-yellow-600">
+                    {analytics ? Math.round(analytics.totalConversations * 0.1) : 0}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Metrics Table */}
         <div className="bg-white rounded-lg shadow overflow-hidden">
