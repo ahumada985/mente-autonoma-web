@@ -36,7 +36,6 @@ interface MetricData {
   botResponse: string;
   responseTime: number;
   totalTokens: number;
-  costEstimate: number;
   timestamp: string;
 }
 
@@ -44,9 +43,8 @@ interface AnalyticsData {
   totalConversations: number;
   avgResponseTime: number;
   totalTokens: number;
-  totalCost: number;
   avgTokensPerConversation: number;
-  avgCostPerConversation: number;
+  efficiencyScore: number;
 }
 
 interface ChartData {
@@ -54,7 +52,7 @@ interface ChartData {
   conversations: number;
   responseTime: number;
   tokens: number;
-  cost: number;
+  efficiency: number;
 }
 
 interface PieData {
@@ -70,6 +68,8 @@ export default function AnalyticsPage() {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [pieData, setPieData] = useState<PieData[]>([]);
   const [viewMode, setViewMode] = useState<'overview' | 'detailed'>('overview');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     loadMetrics();
@@ -90,68 +90,29 @@ export default function AnalyticsPage() {
         // Procesar datos para gráficos
         processChartData(parsedMetrics);
         processPieData(parsedMetrics);
-      } else {
-        // Si no hay datos, crear datos de demostración
-        createDemoData();
       }
     } catch (error) {
       console.error('Error cargando métricas:', error);
-      // Si hay error, crear datos de demostración
-      createDemoData();
     } finally {
       setLoading(false);
     }
   };
 
-  const createDemoData = () => {
-    // Crear datos de demostración para mostrar los gráficos
-    const now = new Date();
-    const demoMetrics: MetricData[] = [];
-    
-    // Generar datos de las últimas 24 horas
-    for (let i = 0; i < 24; i++) {
-      const hour = new Date(now.getTime() - (23 - i) * 60 * 60 * 1000);
-      const conversations = Math.floor(Math.random() * 10) + 1;
-      
-      for (let j = 0; j < conversations; j++) {
-        demoMetrics.push({
-          userMessage: `Mensaje de prueba ${i}-${j}`,
-          botResponse: `Respuesta del bot ${i}-${j}`,
-          responseTime: Math.floor(Math.random() * 3000) + 500,
-          totalTokens: Math.floor(Math.random() * 500) + 100,
-          costEstimate: Math.random() * 0.01 + 0.001,
-          timestamp: hour.toISOString()
-        });
-      }
-    }
-    
-    setMetrics(demoMetrics);
-    
-    // Calcular analytics
-    const analyticsData = calculateAnalytics(demoMetrics);
-    setAnalytics(analyticsData);
-    
-    // Procesar datos para gráficos
-    processChartData(demoMetrics);
-    processPieData(demoMetrics);
-  };
-
   const processChartData = (data: MetricData[]) => {
     // Agrupar por hora para mostrar tendencias
-    const hourlyData: { [key: string]: { conversations: number, responseTime: number, tokens: number, cost: number } } = {};
+    const hourlyData: { [key: string]: { conversations: number, responseTime: number, tokens: number } } = {};
     
     data.forEach(metric => {
       const hour = new Date(metric.timestamp).getHours();
       const timeKey = `${hour}:00`;
       
       if (!hourlyData[timeKey]) {
-        hourlyData[timeKey] = { conversations: 0, responseTime: 0, tokens: 0, cost: 0 };
+        hourlyData[timeKey] = { conversations: 0, responseTime: 0, tokens: 0 };
       }
       
       hourlyData[timeKey].conversations += 1;
       hourlyData[timeKey].responseTime += metric.responseTime;
       hourlyData[timeKey].tokens += metric.totalTokens;
-      hourlyData[timeKey].cost += metric.costEstimate;
     });
 
     const chartDataArray = Object.entries(hourlyData).map(([time, data]) => ({
@@ -159,7 +120,7 @@ export default function AnalyticsPage() {
       conversations: data.conversations,
       responseTime: Math.round(data.responseTime / data.conversations),
       tokens: data.tokens,
-      cost: Math.round(data.cost * 1000) / 1000
+      efficiency: Math.round((data.tokens / data.conversations) / 10) // Score de eficiencia basado en tokens por conversación
     })).sort((a, b) => a.time.localeCompare(b.time));
 
     setChartData(chartDataArray);
@@ -205,24 +166,25 @@ export default function AnalyticsPage() {
         totalConversations: 0,
         avgResponseTime: 0,
         totalTokens: 0,
-        totalCost: 0,
         avgTokensPerConversation: 0,
-        avgCostPerConversation: 0
+        efficiencyScore: 0
       };
     }
 
     const totalConversations = data.length;
     const avgResponseTime = data.reduce((sum, m) => sum + m.responseTime, 0) / totalConversations;
     const totalTokens = data.reduce((sum, m) => sum + m.totalTokens, 0);
-    const totalCost = data.reduce((sum, m) => sum + m.costEstimate, 0);
+    const avgTokensPerConversation = Math.round(totalTokens / totalConversations);
+    
+    // Calcular score de eficiencia basado en tiempo de respuesta y tokens
+    const efficiencyScore = Math.round((1000 / avgResponseTime) * (avgTokensPerConversation / 100));
 
     return {
       totalConversations,
       avgResponseTime: Math.round(avgResponseTime),
       totalTokens,
-      totalCost: Math.round(totalCost * 1000) / 1000,
-      avgTokensPerConversation: Math.round(totalTokens / totalConversations),
-      avgCostPerConversation: Math.round((totalCost / totalConversations) * 1000) / 1000
+      avgTokensPerConversation,
+      efficiencyScore: Math.min(efficiencyScore, 100) // Máximo 100
     };
   };
 
@@ -242,6 +204,28 @@ export default function AnalyticsPage() {
     link.href = url;
     link.download = `chatbot-metrics-${new Date().toISOString().split('T')[0]}.json`;
     link.click();
+  };
+
+  // Funciones de paginación
+  const totalPages = Math.ceil(metrics.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentMetrics = metrics.slice(startIndex, endIndex);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   if (loading) {
@@ -321,15 +305,15 @@ export default function AnalyticsPage() {
 
             <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
-                <div className="p-3 bg-yellow-100 rounded-lg">
-                  <DollarSign className="w-6 h-6 text-yellow-600" />
+                <div className="p-3 bg-orange-100 rounded-lg">
+                  <Activity className="w-6 h-6 text-orange-600" />
                 </div>
                 <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Costo Total</p>
-                  <p className="text-2xl font-semibold text-gray-900">${analytics.totalCost}</p>
-                  <p className="text-xs text-yellow-600 flex items-center mt-1">
-                    <Activity className="w-3 h-3 mr-1" />
-                    ${analytics.avgCostPerConversation} avg/conversación
+                  <p className="text-sm font-medium text-gray-500">Score de Eficiencia</p>
+                  <p className="text-2xl font-semibold text-gray-900">{analytics.efficiencyScore}/100</p>
+                  <p className="text-xs text-orange-600 flex items-center mt-1">
+                    <TrendingUp className="w-3 h-3 mr-1" />
+                    {analytics.efficiencyScore > 70 ? 'Excelente' : analytics.efficiencyScore > 50 ? 'Bueno' : 'Mejorable'}
                   </p>
                 </div>
               </div>
@@ -360,13 +344,6 @@ export default function AnalyticsPage() {
             >
               <Trash2 className="w-4 h-4 mr-2" />
               Limpiar
-            </button>
-            <button
-              onClick={createDemoData}
-              className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors flex items-center"
-            >
-              <Activity className="w-4 h-4 mr-2" />
-              Datos Demo
             </button>
           </div>
           
@@ -406,20 +383,13 @@ export default function AnalyticsPage() {
             <p className="text-gray-500 mb-6">
               Para ver los gráficos de analytics, necesitas tener conversaciones con el chatbot o generar datos de demostración.
             </p>
-            <div className="flex justify-center space-x-4">
-              <button
-                onClick={createDemoData}
-                className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
-              >
-                <Activity className="w-5 h-5 mr-2" />
-                Generar Datos Demo
-              </button>
+            <div className="flex justify-center">
               <a
                 href="/chatbot-demo"
                 className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center"
               >
                 <MessageSquare className="w-5 h-5 mr-2" />
-                Ir al Chatbot
+                Ir al Chatbot para Generar Datos
               </a>
             </div>
           </div>
@@ -482,16 +452,16 @@ export default function AnalyticsPage() {
               </ResponsiveContainer>
             </div>
 
-            {/* Costo por hora */}
+            {/* Eficiencia por hora */}
             <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Costo por Hora</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Eficiencia por Hora</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="time" />
                   <YAxis />
-                  <Tooltip formatter={(value) => [`$${value}`, 'Costo']} />
-                  <Bar dataKey="cost" fill="#f59e0b" />
+                  <Tooltip formatter={(value) => [`${value}%`, 'Eficiencia']} />
+                  <Bar dataKey="efficiency" fill="#f97316" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -542,15 +512,15 @@ export default function AnalyticsPage() {
                   </span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                  <span className="text-sm font-medium text-gray-700">Costo por Conversación</span>
+                  <span className="text-sm font-medium text-gray-700">Tokens por Conversación</span>
                   <span className="text-sm font-bold text-purple-600">
-                    ${analytics?.avgCostPerConversation || 0}
+                    {analytics?.avgTokensPerConversation || 0}
                   </span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg">
-                  <span className="text-sm font-medium text-gray-700">ROI Estimado</span>
+                  <span className="text-sm font-medium text-gray-700">Satisfacción Estimada</span>
                   <span className="text-sm font-bold text-yellow-600">
-                    {analytics ? Math.round(analytics.totalConversations * 0.1) : 0}%
+                    {analytics ? Math.round(analytics.efficiencyScore * 0.8) : 0}%
                   </span>
                 </div>
               </div>
@@ -560,8 +530,13 @@ export default function AnalyticsPage() {
 
         {/* Metrics Table */}
         <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200">
+          <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
             <h3 className="text-lg font-medium text-gray-900">Historial de Conversaciones</h3>
+            {metrics.length > 0 && (
+              <div className="text-sm text-gray-500">
+                Mostrando {startIndex + 1}-{Math.min(endIndex, metrics.length)} de {metrics.length} conversaciones
+              </div>
+            )}
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
@@ -583,7 +558,7 @@ export default function AnalyticsPage() {
                     Tokens
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Costo
+                    Eficiencia
                   </th>
                 </tr>
               </thead>
@@ -595,32 +570,108 @@ export default function AnalyticsPage() {
                     </td>
                   </tr>
                 ) : (
-                  metrics.slice().reverse().map((metric, index) => (
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {new Date(metric.timestamp).toLocaleString()}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-900 max-w-xs truncate">
-                        {metric.userMessage}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-900 max-w-xs truncate">
-                        {metric.botResponse}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {metric.responseTime}ms
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {metric.totalTokens}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        ${metric.costEstimate.toFixed(4)}
-                      </td>
-                    </tr>
-                  ))
+                  currentMetrics.slice().reverse().map((metric, index) => {
+                    const efficiency = Math.round((1000 / metric.responseTime) * (metric.totalTokens / 100));
+                    return (
+                      <tr key={startIndex + index} className="hover:bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          {new Date(metric.timestamp).toLocaleString()}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-900 max-w-xs truncate">
+                          {metric.userMessage}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-900 max-w-xs truncate">
+                          {metric.botResponse}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          {metric.responseTime}ms
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          {metric.totalTokens}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            efficiency > 70 ? 'bg-green-100 text-green-800' :
+                            efficiency > 50 ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-red-100 text-red-800'
+                          }`}>
+                            {Math.min(efficiency, 100)}%
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })
                 )}
               </tbody>
             </table>
           </div>
+          
+          {/* Paginación */}
+          {totalPages > 1 && (
+            <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+              <div className="flex items-center">
+                <p className="text-sm text-gray-700">
+                  Página {currentPage} de {totalPages}
+                </p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={goToPreviousPage}
+                  disabled={currentPage === 1}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Anterior
+                </button>
+                
+                {/* Números de página */}
+                <div className="flex space-x-1">
+                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                    const pageNumber = i + 1;
+                    if (totalPages <= 5) {
+                      return (
+                        <button
+                          key={pageNumber}
+                          onClick={() => goToPage(pageNumber)}
+                          className={`px-3 py-2 text-sm font-medium rounded-md ${
+                            currentPage === pageNumber
+                              ? 'bg-blue-500 text-white'
+                              : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
+                          }`}
+                        >
+                          {pageNumber}
+                        </button>
+                      );
+                    }
+                    return null;
+                  })}
+                  
+                  {totalPages > 5 && (
+                    <>
+                      {currentPage > 3 && <span className="px-2 py-2 text-sm text-gray-500">...</span>}
+                      <button
+                        onClick={() => goToPage(totalPages)}
+                        className={`px-3 py-2 text-sm font-medium rounded-md ${
+                          currentPage === totalPages
+                            ? 'bg-blue-500 text-white'
+                            : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
+                        }`}
+                      >
+                        {totalPages}
+                      </button>
+                    </>
+                  )}
+                </div>
+                
+                <button
+                  onClick={goToNextPage}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
