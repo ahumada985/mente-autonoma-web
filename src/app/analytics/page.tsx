@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { chatbotAnalytics } from '../../lib/chatbot-analytics';
 import { 
   LineChart, 
   Line, 
@@ -71,6 +72,7 @@ export default function AnalyticsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [isDemoData, setIsDemoData] = useState(false);
+  const [ratingStats, setRatingStats] = useState<any>(null);
 
   useEffect(() => {
     loadMetrics();
@@ -93,6 +95,10 @@ export default function AnalyticsPage() {
         processChartData(parsedMetrics);
         processPieData(parsedMetrics);
       }
+
+      // Cargar estadísticas de calificaciones
+      const ratings = chatbotAnalytics.getRatingStats();
+      setRatingStats(ratings);
     } catch (error) {
       console.error('Error cargando métricas:', error);
     } finally {
@@ -350,7 +356,7 @@ export default function AnalyticsPage() {
 
         {/* Stats Cards */}
         {analytics && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
             <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center">
                 <div className="p-3 bg-blue-100 rounded-lg">
@@ -414,6 +420,25 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             </div>
+
+            {/* Tarjeta de Satisfacción */}
+            {ratingStats && (
+              <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center">
+                  <div className="p-3 bg-green-100 rounded-lg">
+                    <span className="text-2xl">⭐</span>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-sm font-medium text-gray-500">Satisfacción</p>
+                    <p className="text-2xl font-semibold text-gray-900">{ratingStats.satisfactionRate}%</p>
+                    <p className="text-xs text-green-600 flex items-center mt-1">
+                      <span className="mr-1">👍</span>
+                      {ratingStats.thumbsUp} positivas
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -594,7 +619,7 @@ export default function AnalyticsPage() {
 
         {/* Detailed View */}
         {viewMode === 'detailed' && pieData.length > 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             {/* Distribución de tipos de mensajes */}
             <div className="bg-white rounded-lg shadow p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Tipos de Mensajes</h3>
@@ -649,6 +674,28 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             </div>
+
+            {/* Feedbacks Recientes */}
+            {ratingStats && ratingStats.recentFeedbacks.length > 0 && (
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Feedbacks Recientes</h3>
+                <div className="space-y-3 max-h-64 overflow-y-auto">
+                  {ratingStats.recentFeedbacks.map((feedback: any, index: number) => (
+                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-700 mb-1">{feedback.feedback}</p>
+                      <p className="text-xs text-gray-500">
+                        {new Date(feedback.timestamp).toLocaleString()}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                {ratingStats.totalFeedbacks > 5 && (
+                  <p className="text-xs text-gray-500 mt-2 text-center">
+                    Mostrando últimos 5 de {ratingStats.totalFeedbacks} feedbacks
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         )}
 

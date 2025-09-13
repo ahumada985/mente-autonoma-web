@@ -137,6 +137,70 @@ export class ChatbotAnalytics {
       currentTime: new Date().toISOString()
     };
   }
+
+  // Trackear calificación de respuesta
+  trackRating(messageId: string, rating: 'thumbs_up' | 'thumbs_down') {
+    const ratingData = {
+      messageId,
+      rating,
+      timestamp: new Date().toISOString(),
+      sessionId: this.sessionId
+    };
+
+    // Guardar en localStorage para persistencia
+    const ratings = JSON.parse(localStorage.getItem('chatbot_ratings') || '[]');
+    ratings.push(ratingData);
+    localStorage.setItem('chatbot_ratings', JSON.stringify(ratings));
+
+    // También guardar en sessionStorage para analytics de sesión
+    const sessionRatings = JSON.parse(sessionStorage.getItem('chatbot_session_ratings') || '[]');
+    sessionRatings.push(ratingData);
+    sessionStorage.setItem('chatbot_session_ratings', JSON.stringify(sessionRatings));
+
+    console.log('📊 Rating tracked:', ratingData);
+  }
+
+  // Trackear feedback específico
+  trackFeedback(messageId: string, feedback: string) {
+    const feedbackData = {
+      messageId,
+      feedback,
+      timestamp: new Date().toISOString(),
+      sessionId: this.sessionId
+    };
+
+    // Guardar en localStorage para persistencia
+    const feedbacks = JSON.parse(localStorage.getItem('chatbot_feedbacks') || '[]');
+    feedbacks.push(feedbackData);
+    localStorage.setItem('chatbot_feedbacks', JSON.stringify(feedbacks));
+
+    // También guardar en sessionStorage para analytics de sesión
+    const sessionFeedbacks = JSON.parse(sessionStorage.getItem('chatbot_session_feedbacks') || '[]');
+    sessionFeedbacks.push(feedbackData);
+    sessionStorage.setItem('chatbot_session_feedbacks', JSON.stringify(sessionFeedbacks));
+
+    console.log('📝 Feedback tracked:', feedbackData);
+  }
+
+  // Obtener estadísticas de calificaciones
+  getRatingStats() {
+    const ratings = JSON.parse(sessionStorage.getItem('chatbot_session_ratings') || '[]');
+    const feedbacks = JSON.parse(sessionStorage.getItem('chatbot_session_feedbacks') || '[]');
+
+    const thumbsUp = ratings.filter((r: any) => r.rating === 'thumbs_up').length;
+    const thumbsDown = ratings.filter((r: any) => r.rating === 'thumbs_down').length;
+    const totalRatings = ratings.length;
+    const satisfactionRate = totalRatings > 0 ? (thumbsUp / totalRatings) * 100 : 0;
+
+    return {
+      totalRatings,
+      thumbsUp,
+      thumbsDown,
+      satisfactionRate: Math.round(satisfactionRate),
+      totalFeedbacks: feedbacks.length,
+      recentFeedbacks: feedbacks.slice(-5) // Últimos 5 feedbacks
+    };
+  }
 }
 
 // Instancia global para usar en toda la aplicación

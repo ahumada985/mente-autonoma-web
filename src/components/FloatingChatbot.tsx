@@ -9,13 +9,24 @@ interface FloatingChatbotProps {
   theme?: 'default' | 'dark' | 'blue' | 'green';
 }
 
+interface Message {
+  id: string;
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
+  rating?: 'thumbs_up' | 'thumbs_down' | null;
+  feedback?: string;
+}
+
 export default function FloatingChatbot({ 
   apiUrl = '/api/chat',
   position = 'bottom-right',
   theme = 'default'
 }: FloatingChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{id: string, text: string, sender: 'user' | 'bot', timestamp: Date}>>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [showFeedbackForm, setShowFeedbackForm] = useState<string | null>(null);
+  const [feedbackText, setFeedbackText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -151,6 +162,45 @@ export default function FloatingChatbot({
     }
   };
 
+  const handleRating = (messageId: string, rating: 'thumbs_up' | 'thumbs_down') => {
+    setMessages(prev => prev.map(msg => 
+      msg.id === messageId 
+        ? { ...msg, rating }
+        : msg
+    ));
+
+    // Si es thumbs_down, mostrar formulario de feedback
+    if (rating === 'thumbs_down') {
+      setShowFeedbackForm(messageId);
+    } else {
+      setShowFeedbackForm(null);
+    }
+
+    // Enviar calificación a analytics
+    chatbotAnalytics.trackRating(messageId, rating);
+  };
+
+  const handleFeedbackSubmit = (messageId: string) => {
+    if (feedbackText.trim()) {
+      setMessages(prev => prev.map(msg => 
+        msg.id === messageId 
+          ? { ...msg, feedback: feedbackText.trim() }
+          : msg
+      ));
+
+      // Enviar feedback a analytics
+      chatbotAnalytics.trackFeedback(messageId, feedbackText.trim());
+      
+      setFeedbackText('');
+      setShowFeedbackForm(null);
+    }
+  };
+
+  const handleFeedbackCancel = () => {
+    setFeedbackText('');
+    setShowFeedbackForm(null);
+  };
+
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
@@ -214,8 +264,8 @@ export default function FloatingChatbot({
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
             <div className="space-y-3">
               {messages.map((message) => (
+                <div key={message.id}>
                   <div
-                    key={message.id}
                     className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
@@ -231,6 +281,67 @@ export default function FloatingChatbot({
                       </p>
                     </div>
                   </div>
+                  
+                  {/* Botones de calificación para mensajes del bot */}
+                  {message.sender === 'bot' && message.id !== 'welcome' && (
+                    <div className="flex justify-start mt-2 ml-2">
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() => handleRating(message.id, 'thumbs_up')}
+                          className={`p-1 rounded-full transition-colors ${
+                            message.rating === 'thumbs_up'
+                              ? 'bg-green-100 text-green-600'
+                              : 'bg-gray-100 text-gray-400 hover:bg-green-100 hover:text-green-600'
+                          }`}
+                          title="Me gusta esta respuesta"
+                        >
+                          👍
+                        </button>
+                        <button
+                          onClick={() => handleRating(message.id, 'thumbs_down')}
+                          className={`p-1 rounded-full transition-colors ${
+                            message.rating === 'thumbs_down'
+                              ? 'bg-red-100 text-red-600'
+                              : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-600'
+                          }`}
+                          title="No me gusta esta respuesta"
+                        >
+                          👎
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Formulario de feedback */}
+                  {showFeedbackForm === message.id && (
+                    <div className="ml-2 mt-2 p-3 bg-gray-100 rounded-lg">
+                      <p className="text-xs text-gray-600 mb-2">
+                        ¿Qué podemos mejorar en esta respuesta?
+                      </p>
+                      <textarea
+                        value={feedbackText}
+                        onChange={(e) => setFeedbackText(e.target.value)}
+                        placeholder="Escribe tu feedback aquí..."
+                        className="w-full p-2 text-xs border border-gray-300 rounded resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        rows={2}
+                      />
+                      <div className="flex space-x-2 mt-2">
+                        <button
+                          onClick={() => handleFeedbackSubmit(message.id)}
+                          className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
+                        >
+                          Enviar
+                        </button>
+                        <button
+                          onClick={handleFeedbackCancel}
+                          className="px-3 py-1 bg-gray-300 text-gray-700 text-xs rounded hover:bg-gray-400 transition-colors"
+                        >
+                          Cancelar
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
               <div ref={messagesEndRef} />
             </div>
