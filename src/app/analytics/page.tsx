@@ -90,12 +90,50 @@ export default function AnalyticsPage() {
         // Procesar datos para gráficos
         processChartData(parsedMetrics);
         processPieData(parsedMetrics);
+      } else {
+        // Si no hay datos, crear datos de demostración
+        createDemoData();
       }
     } catch (error) {
       console.error('Error cargando métricas:', error);
+      // Si hay error, crear datos de demostración
+      createDemoData();
     } finally {
       setLoading(false);
     }
+  };
+
+  const createDemoData = () => {
+    // Crear datos de demostración para mostrar los gráficos
+    const now = new Date();
+    const demoMetrics: MetricData[] = [];
+    
+    // Generar datos de las últimas 24 horas
+    for (let i = 0; i < 24; i++) {
+      const hour = new Date(now.getTime() - (23 - i) * 60 * 60 * 1000);
+      const conversations = Math.floor(Math.random() * 10) + 1;
+      
+      for (let j = 0; j < conversations; j++) {
+        demoMetrics.push({
+          userMessage: `Mensaje de prueba ${i}-${j}`,
+          botResponse: `Respuesta del bot ${i}-${j}`,
+          responseTime: Math.floor(Math.random() * 3000) + 500,
+          totalTokens: Math.floor(Math.random() * 500) + 100,
+          costEstimate: Math.random() * 0.01 + 0.001,
+          timestamp: hour.toISOString()
+        });
+      }
+    }
+    
+    setMetrics(demoMetrics);
+    
+    // Calcular analytics
+    const analyticsData = calculateAnalytics(demoMetrics);
+    setAnalytics(analyticsData);
+    
+    // Procesar datos para gráficos
+    processChartData(demoMetrics);
+    processPieData(demoMetrics);
   };
 
   const processChartData = (data: MetricData[]) => {
@@ -323,6 +361,13 @@ export default function AnalyticsPage() {
               <Trash2 className="w-4 h-4 mr-2" />
               Limpiar
             </button>
+            <button
+              onClick={createDemoData}
+              className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors flex items-center"
+            >
+              <Activity className="w-4 h-4 mr-2" />
+              Datos Demo
+            </button>
           </div>
           
           <div className="flex space-x-2">
@@ -350,6 +395,35 @@ export default function AnalyticsPage() {
             </button>
           </div>
         </div>
+
+        {/* No Data Message */}
+        {chartData.length === 0 && (
+          <div className="bg-white rounded-lg shadow p-8 text-center mb-8">
+            <div className="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+              <BarChart3 className="w-12 h-12 text-gray-400" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No hay datos para mostrar</h3>
+            <p className="text-gray-500 mb-6">
+              Para ver los gráficos de analytics, necesitas tener conversaciones con el chatbot o generar datos de demostración.
+            </p>
+            <div className="flex justify-center space-x-4">
+              <button
+                onClick={createDemoData}
+                className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+              >
+                <Activity className="w-5 h-5 mr-2" />
+                Generar Datos Demo
+              </button>
+              <a
+                href="/chatbot-demo"
+                className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center"
+              >
+                <MessageSquare className="w-5 h-5 mr-2" />
+                Ir al Chatbot
+              </a>
+            </div>
+          </div>
+        )}
 
         {/* Charts Section */}
         {viewMode === 'overview' && chartData.length > 0 && (
