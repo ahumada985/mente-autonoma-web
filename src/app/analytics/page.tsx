@@ -79,7 +79,7 @@ export default function AnalyticsPage() {
     loadMetrics();
   }, []);
 
-  const loadMetrics = () => {
+  const loadMetrics = async () => {
     try {
       // Cargar métricas desde sessionStorage (solo sesión actual)
       const storedMetrics = sessionStorage.getItem('chatbot_metrics');
