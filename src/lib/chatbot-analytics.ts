@@ -1,6 +1,7 @@
 // Sistema de análisis para el chatbot
 import { langSmithTracker } from './langsmith';
 import { PerformanceTracker } from './performance-tracker';
+import { feedbackManager } from './supabase-feedback';
 
 export class ChatbotAnalytics {
   private performanceTracker: PerformanceTracker;
@@ -139,44 +140,68 @@ export class ChatbotAnalytics {
   }
 
   // Trackear calificación de respuesta
-  trackRating(messageId: string, rating: 'thumbs_up' | 'thumbs_down') {
+  async trackRating(messageId: string, rating: 'thumbs_up' | 'thumbs_down') {
     const ratingData = {
-      messageId,
+      message_id: messageId,
       rating,
-      timestamp: new Date().toISOString(),
-      sessionId: this.sessionId
+      session_id: this.sessionId
     };
 
-    // Guardar en localStorage para persistencia
+    // Guardar en Supabase (persistencia en la nube)
+    await feedbackManager.saveRating(ratingData);
+
+    // También guardar en localStorage como fallback
     const ratings = JSON.parse(localStorage.getItem('chatbot_ratings') || '[]');
-    ratings.push(ratingData);
+    ratings.push({
+      ...ratingData,
+      messageId: ratingData.message_id,
+      sessionId: ratingData.session_id,
+      timestamp: new Date().toISOString()
+    });
     localStorage.setItem('chatbot_ratings', JSON.stringify(ratings));
 
     // También guardar en sessionStorage para analytics de sesión
     const sessionRatings = JSON.parse(sessionStorage.getItem('chatbot_session_ratings') || '[]');
-    sessionRatings.push(ratingData);
+    sessionRatings.push({
+      messageId: ratingData.message_id,
+      rating: ratingData.rating,
+      timestamp: new Date().toISOString(),
+      sessionId: ratingData.session_id
+    });
     sessionStorage.setItem('chatbot_session_ratings', JSON.stringify(sessionRatings));
 
     console.log('📊 Rating tracked:', ratingData);
   }
 
   // Trackear feedback específico
-  trackFeedback(messageId: string, feedback: string) {
+  async trackFeedback(messageId: string, feedback: string) {
     const feedbackData = {
-      messageId,
+      message_id: messageId,
       feedback,
-      timestamp: new Date().toISOString(),
-      sessionId: this.sessionId
+      session_id: this.sessionId
     };
 
-    // Guardar en localStorage para persistencia
+    // Guardar en Supabase (persistencia en la nube)
+    await feedbackManager.saveFeedback(feedbackData);
+
+    // También guardar en localStorage como fallback
     const feedbacks = JSON.parse(localStorage.getItem('chatbot_feedbacks') || '[]');
-    feedbacks.push(feedbackData);
+    feedbacks.push({
+      ...feedbackData,
+      messageId: feedbackData.message_id,
+      sessionId: feedbackData.session_id,
+      timestamp: new Date().toISOString()
+    });
     localStorage.setItem('chatbot_feedbacks', JSON.stringify(feedbacks));
 
     // También guardar en sessionStorage para analytics de sesión
     const sessionFeedbacks = JSON.parse(sessionStorage.getItem('chatbot_session_feedbacks') || '[]');
-    sessionFeedbacks.push(feedbackData);
+    sessionFeedbacks.push({
+      messageId: feedbackData.message_id,
+      feedback: feedbackData.feedback,
+      timestamp: new Date().toISOString(),
+      sessionId: feedbackData.session_id
+    });
     sessionStorage.setItem('chatbot_session_feedbacks', JSON.stringify(sessionFeedbacks));
 
     console.log('📝 Feedback tracked:', feedbackData);

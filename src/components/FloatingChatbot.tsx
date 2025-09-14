@@ -162,7 +162,7 @@ export default function FloatingChatbot({
     }
   };
 
-  const handleRating = (messageId: string, rating: 'thumbs_up' | 'thumbs_down') => {
+  const handleRating = async (messageId: string, rating: 'thumbs_up' | 'thumbs_down') => {
     setMessages(prev => prev.map(msg => 
       msg.id === messageId 
         ? { ...msg, rating }
@@ -176,11 +176,11 @@ export default function FloatingChatbot({
       setShowFeedbackForm(null);
     }
 
-    // Enviar calificación a analytics
-    chatbotAnalytics.trackRating(messageId, rating);
+    // Enviar calificación a analytics (ahora con persistencia en Supabase)
+    await chatbotAnalytics.trackRating(messageId, rating);
   };
 
-  const handleFeedbackSubmit = (messageId: string) => {
+  const handleFeedbackSubmit = async (messageId: string) => {
     if (feedbackText.trim()) {
       setMessages(prev => prev.map(msg => 
         msg.id === messageId 
@@ -188,8 +188,8 @@ export default function FloatingChatbot({
           : msg
       ));
 
-      // Enviar feedback a analytics
-      chatbotAnalytics.trackFeedback(messageId, feedbackText.trim());
+      // Enviar feedback a analytics (ahora con persistencia en Supabase)
+      await chatbotAnalytics.trackFeedback(messageId, feedbackText.trim());
       
       setFeedbackText('');
       setShowFeedbackForm(null);

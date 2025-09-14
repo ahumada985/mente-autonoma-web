@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { chatbotAnalytics } from '../../lib/chatbot-analytics';
+import { feedbackManager } from '../../lib/supabase-feedback';
 import { 
   LineChart, 
   Line, 
@@ -96,9 +97,30 @@ export default function AnalyticsPage() {
         processPieData(parsedMetrics);
       }
 
-      // Cargar estadísticas de calificaciones
-      const ratings = chatbotAnalytics.getRatingStats();
-      setRatingStats(ratings);
+      // Cargar estadísticas de calificaciones desde Supabase
+      try {
+        const supabaseRatings = await feedbackManager.getSatisfactionStats(7);
+        if (supabaseRatings.length > 0) {
+          const latestStats = supabaseRatings[0];
+          setRatingStats({
+            totalRatings: latestStats.total_ratings,
+            thumbsUp: latestStats.thumbs_up,
+            thumbsDown: latestStats.thumbs_down,
+            satisfactionRate: latestStats.satisfaction_rate,
+            totalFeedbacks: 0, // Se puede agregar si es necesario
+            recentFeedbacks: []
+          });
+        } else {
+          // Fallback a datos locales
+          const ratings = chatbotAnalytics.getRatingStats();
+          setRatingStats(ratings);
+        }
+      } catch (error) {
+        console.error('Error loading Supabase ratings:', error);
+        // Fallback a datos locales
+        const ratings = chatbotAnalytics.getRatingStats();
+        setRatingStats(ratings);
+      }
     } catch (error) {
       console.error('Error cargando métricas:', error);
     } finally {
