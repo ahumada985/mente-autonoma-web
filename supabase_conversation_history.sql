@@ -51,3 +51,5 @@ COMMENT ON COLUMN conversation_history.feedback IS 'Comentario adicional del usu
 
 
 
+
+
