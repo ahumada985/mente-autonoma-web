@@ -1,2 +1,2 @@
-# Backup automático diario a las 2:00 AM
-0 2 * * * cd C:\Users\usuario\Desktop\Proyectos_IA\Cursor_oficial && node scripts/backup-automation.js >> logs/backup.log 2>&1
+# Respaldo automático diario a las 2:00 AM (Local + Git)
+0 2 * * * cd C:\Users\usuario\Desktop\Proyectos_IA\Cursor_oficial && node scripts/git-backup-automation.js >> logs/backup.log 2>&1

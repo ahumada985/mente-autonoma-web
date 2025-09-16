@@ -1,0 +1,172 @@
+{
+  "name": "Sistema de Alertas del Asistente Secretario",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 30
+            }
+          ]
+        }
+      },
+      "id": "schedule-alerts",
+      "name": "Verificar Alertas Cada 30 Min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "url": "http://localhost:3000/api/analytics-global",
+        "options": {}
+      },
+      "id": "get-business-data",
+      "name": "Obtener Datos del Negocio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente secretario IA especializado en monitoreo de negocios.\n\nAnaliza estos datos y detecta alertas importantes:\n\nDatos del negocio: {{ JSON.stringify($json, null, 2) }}\n\nIdentifica:\n1. Cambios significativos en métricas\n2. Oportunidades de venta\n3. Problemas potenciales\n4. Alertas de rendimiento\n5. Recomendaciones urgentes\n\nSolo reporta si hay algo importante que requiera atención inmediata.",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "detect-alerts",
+      "name": "Detectar Alertas con IA",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-alerts",
+              "leftValue": "={{ $json.choices[0].message.content }}",
+              "rightValue": "No hay alertas importantes",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-alerts",
+      "name": "¿Hay Alertas?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "ALERTA_{{ new Date().toISOString().split('T')[0] }}_{{ new Date().toTimeString().split(' ')[0].replace(/:/g, '-') }}.txt",
+        "content": "🚨 ALERTA DEL NEGOCIO - {{ new Date().toLocaleString('es-ES') }}\n\n{{ $json.choices[0].message.content }}\n\n---\nGenerado por Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "save-alert",
+      "name": "Guardar Alerta",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "message": "🚨 ALERTA: Se ha detectado algo importante que requiere tu atención",
+        "options": {}
+      },
+      "id": "alert-notification",
+      "name": "Notificación de Alerta",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    }
+  ],
+  "connections": {
+    "Verificar Alertas Cada 30 Min": {
+      "main": [
+        [
+          {
+            "node": "Obtener Datos del Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Datos del Negocio": {
+      "main": [
+        [
+          {
+            "node": "Detectar Alertas con IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detectar Alertas con IA": {
+      "main": [
+        [
+          {
+            "node": "¿Hay Alertas?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay Alertas?": {
+      "main": [
+        [
+          {
+            "node": "Guardar Alerta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Alerta": {
+      "main": [
+        [
+          {
+            "node": "Notificación de Alerta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
+
+
+
+

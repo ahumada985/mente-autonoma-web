@@ -1,0 +1,132 @@
+{
+  "name": "Generador de Documentos del Asistente Secretario",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-document",
+        "options": {}
+      },
+      "id": "webhook-document",
+      "name": "Webhook Documento",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente secretario IA especializado en generar documentos profesionales.\n\nTipo de documento: {{ $json.documentType }}\nTema: {{ $json.topic }}\nDetalles: {{ $json.details }}\n\nGenera un documento profesional y bien estructurado.",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "generate-content",
+      "name": "Generar Contenido",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "Documento_{{ $json.documentType }}_{{ new Date().toISOString().split('T')[0] }}.txt",
+        "content": "={{ $json.choices[0].message.content }}",
+        "options": {}
+      },
+      "id": "save-document",
+      "name": "Guardar Documento",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "asistente@mentautonoma.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Documento Generado: {{ $json.documentType }}",
+        "message": "Hola,\n\nHe generado el documento solicitado: {{ $json.documentType }}\n\nEl documento se ha guardado y está listo para revisión.\n\nSaludos,\nAsistente Secretario IA",
+        "options": {
+          "attachments": [
+            {
+              "name": "Documento_{{ $json.documentType }}_{{ new Date().toISOString().split('T')[0] }}.txt",
+              "data": "={{ $json.choices[0].message.content }}"
+            }
+          ]
+        }
+      },
+      "id": "send-document",
+      "name": "Enviar Documento",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "message": "📄 Documento generado exitosamente por el Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "completion-notification",
+      "name": "Notificación de Completado",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Documento": {
+      "main": [
+        [
+          {
+            "node": "Generar Contenido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Contenido": {
+      "main": [
+        [
+          {
+            "node": "Guardar Documento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Documento": {
+      "main": [
+        [
+          {
+            "node": "Enviar Documento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Documento": {
+      "main": [
+        [
+          {
+            "node": "Notificación de Completado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}

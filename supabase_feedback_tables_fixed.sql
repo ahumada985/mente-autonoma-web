@@ -1,4 +1,4 @@
--- Tablas para sistema de feedbacks y ratings del chatbot
+-- Tablas para sistema de feedbacks y ratings del chatbot - VERSIÓN CORREGIDA
 -- Ejecutar en Supabase SQL Editor
 
 -- Tabla de ratings (👍👎)
@@ -73,17 +73,21 @@ CREATE TRIGGER update_feedbacks_updated_at
     BEFORE UPDATE ON chatbot_feedbacks 
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
--- Vista para estadísticas de satisfacción
+-- Vista para estadísticas de satisfacción (CORREGIDA)
 CREATE OR REPLACE VIEW chatbot_satisfaction_stats AS
 SELECT 
   DATE(created_at) as date,
   COUNT(*) as total_ratings,
   COUNT(CASE WHEN rating = 'thumbs_up' THEN 1 END) as thumbs_up,
   COUNT(CASE WHEN rating = 'thumbs_down' THEN 1 END) as thumbs_down,
-  ROUND(
-    (COUNT(CASE WHEN rating = 'thumbs_up' THEN 1 END)::NUMERIC / COUNT(*)) * 100, 
-    2
-  ) as satisfaction_rate
+  CASE 
+    WHEN COUNT(*) > 0 THEN 
+      ROUND(
+        (COUNT(CASE WHEN rating = 'thumbs_up' THEN 1 END)::NUMERIC / COUNT(*)) * 100, 
+        2
+      )
+    ELSE 0
+  END as satisfaction_rate
 FROM chatbot_ratings
 GROUP BY DATE(created_at)
 ORDER BY date DESC;
@@ -128,3 +132,4 @@ CREATE POLICY "Allow public read on conversations" ON chatbot_conversations
 -- Política para permitir actualización de feedbacks (para marcar como procesados)
 CREATE POLICY "Allow public update on feedbacks" ON chatbot_feedbacks
   FOR UPDATE USING (true);
+

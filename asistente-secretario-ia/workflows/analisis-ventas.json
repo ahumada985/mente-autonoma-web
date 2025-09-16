@@ -1,0 +1,132 @@
+{
+  "name": "Analizador de Ventas y Métricas del Asistente Secretario",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-analysis",
+      "name": "Análisis Cada 6 Horas",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "url": "http://localhost:3000/api/analytics-global",
+        "options": {}
+      },
+      "id": "get-analytics",
+      "name": "Obtener Datos de Ventas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente secretario IA especializado en análisis de ventas y métricas de negocio.\n\nAnaliza estos datos y genera un reporte ejecutivo:\n\nDatos de ventas: {{ JSON.stringify($json, null, 2) }}\n\nGenera un análisis que incluya:\n1. Resumen de ventas del período\n2. Tendencias identificadas\n3. Oportunidades de mejora\n4. Recomendaciones estratégicas\n5. Alertas importantes",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "analyze-sales",
+      "name": "Analizar Ventas con IA",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "Reporte_Ventas_{{ new Date().toISOString().split('T')[0] }}.txt",
+        "content": "REPORTE DE VENTAS - {{ new Date().toLocaleDateString('es-ES') }}\n\n{{ $json.choices[0].message.content }}\n\n---\nGenerado por Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "save-report",
+      "name": "Guardar Reporte",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "message": "📊 Reporte de ventas generado automáticamente por el Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "notification",
+      "name": "Notificación de Reporte",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Análisis Cada 6 Horas": {
+      "main": [
+        [
+          {
+            "node": "Obtener Datos de Ventas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Datos de Ventas": {
+      "main": [
+        [
+          {
+            "node": "Analizar Ventas con IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analizar Ventas con IA": {
+      "main": [
+        [
+          {
+            "node": "Guardar Reporte",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Reporte": {
+      "main": [
+        [
+          {
+            "node": "Notificación de Reporte",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
+
+
+
+

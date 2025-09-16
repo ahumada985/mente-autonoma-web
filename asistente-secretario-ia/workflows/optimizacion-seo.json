@@ -1,0 +1,132 @@
+{
+  "name": "Optimizador SEO del Asistente Secretario",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-seo",
+      "name": "Análisis SEO Diario",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "url": "http://localhost:3000/api/analytics-global",
+        "options": {}
+      },
+      "id": "get-seo-data",
+      "name": "Obtener Datos SEO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente secretario IA especializado en SEO y marketing digital.\n\nAnaliza estos datos de tráfico y SEO:\n\nDatos del sitio: {{ JSON.stringify($json, null, 2) }}\n\nGenera un análisis SEO que incluya:\n1. Rendimiento del tráfico\n2. Palabras clave principales\n3. Oportunidades de mejora SEO\n4. Recomendaciones de contenido\n5. Estrategias de optimización\n6. Alertas de rendimiento",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "analyze-seo",
+      "name": "Analizar SEO con IA",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "SEO_Reporte_{{ new Date().toISOString().split('T')[0] }}.txt",
+        "content": "REPORTE SEO - {{ new Date().toLocaleDateString('es-ES') }}\n\n{{ $json.choices[0].message.content }}\n\n---\nGenerado por Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "save-seo-report",
+      "name": "Guardar Reporte SEO",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "message": "🔍 Análisis SEO completado por el Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "seo-notification",
+      "name": "Notificación SEO",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Análisis SEO Diario": {
+      "main": [
+        [
+          {
+            "node": "Obtener Datos SEO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Datos SEO": {
+      "main": [
+        [
+          {
+            "node": "Analizar SEO con IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analizar SEO con IA": {
+      "main": [
+        [
+          {
+            "node": "Guardar Reporte SEO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Reporte SEO": {
+      "main": [
+        [
+          {
+            "node": "Notificación SEO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
+
+
+
+

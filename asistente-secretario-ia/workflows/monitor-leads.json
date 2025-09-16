@@ -1,0 +1,172 @@
+{
+  "name": "Monitor de Leads y Oportunidades del Asistente Secretario",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 2
+            }
+          ]
+        }
+      },
+      "id": "schedule-leads",
+      "name": "Verificar Leads Cada 2 Horas",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "url": "http://localhost:3000/api/leads",
+        "options": {}
+      },
+      "id": "get-leads",
+      "name": "Obtener Leads",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-new-leads",
+              "leftValue": "={{ $json.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-leads",
+      "name": "¿Hay Nuevos Leads?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente secretario IA especializado en gestión de leads y ventas.\n\nAnaliza estos leads y genera un resumen ejecutivo:\n\nLeads encontrados: {{ JSON.stringify($json, null, 2) }}\n\nGenera un análisis que incluya:\n1. Resumen de nuevos leads\n2. Leads de alta prioridad\n3. Acciones recomendadas\n4. Oportunidades de seguimiento\n5. Alertas urgentes",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.4
+        }
+      },
+      "id": "analyze-leads",
+      "name": "Analizar Leads con IA",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "Leads_Reporte_{{ new Date().toISOString().split('T')[0] }}.txt",
+        "content": "REPORTE DE LEADS - {{ new Date().toLocaleDateString('es-ES') }}\n\n{{ $json.choices[0].message.content }}\n\n---\nGenerado por Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "save-leads-report",
+      "name": "Guardar Reporte de Leads",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "message": "🎯 Nuevos leads detectados y analizados por el Asistente Secretario IA",
+        "options": {}
+      },
+      "id": "leads-notification",
+      "name": "Notificación de Leads",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    }
+  ],
+  "connections": {
+    "Verificar Leads Cada 2 Horas": {
+      "main": [
+        [
+          {
+            "node": "Obtener Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Leads": {
+      "main": [
+        [
+          {
+            "node": "¿Hay Nuevos Leads?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay Nuevos Leads?": {
+      "main": [
+        [
+          {
+            "node": "Analizar Leads con IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analizar Leads con IA": {
+      "main": [
+        [
+          {
+            "node": "Guardar Reporte de Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Reporte de Leads": {
+      "main": [
+        [
+          {
+            "node": "Notificación de Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
+
+
+
+

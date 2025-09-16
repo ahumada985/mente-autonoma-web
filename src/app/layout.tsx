@@ -4,7 +4,12 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial']
+});
 
 export const metadata: Metadata = {
   title: "Mente Autónoma - Desarrollo Web Profesional en Antofagasta | Agencia de IA",
@@ -40,7 +45,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Google tag (gtag.js) */}
+        {/* Preload recursos críticos */}
+        <link rel="preload" href="/logo_final.png" as="image" type="image/png" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//res.cloudinary.com" />
+        
+        {/* Google tag (gtag.js) - Cargado después de la interacción */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M0L8D041W7"
           strategy="afterInteractive"

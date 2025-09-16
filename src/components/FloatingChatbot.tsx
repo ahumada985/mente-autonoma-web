@@ -29,10 +29,79 @@ export default function FloatingChatbot({
   const [feedbackText, setFeedbackText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSearch, setShowSearch] = useState(false);
+  const [filteredMessages, setFilteredMessages] = useState<Message[]>([]);
+  const [showQuickReplies, setShowQuickReplies] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Respuestas rápidas sugeridas
+  const quickReplies = [
+    "¿Cuáles son sus servicios?",
+    "¿Cómo puedo contactarlos?",
+    "¿Qué precios manejan?",
+    "¿Tienen garantías?",
+    "¿Qué tecnologías usan?",
+    "¿Pueden ayudarme con mi proyecto?"
+  ];
 
   // Generar ID de sesión único
   const sessionId = useRef(`session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`);
+
+  // No cargar historial al inicializar - cada sesión empieza limpia
+
+  // Función para cargar historial desde localStorage
+  const loadConversationHistory = async () => {
+    try {
+      const savedHistory = localStorage.getItem('chatbot_conversation_history');
+      if (savedHistory) {
+        const parsedHistory = JSON.parse(savedHistory);
+        if (Array.isArray(parsedHistory) && parsedHistory.length > 0) {
+          setMessages(parsedHistory);
+        }
+      }
+    } catch (error) {
+      console.error('Error cargando historial local:', error);
+    }
+  };
+
+  // Función para guardar historial en Supabase (solo para analytics)
+  const saveConversationHistory = async (messages: Message[]) => {
+    try {
+      // Guardar en Supabase para analytics
+      await fetch('/api/conversation-history', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          session_id: sessionId.current,
+          messages: messages
+        })
+      });
+    } catch (error) {
+      console.error('Error guardando historial en Supabase:', error);
+    }
+  };
+
+  // Guardar historial cuando cambien los mensajes
+  useEffect(() => {
+    if (messages.length > 0) {
+      saveConversationHistory(messages);
+    }
+  }, [messages]);
+
+  // Filtrar mensajes cuando cambie la búsqueda
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      const filtered = messages.filter(msg => 
+        msg.text.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredMessages(filtered);
+    } else {
+      setFilteredMessages(messages);
+    }
+  }, [searchQuery, messages]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -59,6 +128,16 @@ export default function FloatingChatbot({
     if (!inputValue.trim() || isLoading) return;
 
     const messageText = inputValue.trim();
+    
+    // Verificar si es un comando especial
+    if (messageText.startsWith('/')) {
+      const isCommand = handleSpecialCommand(messageText);
+      if (isCommand) {
+        setInputValue('');
+        return;
+      }
+    }
+    
     setInputValue('');
     
     // Agregar mensaje del usuario
@@ -201,6 +280,104 @@ export default function FloatingChatbot({
     setShowFeedbackForm(null);
   };
 
+  // Función para buscar en historial
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setShowSearch(query.trim().length > 0);
+  };
+
+  // Función para limpiar búsqueda
+  const clearSearch = () => {
+    setSearchQuery('');
+    setShowSearch(false);
+    setFilteredMessages(messages);
+  };
+
+  // Función para enviar respuesta rápida
+  const handleQuickReply = (reply: string) => {
+    setInputValue(reply);
+    setShowQuickReplies(false);
+  };
+
+  // Función para manejar comandos especiales
+  const handleSpecialCommand = (command: string) => {
+    switch (command.toLowerCase()) {
+      case '/help':
+        const helpMessage = {
+          id: 'help',
+          text: 'Comandos disponibles:\n/help - Mostrar esta ayuda\n/clear - Limpiar conversación\n/export - Exportar conversación\n/search - Buscar en historial\n/quick - Mostrar respuestas rápidas',
+          sender: 'bot' as const,
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, helpMessage]);
+        break;
+      case '/clear':
+        clearHistory();
+        break;
+      case '/export':
+        exportConversation();
+        break;
+      case '/search':
+        setShowSearch(true);
+        break;
+      case '/quick':
+        setShowQuickReplies(true);
+        break;
+      default:
+        // Si no es un comando, enviar como mensaje normal
+        return false;
+    }
+    return true;
+  };
+
+  // Limpiar historial de conversaciones
+  const clearHistory = async () => {
+    try {
+      // Eliminar de Supabase
+      await fetch(`/api/conversation-history?session_id=${sessionId.current}`, {
+        method: 'DELETE'
+      });
+    } catch (error) {
+      console.error('Error eliminando historial:', error);
+    }
+    
+    // Limpiar estado local
+    setMessages([]);
+    
+    // Generar un nuevo session ID para la próxima sesión
+    sessionId.current = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    // Mostrar mensaje de bienvenida
+    const welcomeMessage = {
+      id: 'welcome',
+      text: '¡Hola! 👋 ¿En qué puedo ayudarte hoy?',
+      sender: 'bot' as const,
+      timestamp: new Date()
+    };
+    setMessages([welcomeMessage]);
+  };
+
+  // Exportar conversación a texto
+  const exportConversation = () => {
+    const conversationText = messages
+      .filter(msg => msg.id !== 'welcome')
+      .map(msg => {
+        const time = msg.timestamp.toLocaleString('es-CL');
+        return `[${time}] ${msg.sender === 'user' ? 'Usuario' : 'Bot'}: ${msg.text}`;
+      })
+      .join('\n\n');
+
+    const blob = new Blob([conversationText], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `conversacion-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
@@ -250,24 +427,85 @@ export default function FloatingChatbot({
       {isOpen && (
         <div className={`fixed ${getPositionClasses()} z-50 w-80 h-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col transition-all duration-300`}>
           {/* Header */}
-          <div className={`p-4 rounded-t-lg ${getThemeClasses()} flex justify-between items-center`}>
-            <h3 className="text-lg font-semibold">Mente Autónoma</h3>
-            <button 
-              onClick={toggleChatbot}
-              className="text-white hover:text-gray-200 text-xl font-bold"
-            >
-              ×
-            </button>
+          <div className={`p-4 rounded-t-lg ${getThemeClasses()}`}>
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-lg font-semibold">Mente Autónoma</h3>
+              <div className="flex items-center space-x-2">
+                <button 
+                  onClick={() => setShowSearch(!showSearch)}
+                  className="text-white hover:text-gray-200 text-sm px-2 py-1 rounded bg-white/20 hover:bg-white/30 transition-colors"
+                  title="Buscar en historial"
+                >
+                  🔍
+                </button>
+                <button 
+                  onClick={exportConversation}
+                  className="text-white hover:text-gray-200 text-sm px-2 py-1 rounded bg-white/20 hover:bg-white/30 transition-colors"
+                  title="Exportar conversación"
+                >
+                  📥
+                </button>
+                <button 
+                  onClick={clearHistory}
+                  className="text-white hover:text-gray-200 text-sm px-2 py-1 rounded bg-white/20 hover:bg-white/30 transition-colors"
+                  title="Limpiar historial"
+                >
+                  🗑️
+                </button>
+                <button 
+                  onClick={toggleChatbot}
+                  className="text-white hover:text-gray-200 text-xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+            
+            {/* Barra de búsqueda */}
+            {showSearch && (
+              <div className="flex items-center space-x-2">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  placeholder="Buscar en conversación..."
+                  className="flex-1 px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+                <button
+                  onClick={clearSearch}
+                  className="text-white hover:text-gray-200 text-sm px-2 py-1 rounded bg-white/20 hover:bg-white/30 transition-colors"
+                  title="Limpiar búsqueda"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Mensajes */}
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
             <div className="space-y-3">
-              {messages.map((message) => (
+              {/* Mostrar mensaje de búsqueda si hay filtros */}
+              {showSearch && searchQuery && (
+                <div className="text-center py-2">
+                  <span className="text-sm text-gray-600">
+                    {filteredMessages.length} resultado(s) para "{searchQuery}"
+                  </span>
+                </div>
+              )}
+              
+              {(showSearch && searchQuery ? filteredMessages : messages).map((message) => (
                 <div key={message.id}>
                   <div
-                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} items-start space-x-2`}
                   >
+                    {/* Avatar del bot */}
+                    {message.sender === 'bot' && (
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        🤖
+                      </div>
+                    )}
+                    
                     <div
                       className={`max-w-xs px-3 py-2 rounded-lg ${
                         message.sender === 'user'
@@ -280,6 +518,13 @@ export default function FloatingChatbot({
                         {message.timestamp.toLocaleTimeString()}
                       </p>
                     </div>
+                    
+                    {/* Avatar del usuario */}
+                    {message.sender === 'user' && (
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        👤
+                      </div>
+                    )}
                   </div>
                   
                   {/* Botones de calificación para mensajes del bot */}
@@ -343,9 +588,46 @@ export default function FloatingChatbot({
                   )}
                 </div>
               ))}
+              {/* Indicador de escritura */}
+              {isLoading && (
+                <div className="flex justify-start items-start space-x-2">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    🤖
+                  </div>
+                  <div className="bg-white text-gray-800 border border-gray-200 px-3 py-2 rounded-lg">
+                    <div className="flex items-center space-x-1">
+                      <span className="text-sm text-gray-600">Escribiendo</span>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <div ref={messagesEndRef} />
             </div>
           </div>
+
+          {/* Respuestas rápidas */}
+          {showQuickReplies && (
+            <div className="p-3 border-t border-gray-200 bg-gray-50">
+              <div className="text-xs text-gray-600 mb-2">Respuestas rápidas:</div>
+              <div className="flex flex-wrap gap-2">
+                {quickReplies.map((reply, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleQuickReply(reply)}
+                    className="px-3 py-1 text-xs bg-white border border-gray-300 rounded-full hover:bg-blue-50 hover:border-blue-300 transition-colors"
+                  >
+                    {reply}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Input */}
           <div className="p-4 border-t border-gray-200 bg-white rounded-b-lg">
@@ -355,10 +637,17 @@ export default function FloatingChatbot({
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Escribe tu mensaje..."
+                placeholder="Escribe tu mensaje o usa /help para comandos..."
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 disabled={isLoading}
               />
+              <button
+                onClick={() => setShowQuickReplies(!showQuickReplies)}
+                className="px-3 py-2 text-gray-500 hover:text-gray-700 transition-colors"
+                title="Respuestas rápidas"
+              >
+                💡
+              </button>
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
