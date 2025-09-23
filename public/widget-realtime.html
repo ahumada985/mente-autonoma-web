@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Widget Tiempo Real</title>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <style>
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #007cba, #0056b3);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 124, 186, 0.4);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .chatbot-widget:hover {
+            transform: scale(1.1);
+        }
+        .chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            display: none;
+            flex-direction: column;
+            z-index: 9998;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, #007cba, #0056b3);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .agent-indicator {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .online { color: #4CAF50; }
+        .offline { color: #FFC107; }
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f5f5f5;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            position: relative;
+        }
+        .bot-message {
+            background: #e3f2fd;
+            margin-right: 40px;
+        }
+        .user-message {
+            background: #007cba;
+            color: white;
+            margin-left: 40px;
+        }
+        .agent-message {
+            background: #4CAF50;
+            color: white;
+            margin-left: 40px;
+            border-left: 4px solid #2E7D32;
+        }
+        .system-message {
+            background: #FFF3E0;
+            color: #E65100;
+            margin: 0 20px;
+            text-align: center;
+            font-style: italic;
+        }
+        .agent-typing {
+            background: #E8F5E8;
+            color: #2E7D32;
+            margin-right: 40px;
+            font-style: italic;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .handoff-button {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Widget del chatbot -->
+    <div class="chatbot-widget" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- Ventana de chat -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div>
+                <div>Asistente Virtual</div>
+                <div class="agent-indicator" id="agentStatus">
+                    <span class="offline">● Agentes disponibles</span>
+                </div>
+            </div>
+            <span style="cursor: pointer;" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe tu mensaje..."
+                   onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuración
+        const CLIENT_ID = 'ferreteria_juan_2024';
+        const SESSION_ID = 'session_' + Date.now();
+
+        // Conectar a WebSocket
+        const socket = io('ws://localhost:3001/user', {
+            transports: ['websocket']
+        });
+
+        let isHandoffActive = false;
+        let agentTypingTimeout;
+
+        // === EVENTOS DE CONEXIÓN ===
+        socket.on('connect', () => {
+            console.log('✅ Conectado al chat en tiempo real');
+
+            // Unirse a la sesión
+            socket.emit('join_session', {
+                sessionId: SESSION_ID,
+                clientId: CLIENT_ID
+            });
+
+            updateConnectionStatus(true);
+        });
+
+        socket.on('disconnect', () => {
+            console.log('❌ Desconectado del chat');
+            updateConnectionStatus(false);
+        });
+
+        // === MENSAJES EN TIEMPO REAL ===
+
+        // Mensaje del bot (IA)
+        socket.on('bot_response', (data) => {
+            addMessage(data.message, 'bot');
+
+            // Si el bot sugiere handoff
+            if (data.suggestHandoff) {
+                addHandoffButton();
+            }
+        });
+
+        // Mensaje del agente humano (TIEMPO REAL)
+        socket.on('agent_message', (data) => {
+            // Remover indicador de escritura
+            removeTypingIndicator();
+
+            // Agregar mensaje del agente
+            addMessage(`${data.agentName}: ${data.message}`, 'agent');
+
+            // Activar modo handoff
+            if (!isHandoffActive) {
+                isHandoffActive = true;
+                updateAgentStatus(true, data.agentName);
+            }
+        });
+
+        // Agente está escribiendo
+        socket.on('agent_typing', (data) => {
+            showTypingIndicator(data.agentName);
+        });
+
+        // Mensaje del sistema
+        socket.on('system_message', (data) => {
+            addMessage(data.message, 'system');
+
+            if (data.type === 'handoff_initiated') {
+                updateAgentStatus(true, 'Conectando...');
+            }
+        });
+
+        // === FUNCIONES DE CHAT ===
+
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Mostrar mensaje del usuario inmediatamente
+            addMessage(message, 'user');
+            input.value = '';
+
+            try {
+                if (isHandoffActive) {
+                    // Enviar directo al agente
+                    socket.emit('user_message_to_agent', {
+                        sessionId: SESSION_ID,
+                        message: message
+                    });
+                } else {
+                    // Enviar al bot IA con detección de handoff
+                    const response = await fetch('/api/chat-ai', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            message: message,
+                            client_id: CLIENT_ID,
+                            session_id: SESSION_ID
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    // Si el bot detecta que necesita handoff
+                    if (data.needsHandoff) {
+                        socket.emit('user_message', {
+                            sessionId: SESSION_ID,
+                            message: message,
+                            needsHandoff: true
+                        });
+                    } else {
+                        // Respuesta normal del bot
+                        addMessage(data.response, 'bot');
+                    }
+                }
+            } catch (error) {
+                addMessage('Disculpa, estoy teniendo problemas técnicos.', 'bot');
+            }
+        }
+
+        function requestHandoff() {
+            socket.emit('user_message', {
+                sessionId: SESSION_ID,
+                message: 'Quiero hablar con un humano',
+                needsHandoff: true
+            });
+
+            addMessage('Solicitando conexión con especialista...', 'system');
+        }
+
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            return messageDiv;
+        }
+
+        function addHandoffButton() {
+            const messagesDiv = document.getElementById('chatMessages');
+            const buttonDiv = document.createElement('div');
+            buttonDiv.innerHTML = `
+                <button class="handoff-button" onclick="requestHandoff()">
+                    🤝 Hablar con un especialista
+                </button>
+            `;
+            messagesDiv.appendChild(buttonDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTypingIndicator(agentName) {
+            // Remover indicador anterior
+            removeTypingIndicator();
+
+            const typingDiv = addMessage(`${agentName} está escribiendo...`, 'agent-typing');
+            typingDiv.id = 'typingIndicator';
+
+            // Auto-remover después de 10 segundos
+            agentTypingTimeout = setTimeout(removeTypingIndicator, 10000);
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.remove();
+            }
+            if (agentTypingTimeout) {
+                clearTimeout(agentTypingTimeout);
+            }
+        }
+
+        function updateConnectionStatus(connected) {
+            const widget = document.querySelector('.chatbot-widget');
+            if (connected) {
+                widget.style.background = 'linear-gradient(135deg, #007cba, #0056b3)';
+            } else {
+                widget.style.background = 'linear-gradient(135deg, #666, #444)';
+            }
+        }
+
+        function updateAgentStatus(online, agentName = '') {
+            const statusEl = document.getElementById('agentStatus');
+            if (online) {
+                statusEl.innerHTML = `<span class="online">● ${agentName || 'Agente'} conectado</span>`;
+            } else {
+                statusEl.innerHTML = `<span class="offline">● Agentes disponibles</span>`;
+            }
+        }
+
+        // Simular detección de agentes disponibles
+        setInterval(() => {
+            // En producción, esto vendría del servidor
+            const agentsOnline = Math.random() > 0.3; // 70% probabilidad
+            if (!isHandoffActive) {
+                updateAgentStatus(agentsOnline);
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

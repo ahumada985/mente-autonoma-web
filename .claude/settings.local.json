@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:memorae.ai)",
+      "Bash(npm audit:*)",
+      "Bash(npm outdated)",
+      "Bash(cp:*)",
+      "Bash(npm test)",
+      "Bash(npm run:*)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(npm view:*)",
+      "Bash(npm update:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 15s npm start)",
+      "Bash(awk:*)",
+      "Bash(xargs kill:*)",
+      "Bash(cat:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm uninstall:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

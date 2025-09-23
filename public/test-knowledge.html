@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Base de Conocimiento</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #005a87; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .document { background: white; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        .document h4 { margin: 0 0 10px 0; color: #007cba; }
+        .document-type { background: #007cba; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>📚 Prueba Base de Conocimiento</h1>
+
+    <!-- Sección 1: Crear Cliente -->
+    <div class="section">
+        <h2>1. Crear Cliente de Prueba</h2>
+        <form id="clientForm">
+            <div class="form-group">
+                <label for="clientName">Nombre del Cliente:</label>
+                <input type="text" id="clientName" value="Empresa Test" required>
+            </div>
+            <div class="form-group">
+                <label for="clientPlan">Plan:</label>
+                <select id="clientPlan" required>
+                    <option value="basic">Básico</option>
+                    <option value="pro">Pro</option>
+                    <option value="enterprise">Enterprise</option>
+                </select>
+            </div>
+            <button type="submit">👤 Crear Cliente</button>
+        </form>
+        <div id="clientResult"></div>
+    </div>
+
+    <!-- Sección 2: Crear Documento -->
+    <div class="section">
+        <h2>2. Crear Documento</h2>
+        <form id="docForm">
+            <div class="form-group">
+                <label for="clientId">ID del Cliente:</label>
+                <input type="text" id="clientId" placeholder="Obtenido del paso anterior" required>
+            </div>
+            <div class="form-group">
+                <label for="docType">Tipo de Documento:</label>
+                <select id="docType" required>
+                    <option value="about">Acerca de</option>
+                    <option value="services">Servicios</option>
+                    <option value="faq">FAQ</option>
+                    <option value="cases">Casos de Éxito</option>
+                    <option value="values">Valores</option>
+                    <option value="policies">Políticas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="docTitle">Título:</label>
+                <input type="text" id="docTitle" value="Documento de Prueba" required>
+            </div>
+            <div class="form-group">
+                <label for="docContent">Contenido:</label>
+                <textarea id="docContent" rows="6" required>Este es un documento de prueba para demostrar el funcionamiento de la base de conocimiento. Aquí se incluiría información relevante sobre la empresa, sus servicios, políticas, etc.</textarea>
+            </div>
+            <button type="submit">📝 Crear Documento</button>
+        </form>
+        <div id="docResult"></div>
+    </div>
+
+    <!-- Sección 3: Buscar Documentos -->
+    <div class="section">
+        <h2>3. Buscar Documentos</h2>
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="searchClientId">ID del Cliente:</label>
+                <input type="text" id="searchClientId" required>
+            </div>
+            <div class="form-group">
+                <label for="searchType">Filtrar por Tipo (opcional):</label>
+                <select id="searchType">
+                    <option value="">Todos</option>
+                    <option value="about">Acerca de</option>
+                    <option value="services">Servicios</option>
+                    <option value="faq">FAQ</option>
+                    <option value="cases">Casos de Éxito</option>
+                    <option value="values">Valores</option>
+                    <option value="policies">Políticas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="searchTerm">Buscar texto (opcional):</label>
+                <input type="text" id="searchTerm" placeholder="palabra clave">
+            </div>
+            <button type="submit">🔍 Buscar</button>
+            <button type="button" id="statsBtn">📊 Ver Estadísticas</button>
+        </form>
+        <div id="searchResult"></div>
+    </div>
+
+    <script>
+        let currentClientId = '';
+
+        // Crear Cliente
+        document.getElementById('clientForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const clientData = {
+                name: document.getElementById('clientName').value,
+                plan: document.getElementById('clientPlan').value,
+                admin_email: 'test@test.com'
+            };
+
+            try {
+                const response = await fetch('/api/clients', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(clientData)
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('clientResult');
+
+                if (response.ok) {
+                    currentClientId = result.client.id;
+                    document.getElementById('clientId').value = currentClientId;
+                    document.getElementById('searchClientId').value = currentClientId;
+
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            <h3>✅ Cliente creado exitosamente!</h3>
+                            <p><strong>ID:</strong> ${result.client.id}</p>
+                            <p><strong>Nombre:</strong> ${result.client.name}</p>
+                            <p><strong>Plan:</strong> ${result.client.plan}</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('clientResult').innerHTML = `
+                    <div class="result error">
+                        <h3>❌ Error: ${error.message}</h3>
+                    </div>
+                `;
+            }
+        });
+
+        // Crear Documento
+        document.getElementById('docForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const docData = {
+                client_id: document.getElementById('clientId').value,
+                document_type: document.getElementById('docType').value,
+                title: document.getElementById('docTitle').value,
+                content: document.getElementById('docContent').value
+            };
+
+            try {
+                const response = await fetch('/api/knowledge-base', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(docData)
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('docResult');
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            <h3>✅ Documento creado exitosamente!</h3>
+                            <p><strong>ID:</strong> ${result.document.id}</p>
+                            <p><strong>Tipo:</strong> ${result.document.document_type}</p>
+                            <p><strong>Título:</strong> ${result.document.title}</p>
+                        </div>
+                    `;
+                    document.getElementById('docForm').reset();
+                    document.getElementById('clientId').value = currentClientId;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('docResult').innerHTML = `
+                    <div class="result error">
+                        <h3>❌ Error: ${error.message}</h3>
+                    </div>
+                `;
+            }
+        });
+
+        // Buscar Documentos
+        document.getElementById('searchForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            searchDocuments();
+        });
+
+        document.getElementById('statsBtn').addEventListener('click', () => {
+            searchDocuments(true);
+        });
+
+        async function searchDocuments(includeStats = false) {
+            const clientId = document.getElementById('searchClientId').value;
+            const type = document.getElementById('searchType').value;
+            const searchTerm = document.getElementById('searchTerm').value;
+
+            let url = \`/api/knowledge-base?client_id=\${clientId}\`;
+            if (type) url += \`&type=\${type}\`;
+            if (searchTerm) url += \`&q=\${searchTerm}\`;
+            if (includeStats) url += \`&stats=true\`;
+
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                const resultDiv = document.getElementById('searchResult');
+
+                if (response.ok) {
+                    let html = \`<div class="result success"><h3>🔍 Resultados de búsqueda</h3>\`;
+
+                    if (includeStats && result.usage) {
+                        html += \`
+                            <div class="info">
+                                <h4>📊 Estadísticas de uso</h4>
+                                <p><strong>Cliente:</strong> \${result.client.name} (Plan: \${result.client.plan})</p>
+                                <p><strong>Documentos:</strong> \${result.usage.documents.current}/\${result.usage.documents.limit} (\${result.usage.documents.percentage}%)</p>
+                                <p><strong>Contenido:</strong> \${result.usage.content.current}/\${result.usage.content.limit} caracteres (\${result.usage.content.percentage}%)</p>
+                                <p><strong>Tipos permitidos:</strong> \${result.usage.allowedTypes.join(', ')}</p>
+                            </div>
+                        \`;
+                    }
+
+                    html += \`<p><strong>Total encontrados:</strong> \${result.total}</p>\`;
+
+                    if (result.documents && result.documents.length > 0) {
+                        result.documents.forEach(doc => {
+                            html += \`
+                                <div class="document">
+                                    <h4>\${doc.title} <span class="document-type">\${doc.document_type}</span></h4>
+                                    <p><strong>ID:</strong> \${doc.id}</p>
+                                    <p><strong>Contenido:</strong> \${doc.content.substring(0, 200)}...</p>
+                                    <p><strong>Creado:</strong> \${new Date(doc.created_at).toLocaleString()}</p>
+                                </div>
+                            \`;
+                        });
+                    } else {
+                        html += \`<p>No se encontraron documentos.</p>\`;
+                    }
+
+                    html += \`</div>\`;
+                    resultDiv.innerHTML = html;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('searchResult').innerHTML = `
+                    <div class="result error">
+                        <h3>❌ Error: ${error.message}</h3>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "original": "\\logo_final.png",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465870/logos/hp0ci35hkx5ld1azubdv.png",
+    "folder": "logos"
+  },
+  {
+    "original": "\\noticia1.webp",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465872/noticias/p9k8uj758xmdyik4tnhj.webp",
+    "folder": "noticias"
+  },
+  {
+    "original": "\\noticia2.webp",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465873/noticias/yfdzudfydefvkxqmg9lv.webp",
+    "folder": "noticias"
+  },
+  {
+    "original": "\\noticia3.webp",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465874/noticias/lr7g67dhtxho0h4l5ije.webp",
+    "folder": "noticias"
+  },
+  {
+    "original": "\\logos\\n.png",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465875/logos/gxhcecwnoigv1seuw6uu.png",
+    "folder": "logos"
+  },
+  {
+    "original": "\\logos\\p.png",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465876/logos/csrhopfggtccgt0vttxj.png",
+    "folder": "logos"
+  },
+  {
+    "original": "\\logos\\t.png",
+    "cloudinary": "https://res.cloudinary.com/dysvptyfc/image/upload/v1756465877/logos/cwy34b5y1d3i6o4ragu5.png",
+    "folder": "logos"
+  }
+]

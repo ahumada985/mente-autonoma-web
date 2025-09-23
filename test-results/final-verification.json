@@ -1,0 +1,116 @@
+{
+  "timestamp": "2025-09-03T09:02:01.071Z",
+  "duration": 113,
+  "totalIssues": 61,
+  "pdf": {
+    "apiExists": true,
+    "emailConfig": true,
+    "pdfGeneration": true,
+    "issues": []
+  },
+  "responsive": {
+    "viewport": 18,
+    "mediaQueries": 18,
+    "flexbox": 18,
+    "grid": 14,
+    "issues": [
+      "_next\\static\\css\\931b179cff3131dc.css: No se encontraron breakpoints responsive"
+    ]
+  },
+  "seo": {
+    "title": 0,
+    "description": 2,
+    "keywords": 0,
+    "ogTags": 0,
+    "twitterTags": 0,
+    "structuredData": 0,
+    "sitemap": false,
+    "robots": false,
+    "issues": [
+      "Sitemap no encontrado",
+      "Robots.txt no encontrado"
+    ]
+  },
+  "forms": {
+    "forms": 10,
+    "validation": 10,
+    "submission": 0,
+    "issues": [
+      "index.html: Formulario sin action o method",
+      "30-ideas\\index.html: Formulario sin action o method",
+      "cookies\\index.html: Formulario sin action o method",
+      "privacidad\\index.html: Formulario sin action o method",
+      "servicios-desarrollo-web\\index.html: Formulario sin action o method",
+      "terminos\\index.html: Formulario sin action o method",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Formulario sin action o method",
+      "noticias\\chatbots-que-entienden-contexto\\index.html: Formulario sin action o method",
+      "noticias\\flujos-de-trabajo-inteligentes\\index.html: Formulario sin action o method",
+      "noticias\\ia-para-pequenas-empresas\\index.html: Formulario sin action o method"
+    ]
+  },
+  "navigation": {
+    "internalLinks": 200,
+    "externalLinks": 0,
+    "brokenLinks": 47,
+    "issues": [
+      "30-ideas\\index.html: Enlace roto - /#services",
+      "30-ideas\\index.html: Enlace roto - /#contact",
+      "30-ideas\\index.html: Enlace roto - /#services",
+      "30-ideas\\index.html: Enlace roto - /#services",
+      "30-ideas\\index.html: Enlace roto - /#services",
+      "30-ideas\\index.html: Enlace roto - /#services",
+      "cookies\\index.html: Enlace roto - /#servicios",
+      "cookies\\index.html: Enlace roto - /#noticias",
+      "cookies\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\index.html: Enlace roto - /#services",
+      "noticias\\index.html: Enlace roto - /#contact",
+      "noticias\\index.html: Enlace roto - /#services",
+      "noticias\\index.html: Enlace roto - /#services",
+      "noticias\\index.html: Enlace roto - /#services",
+      "noticias\\index.html: Enlace roto - /#services",
+      "privacidad\\index.html: Enlace roto - /#servicios",
+      "privacidad\\index.html: Enlace roto - /#noticias",
+      "privacidad\\index.html: Enlace roto - /#tecnologias",
+      "servicios-desarrollo-web\\index.html: Enlace roto - /#servicios",
+      "servicios-desarrollo-web\\index.html: Enlace roto - /#noticias",
+      "servicios-desarrollo-web\\index.html: Enlace roto - /#tecnologias",
+      "terminos\\index.html: Enlace roto - /#servicios",
+      "terminos\\index.html: Enlace roto - /#noticias",
+      "terminos\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Enlace roto - /#servicios",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Enlace roto - /#noticias",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Enlace roto - /cotizacion/?plan=Automatización IA",
+      "noticias\\automatizacion-inteligente-avanzada\\index.html: Enlace roto - /noticias/flujos-trabajo-inteligentes/",
+      "noticias\\chatbots-que-entienden-contexto\\index.html: Enlace roto - /#servicios",
+      "noticias\\chatbots-que-entienden-contexto\\index.html: Enlace roto - /#noticias",
+      "noticias\\chatbots-que-entienden-contexto\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\flujos-de-trabajo-inteligentes\\index.html: Enlace roto - /#servicios",
+      "noticias\\flujos-de-trabajo-inteligentes\\index.html: Enlace roto - /#noticias",
+      "noticias\\flujos-de-trabajo-inteligentes\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\ia-para-pequenas-empresas\\index.html: Enlace roto - /#servicios",
+      "noticias\\ia-para-pequenas-empresas\\index.html: Enlace roto - /#noticias",
+      "noticias\\ia-para-pequenas-empresas\\index.html: Enlace roto - /#tecnologias",
+      "noticias\\noticia1\\index.html: Enlace roto - /#services",
+      "noticias\\noticia1\\index.html: Enlace roto - /#news",
+      "noticias\\noticia1\\index.html: Enlace roto - /#contact",
+      "noticias\\noticia2\\index.html: Enlace roto - /#services",
+      "noticias\\noticia2\\index.html: Enlace roto - /#news",
+      "noticias\\noticia2\\index.html: Enlace roto - /#contact",
+      "noticias\\noticia3\\index.html: Enlace roto - /#services",
+      "noticias\\noticia3\\index.html: Enlace roto - /#news",
+      "noticias\\noticia3\\index.html: Enlace roto - /#contact"
+    ]
+  },
+  "performance": {
+    "totalSize": 4456537,
+    "jsFiles": 40,
+    "cssFiles": 2,
+    "imageFiles": 7,
+    "largeFiles": 1,
+    "issues": [
+      "33b28b48f0449e4d.css: CSS file muy grande (111.9KB)"
+    ]
+  },
+  "ready": false
+}

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Sistema Handoff Humano</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; }
+        .section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #007cba; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #005a87; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .ticket { background: white; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; border-left: 4px solid #ffc107; }
+        .ticket.urgent { border-left-color: #dc3545; }
+        .ticket.high { border-left-color: #fd7e14; }
+        .ticket.medium { border-left-color: #ffc107; }
+        .ticket.low { border-left-color: #28a745; }
+        .status-badge { padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; }
+        .status-pending { background: #ffc107; }
+        .status-in_progress { background: #17a2b8; }
+        .status-resolved { background: #28a745; }
+        .priority-urgent { background: #dc3545; }
+        .priority-high { background: #fd7e14; }
+        .priority-medium { background: #ffc107; }
+        .priority-low { background: #28a745; }
+        .step { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border: 1px solid #dee2e6; }
+        .step h3 { margin: 0 0 10px 0; color: #007cba; }
+    </style>
+</head>
+<body>
+    <h1>🤝 Prueba Sistema de Handoff Humano</h1>
+
+    <div class="info">
+        <h3>📋 Proceso de Prueba del Handoff</h3>
+        <p>Este sistema permite escalación automática de consultas del chatbot a agentes humanos cuando:</p>
+        <ul>
+            <li>🤔 La consulta es muy compleja</li>
+            <li>⬆️ El usuario solicita hablar con un humano</li>
+            <li>🔧 El bot no puede resolver la consulta</li>
+            <li>🎓 Se requiere conocimiento especializado</li>
+            <li>😟 Hay una queja o problema</li>
+        </ul>
+    </div>
+
+    <!-- Paso 1: Configurar Handoff -->
+    <div class="section">
+        <div class="step">
+            <h3>1️⃣ Configurar Handoff para Cliente</h3>
+            <form id="configForm">
+                <div class="form-group">
+                    <label for="clientId">ID del Cliente:</label>
+                    <input type="text" id="clientId" value="test-client-001" required>
+                </div>
+                <div class="form-group">
+                    <label for="enabled">Handoff Habilitado:</label>
+                    <select id="enabled" required>
+                        <option value="true">Sí - Activado</option>
+                        <option value="false">No - Desactivado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="supportEmail">Email de Soporte:</label>
+                    <input type="email" id="supportEmail" value="soporte@menteautonoma.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="autoResponse">Respuesta Automática:</label>
+                    <textarea id="autoResponse" rows="3">Gracias por tu consulta. Un especialista te contactará en los próximos 30 minutos para ayudarte.</textarea>
+                </div>
+                <button type="submit">⚙️ Configurar Handoff</button>
+            </form>
+            <div id="configResult"></div>
+        </div>
+    </div>
+
+    <!-- Paso 2: Crear Ticket -->
+    <div class="section">
+        <div class="step">
+            <h3>2️⃣ Simular Escalación (Crear Ticket)</h3>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="ticketClientId">ID del Cliente:</label>
+                    <input type="text" id="ticketClientId" value="test-client-001" required>
+                </div>
+                <div class="form-group">
+                    <label for="userQuery">Consulta del Usuario:</label>
+                    <textarea id="userQuery" rows="3" required>Hola, necesito hablar con un especialista. Tengo un problema urgente con mi cuenta y el chatbot no puede ayudarme. Es muy importante.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="botResponse">Respuesta del Bot (opcional):</label>
+                    <textarea id="botResponse" rows="2">Lo siento, no puedo resolver tu consulta específica sobre problemas de cuenta. Te conectaré con un especialista humano.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="handoffReason">Motivo del Handoff:</label>
+                    <select id="handoffReason" required>
+                        <option value="complex_query">Consulta Compleja</option>
+                        <option value="escalation_request">Solicitud de Escalación</option>
+                        <option value="bot_failure">Falla del Bot</option>
+                        <option value="specialized_knowledge">Conocimiento Especializado</option>
+                        <option value="complaint">Queja</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Prioridad:</label>
+                    <select id="priority" required>
+                        <option value="urgent">🚨 Urgente</option>
+                        <option value="high">⚠️ Alta</option>
+                        <option value="medium">📋 Media</option>
+                        <option value="low">📝 Baja</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Nombre del Usuario:</label>
+                    <input type="text" id="userName" value="María García">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email del Usuario:</label>
+                    <input type="email" id="userEmail" value="maria@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Teléfono del Usuario:</label>
+                    <input type="tel" id="userPhone" value="+56912345678">
+                </div>
+                <button type="submit">🎫 Crear Ticket de Handoff</button>
+            </form>
+            <div id="ticketResult"></div>
+        </div>
+    </div>
+
+    <!-- Paso 3: Ver Tickets -->
+    <div class="section">
+        <div class="step">
+            <h3>3️⃣ Ver Tickets Activos</h3>
+            <form id="viewForm">
+                <div class="form-group">
+                    <label for="viewClientId">ID del Cliente:</label>
+                    <input type="text" id="viewClientId" value="test-client-001" required>
+                </div>
+                <div class="form-group">
+                    <label for="filterStatus">Filtrar por Estado:</label>
+                    <select id="filterStatus">
+                        <option value="">Todos</option>
+                        <option value="pending">Pendientes</option>
+                        <option value="in_progress">En Progreso</option>
+                        <option value="resolved">Resueltos</option>
+                    </select>
+                </div>
+                <button type="submit">📋 Ver Tickets</button>
+                <button type="button" id="refreshBtn">🔄 Actualizar</button>
+            </form>
+            <div id="viewResult"></div>
+        </div>
+    </div>
+
+    <!-- Paso 4: Responder Ticket -->
+    <div class="section">
+        <div class="step">
+            <h3>4️⃣ Simular Respuesta de Agente</h3>
+            <form id="responseForm">
+                <div class="form-group">
+                    <label for="responseTicketId">ID del Ticket:</label>
+                    <input type="text" id="responseTicketId" placeholder="Obtenido del paso anterior" required>
+                </div>
+                <div class="form-group">
+                    <label for="agentName">Nombre del Agente:</label>
+                    <input type="text" id="agentName" value="Carlos Especialista" required>
+                </div>
+                <div class="form-group">
+                    <label for="agentResponse">Respuesta del Agente:</label>
+                    <textarea id="agentResponse" rows="4" required>Hola María, soy Carlos del equipo de soporte. He revisado tu consulta sobre el problema con tu cuenta. Ya he identificado el inconveniente y lo he solucionado. Tu cuenta debería estar funcionando normalmente ahora. ¿Puedes verificar e informarme si el problema persiste?</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newStatus">Nuevo Estado:</label>
+                    <select id="newStatus" required>
+                        <option value="in_progress">En Progreso</option>
+                        <option value="resolved">Resuelto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="internalNotes">Notas Internas (opcional):</label>
+                    <textarea id="internalNotes" rows="2">Problema resuelto: Error en configuración de permisos. Actualizado manualmente en base de datos.</textarea>
+                </div>
+                <button type="submit">💬 Enviar Respuesta</button>
+            </form>
+            <div id="responseResult"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentTicketId = '';
+
+        // Configurar Handoff
+        document.getElementById('configForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const configData = {
+                client_id: document.getElementById('clientId').value,
+                enabled: document.getElementById('enabled').value === 'true',
+                escalation_contacts: {
+                    support_email: document.getElementById('supportEmail').value
+                },
+                auto_response_template: document.getElementById('autoResponse').value,
+                notification_methods: ['telegram', 'email'],
+                business_hours: {
+                    start: '09:00',
+                    end: '18:00',
+                    timezone: 'America/Santiago'
+                }
+            };
+
+            try {
+                const response = await fetch('/api/handoff-config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(configData)
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('configResult');
+
+                if (response.ok) {
+                    resultDiv.innerHTML = \`
+                        <div class="result success">
+                            <h3>✅ Configuración guardada exitosamente!</h3>
+                            <p><strong>Cliente:</strong> \${configData.client_id}</p>
+                            <p><strong>Estado:</strong> \${configData.enabled ? 'Activado' : 'Desactivado'}</p>
+                            <p><strong>Email soporte:</strong> \${configData.escalation_contacts.support_email}</p>
+                        </div>
+                    \`;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('configResult').innerHTML = \`
+                    <div class="result error">
+                        <h3>❌ Error: \${error.message}</h3>
+                    </div>
+                \`;
+            }
+        });
+
+        // Crear Ticket
+        document.getElementById('ticketForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const ticketData = {
+                client_id: document.getElementById('ticketClientId').value,
+                session_id: 'test-session-' + Date.now(),
+                user_query: document.getElementById('userQuery').value,
+                bot_response: document.getElementById('botResponse').value,
+                handoff_reason: document.getElementById('handoffReason').value,
+                priority: document.getElementById('priority').value,
+                user_contact: {
+                    name: document.getElementById('userName').value,
+                    email: document.getElementById('userEmail').value,
+                    phone: document.getElementById('userPhone').value,
+                    preferred_method: 'email'
+                }
+            };
+
+            try {
+                const response = await fetch('/api/human-handoff', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(ticketData)
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('ticketResult');
+
+                if (response.ok) {
+                    currentTicketId = result.ticket.id;
+                    document.getElementById('responseTicketId').value = currentTicketId;
+
+                    resultDiv.innerHTML = \`
+                        <div class="result success">
+                            <h3>🎫 Ticket creado exitosamente!</h3>
+                            <p><strong>ID Ticket:</strong> \${result.ticket.id}</p>
+                            <p><strong>Estado:</strong> \${result.ticket.status}</p>
+                            <p><strong>Prioridad:</strong> \${result.ticket.priority}</p>
+                            <p><strong>Respuesta automática:</strong> \${result.ticket.auto_response}</p>
+                            <div class="info">
+                                <p>📧 <strong>Notificaciones enviadas:</strong></p>
+                                <ul>
+                                    <li>✅ Email al equipo de soporte</li>
+                                    <li>✅ Notificación por Telegram</li>
+                                    <li>✅ Mensaje automático al usuario</li>
+                                </ul>
+                            </div>
+                        </div>
+                    \`;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('ticketResult').innerHTML = \`
+                    <div class="result error">
+                        <h3>❌ Error: \${error.message}</h3>
+                    </div>
+                \`;
+            }
+        });
+
+        // Ver Tickets
+        document.getElementById('viewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loadTickets();
+        });
+
+        document.getElementById('refreshBtn').addEventListener('click', loadTickets);
+
+        async function loadTickets() {
+            const clientId = document.getElementById('viewClientId').value;
+            const status = document.getElementById('filterStatus').value;
+
+            let url = \`/api/human-handoff?client_id=\${clientId}\`;
+            if (status) url += \`&status=\${status}\`;
+
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                const resultDiv = document.getElementById('viewResult');
+
+                if (response.ok) {
+                    let html = \`<div class="result success"><h3>📋 Tickets Encontrados (\${result.stats.total})</h3>\`;
+
+                    // Estadísticas
+                    html += \`
+                        <div class="info">
+                            <h4>📊 Estadísticas</h4>
+                            <p>
+                                <span class="status-badge status-pending">Pendientes: \${result.stats.pending}</span>
+                                <span class="status-badge status-in_progress">En Progreso: \${result.stats.in_progress}</span>
+                                <span class="status-badge status-resolved">Resueltos: \${result.stats.resolved}</span>
+                            </p>
+                            <p>
+                                <span class="status-badge priority-urgent">Urgentes: \${result.stats.by_priority.urgent}</span>
+                                <span class="status-badge priority-high">Altas: \${result.stats.by_priority.high}</span>
+                                <span class="status-badge priority-medium">Medias: \${result.stats.by_priority.medium}</span>
+                                <span class="status-badge priority-low">Bajas: \${result.stats.by_priority.low}</span>
+                            </p>
+                        </div>
+                    \`;
+
+                    if (result.tickets && result.tickets.length > 0) {
+                        result.tickets.forEach(ticket => {
+                            html += \`
+                                <div class="ticket \${ticket.priority}">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <h4 style="margin: 0;">🎫 Ticket #\${ticket.id}</h4>
+                                        <div>
+                                            <span class="status-badge status-\${ticket.status}">\${ticket.status}</span>
+                                            <span class="status-badge priority-\${ticket.priority}">\${ticket.priority}</span>
+                                        </div>
+                                    </div>
+                                    <p><strong>Motivo:</strong> \${ticket.handoff_reason}</p>
+                                    <p><strong>Consulta:</strong> \${ticket.user_query.substring(0, 150)}...</p>
+                                    <p><strong>Usuario:</strong> \${ticket.user_contact?.name || 'No especificado'} (\${ticket.user_contact?.email || 'Sin email'})</p>
+                                    <p><strong>Creado:</strong> \${new Date(ticket.created_at).toLocaleString()}</p>
+                                    \${ticket.assigned_to ? \`<p><strong>Asignado a:</strong> \${ticket.assigned_to}</p>\` : ''}
+                                    \${ticket.human_responses && ticket.human_responses.length > 0 ?
+                                        \`<div class="info"><strong>Respuestas:</strong> \${ticket.human_responses.length} respuesta(s)</div>\` : ''}
+                                </div>
+                            \`;
+                        });
+                    } else {
+                        html += \`<p>No se encontraron tickets.</p>\`;
+                    }
+
+                    html += \`</div>\`;
+                    resultDiv.innerHTML = html;
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('viewResult').innerHTML = \`
+                    <div class="result error">
+                        <h3>❌ Error: \${error.message}</h3>
+                    </div>
+                \`;
+            }
+        }
+
+        // Responder Ticket
+        document.getElementById('responseForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const responseData = {
+                ticket_id: document.getElementById('responseTicketId').value,
+                status: document.getElementById('newStatus').value,
+                assigned_to: document.getElementById('agentName').value,
+                agent_response: document.getElementById('agentResponse').value,
+                internal_notes: document.getElementById('internalNotes').value
+            };
+
+            try {
+                const response = await fetch('/api/human-handoff', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(responseData)
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('responseResult');
+
+                if (response.ok) {
+                    resultDiv.innerHTML = \`
+                        <div class="result success">
+                            <h3>✅ Respuesta enviada exitosamente!</h3>
+                            <p><strong>Ticket:</strong> \${responseData.ticket_id}</p>
+                            <p><strong>Agente:</strong> \${responseData.assigned_to}</p>
+                            <p><strong>Nuevo estado:</strong> \${responseData.status}</p>
+                            <div class="info">
+                                <p>📧 <strong>Acciones realizadas:</strong></p>
+                                <ul>
+                                    <li>✅ Respuesta guardada en el ticket</li>
+                                    <li>✅ Estado actualizado</li>
+                                    <li>✅ Respuesta enviada al usuario</li>
+                                    <li>✅ Notas internas guardadas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    \`;
+                    document.getElementById('responseForm').reset();
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                document.getElementById('responseResult').innerHTML = \`
+                    <div class="result error">
+                        <h3>❌ Error: \${error.message}</h3>
+                    </div>
+                \`;
+            }
+        });
+    </script>
+</body>
+</html>

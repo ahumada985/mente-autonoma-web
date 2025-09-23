@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Widget para Cliente Manual</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .demo-site { background: #f0f0f0; padding: 40px; border-radius: 10px; text-align: center; }
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #007cba;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: none;
+            flex-direction: column;
+            z-index: 1001;
+        }
+        .chat-header {
+            background: #007cba;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            font-weight: bold;
+        }
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .bot-message {
+            background: #f1f1f1;
+            margin-right: 40px;
+        }
+        .user-message {
+            background: #007cba;
+            color: white;
+            margin-left: 40px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-site">
+        <h1>🏪 Ferretería Don Juan</h1>
+        <p>Ejemplo de sitio web de cliente con chatbot integrado</p>
+        <p>El chatbot aparece abajo a la derecha ➡️</p>
+    </div>
+
+    <!-- WIDGET DEL CHATBOT -->
+    <div class="chatbot-widget" onclick="toggleChat()">💬</div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            Asistente Virtual - Ferretería Don Juan
+            <span style="float: right; cursor: pointer;" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-message">
+                ¡Hola! Soy el asistente de Ferretería Don Juan. ¿En qué puedo ayudarte hoy?
+                Puedo ayudarte con herramientas, materiales de construcción y consejos de bricolaje.
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Mostrar mensaje del usuario
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Mostrar "escribiendo..."
+            const typingDiv = addMessage('🤖 Escribiendo...', 'bot');
+
+            try {
+                // Llamar a tu API de chatbot real
+                const response = await fetch('/api/chat-ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: message,
+                        client_id: 'ferreteria_juan', // ID del cliente
+                        session_id: 'demo-' + Date.now()
+                    })
+                });
+
+                const data = await response.json();
+
+                // Remover "escribiendo..." y mostrar respuesta real
+                typingDiv.remove();
+                addMessage(data.response || 'Lo siento, hubo un error.', 'bot');
+
+            } catch (error) {
+                typingDiv.remove();
+                addMessage('Disculpa, estoy teniendo problemas técnicos. ¿Podrías intentar de nuevo?', 'bot');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chatBody');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = text;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return messageDiv;
+        }
+    </script>
+</body>
+</html>

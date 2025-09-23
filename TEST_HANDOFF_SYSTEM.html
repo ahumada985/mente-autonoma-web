@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤝 Test Sistema de Handoff Humano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            border: 2px solid #e5e7eb;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .escalation { border-color: #dc2626; background: #fef2f2; }
+        .complaint { border-color: #ea580c; background: #fff7ed; }
+        .technical { border-color: #0ea5e9; background: #f0f9ff; }
+        .complex { border-color: #8b5cf6; background: #f3e8ff; }
+        .success { border-color: #16a34a; background: #f0fdf4; }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        button {
+            background: #6366f1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #4f46e5; }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .indicators {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .indicator {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .high { background: #fee2e2; color: #991b1b; }
+        .medium { background: #fef3c7; color: #92400e; }
+        .low { background: #dcfce7; color: #166534; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤝 Test Sistema de Handoff Humano</h1>
+        <p>Prueba la detección automática de cuándo derivar consultas a agentes humanos</p>
+
+        <div class="indicators">
+            <span class="indicator high">🚨 ALTA PRIORIDAD</span>
+            <span class="indicator medium">⚠️ MEDIA PRIORIDAD</span>
+            <span class="indicator low">📋 BAJA PRIORIDAD</span>
+        </div>
+    </div>
+
+    <div class="grid">
+        <!-- Solicitudes de Escalación -->
+        <div class="container">
+            <h2>🔝 Test: Solicitudes de Escalación</h2>
+            <div class="test-section escalation">
+                <h3>Mensajes que requieren agente humano:</h3>
+                <textarea id="escalationMessage" placeholder="Escribe un mensaje que solicite hablar con un humano...">Quiero hablar con una persona, no entiendes mi problema y necesito que me ayude alguien del equipo</textarea>
+                <br>
+                <button onclick="testHandoff('escalation')">🔝 Probar Escalación</button>
+                <div id="escalationResult" class="result"></div>
+            </div>
+        </div>
+
+        <!-- Quejas y Reclamos -->
+        <div class="container">
+            <h2>😟 Test: Quejas y Reclamos</h2>
+            <div class="test-section complaint">
+                <h3>Mensajes de queja o reclamo:</h3>
+                <textarea id="complaintMessage" placeholder="Escribe una queja o reclamo...">Estoy muy molesto, el producto que compré está defectuoso y quiero que me devuelvan mi dinero, esto es terrible</textarea>
+                <br>
+                <button onclick="testHandoff('complaint')">😟 Probar Queja</button>
+                <div id="complaintResult" class="result"></div>
+            </div>
+        </div>
+
+        <!-- Problemas Técnicos -->
+        <div class="container">
+            <h2>🔧 Test: Problemas Técnicos</h2>
+            <div class="test-section technical">
+                <h3>Consultas técnicas complejas:</h3>
+                <textarea id="technicalMessage" placeholder="Describe un problema técnico...">Mi sistema no funciona correctamente, aparece un error cuando trato de instalar el software y no puedo configurar la conexión</textarea>
+                <br>
+                <button onclick="testHandoff('technical')">🔧 Probar Técnico</button>
+                <div id="technicalResult" class="result"></div>
+            </div>
+        </div>
+
+        <!-- Consultas Complejas -->
+        <div class="container">
+            <h2>🤔 Test: Consultas Complejas</h2>
+            <div class="test-section complex">
+                <h3>Consultas que requieren conocimiento especializado:</h3>
+                <textarea id="complexMessage" placeholder="Escribe una consulta compleja...">Necesito integrar múltiples sistemas de mi empresa con una solución personalizada que maneje inventario, facturación y CRM de manera específica para mi industria</textarea>
+                <br>
+                <button onclick="testHandoff('complex')">🤔 Probar Compleja</button>
+                <div id="complexResult" class="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prueba con Historial de Conversación -->
+    <div class="container">
+        <h2>🔄 Test: Conversación Repetitiva</h2>
+        <div class="test-section">
+            <h3>Simular conversación con historial:</h3>
+            <p><strong>Historial de la conversación:</strong></p>
+            <div style="background: #f9fafb; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                <p><strong>Usuario:</strong> ¿Cuánto cuesta su servicio?</p>
+                <p><strong>Bot:</strong> Los precios varían según tus necesidades...</p>
+                <p><strong>Usuario:</strong> Pero quiero saber el precio exacto</p>
+                <p><strong>Bot:</strong> Te recomiendo contactar para una cotización...</p>
+                <p><strong>Usuario:</strong> <input type="text" id="repetitiveMessage" value="Necesito saber cuánto cuesta, ya pregunté varias veces" style="width: 60%;"></p>
+            </div>
+            <button onclick="testRepetitiveConversation()">🔄 Probar Repetición</button>
+            <div id="repetitiveResult" class="result"></div>
+        </div>
+    </div>
+
+    <!-- Test del API completo -->
+    <div class="container">
+        <h2>🌐 Test: API Completo</h2>
+        <div class="test-section success">
+            <h3>Probar con el API real del chatbot:</h3>
+            <textarea id="apiMessage" placeholder="Mensaje para enviar al API...">Quiero hablar con el gerente porque este chatbot no me ayuda para nada y estoy muy molesto</textarea>
+            <br>
+            <label>
+                <input type="checkbox" id="enableHandoff" checked> Habilitar handoff automático
+            </label>
+            <br><br>
+            <button onclick="testCompleteAPI()">🌐 Probar API Completo</button>
+            <div id="apiResult" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simular la función de detección de handoff
+        function simulateHandoffDetection(message, conversationHistory = []) {
+            const normalizedMessage = message.toLowerCase().trim();
+            let score = 0;
+            let detectedReasons = [];
+            let priority = 'medium';
+
+            // Palabras clave para diferentes tipos de handoff
+            const keywords = {
+                escalation: ['hablar con un humano', 'quiero hablar con una persona', 'gerente', 'supervisor', 'jefe', 'encargado', 'responsable', 'atención al cliente', 'no entiendes', 'eres un robot', 'no sirves', 'no me ayudas', 'contactar con', 'hablar con alguien'],
+                complaint: ['reclamo', 'queja', 'molesto', 'indignado', 'terrible', 'pésimo', 'horrible', 'problema serio', 'muy mal', 'deficiente', 'insatisfecho', 'devolver dinero', 'reembolso', 'cancelar', 'nunca más', 'disgusto', 'decepcionado'],
+                technical: ['no funciona', 'error', 'falla', 'defecto', 'roto', 'problema técnico', 'no carga', 'no responde', 'se cuelga', 'instalación', 'configuración', 'manual', 'instrucciones', 'garantía', 'servicio técnico'],
+                complex: ['múltiples', 'varios', 'combinación', 'integración', 'complejo', 'detallado', 'específico', 'particular', 'exacto', 'preciso', 'personalizado', 'customizado', 'a medida']
+            };
+
+            // Detectar escalación explícita
+            const escalationFound = keywords.escalation.some(keyword => normalizedMessage.includes(keyword));
+            if (escalationFound) {
+                return {
+                    shouldHandoff: true,
+                    reason: 'escalation_request',
+                    priority: 'high',
+                    confidence: 95,
+                    explanation: 'Usuario solicita explícitamente hablar con un humano'
+                };
+            }
+
+            // Detectar quejas
+            const complaintKeywords = keywords.complaint.filter(keyword => normalizedMessage.includes(keyword));
+            if (complaintKeywords.length > 0) {
+                score += complaintKeywords.length * 30;
+                detectedReasons.push('Palabras de queja detectadas');
+                priority = 'high';
+            }
+
+            // Detectar problemas técnicos
+            const technicalKeywords = keywords.technical.filter(keyword => normalizedMessage.includes(keyword));
+            if (technicalKeywords.length > 1) {
+                score += technicalKeywords.length * 20;
+                detectedReasons.push('Múltiples problemas técnicos mencionados');
+                priority = priority === 'high' ? 'high' : 'medium';
+            }
+
+            // Detectar consultas complejas
+            const complexKeywords = keywords.complex.filter(keyword => normalizedMessage.includes(keyword));
+            if (complexKeywords.length > 1 && message.length > 100) {
+                score += 20;
+                detectedReasons.push('Consulta compleja y detallada');
+            }
+
+            // Detectar repetición
+            if (conversationHistory.length > 0) {
+                const userMessages = conversationHistory.filter(msg => msg.sender === 'user').slice(-2);
+                const similarity = userMessages.some(prevMsg => {
+                    const prev = prevMsg.message.toLowerCase();
+                    const commonWords = normalizedMessage.split(' ').filter(word =>
+                        prev.includes(word) && word.length > 3
+                    );
+                    return commonWords.length > 2;
+                });
+
+                if (similarity) {
+                    score += 25;
+                    detectedReasons.push('Usuario repite la misma consulta');
+                }
+            }
+
+            let mainReason = 'complex_query';
+            if (complaintKeywords.length > 0) mainReason = 'complaint';
+            else if (technicalKeywords.length > 1) mainReason = 'technical_support';
+            else if (complexKeywords.length > 1) mainReason = 'specialized_knowledge';
+
+            return {
+                shouldHandoff: score >= 50,
+                reason: mainReason,
+                priority,
+                confidence: Math.min(score, 100),
+                explanation: detectedReasons.join(', ') || 'Análisis de contexto general'
+            };
+        }
+
+        function testHandoff(type) {
+            const messageId = type + 'Message';
+            const resultId = type + 'Result';
+
+            const message = document.getElementById(messageId).value;
+            const result = simulateHandoffDetection(message);
+
+            let html = `🤖 ANÁLISIS DE HANDOFF:\n\n`;
+            html += `Mensaje: "${message}"\n\n`;
+            html += `¿Necesita handoff? ${result.shouldHandoff ? '✅ SÍ' : '❌ NO'}\n`;
+            html += `Motivo: ${result.reason}\n`;
+            html += `Prioridad: ${result.priority.toUpperCase()}\n`;
+            html += `Confianza: ${result.confidence}%\n`;
+            html += `Explicación: ${result.explanation}\n`;
+
+            if (result.shouldHandoff) {
+                html += `\n🎫 ACCIÓN: Se crearía ticket automáticamente\n`;
+                html += `📞 RESPUESTA: "Un especialista te contactará pronto para ayudarte con tu consulta."\n`;
+            }
+
+            const resultDiv = document.getElementById(resultId);
+            resultDiv.textContent = html;
+            resultDiv.className = `result ${result.shouldHandoff ? 'escalation' : 'success'}`;
+        }
+
+        function testRepetitiveConversation() {
+            const message = document.getElementById('repetitiveMessage').value;
+            const conversationHistory = [
+                { sender: 'user', message: '¿Cuánto cuesta su servicio?' },
+                { sender: 'bot', message: 'Los precios varían según tus necesidades...' },
+                { sender: 'user', message: 'Pero quiero saber el precio exacto' },
+                { sender: 'bot', message: 'Te recomiendo contactar para una cotización...' }
+            ];
+
+            const result = simulateHandoffDetection(message, conversationHistory);
+
+            let html = `🔄 ANÁLISIS DE CONVERSACIÓN REPETITIVA:\n\n`;
+            html += `Historial: ${conversationHistory.length} mensajes anteriores\n`;
+            html += `Nuevo mensaje: "${message}"\n\n`;
+            html += `¿Detecta repetición? ${result.confidence > 50 ? '✅ SÍ' : '❌ NO'}\n`;
+            html += `¿Necesita handoff? ${result.shouldHandoff ? '✅ SÍ' : '❌ NO'}\n`;
+            html += `Confianza: ${result.confidence}%\n`;
+            html += `Explicación: ${result.explanation}\n`;
+
+            document.getElementById('repetitiveResult').textContent = html;
+        }
+
+        async function testCompleteAPI() {
+            const message = document.getElementById('apiMessage').value;
+            const enableHandoff = document.getElementById('enableHandoff').checked;
+
+            const resultDiv = document.getElementById('apiResult');
+            resultDiv.textContent = '🌐 Enviando al API...';
+
+            try {
+                const response = await fetch('/api/chat-ai', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        client_id: 'pizzeria_luigi',
+                        session_id: 'test_session_' + Date.now(),
+                        conversation_history: []
+                    })
+                });
+
+                const data = await response.json();
+
+                let html = `🌐 RESPUESTA DEL API:\n\n`;
+                html += `Mensaje enviado: "${message}"\n\n`;
+                html += `✅ Respuesta del bot:\n"${data.response}"\n\n`;
+
+                if (data.handoff) {
+                    html += `🤝 ANÁLISIS DE HANDOFF:\n`;
+                    html += `¿Necesita handoff? ${data.handoff.should_handoff ? '✅ SÍ' : '❌ NO'}\n`;
+                    html += `Motivo: ${data.handoff.reason}\n`;
+                    html += `Prioridad: ${data.handoff.priority}\n`;
+                    html += `Confianza: ${data.handoff.confidence}%\n`;
+                    html += `Ticket creado: ${data.handoff.ticket_created ? '✅ SÍ' : '❌ NO'}\n`;
+                    html += `En horario laboral: ${data.handoff.within_business_hours ? '✅ SÍ' : '❌ NO'}\n`;
+                } else {
+                    html += `🤝 Handoff no evaluado (posiblemente deshabilitado)\n`;
+                }
+
+                html += `\n📊 Uso del modelo: ${data.usage?.total_tokens || 'N/A'} tokens\n`;
+
+                resultDiv.textContent = html;
+                resultDiv.className = 'result success';
+
+            } catch (error) {
+                resultDiv.textContent = `❌ ERROR: ${error.message}`;
+                resultDiv.className = 'result escalation';
+            }
+        }
+
+        // Ejemplos predefinidos
+        document.addEventListener('DOMContentLoaded', function() {
+            const examples = {
+                escalation: "Quiero hablar con una persona, no entiendes mi problema y necesito que me ayude alguien del equipo",
+                complaint: "Estoy muy molesto, el producto que compré está defectuoso y quiero que me devuelvan mi dinero, esto es terrible",
+                technical: "Mi sistema no funciona correctamente, aparece un error cuando trato de instalar el software y no puedo configurar la conexión",
+                complex: "Necesito integrar múltiples sistemas de mi empresa con una solución personalizada que maneje inventario, facturación y CRM de manera específica para mi industria"
+            };
+
+            Object.keys(examples).forEach(type => {
+                document.getElementById(type + 'Message').value = examples[type];
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Simple Chatbot IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FF6B35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn {
+            background: linear-gradient(45deg, #FFD700, #FF6B35);
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .status {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0,255,0,0.2);
+            border-radius: 10px;
+            border: 1px solid rgba(0,255,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Test Chatbot IA</h1>
+        <p>Página de prueba simplificada para verificar que todo funciona correctamente</p>
+
+        <button class="btn" onclick="testFunction()">🚀 Probar Función</button>
+        <button class="btn" onclick="window.location.href='/chatbot-ia'">🎯 Ir a Página Principal</button>
+
+        <div class="status">
+            <h3>✅ Status del Sistema</h3>
+            <p>✅ HTML carga correctamente</p>
+            <p>✅ CSS se aplica correctamente</p>
+            <p id="js-status">⏳ Verificando JavaScript...</p>
+        </div>
+    </div>
+
+    <script>
+        // Verificar que JavaScript funciona
+        document.getElementById('js-status').innerHTML = '✅ JavaScript funciona correctamente';
+
+        function testFunction() {
+            alert('✅ ¡JavaScript funciona! La función se ejecutó correctamente.');
+            console.log('Test function executed successfully');
+        }
+
+        // Verificar fecha de carga
+        console.log('Página cargada en:', new Date().toISOString());
+
+        // Simular alguna funcionalidad del chatbot
+        setTimeout(() => {
+            console.log('✅ All systems operational');
+        }, 1000);
+    </script>
+</body>
+</html>

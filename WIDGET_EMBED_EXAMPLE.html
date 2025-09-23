@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de Widget Embed para Cliente</title>
+</head>
+<body>
+    <h1>Sitio Web del Cliente</h1>
+
+    <!-- CÓDIGO QUE LE DAS AL CLIENTE -->
+    <div id="mente-autonoma-chatbot"></div>
+
+    <script>
+        // Script que el cliente copia y pega en su sitio
+        (function() {
+            // Configuración del cliente
+            const config = {
+                clientId: "pizzeria_luigi",
+                businessName: "Pizzería Luigi",
+                customPrompt: "Eres el asistente de una pizzería italiana",
+                apiUrl: "https://tu-dominio.com/api/chat-ai", // Tu servidor
+                position: "bottom-right",
+                theme: "default"
+            };
+
+            // Crear iframe que conecta a tu chatbot
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://tu-dominio.com/widget?${new URLSearchParams(config)}`;
+            iframe.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+                border: none;
+                z-index: 9999;
+                border-radius: 50%;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+
+            document.body.appendChild(iframe);
+
+            // Comunicación entre iframe y sitio cliente
+            window.addEventListener('message', function(event) {
+                if (event.origin !== 'https://tu-dominio.com') return;
+
+                if (event.data.type === 'resize') {
+                    iframe.style.width = event.data.width + 'px';
+                    iframe.style.height = event.data.height + 'px';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

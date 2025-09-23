@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA para PYMEs en Antofagasta 🚀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #f9f9f9;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    .download-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #ff7a00, #6a00f4);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,122,0,0.1), rgba(106,0,244,0.1));
+    }
+    
+    .header-content {
+      z-index: 2;
+      max-width: 900px;
+      padding: 2rem;
+    }
+    
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      background: linear-gradient(90deg, #ff7a00, #6a00f4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    header p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      margin-bottom: 2rem;
+      color: #e0e0e0;
+      font-weight: 300;
+    }
+    
+    .subtitle {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: #00f5d4;
+      margin-bottom: 3rem;
+      font-weight: 500;
+    }
+    
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+      padding: 4rem 0;
+    }
+    
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ff7a00, #6a00f4, #00f5d4);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,245,212,0.2);
+      background: rgba(255,255,255,0.08);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+    }
+    
+    .card-number {
+      background: linear-gradient(135deg, #ff7a00, #6a00f4);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    
+    .card h3 {
+      color: #00f5d4;
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .card p {
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    
+    .example {
+      background: rgba(0,245,212,0.1);
+      border-left: 3px solid #00f5d4;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    
+    .example-title {
+      color: #00f5d4;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .example-text {
+      color: #d0d0d0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    
+    .cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, rgba(255,122,0,0.1), rgba(106,0,244,0.1));
+      margin-top: 4rem;
+    }
+    
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #ff7a00, #6a00f4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .cta button {
+      background: linear-gradient(135deg, #ff7a00, #6a00f4);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .cta button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 15px 35px rgba(0,0,0,0.4);
+    }
+    
+    .whatsapp-btn {
+      background: linear-gradient(135deg, #25d366, #128c7e) !important;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(0,0,0,0.8);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    footer p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .ideas-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .download-btn {
+        top: 10px;
+        right: 10px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="download-btn" onclick="downloadPDF()">📄 Descargar PDF</button>
+
+  <header>
+    <div class="header-content">
+      <h1>IA para PYMEs en Antofagasta 🚀</h1>
+      <p class="subtitle">30 Ideas Innovadoras para que la Inteligencia Artificial Potencie tu Negocio</p>
+      <p>Descubre cómo implementar soluciones de IA específicamente diseñadas para empresas de Antofagasta</p>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="ideas-grid">
+      
+      <div class="card" data-aos="fade-up">
+        <div class="card-header">
+          <div class="card-number">1</div>
+          <h3>Asistente inteligente para e-commerce</h3>
+        </div>
+        <p>Chatbot que recomienda productos, ayuda en el checkout y responde dudas frecuentes.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una ferretería del centro puede implementar un chatbot que recomiende herramientas según el proyecto del cliente (construcción, minería, hogar). El bot conoce el stock local y puede sugerir alternativas disponibles.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="50">
+        <div class="card-header">
+          <div class="card-number">2</div>
+          <h3>Recordatorio automatizado de vacunas veterinarias</h3>
+        </div>
+        <p>Sistema que envía alertas y sugerencias de próximas dosis según historial de mascotas.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Veterinaria "Patitas Sanas" automatiza recordatorios por WhatsApp para vacunas anuales, desparasitaciones mensuales y chequeos según la edad de cada mascota, aumentando la fidelización de clientes.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-header">
+          <div class="card-number">3</div>
+          <h3>Gestión predictiva de inventario</h3>
+        </div>
+        <p>IA que anticipa demanda y optimiza el stock según patrones de compra estacionales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una farmacia predice el aumento de demanda de protectores solares en verano y medicamentos para resfríos en invierno, evitando quiebres de stock y sobreinventario.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-header">
+          <div class="card-number">4</div>
+          <h3>Generación de contenido para redes sociales</h3>
+        </div>
+        <p>IA que crea posts, descripciones y hashtags atractivos, manteniendo tu voz de marca.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un restaurant del puerto usa IA para crear posts sobre sus platos del día, incorporando hashtags locales como #AntofagastaEats #PuertoSaboroso y adaptando el contenido según eventos de la ciudad.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-header">
+          <div class="card-number">5</div>
+          <h3>Email marketing hiperpersonalizado</h3>
+        </div>
+        <p>Campañas con ofertas según comportamiento de clientes y categorías preferidas.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una tienda de ropa segmenta emails: envía ofertas de ropa de trabajo a empleados mineros, ropa casual a estudiantes de la UCN, y ropa formal a ejecutivos del sector financiero.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="250">
+        <div class="card-header">
+          <div class="card-number">6</div>
+          <h3>Agente de atención 24/7 para servicios profesionales</h3>
+        </div>
+        <p>Chatbots que atienden consultas frecuentes fuera del horario laboral.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un estudio contable automatiza respuestas sobre plazos tributarios, documentos necesarios para constitución de empresas y cálculos básicos de honorarios, atendiendo turnos de noche de trabajadores mineros.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-header">
+          <div class="card-number">7</div>
+          <h3>Automatización de facturación y contabilidad</h3>
+        </div>
+        <p>Software que categoriza gastos, gestiona pagos y conciliaciones automáticamente.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una empresa de transporte minero automatiza la clasificación de gastos en combustible, mantención de vehículos y peajes, generando reportes mensuales para optimizar rutas y costos.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="350">
+        <div class="card-header">
+          <div class="card-number">8</div>
+          <h3>Asistente de voz para consulta de datos</h3>
+        </div>
+        <p>Interactividad vía voz para revisar citas programadas, stock o dudas frecuentes.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un taller mecánico permite a los técnicos consultar por voz el stock de repuestos mientras trabajan, sin necesidad de interrumpir su labor para revisar el sistema manualmente.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-header">
+          <div class="card-number">9</div>
+          <h3>Telemetría y mantenimiento predictivo</h3>
+        </div>
+        <p>IA que monitoriza equipos industriales y avisa sobre posibles fallas antes que ocurran.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una empresa de servicios mineros monitorea sus compresores y generadores, recibiendo alertas 48 horas antes de fallas potenciales, reduciendo tiempo de inactividad en faenas.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="450">
+        <div class="card-header">
+          <div class="card-number">10</div>
+          <h3>Recomendador de productos cruzados</h3>
+        </div>
+        <p>Sistema que sugiere complementos para aumentar ventas y fidelidad en tienda física.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una librería-papelería sugiere automáticamente cuadernos universitarios, destacadores y calculadoras cuando un estudiante compra textos de ingeniería, aumentando el ticket promedio.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <div class="card-header">
+          <div class="card-number">11</div>
+          <h3>Planificación automática de turnos</h3>
+        </div>
+        <p>Genera horarios eficientes según flujo de clientes, disponibilidad y normativas laborales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una peluquería optimiza turnos considerando servicios populares los fines de semana, disponibilidad de especialistas y cumplimiento de descansos obligatorios.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="550">
+        <div class="card-header">
+          <div class="card-number">12</div>
+          <h3>Detección inteligente de documentos</h3>
+        </div>
+        <p>IA que ordena facturas, comprobantes y archivos digitales sin intervención manual.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una gestoría automatiza la clasificación de documentos de clientes mineros: contratos, certificados de seguridad, facturas de equipos, agilizando trámites regulatorios.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
+        <div class="card-header">
+          <div class="card-number">13</div>
+          <h3>Análisis de clientes frecuentes</h3>
+        </div>
+        <p>Identifica ciclos de compra y ayuda a fidelizar con ofertas personalizadas.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un supermercado detecta que familias mineras compran despensa cada 15 días coincidiendo con quincenas, enviando ofertas especiales 2 días antes de cada ciclo.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="650">
+        <div class="card-header">
+          <div class="card-number">14</div>
+          <h3>Optimización de rutas logísticas</h3>
+        </div>
+        <p>Calcula rutas óptimas según tráfico, clima y entregas, reduciendo costos operacionales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una distribuidora de gas ajusta rutas evitando el tráfico del centro en horas peak y considerando condiciones de camanchaca para optimizar tiempos de entrega.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="700">
+        <div class="card-header">
+          <div class="card-number">15</div>
+          <h3>Asistente financiero automatizado</h3>
+        </div>
+        <p>Visualiza flujos de caja y sugiere financiamiento según necesidades y proyecciones.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una constructora recibe alertas automáticas sobre necesidades de capital de trabajo y sugerencias de líneas de crédito antes de iniciar nuevos proyectos habitacionales.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="750">
+        <div class="card-header">
+          <div class="card-number">16</div>
+          <h3>Evaluación de crédito ágil</h3>
+        </div>
+        <p>Analiza historial financiero para decisiones de préstamo rápido y confiable.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una casa comercial evalúa en 5 minutos el crédito de trabajadores mineros considerando estabilidad laboral, ingresos y historial de pagos en el retail local.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="800">
+        <div class="card-header">
+          <div class="card-number">17</div>
+          <h3>Chat con inteligencia emocional</h3>
+        </div>
+        <p>Asistente que conversa con tono empático y adaptado al estado emocional del cliente.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una funeraria implementa un chatbot que detecta el tono emocional de consultas y responde con sensibilidad apropiada, brindando información de servicios con empatía.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="850">
+        <div class="card-header">
+          <div class="card-number">18</div>
+          <h3>Dashboard de indicadores automáticos</h3>
+        </div>
+        <p>Muestra métricas clave de tu negocio en tiempo real con alertas inteligentes.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una cadena de minimarkets monitorea ventas por sucursal, rotación de productos y márgenes en tiempo real, recibiendo alertas sobre productos de baja rotación o faltantes críticos.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="900">
+        <div class="card-header">
+          <div class="card-number">19</div>
+          <h3>Automatización de anuncios segmentados</h3>
+        </div>
+        <p>Crea copys y define audiencias para campañas efectivas en redes sociales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una academia de inglés segmenta automáticamente anuncios: cursos corporativos para empresas mineras, preparación TOEFL para estudiantes universitarios, e inglés básico para comerciantes.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="950">
+        <div class="card-header">
+          <div class="card-number">20</div>
+          <h3>Resúmenes automáticos de reuniones</h3>
+        </div>
+        <p>Genera apuntes, tareas y resúmenes ejecutivos a partir de grabaciones de reuniones.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un estudio de arquitectura transcribe automáticamente reuniones con clientes, extrayendo requisitos del proyecto, plazos acordados y próximos pasos, enviando resúmenes a todos los participantes.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1000">
+        <div class="card-header">
+          <div class="card-number">21</div>
+          <h3>Sistema de alertas climáticas para negocios</h3>
+        </div>
+        <p>Monitorea condiciones meteorológicas y ajusta operaciones según el clima del desierto.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una empresa de eventos al aire libre recibe alertas tempranas sobre vientos fuertes o camanchaca, permitiendo reprogramar actividades y ajustar logística con 48 horas de anticipación.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1050">
+        <div class="card-header">
+          <div class="card-number">22</div>
+          <h3>Análisis de sentimiento en reviews</h3>
+        </div>
+        <p>Monitorea opiniones online y genera reportes de satisfacción con alertas tempranas.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un hotel boutique analiza comentarios en Google y TripAdvisor, identificando problemas recurrentes (ruido, wifi, desayuno) para implementar mejoras antes de que afecten más huéspedes.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1100">
+        <div class="card-header">
+          <div class="card-number">23</div>
+          <h3>Precio dinámico inteligente</h3>
+        </div>
+        <p>Ajusta precios automáticamente según demanda, competencia y eventos locales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un hostal ajusta tarifas automáticamente durante eventos como Festival de la Tirana, congresos mineros o temporada de avistamiento de ballenas, maximizando ingresos sin perder competitividad.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1150">
+        <div class="card-header">
+          <div class="card-number">24</div>
+          <h3>Traductor automático para turismo</h3>
+        </div>
+        <p>Sistema de traducción en tiempo real para atender turistas extranjeros eficientemente.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una agencia de turismo astronómico implementa traducción automática español-inglés-portugués para atender visitantes internacionales, mejorando la experiencia en tours al desierto de Atacama.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1200">
+        <div class="card-header">
+          <div class="card-number">25</div>
+          <h3>Detector de fraudes en pagos</h3>
+        </div>
+        <p>IA que identifica transacciones sospechosas y protege contra fraudes financieros.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una tienda de electrónicos detecta patrones anómalos como compras múltiples con diferentes tarjetas desde la misma IP o compras de alto valor fuera del horario habitual del cliente.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1250">
+        <div class="card-header">
+          <div class="card-number">26</div>
+          <h3>Optimizador de consumo energético</h3>
+        </div>
+        <p>Monitorea y reduce automáticamente el consumo eléctrico según patrones de uso.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un laboratorio dental programa equipos para operar en horarios de menor tarifa eléctrica, ajusta aire acondicionado según ocupación y apaga automáticamente equipos no esenciales fuera del horario laboral.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1300">
+        <div class="card-header">
+          <div class="card-number">27</div>
+          <h3>Gestor inteligente de citas médicas</h3>
+        </div>
+        <p>Optimiza agendas médicas considerando tipo de consulta, duración y urgencias.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una clínica dental programa automáticamente limpiezas de 30 min, tratamientos de conducto de 90 min y emergencias, optimizando la agenda y reduciendo tiempos de espera.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1350">
+        <div class="card-header">
+          <div class="card-number">28</div>
+          <h3>Análisis predictivo de demanda local</h3>
+        </div>
+        <p>Predice tendencias de consumo basándose en datos económicos y eventos de la región.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Una distribuidora de bebidas anticipa mayor demanda durante eventos deportivos en el estadio regional, festividades religiosas y cambios de turno en las mineras, ajustando inventario automáticamente.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1400">
+        <div class="card-header">
+          <div class="card-number">29</div>
+          <h3>Sistema de recomendación para capacitaciones</h3>
+        </div>
+        <p>Sugiere cursos y certificaciones según perfil laboral y demanda del mercado minero.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un centro de capacitación recomienda cursos de seguridad minera a operadores, certificaciones de soldadura a técnicos, y cursos de inglés técnico a supervisores, basándose en ofertas laborales actuales.</div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="1450">
+        <div class="card-header">
+          <div class="card-number">30</div>
+          <h3>Monitoreo inteligente de redes sociales</h3>
+        </div>
+        <p>Rastrea menciones de tu marca y competencia, generando insights para estrategias comerciales.</p>
+        <div class="example">
+          <div class="example-title">💡 Ejemplo para Antofagasta:</div>
+          <div class="example-text">Un restaurant monitorea menciones en redes sociales, detecta quejas sobre tiempos de espera, identifica platos más populares y descubre oportunidades como "delivery a campamentos mineros" mencionado por usuarios.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>¿Listo para implementar la IA en tu negocio?</h2>
+    <p style="color: #b0b0b0; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Estas 30 ideas de IA están diseñadas específicamente para PYMEs de Antofagasta. Comienza con una solución simple y escala gradualmente.
+    </p>
+    <div class="cta-buttons">
+      <button onclick="downloadPDF()">🚀 Quiero transformar mi PyME</button>
+      <a href="https://wa.me/56912345678?text=Hola%2C%20me%20interesa%20implementar%20IA%20en%20mi%20PYME%20de%20Antofagasta" target="_blank" style="text-decoration: none;">
+        <button class="whatsapp-btn">📲 Hablar por WhatsApp</button>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 IA para PYMEs Antofagasta | Innovación que potencia tu negocio en el corazón del desierto</p>
+    <p style="margin-top: 1rem; font-size: 0.8rem;">Desarrollado especialmente para empresarios de la región de Antofagasta 🌵</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  
+  <script>
+    // Inicializar animaciones AOS
+    AOS.init({ 
+      duration: 800, 
+      once: true,
+      offset: 100
+    });
+
+    // Función para descargar PDF
+    function downloadPDF() {
+      // Ocultar botón de descarga temporalmente
+      const downloadBtn = document.querySelector('.download-btn');
+      downloadBtn.style.display = 'none';
+      
+      const element = document.body;
+      const opt = {
+        margin: [0.5, 0.5, 0.5, 0.5],
+        filename: 'IA-para-PYMEs-Antofagasta-30-Ideas.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+          allowTaint: false
+        },
+        jsPDF: { 
+          unit: 'in', 
+          format: 'a4', 
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: { 
+          mode: ['avoid-all', 'css', 'legacy'],
+          avoid: ['.card', '.cta']
+        }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        // Restaurar botón después de la descarga
+        downloadBtn.style.display = 'block';
+      });
+    }
+
+    // Animación suave para el scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Efecto parallax sutil en el header
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('header');
+      if (header) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Contador animado para las tarjetas
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    // Observar todas las tarjetas
+    document.querySelectorAll('.card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

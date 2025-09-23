@@ -1,0 +1,161 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      UserRole @default(VET)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  clients   Client[]
+  appointments Appointment[]
+  medicalRecords MedicalRecord[]
+
+  @@map("users")
+}
+
+model Client {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String?
+  phone       String?
+  address     String?
+  dateOfBirth DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pets        Pet[]
+  appointments Appointment[]
+
+  @@map("clients")
+}
+
+model Pet {
+  id          String   @id @default(cuid())
+  name        String
+  species     String   // Perro, Gato, etc.
+  breed       String?
+  color       String?
+  gender      PetGender
+  dateOfBirth DateTime?
+  weight      Float?
+  microchip   String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  clientId    String
+  client      Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  medicalRecords MedicalRecord[]
+  vaccinations Vaccination[]
+  appointments Appointment[]
+
+  @@map("pets")
+}
+
+model MedicalRecord {
+  id          String   @id @default(cuid())
+  date        DateTime @default(now())
+  diagnosis   String
+  treatment   String?
+  notes       String?
+  weight      Float?
+  temperature Float?
+  heartRate   Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  petId       String
+  pet         Pet      @relation(fields: [petId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@map("medical_records")
+}
+
+model Vaccination {
+  id          String   @id @default(cuid())
+  name        String
+  date        DateTime
+  nextDue     DateTime?
+  batchNumber String?
+  veterinarian String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  petId       String
+  pet         Pet      @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  @@map("vaccinations")
+}
+
+model Appointment {
+  id          String   @id @default(cuid())
+  date        DateTime
+  time        String
+  type        AppointmentType
+  status      AppointmentStatus @default(SCHEDULED)
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  clientId    String
+  client      Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  petId       String?
+  pet         Pet?     @relation(fields: [petId], references: [id], onDelete: SetNull)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@map("appointments")
+}
+
+enum UserRole {
+  ADMIN
+  VET
+  ASSISTANT
+}
+
+enum PetGender {
+  MALE
+  FEMALE
+  UNKNOWN
+}
+
+enum AppointmentType {
+  CONSULTATION
+  VACCINATION
+  SURGERY
+  GROOMING
+  EMERGENCY
+  FOLLOW_UP
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}

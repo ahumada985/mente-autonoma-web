@@ -1,0 +1,102 @@
+git hub
+
+git status
+
+git add .
+
+git commit -m "🎨 Rediseño completo: Hero con gradiente azul-rosa, servicios unificados, sección IA rediseñada, CTA eliminado, tecnologías en carrusel, nueva sección de logos oficiales"
+
+git push origin main
+
+
+Comandos Básicos (Siempre en este orden):
+
+Ver el estado de los archivos:
+   git status
+
+Agregar todos los cambios:
+   git add .
+
+Hacer el commit con un mensaje descriptivo:
+   git commit -m "📝 Descripción de lo que cambiaste"
+
+Subir a GitHub:
+   git push origin main
+
+
+
+
+Comandos Adicionales Útiles:
+
+
+Ver el historial de commits:
+  git log --oneline
+
+Ver qué rama estás:
+  git branch
+
+Si quieres descartar cambios y volver a la versión anterior:
+  git checkout -- nombre-del-archivo
+
+Si quieres ver los cambios específicos :
+
+
+
+reaturar versión ///
+
+git checkout -- src/app/page.tsx
+
+
+Cómo Restaurar a la Última Versión - Guía Completa
+1. Restaurar Archivo Específico (Recomendado)
+git checkout -- nombre_del_archivo
+Ejemplo:
+git checkout -- src/app/page.tsx
+
+
+2. Restaurar Todos los Archivos Modificados
+git checkout -- .
+
+
+3. Restaurar a un Commit Específico
+git checkout -- nombre_del_archivo
+
+
+4. Ver el Historial de Commits
+git log --oneline
+
+
+5. Restaurar a un Commit Anterior
+git reset --hard HEAD~1  # Retrocede 1 commit
+git reset --hard HEAD~2  # Retrocede 2 commits
+
+6. Restaurar a un Commit Específico por Hash
+ 		
+
+
+🔄 Comandos que Usamos:
+git status - Ver el estado actual del repositorio
+git checkout -- archivo - Restaurar archivo específico
+git log --oneline - Ver historial de commits
+⚠️ Importante:
+git checkout -- archivo es seguro y solo afecta el archivo especificado
+git reset --hard es más peligroso porque elimina TODOS los cambios no confirmados
+Siempre usa git status antes de restaurar para ver qué archivos están modificados
+
+
+git log --oneline
+
+. BACKUP AUTOMÁTICO   
+¿Dónde se guardan las copias?
+Directorio: C:\Users\usuario\Desktop\Proyectos_IA\Cursor_oficial\backups\
+Formato: Archivos ZIP con timestamp
+Ejemplo: backup-2025-09-03T17-30-19-760Z.zip
+¿Cómo restaurar?
+Script automático: backups/restore.sh
+Comando: bash backups/restore.sh
+¿Cada cuánto tiempo?
+Frecuencia: Diario a las 2:00 AM
+Retención: 7 backups máximo
+Configuración: backup-cron.txt
+
+

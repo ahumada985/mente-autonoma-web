@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test Sistema de Validación de Contenido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            border: 2px solid #e5e7eb;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .success { border-color: #16a34a; background: #f0fdf4; }
+        .warning { border-color: #d97706; background: #fffbeb; }
+        .error { border-color: #dc2626; background: #fef2f2; }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        button {
+            background: #6366f1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #4f46e5; }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        .plans {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .plan {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .plan.basic { background: #fef3c7; border: 2px solid #f59e0b; }
+        .plan.pro { background: #dbeafe; border: 2px solid #3b82f6; }
+        .plan.premium { background: #f3e8ff; border: 2px solid #8b5cf6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test Sistema de Validación de Contenido</h1>
+        <p>Prueba aquí todas las funciones del sistema de límites y validación</p>
+
+        <!-- Información de planes -->
+        <h2>📋 Planes Disponibles</h2>
+        <div class="plans">
+            <div class="plan basic">
+                <h3>BASIC</h3>
+                <p>• 5 documentos<br>• 2,000 chars/doc<br>• 8,000 chars total</p>
+            </div>
+            <div class="plan pro">
+                <h3>PRO</h3>
+                <p>• 20 documentos<br>• 5,000 chars/doc<br>• 50,000 chars total</p>
+            </div>
+            <div class="plan premium">
+                <h3>PREMIUM</h3>
+                <p>• Sin límite docs<br>• 20,000 chars/doc<br>• Sin límite total</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🔍 Test 1: Detección de Pegado Masivo</h2>
+        <p>Pega contenido sospechoso para probar la detección automática</p>
+
+        <div class="test-section">
+            <h3>Contenido a Analizar:</h3>
+            <textarea id="massiveContent" placeholder="Pega aquí contenido que parezca sospechoso (muy largo, múltiples secciones, URLs, etc.)">
+¡Bienvenido a Pizzería Luigi!
+
+HISTORIA DE NUESTRA EMPRESA
+Fundada en 2008 por Luigi Rossi, somos una pizzería familiar italiana con más de 15 años de experiencia en Santiago. Nuestro fundador emigró desde Nápoles, Italia, trayendo consigo recetas familiares transmitidas por generaciones.
+
+NUESTROS SERVICIOS PRINCIPALES
+1. Pizzas artesanales hechas en horno de leña tradicional
+2. Delivery gratuito en un radio de 5 kilómetros
+3. Catering para eventos corporativos y familiares
+4. Take away con descuento del 10%
+5. Reservas para grupos hasta 25 personas
+
+HORARIOS DE ATENCIÓN COMPLETOS
+• Lunes a Jueves: 18:00 - 23:30
+• Viernes y Sábados: 18:00 - 00:30
+• Domingos: 18:00 - 23:00
+• Delivery disponible en todos los horarios
+• Última orden 30 minutos antes del cierre
+
+CARTA DE PRECIOS ACTUALIZADA
+Pizzas personales: $8.000 - $12.000
+Pizzas familiares: $15.000 - $22.000
+Bebidas: $2.500 - $4.000
+Delivery mínimo: $15.000
+
+FORMAS DE PAGO ACEPTADAS
+- Efectivo en el local
+- Tarjetas de débito y crédito
+- Transferencia bancaria
+- WebPay online
+- Mercado Pago
+
+MISIÓN EMPRESARIAL
+Ofrecer pizzas artesanales de la más alta calidad, manteniendo la tradición italiana mientras servimos a nuestra comunidad local con pasión y dedicación.
+
+VISIÓN CORPORATIVA
+Ser la pizzería número uno de Santiago, reconocida por nuestra autenticidad italiana y excelencia en el servicio al cliente.
+
+VALORES FUNDAMENTALES
+• CALIDAD: Utilizamos solo ingredientes frescos y de primera calidad
+• TRADICIÓN: Recetas familiares italianas transmitidas por generaciones
+• SERVICIO: Atención personalizada y calidez humana en cada pedido
+• COMUNIDAD: Apoyamos a productores locales y agricultura sustentable
+• PASIÓN: Amor por la cocina italiana en cada pizza que preparamos
+
+POLÍTICAS DE LA EMPRESA
+Política de devoluciones: Si no estás 100% satisfecho, te devolvemos tu dinero
+Política de privacidad: Protegemos tus datos personales según la ley
+Política ambiental: Usamos envases biodegradables y reciclables
+
+Para más información visita: https://www.pizzerialuigi.cl
+Síguenos en: https://www.instagram.com/pizzerialuigi
+Facebook: https://www.facebook.com/pizzerialuigioficial
+            </textarea>
+            <br>
+            <button onclick="testMassivePaste()">🔍 Analizar Contenido</button>
+            <div id="massiveResult" class="result"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>📏 Test 2: Validación por Plan</h2>
+        <p>Prueba los límites de diferentes planes</p>
+
+        <div class="test-section">
+            <label for="planSelect">Seleccionar Plan:</label>
+            <select id="planSelect">
+                <option value="basic">Basic (5 docs, 2K chars/doc, 8K total)</option>
+                <option value="pro">Pro (20 docs, 5K chars/doc, 50K total)</option>
+                <option value="premium">Premium (Sin límites)</option>
+            </select>
+            <br><br>
+
+            <label for="currentTotal">Contenido Total Actual del Cliente:</label>
+            <input type="number" id="currentTotal" value="3000" placeholder="Caracteres ya usados">
+            <br><br>
+
+            <textarea id="newContent" placeholder="Nuevo contenido a validar...">Este es un nuevo documento que quiero agregar a mi base de conocimiento. Vamos a ver si pasa las validaciones del plan seleccionado.</textarea>
+            <br>
+            <button onclick="testPlanValidation()">✅ Validar Contenido</button>
+            <div id="planResult" class="result"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>✂️ Test 3: Sugerencia de División</h2>
+        <p>Ve cómo se dividiría contenido largo automáticamente</p>
+
+        <div class="test-section">
+            <label for="maxLength">Máximo de caracteres por documento:</label>
+            <input type="number" id="maxLength" value="2000" min="100" max="20000">
+            <br><br>
+
+            <textarea id="contentToDivide" placeholder="Contenido largo para dividir...">
+Este es un documento muy largo que necesita ser dividido en partes más pequeñas.
+
+SECCIÓN 1: INFORMACIÓN GENERAL
+Aquí tenemos información general sobre nuestra empresa y nuestros servicios principales.
+
+SECCIÓN 2: PRODUCTOS Y SERVICIOS
+En esta sección describimos en detalle todos nuestros productos y servicios disponibles.
+
+SECCIÓN 3: PRECIOS Y CONDICIONES
+Aquí están todos nuestros precios actualizados y las condiciones de venta.
+
+SECCIÓN 4: POLÍTICAS EMPRESARIALES
+En esta parte incluimos todas nuestras políticas internas y procedimientos.
+
+SECCIÓN 5: CONTACTO E INFORMACIÓN ADICIONAL
+Finalmente, toda la información de contacto y datos adicionales relevantes.
+            </textarea>
+            <br>
+            <button onclick="testContentDivision()">✂️ Sugerir División</button>
+            <div id="divisionResult" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simular las funciones del sistema (en producción estas estarían en el backend)
+
+        function detectMassivePaste(content) {
+            const reasons = [];
+            let suspicionScore = 0;
+
+            if (content.length > 5000) {
+                reasons.push('Contenido excesivamente largo');
+                suspicionScore += 30;
+            }
+
+            const sections = content.split(/\n\s*\n|\n-|\n\d+\./).length;
+            if (sections > 10) {
+                reasons.push('Múltiples secciones detectadas');
+                suspicionScore += 25;
+            }
+
+            const topics = ['precio', 'horario', 'servicio', 'historia', 'contacto', 'producto'];
+            const topicCount = topics.filter(topic =>
+                content.toLowerCase().includes(topic)
+            ).length;
+
+            if (topicCount > 4) {
+                reasons.push('Múltiples temas mezclados');
+                suspicionScore += 20;
+            }
+
+            if (content.includes('•') && content.includes('-') && content.includes('1.')) {
+                reasons.push('Formatos de lista mezclados');
+                suspicionScore += 15;
+            }
+
+            if (content.match(/https?:\/\/|www\./)) {
+                reasons.push('Contiene URLs (posible copia de web)');
+                suspicionScore += 20;
+            }
+
+            return {
+                suspicious: suspicionScore > 50,
+                reasons,
+                confidence: Math.min(suspicionScore, 100)
+            };
+        }
+
+        function validateContent(plan, content, clientTotalContent) {
+            const limits = {
+                basic: { maxContentLength: 2000, maxTotalContent: 8000 },
+                pro: { maxContentLength: 5000, maxTotalContent: 50000 },
+                premium: { maxContentLength: 20000, maxTotalContent: 999999999 }
+            };
+
+            const planLimits = limits[plan] || limits.basic;
+
+            if (content.length > planLimits.maxContentLength) {
+                return {
+                    valid: false,
+                    error: `Documento demasiado largo. Máximo ${planLimits.maxContentLength} caracteres para plan ${plan}`,
+                    suggestions: [
+                        `Dividir en ${Math.ceil(content.length / planLimits.maxContentLength)} documentos más pequeños`,
+                        'Upgrader a plan superior para más espacio',
+                        'Resumir el contenido manteniendo lo esencial'
+                    ]
+                };
+            }
+
+            const newTotal = clientTotalContent + content.length;
+            if (newTotal > planLimits.maxTotalContent) {
+                return {
+                    valid: false,
+                    error: `Límite total de contenido alcanzado. Máximo ${planLimits.maxTotalContent} caracteres para plan ${plan}`,
+                    suggestions: [
+                        'Eliminar documentos antiguos para hacer espacio',
+                        'Upgrader a plan superior',
+                        'Optimizar contenido existente'
+                    ]
+                };
+            }
+
+            return { valid: true };
+        }
+
+        function suggestContentDivision(content, maxLength) {
+            const words = content.split(' ');
+            const parts = [];
+            const titles = [];
+
+            let currentPart = '';
+            let partIndex = 1;
+
+            for (const word of words) {
+                if ((currentPart + ' ' + word).length > maxLength) {
+                    parts.push(currentPart.trim());
+                    titles.push(`Documento ${partIndex}`);
+                    currentPart = word;
+                    partIndex++;
+                } else {
+                    currentPart += (currentPart ? ' ' : '') + word;
+                }
+            }
+
+            if (currentPart) {
+                parts.push(currentPart.trim());
+                titles.push(`Documento ${partIndex}`);
+            }
+
+            return { suggestedParts: parts, titles };
+        }
+
+        // Funciones de test
+        function testMassivePaste() {
+            const content = document.getElementById('massiveContent').value;
+            const result = detectMassivePaste(content);
+
+            let html = `<strong>📊 RESULTADO DEL ANÁLISIS:</strong>\n\n`;
+            html += `Sospechoso: ${result.suspicious ? '🚨 SÍ' : '✅ NO'}\n`;
+            html += `Confianza: ${result.confidence}%\n\n`;
+
+            if (result.reasons.length > 0) {
+                html += `⚠️ RAZONES DETECTADAS:\n`;
+                result.reasons.forEach(reason => {
+                    html += `• ${reason}\n`;
+                });
+            }
+
+            const resultDiv = document.getElementById('massiveResult');
+            resultDiv.textContent = html;
+            resultDiv.className = `result ${result.suspicious ? 'error' : 'success'}`;
+        }
+
+        function testPlanValidation() {
+            const plan = document.getElementById('planSelect').value;
+            const content = document.getElementById('newContent').value;
+            const currentTotal = parseInt(document.getElementById('currentTotal').value) || 0;
+
+            const validation = validateContent(plan, content, currentTotal);
+
+            let html = `<strong>📋 VALIDACIÓN DE PLAN ${plan.toUpperCase()}:</strong>\n\n`;
+            html += `Contenido nuevo: ${content.length} caracteres\n`;
+            html += `Contenido actual: ${currentTotal} caracteres\n`;
+            html += `Total después: ${currentTotal + content.length} caracteres\n\n`;
+
+            if (validation.valid) {
+                html += `✅ VÁLIDO - El contenido cumple con los límites del plan\n`;
+            } else {
+                html += `❌ INVÁLIDO\n`;
+                html += `Error: ${validation.error}\n\n`;
+                if (validation.suggestions) {
+                    html += `💡 SUGERENCIAS:\n`;
+                    validation.suggestions.forEach(suggestion => {
+                        html += `• ${suggestion}\n`;
+                    });
+                }
+            }
+
+            const resultDiv = document.getElementById('planResult');
+            resultDiv.textContent = html;
+            resultDiv.className = `result ${validation.valid ? 'success' : 'error'}`;
+        }
+
+        function testContentDivision() {
+            const content = document.getElementById('contentToDivide').value;
+            const maxLength = parseInt(document.getElementById('maxLength').value) || 2000;
+
+            const division = suggestContentDivision(content, maxLength);
+
+            let html = `<strong>✂️ DIVISIÓN SUGERIDA:</strong>\n\n`;
+            html += `Contenido original: ${content.length} caracteres\n`;
+            html += `Máximo por documento: ${maxLength} caracteres\n`;
+            html += `Documentos sugeridos: ${division.suggestedParts.length}\n\n`;
+
+            division.suggestedParts.forEach((part, index) => {
+                html += `📄 ${division.titles[index]} (${part.length} chars):\n`;
+                html += `"${part.substring(0, 100)}..."\n\n`;
+            });
+
+            const resultDiv = document.getElementById('divisionResult');
+            resultDiv.textContent = html;
+            resultDiv.className = 'result success';
+        }
+    </script>
+</body>
+</html>

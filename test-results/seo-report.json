@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-03T08:54:55.788Z",
+  "score": 50,
+  "seoFiles": {
+    "sitemap": false,
+    "robots": false,
+    "googleVerification": true
+  },
+  "metaTags": {
+    "title": false,
+    "description": true,
+    "keywords": false,
+    "ogTags": false,
+    "twitterTags": false,
+    "googleVerification": false
+  },
+  "urlStructure": {
+    "found": 6,
+    "missing": [
+      "contacto/index.html"
+    ]
+  },
+  "gscVerification": false,
+  "recommendations": []
+}

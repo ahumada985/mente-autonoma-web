@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/chatbot_completo.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/chatbot_completo.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/chatbot_completo.py"
+    }
+  ]
+}
