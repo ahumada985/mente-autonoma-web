@@ -2,18 +2,6 @@
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key",
-    "LANGSMITH_API_KEY": "@langsmith_api_key",
-    "LANGSMITH_TRACING": "true",
-    "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
-    "LANGSMITH_PROJECT": "pr-artistic-injunction-89",
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_ANON_KEY": "@supabase_anon_key",
-    "CLOUDINARY_CLOUD_NAME": "@cloudinary_cloud_name",
-    "CLOUDINARY_API_KEY": "@cloudinary_api_key",
-    "CLOUDINARY_API_SECRET": "@cloudinary_api_secret"
-  },
   "functions": {
     "src/app/api/**": {
       "maxDuration": 60
