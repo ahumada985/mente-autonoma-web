@@ -2037,6 +2037,493 @@ export default function Indigo() {
 
 
 
+      {/* Sección duplicada: Soluciones IA que Revolucionan tu Negocio */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+        {/* Decoraciones de fondo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-pink-600/5"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold mb-4 animate-bounce">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+              Potencia tu negocio con IA
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Soluciones IA
+              </span>
+              <br />
+              que Revolucionan tu Negocio
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Descubre cómo la Inteligencia Artificial puede transformar cada aspecto de tu empresa.
+              Desde atención al cliente hasta marketing automatizado.
+            </p>
+          </div>
+
+          {/* Grid de servicios */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* Servicio 1: Chatbot Inteligente */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-purple-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  Chatbot Inteligente
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Atiende a tus clientes 24/7 con respuestas personalizadas. Convierte visitantes en clientes con IA que entiende y vende.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">24/7</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Convierte</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">IA GPT-4</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 2: Diseño Web Inteligente */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-pink-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
+                  Diseño Web Inteligente
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Sitios web que se adaptan a cada usuario. Landing pages que convierten más con IA que personaliza la experiencia.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Responsive</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm font-medium">Personalizado</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Next.js</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-purple-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 3: Automatización de Procesos */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-transparent to-emerald-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
+                  Automatización de Procesos
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Automatiza tareas repetitivas con IA. Desde facturación hasta seguimiento de clientes, todo en piloto automático.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Automático</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Eficiente</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Ahorra tiempo</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-green-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 4: Marketing Digital */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-transparent to-red-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
+                  Marketing Digital
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Campañas que se optimizan solas. IA que analiza tu audiencia y crea contenido que convierte automáticamente.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">ROI Alto</span>
+                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Segmentado</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Automático</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-orange-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 5: Asistente Secretario IA */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-transparent to-blue-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors">
+                  Asistente Secretario IA
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Tu secretario virtual que nunca descansa. Agenda citas, responde emails y gestiona tu calendario automáticamente.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Virtual</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Inteligente</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">24/7</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-indigo-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 6: Generador RRSS */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-transparent to-rose-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 4V2a1 1 0 011-1h4a1 1 0 011 1v2M7 4H5a2 2 0 00-2 2v9a2 2 0 002 2h2m-2-4h4m6-5v5l3-3m0 0l-3-3m3 3h-11" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
+                  Generador RRSS
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Contenido viral automático para tus redes sociales. IA que crea posts, stories y videos que enganchan a tu audiencia.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm font-medium">Viral</span>
+                  <span className="px-3 py-1 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Creativo</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Multi-red</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-pink-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 7: Optimización SEO */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-transparent to-cyan-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors">
+                  Optimización SEO
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Posicionamiento automático en Google. IA que optimiza tu sitio para aparecer primero en las búsquedas.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Top 1</span>
+                  <span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm font-medium">Automático</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Orgánico</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-teal-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 8: Aplicaciones SAAS/BAAS */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-transparent to-purple-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-violet-600 transition-colors">
+                  Aplicaciones SAAS/BAAS
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Aplicaciones web completas con IA integrada. Desde CRM hasta herramientas de productividad personalizadas.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-violet-100 text-violet-800 rounded-full text-sm font-medium">Escalable</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Cloud</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Personalizado</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-violet-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Servicio 9: Módulo Personalizado */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-transparent to-yellow-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-amber-600 transition-colors">
+                  Módulo Personalizado
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  ¿Tienes una idea única? Creamos módulos de IA específicos para tu negocio. Soluciones que nadie más tiene.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">Único</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">A medida</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Innovador</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center text-amber-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Ver más <span className="ml-2">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 max-w-4xl mx-auto">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                ¿Listo para la <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Revolución IA</span>?
+              </h3>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                No te quedes atrás. Tus competidores ya están usando IA. Es hora de que tu negocio lidere el futuro.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button
+                  onClick={() => setIsDemoModalOpen(true)}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-lg hover:shadow-xl"
+                >
+                  🚀 Consulta Gratuita Ahora
+                </button>
+                <Link href="/chatbot-demo" className="text-gray-600 hover:text-blue-600 font-semibold text-lg transition-colors">
+                  Ver Demo en Vivo →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección duplicada: ¿Por Qué Tu Negocio Debe Implementar Agentes IA? */}
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        {/* Efectos de fondo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-blue-600/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-purple-600/20 to-transparent rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold mb-6 animate-pulse">
+              <span className="w-2 h-2 bg-black rounded-full mr-2 animate-ping"></span>
+              ¡La revolución IA ya está aquí!
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              ¿Por Qué Tu Negocio Debe Implementar
+              <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent mt-2">
+                Agentes IA?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Mientras tus competidores duermen, los Agentes IA trabajan 24/7 para hacer crecer tu negocio.
+              <strong className="text-white"> No es el futuro, es el presente.</strong>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {/* Beneficio 1: Funcionamiento Autónomo */}
+            <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-yellow-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-400/10 cursor-pointer">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors">
+                Funcionamiento Autónomo
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Tus agentes IA trabajan sin supervisión. Procesan leads, responden consultas y ejecutan ventas mientras duermes.
+              </p>
+              <div className="flex items-center text-yellow-400 font-semibold">
+                <span className="text-3xl mr-2">24</span>
+                <div className="text-sm">
+                  <div>Horas</div>
+                  <div>Activo</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Beneficio 2: Escalabilidad Infinita */}
+            <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-blue-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-400/10 cursor-pointer">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 11l5-6-5-6v5H1v2h6v5zM17 7v5h6v2h-6v5l-5-6 5-6z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                Escalabilidad Infinita
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Un agente IA puede atender a miles de clientes simultáneamente. Sin límites de capacidad ni cansancio.
+              </p>
+              <div className="flex items-center text-blue-400 font-semibold">
+                <span className="text-3xl mr-2">∞</span>
+                <div className="text-sm">
+                  <div>Clientes</div>
+                  <div>Simultaneos</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Beneficio 3: 99.9% Uptime */}
+            <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-green-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400/10 cursor-pointer">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
+                99.9% Uptime
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Nunca más pierdes una venta por horarios. Tus agentes están disponibles cada segundo del año.
+              </p>
+              <div className="flex items-center text-green-400 font-semibold">
+                <span className="text-3xl mr-2">365</span>
+                <div className="text-sm">
+                  <div>Días</div>
+                  <div>Al Año</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Beneficio 4: Evolución Continua */}
+            <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-400/10 cursor-pointer">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                Evolución Continua
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Cada interacción hace que tu agente sea más inteligente. Aprende de cada cliente y mejora automáticamente.
+              </p>
+              <div className="flex items-center text-purple-400 font-semibold">
+                <span className="text-3xl mr-2">∞</span>
+                <div className="text-sm">
+                  <div>Aprendizaje</div>
+                  <div>Continuo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sección de impacto en números */}
+          <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-3xl p-12 mb-16 backdrop-blur-sm border border-gray-600">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                El Impacto Real en tu Negocio
+              </h3>
+              <p className="text-xl text-gray-300">
+                Estos números no son proyecciones. Son resultados reales de nuestros clientes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center group">
+                <div className="text-5xl md:text-6xl font-bold text-green-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  +347%
+                </div>
+                <div className="text-xl font-semibold text-white mb-2">Aumento en Ventas</div>
+                <div className="text-gray-300">Los agentes IA convierten más leads en clientes reales</div>
+              </div>
+
+              <div className="text-center group">
+                <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  -89%
+                </div>
+                <div className="text-xl font-semibold text-white mb-2">Reducción de Costos</div>
+                <div className="text-gray-300">Un agente IA cuesta menos que un empleado medio tiempo</div>
+              </div>
+
+              <div className="text-center group">
+                <div className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  1.2s
+                </div>
+                <div className="text-xl font-semibold text-white mb-2">Tiempo de Respuesta</div>
+                <div className="text-gray-300">Respuesta instantánea = mayor satisfacción del cliente</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action Final */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl p-8 md:p-12 shadow-2xl shadow-yellow-400/20">
+              <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                ⚡ Tu Competencia Ya Está Usando IA
+              </h3>
+              <p className="text-xl text-gray-900 mb-8 max-w-3xl mx-auto font-semibold">
+                Cada día que esperas, es un día que tu competencia se adelanta.
+                <span className="block mt-2">¿Vas a liderar o vas a seguir?</span>
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button
+                  onClick={() => setIsDemoModalOpen(true)}
+                  className="bg-black text-white px-10 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border-2 border-black hover:border-gray-800"
+                >
+                  🚀 Implementar IA Ahora
+                </button>
+                <div className="text-black font-bold">
+                  <div className="text-sm opacity-75">Consulta gratuita disponible</div>
+                  <div className="text-2xl">¡Solo por tiempo limitado!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Estándar */}
       <Footer />
 
