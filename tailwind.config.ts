@@ -97,6 +97,54 @@ const config: Config = {
         "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
+        },
+        // Nuevas animaciones espectaculares para servicios
+        "float-slow": {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "33%": { transform: "translate(30px, -30px) rotate(120deg)" },
+          "66%": { transform: "translate(-20px, 20px) rotate(240deg)" },
+        },
+        "float-medium": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(-20px, -20px) scale(1.1)" },
+        },
+        "float-fast": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "25%": { transform: "translateY(-15px) rotate(90deg)" },
+          "50%": { transform: "translateY(-30px) rotate(180deg)" },
+          "75%": { transform: "translateY(-15px) rotate(270deg)" },
+        },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "0.6", transform: "scale(1.05)" },
+        },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "dance": {
+          "0%, 100%": { transform: "rotate(0deg) scale(1)" },
+          "25%": { transform: "rotate(-5deg) scale(1.1)" },
+          "50%": { transform: "rotate(5deg) scale(1.2)" },
+          "75%": { transform: "rotate(-3deg) scale(1.1)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "spin-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+        "color-shift": {
+          "0%, 100%": { filter: "hue-rotate(0deg)" },
+          "25%": { filter: "hue-rotate(90deg)" },
+          "50%": { filter: "hue-rotate(180deg)" },
+          "75%": { filter: "hue-rotate(270deg)" },
+        },
+        "grow-bar": {
+          "0%": { height: "4px" },
+          "100%": { height: "20px" },
         }
       },
       animation: {
@@ -106,6 +154,17 @@ const config: Config = {
         "float": "float 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
         "shimmer": "shimmer 2s linear infinite",
+        // Nuevas animaciones espectaculares
+        "float-slow": "float-slow 8s ease-in-out infinite",
+        "float-medium": "float-medium 6s ease-in-out infinite",
+        "float-fast": "float-fast 4s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "gradient-x": "gradient-x 3s ease infinite",
+        "dance": "dance 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 4s linear infinite",
+        "spin-reverse": "spin-reverse 3s linear infinite",
+        "color-shift": "color-shift 3s ease-in-out infinite",
+        "grow-bar": "grow-bar 1.5s ease-out forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

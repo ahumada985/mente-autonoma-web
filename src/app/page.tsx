@@ -2189,403 +2189,502 @@ export default function Indigo() {
         </div>
       </section>
       
-       {/* Sección de Servicios IA Premium - Diseño Moderno */}
-      <section id="servicios-premium" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-        {/* Efectos de fondo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+       {/* Sección de Servicios IA Premium - Diseño Espectacular Fondo Blanco */}
+      <section id="servicios-premium" className="py-24 bg-white relative overflow-hidden">
+        {/* Efectos de partículas flotantes de fondo */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Partículas flotantes animadas */}
+          <div className="absolute top-20 left-[10%] w-2 h-2 bg-blue-400/30 rounded-full animate-float-slow"></div>
+          <div className="absolute top-32 right-[15%] w-3 h-3 bg-purple-400/30 rounded-full animate-float-medium"></div>
+          <div className="absolute top-48 left-[25%] w-1.5 h-1.5 bg-pink-400/30 rounded-full animate-float-fast"></div>
+          <div className="absolute top-64 right-[30%] w-2.5 h-2.5 bg-green-400/30 rounded-full animate-float-slow"></div>
+          <div className="absolute top-80 left-[40%] w-2 h-2 bg-orange-400/30 rounded-full animate-float-medium"></div>
+          <div className="absolute top-96 right-[45%] w-1.5 h-1.5 bg-teal-400/30 rounded-full animate-float-fast"></div>
+          <div className="absolute bottom-32 left-[20%] w-2 h-2 bg-indigo-400/30 rounded-full animate-float-slow"></div>
+          <div className="absolute bottom-48 right-[25%] w-3 h-3 bg-violet-400/30 rounded-full animate-float-medium"></div>
+          <div className="absolute bottom-64 left-[35%] w-1.5 h-1.5 bg-cyan-400/30 rounded-full animate-float-fast"></div>
+
+          {/* Ondas de fondo sutiles */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-100/20 to-purple-100/20 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-pink-100/20 to-orange-100/20 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-green-100/15 to-teal-100/15 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-bold mb-6 animate-bounce">
-              <span className="w-2 h-2 bg-white rounded-full mr-3 animate-ping"></span>
-              🚀 Servicios Premium IA
+          {/* Header Espectacular */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-sm font-bold mb-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 animate-glow">
+              <span className="w-3 h-3 bg-white rounded-full mr-3 animate-ping"></span>
+              <span className="mr-2">✨</span>
+              Servicios Premium IA
+              <span className="ml-2">🚀</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-8 leading-tight">
               Soluciones IA que
-              <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent mt-2">
+              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mt-3 animate-gradient-x">
                 Transforman tu Empresa
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Tecnología de vanguardia diseñada para revolucionar cada aspecto de tu negocio
+
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Tecnología de vanguardia diseñada para revolucionar cada aspecto de tu negocio con la elegancia que mereces
             </p>
+
+            {/* Línea decorativa animada */}
+            <div className="flex justify-center mt-8">
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+            </div>
           </div>
 
-          {/* Grid de 6 Servicios - 2 filas x 3 columnas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Servicio 1 - Humanos Digitales */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-tr from-purple-600/20 to-blue-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Grid de 6 Servicios Premium - 2 filas x 3 columnas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-              {/* Líneas decorativas */}
-              <div className="absolute top-6 left-6 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="absolute bottom-6 right-6 w-8 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform -rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500"></div>
+            {/* Servicio 1 - Humanos Digitales */}
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-blue-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%)'}}></div>
+
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">🤖</span>
-                  {/* Anillo giratorio */}
-                  <div className="absolute inset-0 border-2 border-blue-300/30 border-dashed rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Contenedor del ícono con animación de robot bailando */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Robot que baila */}
+                  <span className="text-5xl transform transition-all duration-700 group-hover:animate-dance group-hover:scale-110">🤖</span>
+
+                  {/* Anillos de energía giratorios */}
+                  <div className="absolute inset-2 border-2 border-white/30 rounded-xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{animationDuration: '3s'}}></div>
+                  <div className="absolute inset-4 border border-white/20 rounded-lg animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{animationDuration: '2s', animationDirection: 'reverse'}}></div>
+
+                  {/* Pulso de energía */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-blue-600 transition-colors duration-500">
                   Humanos Digitales
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Avatares inteligentes con IA que interactúan de forma natural y proporcionan experiencias personalizadas.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Avatares inteligentes con IA que interactúan de forma natural y proporcionan experiencias personalizadas únicas.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl p-4 border border-blue-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-5 border border-blue-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">24/7 Disponible</span>
+                      <span className="text-green-600 font-semibold">24/7 Disponible</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 font-semibold">Personalizable</span>
+                      <span className="text-blue-600 font-semibold">Personalizable</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <span className="text-purple-300 font-semibold">Multiidioma</span>
+                      <span className="text-purple-600 font-semibold">Multiidioma</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
-                      <span className="text-pink-300 font-semibold">Emocional</span>
+                      <span className="text-pink-600 font-semibold">Emocional</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 hover:from-blue-600 hover:via-purple-600 hover:to-blue-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">✨</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 2 - Diseño Web */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-pink-600/20 to-purple-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-purple-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white/50 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-              {/* Puntos decorativos */}
-              <div className="absolute top-8 right-8 w-3 h-3 bg-purple-400 rounded-full opacity-50 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              <div className="absolute bottom-8 left-8 w-2 h-2 bg-pink-400 rounded-full opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(168, 85, 247, 0.1) 50%, transparent 70%)'}}></div>
+
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 left-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">🎨</span>
-                  {/* Ondas concéntricas */}
-                  <div className="absolute inset-0 border border-purple-300/30 rounded-2xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-2 border border-pink-200/30 rounded-xl animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+                {/* Contenedor del ícono con animación de paleta girando y cambiando colores */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Paleta que gira y cambia colores */}
+                  <span className="text-5xl transform transition-all duration-700 group-hover:animate-spin-slow group-hover:scale-110 animate-color-shift">🎨</span>
+
+                  {/* Ondas concéntricas de colores */}
+                  <div className="absolute inset-2 border-2 border-white/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+                  <div className="absolute inset-4 border border-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse delay-200"></div>
+
+                  {/* Explosión de colores */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-red-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-purple-600 transition-colors duration-500">
                   Diseño Web
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Sitios web modernos, responsivos y optimizados que cautivan usuarios y convierten visitantes en clientes.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Sitios web modernos, responsivos y optimizados que cautivan usuarios y convierten visitantes en clientes leales.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-4 border border-purple-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-5 border border-purple-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">Responsive</span>
+                      <span className="text-green-600 font-semibold">Responsive</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <span className="text-purple-300 font-semibold">SEO Optimizado</span>
+                      <span className="text-purple-600 font-semibold">SEO Optimizado</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
-                      <span className="text-pink-300 font-semibold">Carga Rápida</span>
+                      <span className="text-pink-600 font-semibold">Carga Rápida</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 font-semibold">Moderno</span>
+                      <span className="text-blue-600 font-semibold">Moderno</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">🎨</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 3 - Automatización de Procesos */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-green-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-green-500/20 to-emerald-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-emerald-600/20 to-green-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Servicio 3 - Automatización */}
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-green-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 via-white/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-              {/* Líneas decorativas dinámicas */}
-              <div className="absolute top-4 left-4 w-16 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transform -rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <div className="absolute bottom-4 right-4 w-12 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 transform rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <div className="absolute top-1/2 left-2 w-8 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transform rotate-90 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.3s'}}></div>
-              <div className="absolute top-1/2 right-2 w-8 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 transform -rotate-90 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(34, 197, 94, 0.1) 50%, transparent 70%)'}}></div>
+
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 right-4 w-2 h-2 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">⚙️</span>
-                  {/* Anillos concéntricos giratorios */}
-                  <div className="absolute inset-2 border border-white/20 rounded-xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '0.2s'}}></div>
-                  <div className="absolute inset-4 border border-white/10 rounded-lg animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.4s'}}></div>
+                {/* Contenedor del ícono con engranajes girando en diferentes direcciones */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Engranaje principal */}
+                  <span className="text-5xl transform transition-all duration-700 group-hover:animate-spin group-hover:scale-110">⚙️</span>
+
+                  {/* Engranajes secundarios girando en dirección opuesta */}
+                  <div className="absolute top-1 right-1 text-lg opacity-0 group-hover:opacity-100 transition-all duration-700 animate-spin-reverse">⚙️</div>
+                  <div className="absolute bottom-1 left-1 text-sm opacity-0 group-hover:opacity-100 transition-all duration-700 animate-spin-slow">⚙️</div>
+
+                  {/* Líneas de conexión entre engranajes */}
+                  <div className="absolute inset-3 border border-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+
+                  {/* Pulso de automatización */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors duration-300">
-                  Automatización de Procesos
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-green-600 transition-colors duration-500">
+                  Automatización
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Optimiza flujos de trabajo y elimina tareas repetitivas con soluciones inteligentes de automatización.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Optimiza flujos de trabajo y elimina tareas repetitivas con soluciones inteligentes de automatización avanzada.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-xl p-4 border border-green-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">Ahorro 80%</span>
+                      <span className="text-green-600 font-semibold">Ahorro 80%</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                      <span className="text-emerald-300 font-semibold">Sin Errores</span>
+                      <span className="text-emerald-600 font-semibold">Sin Errores</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 font-semibold">24/7 Activo</span>
+                      <span className="text-blue-600 font-semibold">24/7 Activo</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                      <span className="text-yellow-300 font-semibold">Escalable</span>
+                      <span className="text-yellow-600 font-semibold">Escalable</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 hover:from-green-600 hover:via-emerald-600 hover:to-green-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">⚙️</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
 
             {/* Servicio 4 - Marketing Digital */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tl from-red-600/20 to-orange-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-orange-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-white/50 to-red-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-              {/* Líneas decorativas dinámicas */}
-              <div className="absolute top-6 left-6 w-12 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 transform rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <div className="absolute bottom-6 right-6 w-8 h-0.5 bg-gradient-to-r from-red-400 to-orange-400 transform -rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <div className="absolute top-1/2 left-4 w-10 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 transform rotate-90 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 right-4 w-10 h-0.5 bg-gradient-to-r from-red-400 to-orange-400 transform -rotate-90 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(251, 146, 60, 0.1) 50%, transparent 70%)'}}></div>
+
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 left-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-red-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl">📊</span>
-                  {/* Anillos pulsantes */}
-                  <div className="absolute inset-0 border-2 border-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-125 animate-ping"></div>
-                  <div className="absolute inset-0 border border-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-150 animate-ping" style={{animationDelay: '0.5s'}}></div>
+                {/* Contenedor del ícono con barras que crecen animadamente */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Gráfico que se anima */}
+                  <span className="text-5xl transform transition-all duration-700 group-hover:scale-110">📊</span>
 
-                  {/* Partículas flotantes de energía */}
-                  <div className="absolute top-2 left-2 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-red-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.4s'}}></div>
-                  <div className="absolute bottom-2 right-2 w-2 h-2 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                  {/* Barras que crecen animadamente */}
+                  <div className="absolute bottom-2 left-2 w-1 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-grow-bar"></div>
+                  <div className="absolute bottom-2 left-4 w-1 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-grow-bar delay-100"></div>
+                  <div className="absolute bottom-2 right-4 w-1 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-grow-bar delay-200"></div>
+                  <div className="absolute bottom-2 right-2 w-1 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-grow-bar delay-300"></div>
+
+                  {/* Ondas de datos */}
+                  <div className="absolute inset-3 border border-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+
+                  {/* Pulso de marketing */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-red-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-orange-600 transition-colors duration-500">
                   Marketing Digital
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Estrategias digitales inteligentes que maximizan ROI y posicionan tu marca en el mercado digital.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Estrategias digitales inteligentes que maximizan ROI y posicionan tu marca en el mercado digital competitivo.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-orange-900/30 to-red-900/30 rounded-xl p-4 border border-orange-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-5 border border-orange-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">ROI +300%</span>
+                      <span className="text-green-600 font-semibold">ROI +300%</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                      <span className="text-orange-300 font-semibold">Campañas</span>
+                      <span className="text-orange-600 font-semibold">Campañas</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-                      <span className="text-red-300 font-semibold">Conversiones</span>
+                      <span className="text-red-600 font-semibold">Conversiones</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                      <span className="text-yellow-300 font-semibold">Analytics</span>
+                      <span className="text-yellow-600 font-semibold">Analytics</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 hover:from-orange-600 hover:via-red-600 hover:to-orange-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">📊</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 5 - Optimización SEO */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-teal-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-teal-500/20 to-cyan-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-cyan-600/20 to-teal-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Servicio 5 - SEO */}
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-teal-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-white/50 to-cyan-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-              {/* Estrellas decorativas */}
-              <div className="absolute top-4 left-4 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[8px] border-b-teal-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <div className="absolute bottom-4 right-4 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[8px] border-t-cyan-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="absolute top-1/2 left-2 w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-b-[6px] border-b-teal-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s'}}></div>
-              <div className="absolute top-1/2 right-2 w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-t-[6px] border-t-cyan-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(20, 184, 166, 0.1) 50%, transparent 70%)'}}></div>
 
-              {/* Diamantes decorativos */}
-              <div className="absolute top-1/4 right-1/2 w-3 h-3 bg-gradient-to-r from-teal-400 to-cyan-400 transform rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.1s'}}></div>
-              <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 transform rotate-45 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{animationDelay: '0.3s'}}></div>
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 right-4 w-2 h-2 bg-teal-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  <span className="text-4xl group-hover:animate-spin" style={{animationDuration: '3s'}}>🔍</span>
-                  {/* Anillos de búsqueda */}
-                  <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDirection: 'reverse', animationDelay: '2.9s'}}></div>
-                  <div className="absolute inset-4 border border-white/10 rounded-lg animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.6s'}}></div>
+                {/* Contenedor del ícono con lupa que pulsa y ondas de búsqueda */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Lupa que pulsa */}
+                  <span className="text-5xl transform transition-all duration-700 group-hover:animate-pulse group-hover:scale-110">🔍</span>
+
+                  {/* Ondas de búsqueda concéntricas */}
+                  <div className="absolute inset-2 border-2 border-white/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping"></div>
+                  <div className="absolute inset-4 border border-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping delay-200"></div>
+                  <div className="absolute inset-6 border border-white/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping delay-400"></div>
+
+                  {/* Rayos de búsqueda */}
+                  <div className="absolute top-1 right-1 w-2 h-0.5 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform rotate-45"></div>
+                  <div className="absolute bottom-1 left-1 w-2 h-0.5 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform -rotate-45"></div>
+
+                  {/* Pulso de SEO */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-400 transition-colors duration-300">
-                  Optimización SEO
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-teal-600 transition-colors duration-500">
+                  SEO
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Mejora tu posicionamiento en buscadores con estrategias SEO avanzadas y análisis detallado.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Mejora tu posicionamiento en buscadores con estrategias SEO avanzadas y análisis detallado de competencia.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-teal-900/30 to-cyan-900/30 rounded-xl p-4 border border-teal-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-5 border border-teal-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">Top Rankings</span>
+                      <span className="text-green-600 font-semibold">Top Rankings</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
-                      <span className="text-teal-300 font-semibold">Auditorías</span>
+                      <span className="text-teal-600 font-semibold">Auditorías</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                      <span className="text-cyan-300 font-semibold">Keywords</span>
+                      <span className="text-cyan-600 font-semibold">Keywords</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 font-semibold">Competencia</span>
+                      <span className="text-blue-600 font-semibold">Competencia</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-600 hover:from-teal-600 hover:via-cyan-600 hover:to-teal-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">🔍</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
 
-            {/* Servicio 6 - Software as a Service (SAAS) */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 hover:border-indigo-500/50 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-indigo-500/20">
-              {/* Elementos decorativos de fondo */}
-              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-indigo-500/20 to-purple-600/20 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-purple-600/20 to-indigo-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Servicio 6 - SAAS */}
+            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 hover:border-indigo-200 overflow-hidden">
+              {/* Efectos de glassmorphism */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-              {/* Hexágonos decorativos */}
-              <div className="absolute top-4 left-4 w-6 h-6 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
-              <div className="absolute bottom-4 right-4 w-4 h-4 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.2s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
-              <div className="absolute top-1/2 left-2 w-3 h-3 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.4s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
-              <div className="absolute top-1/2 right-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-50 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.6s', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+              {/* Brillo sutil en los bordes */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+                   style={{background: 'linear-gradient(45deg, transparent 30%, rgba(99, 102, 241, 0.1) 50%, transparent 70%)'}}></div>
 
-              {/* Círculos con bordes punteados */}
-              <div className="absolute top-1/4 right-1/2 w-8 h-8 border-2 border-dashed border-indigo-400/50 rounded-full opacity-50 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDelay: '0.1s'}}></div>
-              <div className="absolute bottom-1/4 left-1/2 w-6 h-6 border-2 border-dashed border-purple-400/50 rounded-full opacity-50 group-hover:opacity-100 transition-all duration-500 animate-spin" style={{animationDelay: '0.3s', animationDirection: 'reverse'}}></div>
+              {/* Partículas de energía específicas */}
+              <div className="absolute top-4 left-4 w-2 h-2 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-100"></div>
+              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-700 delay-300"></div>
 
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
-                  {/* Nube que aparece y desaparece */}
-                  <span className="text-4xl group-hover:opacity-0 transition-opacity duration-300">☁️</span>
-                  <span className="text-4xl absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">⚡</span>
+                {/* Contenedor del ícono con nube que se transforma en rayos */}
+                <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-700 relative overflow-hidden">
+                  {/* Nube que se transforma en rayos */}
+                  <span className="text-5xl absolute inset-0 flex items-center justify-center transition-all duration-700 group-hover:opacity-0 group-hover:scale-75">☁️</span>
+                  <span className="text-5xl absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-110 animate-pulse">⚡</span>
 
-                  {/* Rayos de energía */}
-                  <div className="absolute inset-0 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[12px] border-t-yellow-400 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse"></div>
-                  <div className="absolute inset-0 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[8px] border-t-orange-400 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  {/* Rayos de energía que aparecen */}
+                  <div className="absolute top-2 left-2 w-3 h-0.5 bg-yellow-400 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform rotate-45"></div>
+                  <div className="absolute top-2 right-2 w-3 h-0.5 bg-orange-400 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform -rotate-45"></div>
+                  <div className="absolute bottom-2 left-2 w-3 h-0.5 bg-yellow-400 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform -rotate-45"></div>
+                  <div className="absolute bottom-2 right-2 w-3 h-0.5 bg-orange-400 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse transform rotate-45"></div>
+
+                  {/* Ondas de transformación */}
+                  <div className="absolute inset-2 border-2 border-white/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping"></div>
+
+                  {/* Pulso de SAAS */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300">
-                  Software as a Service (SAAS)
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 group-hover:text-indigo-600 transition-colors duration-500">
+                  SAAS
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Desarrollo de aplicaciones web escalables en la nube con arquitectura moderna y servicios gestionados.
+                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                  Desarrollo de aplicaciones web escalables en la nube con arquitectura moderna y servicios gestionados profesionales.
                 </p>
 
-                {/* Información importante de forma visualmente atractiva */}
-                <div className="mb-6 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 rounded-xl p-4 border border-indigo-500/20">
-                  <div className="flex items-center justify-between text-sm">
+                {/* Características Premium */}
+                <div className="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-5 border border-indigo-100/50">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-300 font-semibold">Escalable</span>
+                      <span className="text-green-600 font-semibold">Escalable</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-                      <span className="text-indigo-300 font-semibold">Cloud Native</span>
+                      <span className="text-indigo-600 font-semibold">Cloud Native</span>
                     </div>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <span className="text-purple-300 font-semibold">Multi-tenant</span>
+                      <span className="text-purple-600 font-semibold">Multi-tenant</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 font-semibold">API First</span>
+                      <span className="text-blue-600 font-semibold">API First</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Explorar Servicio</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 hover:from-indigo-600 hover:via-purple-600 hover:to-indigo-700 text-white py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="mr-2">☁️</span>
+                    Explorar Servicio
+                    <span className="ml-2">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
+            </div>
+
+          </div>
+
+          {/* Llamada a la acción final elegante */}
+          <div className="text-center mt-20">
+            <div className="bg-gradient-to-r from-gray-50 to-white rounded-3xl p-10 shadow-xl border border-gray-100 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                ¿Listo para transformar tu negocio?
+              </h3>
+              <p className="text-lg text-gray-600 mb-8">
+                Contacta con nosotros y descubre cómo nuestras soluciones IA pueden llevar tu empresa al siguiente nivel
+              </p>
+              <button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white px-12 py-4 rounded-2xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl animate-glow">
+                <span className="flex items-center justify-center">
+                  <span className="mr-3">🚀</span>
+                  Comenzar Ahora
+                  <span className="ml-3">✨</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
