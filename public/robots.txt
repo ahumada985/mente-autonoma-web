@@ -1,0 +1,56 @@
+# Robots.txt para Mente Autónoma
+# Agencia de Desarrollo Web e IA - Antofagasta, Chile
+# https://menteautonoma.com
+
+User-agent: *
+Allow: /
+
+# Permitir acceso completo a Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Permitir acceso a Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Bloquear directorios privados y archivos sensibles
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: *.json$
+Disallow: *.log$
+Disallow: /temp/
+Disallow: /cache/
+
+# Permitir acceso a recursos estáticos importantes para SEO
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /favicon.ico
+Allow: /logo_final.png
+Allow: /og-image-2025.jpg
+
+# Bloquear bots maliciosos comunes
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Archivos importantes para SEO
+Sitemap: https://menteautonoma.com/sitemap.xml
+Sitemap: https://menteautonoma.com/sitemap-pages.xml
+Sitemap: https://menteautonoma.com/sitemap-services.xml
+
+# Host principal (para evitar contenido duplicado)
+Host: https://menteautonoma.com
