@@ -2,9 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import Footer from '@/components/Footer'
 import SEO from '@/components/SEO'
 import DemoModal from '@/components/DemoModal'
+import OptimizedImage from '@/components/OptimizedImage'
+
+// Lazy load components below the fold
+const LazySection = dynamic(() => import('@/components/LazySection'), {
+  loading: () => <div className="w-full h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse rounded-lg" />
+})
 
 export default function Indigo() {
   const [formData, setFormData] = useState({
@@ -96,7 +103,14 @@ export default function Indigo() {
           <div className="hidden md:flex justify-between items-center h-20">
             {/* Logo y texto */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+              <OptimizedImage
+                src="/logo_final.png"
+                alt="Mente Autónoma"
+                width={40}
+                height={40}
+                priority={true}
+                className="w-10 h-10 group-hover:scale-110 transition-transform duration-300"
+              />
               <div>
                 <h1 className={`text-xl font-bold transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-900' : 'text-white'
@@ -142,7 +156,14 @@ export default function Indigo() {
           <div className="md:hidden flex items-center justify-between h-20">
             {/* Logo y texto - MÁS PEQUEÑO en móvil */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <img src="/logo_final.png" alt="Mente Autónoma" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+              <OptimizedImage
+                src="/logo_final.png"
+                alt="Mente Autónoma"
+                width={40}
+                height={40}
+                priority={true}
+                className="w-10 h-10 group-hover:scale-110 transition-transform duration-300"
+              />
               <div>
                 <h1 className={`text-base font-bold transition-colors duration-300 ${
                   isHeaderSticky ? 'text-gray-900' : 'text-white'
@@ -1033,7 +1054,13 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-200 hover:border-purple-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
-                  <img src="/noticia1.webp" alt="Automatización Inteligente" className="w-full h-full object-cover" />
+                  <OptimizedImage
+                    src="/noticia1.webp"
+                    alt="Automatización Inteligente"
+                    width={400}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
@@ -1062,7 +1089,13 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-200 hover:border-pink-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center">
-                  <img src="/noticia2.webp" alt="Chatbots Inteligentes" className="w-full h-full object-cover" />
+                  <OptimizedImage
+                    src="/noticia2.webp"
+                    alt="Chatbots Inteligentes"
+                    width={400}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
@@ -1091,7 +1124,13 @@ export default function Indigo() {
             <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-200 hover:border-blue-400">
               <div className="relative overflow-hidden">
                 <div className="w-full h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-purple-500 flex items-center justify-center">
-                  <img src="/noticia3.webp" alt="Flujos de Trabajo Inteligentes" className="w-full h-full object-cover" />
+                  <OptimizedImage
+                    src="/noticia3.webp"
+                    alt="Flujos de Trabajo Inteligentes"
+                    width={400}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-block bg-gradient-to-r from-pink-600 to-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
@@ -2029,8 +2068,8 @@ export default function Indigo() {
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                ¿seccion 3 o
-                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Isecon 3 3 3 3 3 3 IA?</span>
+                ¿Por Qué Tu Negocio
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Implementar Agentes IA?</span>
               </h2>
               
               <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl">

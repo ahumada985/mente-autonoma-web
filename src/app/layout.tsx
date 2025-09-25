@@ -110,11 +110,16 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Preload recursos críticos para Core Web Vitals */}
+        {/* Preload recursos críticos optimizado para móvil */}
         <link rel="preload" href="/logo_final.png" as="image" type="image/png" />
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onLoad="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" /></noscript>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
+        {/* Preload crítico solo para viewport inicial móvil */}
+        <link rel="preload" as="image" href="/hero-mobile.webp" media="(max-width: 768px)" />
+        <link rel="preload" as="image" href="/hero-desktop.webp" media="(min-width: 769px)" />
 
         {/* DNS prefetching para recursos externos */}
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />

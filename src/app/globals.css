@@ -120,6 +120,36 @@
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
+  font-display: swap;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize scrolling performance for mobile */
+* {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Critical path optimizations */
+.critical-css {
+  content-visibility: auto;
+  contain: layout style paint;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Animaciones para carrusel de tecnologías */
@@ -143,10 +173,20 @@ body {
 
 .animate-scroll {
   animation: scroll 45s linear infinite; /* Primera fila más lenta */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Optimize animation for mobile */
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 60s; /* Slower on mobile for better performance */
+  }
 }
 
 /* Animación del carrusel lento para logos oficiales */
@@ -161,10 +201,20 @@ body {
 
 .animate-scroll-slow {
   animation: scroll-slow 30s linear infinite; /* Segunda fila más rápida */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .animate-scroll-slow:hover {
   animation-play-state: paused;
+}
+
+/* Optimize slow animation for mobile */
+@media (max-width: 768px) {
+  .animate-scroll-slow {
+    animation-duration: 40s; /* Slower on mobile for better performance */
+  }
 }
 
 
@@ -176,4 +226,25 @@ body {
 
 .animate-tilt {
   animation: tilt 10s infinite linear;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Disable heavy animations on mobile for better performance */
+@media (max-width: 768px) {
+  .animate-tilt {
+    animation: none;
+    transform: none;
+  }
+
+  /* Reduce transform animations complexity on mobile */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.05) !important;
+  }
+
+  /* Optimize hover states for mobile touch */
+  .hover\:shadow-xl {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
 }
