@@ -406,14 +406,11 @@ export default function Indigo() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-700 transform hover:scale-105 hover:-translate-y-1 shadow-xl hover:shadow-2xl relative overflow-hidden group-hover:shadow-[0_20px_40px_-12px_rgba(59,130,246,0.4)]">
-                  <span className="relative z-10 flex items-center justify-center">
-                    <span className="mr-3 text-xl">✨</span>
-                    Explorar Servicio
-                    <span className="ml-3 text-xl">🚀</span>
+                <button disabled className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white py-4 rounded-2xl font-bold text-lg opacity-50 cursor-not-allowed">
+                  <span className="flex items-center justify-center">
+                    <span className="mr-3 text-xl">⏳</span>
+                    Próximamente
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </button>
               </div>
             </div>
@@ -573,13 +570,11 @@ export default function Indigo() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-700 hover:via-green-700 hover:to-emerald-800 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-700 transform hover:scale-105 hover:-translate-y-1 shadow-xl hover:shadow-2xl relative overflow-hidden group-hover:shadow-[0_20px_40px_-12px_rgba(16,185,129,0.4)]">
-                  <span className="relative z-10 flex items-center justify-center">
-                    <span className="mr-3 text-xl">⚙️</span>
-                    Explorar Servicio
-                    <span className="ml-3 text-xl">⚡</span>
+                <button disabled className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 text-white py-4 rounded-2xl font-bold text-lg opacity-50 cursor-not-allowed">
+                  <span className="flex items-center justify-center">
+                    <span className="mr-3 text-xl">⏳</span>
+                    Próximamente
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200"></div>
                 </button>
               </div>
             </div>
@@ -652,13 +647,11 @@ export default function Indigo() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 hover:from-orange-700 hover:via-amber-700 hover:to-orange-800 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-700 transform hover:scale-105 hover:-translate-y-1 shadow-xl hover:shadow-2xl relative overflow-hidden group-hover:shadow-[0_20px_40px_-12px_rgba(245,158,11,0.4)]">
-                  <span className="relative z-10 flex items-center justify-center">
-                    <span className="mr-3 text-xl">📊</span>
-                    Explorar Servicio
-                    <span className="ml-3 text-xl">🔥</span>
+                <button disabled className="w-full bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white py-4 rounded-2xl font-bold text-lg opacity-50 cursor-not-allowed">
+                  <span className="flex items-center justify-center">
+                    <span className="mr-3 text-xl">⏳</span>
+                    Próximamente
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200"></div>
                 </button>
               </div>
             </div>
@@ -731,13 +724,11 @@ export default function Indigo() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-700 hover:from-teal-700 hover:via-cyan-700 hover:to-teal-800 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-700 transform hover:scale-105 hover:-translate-y-1 shadow-xl hover:shadow-2xl relative overflow-hidden group-hover:shadow-[0_20px_40px_-12px_rgba(8,145,178,0.4)]">
-                  <span className="relative z-10 flex items-center justify-center">
-                    <span className="mr-3 text-xl">🔍</span>
-                    Explorar Servicio
-                    <span className="ml-3 text-xl">📈</span>
+                <button disabled className="w-full bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-700 text-white py-4 rounded-2xl font-bold text-lg opacity-50 cursor-not-allowed">
+                  <span className="flex items-center justify-center">
+                    <span className="mr-3 text-xl">⏳</span>
+                    Próximamente
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200"></div>
                 </button>
               </div>
             </div>
@@ -811,14 +802,12 @@ export default function Indigo() {
                   </div>
                 </div>
 
-                {/* Botón elegante */}
-                <button className="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <span className="relative z-10 flex items-center justify-center">
-                    <span className="mr-3 text-xl">☁️</span>
-                    Explorar Servicio
-                    <span className="ml-3 text-xl">🌟</span>
+                {/* Botón deshabilitado */}
+                <button disabled className="w-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white py-4 rounded-2xl font-bold text-lg opacity-50 cursor-not-allowed">
+                  <span className="flex items-center justify-center">
+                    <span className="mr-3 text-xl">⏳</span>
+                    Próximamente
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
               </div>
             </div>
@@ -829,13 +818,9 @@ export default function Indigo() {
       </section>
 
 
-
-
-
-
-                    {/* NUEVA SECCIÓN: Por Qué Adoptar IA en los Negocios - FONDO OSCURO */}
+             {/* NUEVA SECCIÓN: El Futuro de Tu Empresa Es Ahora - FONDO OSCURO */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Columna Izquierda - Contenido */}
@@ -843,18 +828,18 @@ export default function Indigo() {
               <div className="mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm shadow-2xl rounded-full inline-block">
                 🚀 Transformación Digital 2025
               </div>
-              
+
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                ¿Por Qué Tu Negocio
-                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Implementar Agentes IA?</span>
+                El Futuro de Tu Empresa Es
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Ahora</span>
               </h2>
-              
+
               <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl">
-                Los agentes de IA son la próxima revolución en productividad empresarial. 
-                <span className="text-emerald-300 font-semibold">Automatizan tareas complejas, toman decisiones inteligentes y trabajan 24/7</span> 
+                Los agentes de IA son la próxima revolución en productividad empresarial.
+                <span className="text-emerald-300 font-semibold">Automatizan tareas complejas, toman decisiones inteligentes y trabajan 24/7</span>
                 para que tu equipo se enfoque en lo que realmente importa: crecer tu negocio.
               </p>
-              
+
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -865,7 +850,7 @@ export default function Indigo() {
                     <p className="text-sm sm:text-base text-gray-300">Los negocios con IA crecen 3x más rápido que los tradicionales</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <span className="text-lg sm:text-2xl">💰</span>
@@ -875,7 +860,7 @@ export default function Indigo() {
                     <p className="text-sm sm:text-base text-gray-300">Reduce gastos operativos hasta en un 40% con automatización inteligente</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <span className="text-lg sm:text-2xl">🎯</span>
@@ -886,144 +871,170 @@ export default function Indigo() {
                   </div>
                 </div>
               </div>
-              
+
 
             </div>
-            
-            {/* Columna Derecha - NUEVO ECOSISTEMA IA HOLOGRÁFICO */}
+
+            {/* Columna Derecha - SIMULADOR INTERACTIVO DE IA */}
             <div className="relative lg:order-2 order-1 mb-12 lg:mb-0">
-              <div className="w-full max-w-[400px] sm:w-[450px] lg:w-[500px] h-[400px] sm:h-[450px] lg:h-[500px] mx-auto relative">
+              <div className="w-full max-w-[500px] sm:w-[550px] lg:w-[600px] h-[500px] sm:h-[550px] lg:h-[600px] mx-auto relative">
 
-                {/* Fondo holográfico principal */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-800/40 to-pink-900/30 rounded-3xl backdrop-blur-lg border border-white/10"></div>
+                {/* Contenedor Principal del Simulador */}
+                <div className="relative h-full bg-gradient-to-br from-slate-800/90 via-slate-900/95 to-black/90 rounded-3xl overflow-hidden backdrop-blur-sm border border-slate-700/50 shadow-2xl">
 
-                {/* Grid de conexiones de fondo */}
-                <div className="absolute inset-0 opacity-20">
-                  <svg className="w-full h-full" viewBox="0 0 400 400">
-                    <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="1"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                  </svg>
-                </div>
+                  {/* Efectos de Fondo Animados */}
+                  <div className="absolute inset-0">
+                    {/* Grid Matrix Effect */}
+                    <div className="absolute inset-0 opacity-10" style={{
+                      backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}></div>
 
-                {/* Núcleo Central - Cerebro IA */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 shadow-2xl border-4 border-white/30 flex items-center justify-center animate-pulse">
-                  <div className="text-center text-white">
-                    <div className="text-4xl mb-1">🧠</div>
-                    <div className="text-sm font-bold">IA Core</div>
+                    {/* Floating Particles */}
+                    <div className="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                    <div className="absolute top-20 right-16 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute bottom-24 left-20 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+                    <div className="absolute bottom-16 right-12 w-1 h-1 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+                    <div className="absolute top-32 left-1/2 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                   </div>
 
-                  {/* Pulsos de energía */}
-                  <div className="absolute inset-0 rounded-full border-2 border-white/40 animate-ping"></div>
-                  <div className="absolute inset-0 rounded-full border border-cyan-300/50 animate-ping" style={{animationDelay: '0.5s'}}></div>
-                  <div className="absolute inset-0 rounded-full border border-pink-300/40 animate-ping" style={{animationDelay: '1s'}}></div>
-                </div>
-
-                {/* Satélites orbitales - Módulos de IA */}
-                <div className="absolute inset-0 animate-spin" style={{animationDuration: '20s'}}>
-                  {/* Módulo 1 - Análisis Predictivo */}
-                  <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-emerald-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">📊</div>
-                      <div className="text-xs font-bold">Análisis</div>
-                      <div className="text-xs opacity-80">Predictivo</div>
+                  {/* Header del Simulador */}
+                  <div className="relative p-4 border-b border-slate-700/50">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      </div>
+                      <div className="text-slate-400 text-sm font-mono">AI_Workspace.exe</div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="mt-3 flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                      <span className="text-emerald-400 text-sm font-mono">Sistema IA Activo</span>
+                    </div>
                   </div>
 
-                  {/* Módulo 2 - Automatización */}
-                  <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-orange-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">⚙️</div>
-                      <div className="text-xs font-bold">Auto</div>
-                      <div className="text-xs opacity-80">mación</div>
+                  {/* Área de Trabajo Principal */}
+                  <div className="relative p-4 h-full">
+
+                    {/* Dashboard de Métricas Flotantes - AGRANDADO */}
+                    <div className="absolute top-8 left-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-xl p-4 border border-blue-400/30 transform hover:scale-105 transition-all duration-300 cursor-pointer group scale-110">
+                      <div className="flex items-center space-x-3">
+                        <div className="text-2xl animate-spin" style={{animationDuration: '3s'}}>⚡</div>
+                        <div>
+                          <div className="text-blue-400 text-sm font-mono">VELOCIDAD</div>
+                          <div className="text-white font-bold text-base">10.5x</div>
+                        </div>
+                      </div>
+                      <div className="mt-3 bg-blue-400/20 rounded-full h-1.5 overflow-hidden">
+                        <div className="bg-blue-400 h-full rounded-full transition-all duration-1000 group-hover:w-full" style={{width: '85%'}}></div>
+                      </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+
+                    {/* Panel de Análisis en Tiempo Real - AGRANDADO */}
+                    <div className="absolute top-8 right-8 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 backdrop-blur-sm rounded-xl p-4 border border-emerald-400/30 transform hover:scale-105 transition-all duration-300 cursor-pointer group scale-110">
+                      <div className="flex items-center space-x-3">
+                        <div className="text-2xl animate-bounce">📊</div>
+                        <div>
+                          <div className="text-emerald-400 text-sm font-mono">ANÁLISIS</div>
+                          <div className="text-white font-bold text-base">99.9%</div>
+                        </div>
+                      </div>
+                      <div className="flex justify-center space-x-1 mt-3">
+                        <div className="w-1.5 h-4 bg-emerald-400/40 rounded-full"></div>
+                        <div className="w-1.5 h-5 bg-emerald-400/60 rounded-full"></div>
+                        <div className="w-1.5 h-7 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <div className="w-1.5 h-5 bg-emerald-400/50 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* Central AI Brain Visualization - AGRANDADO */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-16">
+                      <div className="relative w-32 h-32 cursor-pointer group scale-110">
+                        {/* Núcleo Central */}
+                        <div className="absolute inset-6 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-full animate-pulse shadow-lg shadow-purple-500/50 group-hover:shadow-xl group-hover:shadow-purple-500/70 transition-all duration-500"></div>
+
+                        {/* Anillos Orbitales */}
+                        <div className="absolute inset-0 border-2 border-purple-400/30 rounded-full animate-spin" style={{animationDuration: '8s'}}></div>
+                        <div className="absolute inset-3 border border-blue-400/20 rounded-full animate-spin" style={{animationDuration: '12s', animationDirection: 'reverse'}}></div>
+
+                        {/* Partículas Orbitales */}
+                        <div className="absolute top-1 left-1/2 w-2 h-2 bg-blue-400 rounded-full animate-spin transform -translate-x-1/2" style={{animationDuration: '4s'}}></div>
+                        <div className="absolute bottom-1 left-1/2 w-2 h-2 bg-purple-400 rounded-full animate-spin transform -translate-x-1/2" style={{animationDuration: '6s', animationDirection: 'reverse'}}></div>
+                        <div className="absolute top-1/2 left-1 w-2 h-2 bg-pink-400 rounded-full animate-spin transform -translate-y-1/2" style={{animationDuration: '5s'}}></div>
+                        <div className="absolute top-1/2 right-1 w-2 h-2 bg-cyan-400 rounded-full animate-spin transform -translate-y-1/2" style={{animationDuration: '7s', animationDirection: 'reverse'}}></div>
+
+                        {/* Texto Central */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300">AI</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Panel de Automatización - AGRANDADO */}
+                    <div className="absolute bottom-32 left-8 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-xl p-4 border border-orange-400/30 transform hover:scale-105 transition-all duration-300 cursor-pointer group scale-110">
+                      <div className="flex items-center space-x-3">
+                        <div className="text-2xl group-hover:animate-spin">⚙️</div>
+                        <div>
+                          <div className="text-orange-400 text-sm font-mono">AUTO</div>
+                          <div className="text-white font-bold text-base">24/7</div>
+                        </div>
+                      </div>
+                      <div className="flex justify-center items-center space-x-2 mt-3">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                        <div className="text-green-400 text-sm font-mono">ACTIVO</div>
+                      </div>
+                    </div>
+
+                    {/* Panel de Insights - AGRANDADO */}
+                    <div className="absolute bottom-32 right-8 bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur-sm rounded-xl p-4 border border-pink-400/30 transform hover:scale-105 transition-all duration-300 cursor-pointer group scale-110">
+                      <div className="flex items-center space-x-3">
+                        <div className="text-2xl animate-pulse">🔮</div>
+                        <div>
+                          <div className="text-pink-400 text-sm font-mono">INSIGHTS</div>
+                          <div className="text-white font-bold text-base">∞</div>
+                        </div>
+                      </div>
+                      <div className="mt-3 flex justify-center space-x-1">
+                        <div className="w-1.5 h-3 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0s'}}></div>
+                        <div className="w-1.5 h-4 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                        <div className="w-1.5 h-2 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                        <div className="w-1.5 h-5 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                      </div>
+                    </div>
+
+                    {/* Líneas de Conexión Animadas - AJUSTADAS A NUEVA POSICIÓN MÁS ARRIBA */}
+                    <div className="absolute top-16 left-20 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-transparent animate-pulse"></div>
+                    <div className="absolute top-16 right-20 w-8 h-0.5 bg-gradient-to-l from-emerald-400 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute bottom-40 left-20 w-8 h-0.5 bg-gradient-to-r from-orange-400 to-transparent animate-pulse" style={{animationDelay: '2s'}}></div>
+                    <div className="absolute bottom-40 right-20 w-8 h-0.5 bg-gradient-to-l from-pink-400 to-transparent animate-pulse" style={{animationDelay: '3s'}}></div>
+
+                    {/* Efecto de Ondas Expansivas - CENTRADAS EN NUEVA POSICIÓN MÁS ARRIBA */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-16 w-32 h-32 border border-purple-400/20 rounded-full animate-ping" style={{animationDuration: '4s'}}></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-16 w-44 h-44 border border-blue-400/10 rounded-full animate-ping" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
+
                   </div>
 
-                  {/* Módulo 3 - Machine Learning */}
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-purple-400 to-violet-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-purple-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">🤖</div>
-                      <div className="text-xs font-bold">Machine</div>
-                      <div className="text-xs opacity-80">Learning</div>
+                  {/* Footer con Información de Estado */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-slate-900/80 backdrop-blur-sm border-t border-slate-700/50">
+                    <div className="flex justify-between items-center text-xs font-mono text-slate-400">
+                      <div className="flex items-center space-x-4">
+                        <span>Procesos: 12,847</span>
+                        <span>Eficiencia: 98.7%</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
+                        <span>Sistema Optimizado</span>
+                      </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                   </div>
 
-                  {/* Módulo 4 - Natural Language */}
-                  <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-cyan-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">💬</div>
-                      <div className="text-xs font-bold">Natural</div>
-                      <div className="text-xs opacity-80">Language</div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  </div>
                 </div>
-
-                {/* Órbita intermedia - Conectores de datos */}
-                <div className="absolute inset-0 animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}>
-                  <div className="absolute top-16 right-16 w-6 h-6 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full shadow-lg animate-pulse"></div>
-                  <div className="absolute bottom-16 right-16 w-8 h-8 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                  <div className="absolute bottom-16 left-16 w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '1s'}}></div>
-                  <div className="absolute top-16 left-16 w-7 h-7 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                </div>
-
-                {/* Conexiones de datos animadas */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                  <defs>
-                    <linearGradient id="dataFlow1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8">
-                        <animate attributeName="stop-opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
-                      </stop>
-                      <stop offset="100%" stopColor="#EC4899" stopOpacity="0.8">
-                        <animate attributeName="stop-opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
-                      </stop>
-                    </linearGradient>
-                    <linearGradient id="dataFlow2" x1="100%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#10B981" stopOpacity="0.6">
-                        <animate attributeName="stop-opacity" values="0.6;0.1;0.6" dur="1.5s" repeatCount="indefinite"/>
-                      </stop>
-                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.6">
-                        <animate attributeName="stop-opacity" values="0.1;0.6;0.1" dur="1.5s" repeatCount="indefinite"/>
-                      </stop>
-                    </linearGradient>
-                  </defs>
-
-                  {/* Líneas de datos dinámicas */}
-                  <path d="M200 200 Q120 120 50 200 Q120 280 200 200 Q280 120 350 200 Q280 280 200 200"
-                        stroke="url(#dataFlow1)"
-                        strokeWidth="2"
-                        fill="none"
-                        strokeDasharray="8,4"
-                        className="animate-pulse"/>
-
-                  <path d="M200 200 Q200 120 120 160 Q200 280 280 160 Q200 120 200 200"
-                        stroke="url(#dataFlow2)"
-                        strokeWidth="1.5"
-                        fill="none"
-                        strokeDasharray="6,3"
-                        className="animate-pulse"/>
-                </svg>
-
-                {/* Partículas de datos flotantes */}
-                <div className="absolute top-6 left-6 w-3 h-3 bg-cyan-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0s'}}></div>
-                <div className="absolute top-20 right-8 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.3s'}}></div>
-                <div className="absolute bottom-12 left-12 w-4 h-4 bg-emerald-400 rounded-full animate-bounce opacity-80" style={{animationDelay: '0.6s'}}></div>
-                <div className="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-50" style={{animationDelay: '0.9s'}}></div>
-                <div className="absolute top-1/3 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-bounce opacity-65" style={{animationDelay: '1.2s'}}></div>
-                <div className="absolute top-2/3 right-4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-75" style={{animationDelay: '1.5s'}}></div>
-
-                {/* Efecto holográfico exterior */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/10 via-purple-600/15 to-pink-600/10 rounded-3xl blur-xl animate-pulse"></div>
-                <div className="absolute -inset-8 bg-gradient-to-tr from-cyan-500/5 via-purple-500/10 to-pink-500/5 rounded-3xl blur-2xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
 
               </div>
             </div>
+
+
           </div>
         </div>
       </section>
@@ -2054,205 +2065,8 @@ export default function Indigo() {
 
 
 
-     
 
-             {/* NUEVA SECCIÓN: Por Qué Adoptar IA en los Negocios - FONDO OSCURO */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Columna Izquierda - Contenido */}
-            <div className="space-y-6 sm:space-y-8">
-              <div className="mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm shadow-2xl rounded-full inline-block">
-                🚀 Transformación Digital 2025
-              </div>
-              
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                ¿Por Qué Tu Negocio
-                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> Debe Implementar Agentes IA?</span>
-              </h2>
-              
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl">
-                Los agentes de IA son la próxima revolución en productividad empresarial. 
-                <span className="text-emerald-300 font-semibold">Automatizan tareas complejas, toman decisiones inteligentes y trabajan 24/7</span> 
-                para que tu equipo se enfoque en lo que realmente importa: crecer tu negocio.
-              </p>
-              
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg sm:text-2xl">📈</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Crecimiento Exponencial</h3>
-                    <p className="text-sm sm:text-base text-gray-300">Los negocios con IA crecen 3x más rápido que los tradicionales</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg sm:text-2xl">💰</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Ahorro de Costos</h3>
-                    <p className="text-sm sm:text-base text-gray-300">Reduce gastos operativos hasta en un 40% con automatización inteligente</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg sm:text-2xl">🎯</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Ventaja Competitiva</h3>
-                    <p className="text-sm sm:text-base text-gray-300">Sé el primero en tu industria en implementar soluciones IA</p>
-                  </div>
-                </div>
-              </div>
-              
 
-            </div>
-            
-            {/* Columna Derecha - NUEVO ECOSISTEMA IA HOLOGRÁFICO */}
-            <div className="relative lg:order-2 order-1 mb-12 lg:mb-0">
-              <div className="w-full max-w-[400px] sm:w-[450px] lg:w-[500px] h-[400px] sm:h-[450px] lg:h-[500px] mx-auto relative">
-
-                {/* Fondo holográfico principal */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-800/40 to-pink-900/30 rounded-3xl backdrop-blur-lg border border-white/10"></div>
-
-                {/* Grid de conexiones de fondo */}
-                <div className="absolute inset-0 opacity-20">
-                  <svg className="w-full h-full" viewBox="0 0 400 400">
-                    <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="1"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                  </svg>
-                </div>
-
-                {/* Núcleo Central - Cerebro IA */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 shadow-2xl border-4 border-white/30 flex items-center justify-center animate-pulse">
-                  <div className="text-center text-white">
-                    <div className="text-4xl mb-1">🧠</div>
-                    <div className="text-sm font-bold">IA Core</div>
-                  </div>
-
-                  {/* Pulsos de energía */}
-                  <div className="absolute inset-0 rounded-full border-2 border-white/40 animate-ping"></div>
-                  <div className="absolute inset-0 rounded-full border border-cyan-300/50 animate-ping" style={{animationDelay: '0.5s'}}></div>
-                  <div className="absolute inset-0 rounded-full border border-pink-300/40 animate-ping" style={{animationDelay: '1s'}}></div>
-                </div>
-
-                {/* Satélites orbitales - Módulos de IA */}
-                <div className="absolute inset-0 animate-spin" style={{animationDuration: '20s'}}>
-                  {/* Módulo 1 - Análisis Predictivo */}
-                  <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-emerald-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">📊</div>
-                      <div className="text-xs font-bold">Análisis</div>
-                      <div className="text-xs opacity-80">Predictivo</div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  </div>
-
-                  {/* Módulo 2 - Automatización */}
-                  <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-orange-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">⚙️</div>
-                      <div className="text-xs font-bold">Auto</div>
-                      <div className="text-xs opacity-80">mación</div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  </div>
-
-                  {/* Módulo 3 - Machine Learning */}
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-purple-400 to-violet-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-purple-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">🤖</div>
-                      <div className="text-xs font-bold">Machine</div>
-                      <div className="text-xs opacity-80">Learning</div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  </div>
-
-                  {/* Módulo 4 - Natural Language */}
-                  <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl border-2 border-cyan-300/50 group hover:scale-110 transition-all duration-500">
-                    <div className="text-center animate-none">
-                      <div className="text-2xl mb-1">💬</div>
-                      <div className="text-xs font-bold">Natural</div>
-                      <div className="text-xs opacity-80">Language</div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  </div>
-                </div>
-
-                {/* Órbita intermedia - Conectores de datos */}
-                <div className="absolute inset-0 animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}>
-                  <div className="absolute top-16 right-16 w-6 h-6 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full shadow-lg animate-pulse"></div>
-                  <div className="absolute bottom-16 right-16 w-8 h-8 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                  <div className="absolute bottom-16 left-16 w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '1s'}}></div>
-                  <div className="absolute top-16 left-16 w-7 h-7 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full shadow-lg animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                </div>
-
-                {/* Conexiones de datos animadas */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                  <defs>
-                    <linearGradient id="dataFlow1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8">
-                        <animate attributeName="stop-opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
-                      </stop>
-                      <stop offset="100%" stopColor="#EC4899" stopOpacity="0.8">
-                        <animate attributeName="stop-opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
-                      </stop>
-                    </linearGradient>
-                    <linearGradient id="dataFlow2" x1="100%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#10B981" stopOpacity="0.6">
-                        <animate attributeName="stop-opacity" values="0.6;0.1;0.6" dur="1.5s" repeatCount="indefinite"/>
-                      </stop>
-                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.6">
-                        <animate attributeName="stop-opacity" values="0.1;0.6;0.1" dur="1.5s" repeatCount="indefinite"/>
-                      </stop>
-                    </linearGradient>
-                  </defs>
-
-                  {/* Líneas de datos dinámicas */}
-                  <path d="M200 200 Q120 120 50 200 Q120 280 200 200 Q280 120 350 200 Q280 280 200 200"
-                        stroke="url(#dataFlow1)"
-                        strokeWidth="2"
-                        fill="none"
-                        strokeDasharray="8,4"
-                        className="animate-pulse"/>
-
-                  <path d="M200 200 Q200 120 120 160 Q200 280 280 160 Q200 120 200 200"
-                        stroke="url(#dataFlow2)"
-                        strokeWidth="1.5"
-                        fill="none"
-                        strokeDasharray="6,3"
-                        className="animate-pulse"/>
-                </svg>
-
-                {/* Partículas de datos flotantes */}
-                <div className="absolute top-6 left-6 w-3 h-3 bg-cyan-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0s'}}></div>
-                <div className="absolute top-20 right-8 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.3s'}}></div>
-                <div className="absolute bottom-12 left-12 w-4 h-4 bg-emerald-400 rounded-full animate-bounce opacity-80" style={{animationDelay: '0.6s'}}></div>
-                <div className="absolute bottom-6 right-6 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-50" style={{animationDelay: '0.9s'}}></div>
-                <div className="absolute top-1/3 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-bounce opacity-65" style={{animationDelay: '1.2s'}}></div>
-                <div className="absolute top-2/3 right-4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-75" style={{animationDelay: '1.5s'}}></div>
-
-                {/* Efecto holográfico exterior */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/10 via-purple-600/15 to-pink-600/10 rounded-3xl blur-xl animate-pulse"></div>
-                <div className="absolute -inset-8 bg-gradient-to-tr from-cyan-500/5 via-purple-500/10 to-pink-500/5 rounded-3xl blur-2xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-     
-      
       {/* Footer Estándar */}
       <Footer />
 
